@@ -1,0 +1,27 @@
+fr:
+  metas:
+    title:
+      generic: "Parentheze, la nouvelle vie des parents."
+  home:
+    page_title: "Accueil || "
+    title: "LA NOUVELLE VIE DES PARENTS"
+    subtitle-max: "Réseau social des parents, solutions de garde collaboratives, mutualisation de baby-sitter et actualité dédiée."
+    subtitle-min_html: "Réseau social des parents et</br> solutions de garde collaboratives"
+  page1:
+    title: "TROUVEZ DES PARENTS COMME VOUS,"
+    subtitle: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut."
+  page2:
+    title: "DES FORFAITS DE GARDE ENTRE PARENTS."
+    subtitle-max: "Parce que demander un service gratuit est un frein, que nous ressentons le besoin de nous justifier et n’osons pas abuser. Nous avons pensé à des forfaits de garde entre parents. Les parents et amis reçoivent la garde de vos enfants en échanges d’une compensation de votre part, ou inversement."
+    subtitle-min: "Parce que demander un service gratuit à ses amis, voisins parents est un frein, nous avons pensé à des forfaits de garde en échanges d’une compensation de votre part, ou inversement."
+  footer:
+    facebook: "https://www.facebook.com/groups/1860665404215862/"
+    twitter: "https://medium.com/@parentgenial"
+    medium: "https://medium.com/@parentgenial"
+  calltoaction:
+    inscription: "INSCRIVEZ-VOUS MAINTENANT"
+  alt:
+    forfait1: "forfait soiree à 22€ pour la garde des enfants"
+    forfait2: "forfait soiree + nuit à 40€ pour la garde des enfants"
+    forfait3: "forfait soiree + nuit + grasse mat' à 48€ pour la garde des enfants"
+    flechebas: "fleche de défilement vers le bas"
