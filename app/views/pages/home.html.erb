@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% content_for :title_tag do t('metas.titles.home') end %>
+
+<div class="home">
+  <% t('home.slides').length.times do |x| %>
+    <% x = x.to_s %>
+    <%= render "slide", target_page: "slide"+x, id: "slide"+x ,  text: t('home.slide_'+x+'.title'), image: t('home.slide_'+x+'.image') %>
+  <% end %>
+</div>
