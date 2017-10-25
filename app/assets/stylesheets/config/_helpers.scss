@@ -79,6 +79,9 @@ $input-height: 56px !important;
   &.center {
     justify-content: center;
   }
+  &.between {
+    justify-content: space-between;
+  }
 }
 .flex-wrap {
   flex-wrap: wrap;

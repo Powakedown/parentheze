@@ -34,5 +34,14 @@
     background-color: white;
     border: none;
     height: 340px;
+    color: $medium-gray;
+    h1 {
+      font-family: $body-font;
+      font-size: 81px;
+    }
+    &.emergency {
+      background-color: $yellow;
+      color: white;
+    }
   }
 }
