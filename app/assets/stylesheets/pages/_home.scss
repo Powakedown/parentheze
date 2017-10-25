@@ -3,27 +3,36 @@
   color: white;
   background-color: $purple;
 }
-.page0 {
+.slide0 {
   text-align: center;
   width: 60%;
   margin-top: 10%;
 }
-.page1 {
+.slide1 {
   position: absolute;
   right: 5%;
   width: 40%;
 }
-.page2 {
+@media (max-device-width : 667px){
+  .slide1 {
+    width: 60%;
+  }
+}
+.slide2 {
   position: absolute;
   left: 5%;
   width: 40%;
 }
-.page3 {
+.slide3 {
   position: absolute;
   bottom: 10%;
   width: 80%;
   text-align: center;
 }
-.page4 {
-
+.slide_plan {
+  .plan-card {
+    background-color: white;
+    border: none;
+    height: 340px;
+  }
 }

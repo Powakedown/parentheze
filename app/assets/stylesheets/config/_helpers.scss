@@ -23,6 +23,10 @@ $input-height: 56px !important;
     height: calc(100vh - 45px);
   }
 }
+.minfullscreen {
+  width: 100%;
+  min-height: 100vh;
+}
 .margin-bottom-medium {
   margin-bottom: 40px !important;
 }
@@ -69,6 +73,12 @@ $input-height: 56px !important;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  &.top {
+    justify-content: start;
+  }
+  &.center {
+    justify-content: center;
+  }
 }
 .flex-wrap {
   flex-wrap: wrap;

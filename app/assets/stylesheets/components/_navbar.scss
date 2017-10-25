@@ -11,11 +11,25 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  a, i {
+    color: white;
+    font-size: 16px;
+    &:hover {
+      color: $yellow;
+    }
+  }
+}
+
+@media (max-device-width : 667px){
+  .navbar-wagon {
+    padding: 0 10px;
+  }
 }
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 40px;
+  height: 31px;
+  width: 217px;
 }
 
 /* User Avatar */
@@ -40,17 +54,13 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: $light-blue;
 }
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  border-color: #E6E6E6;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;

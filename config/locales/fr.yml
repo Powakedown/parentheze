@@ -1,7 +1,12 @@
 fr:
   metas:
-    title:
+    titles:
+      home: "Parentheze, la nouvelle vie des parents."
       generic: "Parentheze, la nouvelle vie des parents."
+  navbar:
+    login: "connexion"
+    signup: "s'enregistrer"
+    manifesto: "manisfeste"
   home:
     slides:
       slide_0:
@@ -16,28 +21,26 @@ fr:
       slide_3:
         title: "Parentheze, vous propose de faciliter l’échange de garde entre parents."
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
-    page_4:
+    slide_plan:
       title: "Rencontrez des parents comme vous,"
       text: "nous avons prévu les outils et les forfaits pour faciliter et compenser la garde des enfants, parce que payer est parfois plus facile que de demander un service:"
-      image: ""
-    page_5:
+    slide_calltoaction:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
-      image: ""
   plans:
-    plan_2h:
+    plan_0:
       price: "12€"
       title: "no-stress"
       subtitle: "2h en journée"
-    plan_evening:
+    plan_1:
       price: "22€"
       title: "la soirée"
       subtitle: "20h-Minuit Repas non compris"
-    plan_night:
+    plan_2:
       price: "48€"
       title: "la soirée + la nuit + la grasse mat'"
       subtitle: "20h-Minuit Repas non compris"
-    plan_day:
+    plan_3:
       price: "44€"
       title: "Panique! Grêve à l'école"
       subtitle: "la journée"

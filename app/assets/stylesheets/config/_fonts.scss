@@ -28,14 +28,18 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
  }
 
  p{
-  font-size: 24px;
+  font-size: 16px;
   font-family: 'Open sans', sans-serif;
   font-weight: 300;
-  line-height: 30px;
+  line-height: 18px;
+ }
+
+ a {
+  font-family: $body-font;
  }
 
 
-@media (min-device-width: 320px) and (max-device-width : 667px){
+@media (max-device-width : 667px){
 h1 {
   font-size: 40px;
   margin-bottom: 20px;
@@ -51,24 +55,24 @@ h2 {
 @media (min-device-width: 768px) and (orientation : portrait) {
 h1 {
   font-size: 81px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   line-height: 72px;
 }
 h2 {
   font-size: 56px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   line-height: 60px;
 }
 }
 @media (min-device-width: 769px) {
 h1 {
   font-size: 81px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   line-height: 72px;
 }
 h2 {
   font-size: 56px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   line-height: 72px;
 }
 }

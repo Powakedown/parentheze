@@ -1,8 +1,33 @@
 <% content_for :title_tag do t('metas.titles.home') end %>
 
 <div class="home">
+
   <% t('home.slides').length.times do |x| %>
     <% x = x.to_s %>
-    <%= render "slide", target_page: "slide"+x, id: "slide"+x ,  text: t('home.slide_'+x+'.title'), image: t('home.slide_'+x+'.image') %>
+    <%= render "slide", target_page: "slide"+(x.to_i+1).to_s, id: "slide"+x ,  text: t('home.slides.slide_'+x+'.title'), image: t('home.slides.slide_'+x+'.image') %>
   <% end %>
+
+  <div class="minfullscreen stretch relative flex-column center text-center slide_plan" id=<%= "slide"+t('home.slides').length.to_s %>>
+    <h2><%= t('home.slide_plan.title') %></h2>
+    <p class="margin-bottom-medium"><%= t('home.slide_plan.text') %></p>
+    <div class="container">
+      <div class="row">
+        <% t('plans').length.times do |x| %>
+        <div class="col-xs-12 col-md-3">
+          <div class="plan-card">
+            <p><%= t('plans.'+x.to_s+".price") %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <%= render 'shared/scroller', target_page: "slide_calltoaction", icon: "fa-arrow-circle-down" %>
+  </div>
+
+  <div class="fullscreen relative flex-column" id="slide_calltoaction" >
+    <h1 class="title_top"><%= t('home.slide_calltoaction.title') %></h1>
+    <p class=""><%= t('home.slide_calltoaction.text') %></p>
+    <%= render 'shared/scroller', target_page: "slide0", icon: "fa-arrow-circle-up" %>
+  </div>
+
 </div>

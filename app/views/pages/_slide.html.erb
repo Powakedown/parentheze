@@ -1,4 +1,4 @@
-<div class="fullscreen relative flexbox" style="background-image: url(<%= image %>)">
+<div class="fullscreen relative flexbox" style="background-image: url(<%= image %>)" id=<%= id %>>
   <h1 class="<%= id %>"><%= text %></h1>
-  <%= render 'shared/next_page', target_page: target_page, icon: "fa-arrow-circle-down", label: false %>
+  <%= render 'shared/scroller', target_page: target_page, icon: "fa-arrow-circle-down" %>
 </div>
