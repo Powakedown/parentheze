@@ -32,9 +32,9 @@
     <h1 class="title_top"><%= t('home.slide_calltoaction.title') %></h1>
     <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
     <div class="inscription-wrapper center">
-      <%= simple_form_for testers_path, method: :post do |f|%>
+      <%= simple_form_for @tester do |f| %>
         <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
-        <%= f.button :submit %>
+        <%= f.button :submit, value: t('commons.register') %>
       <% end %>
     </div>
     <%= render 'shared/scroller', target_page: "slide0", icon: "fa-arrow-circle-up" %>
