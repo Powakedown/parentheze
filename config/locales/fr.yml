@@ -1,4 +1,6 @@
 fr:
+  commons:
+    register: "S'inscrire"
   metas:
     titles:
       home: "Parentheze, la nouvelle vie des parents."
@@ -23,7 +25,7 @@ fr:
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
     slide_plan:
       title: "Rencontrez des parents comme vous,"
-      text: "nous avons prévu les outils et les forfaits pour faciliter et compenser la garde des enfants, parce que payer est parfois plus facile que de demander un service:"
+      text: "nous avons prévu les outils et les forfaits pour faciliter et compenser la garde des enfants entre parents, parce que payer est parfois plus facile que de demander un service:"
     slide_calltoaction:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
