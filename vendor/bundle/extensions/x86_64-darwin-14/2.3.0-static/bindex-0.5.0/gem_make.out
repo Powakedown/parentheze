@@ -1,0 +1,15 @@
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+/usr/local/opt/rbenv/versions/2.3.3/bin/ruby -r ./siteconf20171027-61449-1x0fufe.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20171027-61449-dww5s6/bindex
