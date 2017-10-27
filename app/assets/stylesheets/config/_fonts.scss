@@ -1,5 +1,5 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Montserrat:900");
 
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
@@ -14,3 +14,75 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+
+/*-------------------------------------------------
+ * TYPOS
+ *------------------------------------------------- */
+body {
+  font-family: $body-font
+}
+
+ h1, h2{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  text-shadow: $shadow;
+  letter-spacing: -0.2px;
+ }
+ h3 {
+  font-size: 34px;
+  letter-spacing: 0.2px;
+
+ }
+
+ p{
+  font-size: 16px;
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  line-height: 18px;
+ }
+
+ a {
+  font-family: $body-font;
+ }
+
+
+@media (max-device-width : 667px){
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+}
+
+@media (min-device-width: 768px) and (orientation : portrait) {
+h1 {
+  font-size: 81px;
+  margin-bottom: 20px;
+  line-height: 72px;
+}
+h2 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  line-height: 60px;
+}
+}
+@media (min-device-width: 769px) {
+h1 {
+  font-size: 81px;
+  margin-bottom: 20px;
+  line-height: 72px;
+}
+h2 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  line-height: 72px;
+}
+}
+
+

@@ -1,0 +1,66 @@
+fr:
+  metas:
+    titles:
+      home: "Parentheze, la nouvelle vie des parents."
+      generic: "Parentheze, la nouvelle vie des parents."
+  navbar:
+    login: "connexion"
+    signup: "s'enregistrer"
+    manifesto: "manisfeste"
+  home:
+    slides:
+      slide0:
+        title: "LA NOUVELLE VIE DES PARENTS"
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_party.jpg"
+      slide1:
+        title: "Parce que nous adorons nos enfants..."
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kit_jumping.jpg"
+      slide2:
+        title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_lover.jpg"
+      slide3:
+        title: "Parentheze, vous propose de faciliter l’échange de garde entre parents."
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
+    slide_plan:
+      title: "Rencontrez des parents comme vous,"
+      text: "nous avons prévu les outils et les forfaits pour faciliter et compenser la garde des enfants, parce que payer est parfois plus facile que de demander un service:"
+    slide_calltoaction:
+      title: "Inscrivez-vous"
+      text: "le service est en phase de test, participez à la béta gratuitement."
+  plans:
+    plan0:
+      price: "12€"
+      title: "no-stress"
+      subtitle: "2h en journée"
+      color: "#469AE0"
+    plan1:
+      price: "22€"
+      title: "la soirée"
+      subtitle: "20h-Minuit Repas non compris"
+      color: "#E12787"
+    plan2:
+      price: "48€"
+      title: "la soirée + la nuit + la grasse mat'"
+      subtitle: "20h-Minuit Repas non compris"
+      color: "#F1B255"
+    plan3:
+      price: "44€"
+      title: "Panique! Grêve à l'école"
+      subtitle: "la journée"
+      color: "white"
+  footer:
+    facebook: "https://www.facebook.com/groups/1860665404215862/"
+    twitter: "https://medium.com/@parentgenial"
+    medium: "https://medium.com/@parentgenial"
+  calltoaction:
+    inscription: "Inscrivez-vous:"
+  alt:
+    forfait1: "forfait soiree à 22€ pour la garde des enfants"
+    forfait2: "forfait soiree + nuit à 40€ pour la garde des enfants"
+    forfait3: "forfait soiree + nuit + grasse mat' à 48€ pour la garde des enfants"
+    flechebas: "fleche de défilement vers le bas"
+  flash:
+    tester:
+      new: "Oh yeah! Inscription à la béta enregistrée, vous allez recevoir un mail."
+  placeholder:
+    email: "précisez votre email"
