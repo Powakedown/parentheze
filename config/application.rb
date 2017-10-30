@@ -23,5 +23,7 @@ module Parentheze
     # -- all .rb files in that directory are automatically loaded.
 
     config.action_mailer.default_url_options = { host: 'parentheze.com' }
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_API_KEY'] }
   end
 end

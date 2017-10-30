@@ -3,8 +3,8 @@
 <div class="home">
 
   <% t('home.slides').length.times do |x| %>
-    <% x = x.to_s %>
-    <%= render "slide", target_page: "slide"+(x.to_i+1).to_s, id: "slide"+x ,  text: t('home.slides.slide'+x+'.title'), image: t('home.slides.slide'+x+'.image') %>
+    <% xstring = x.to_s %>
+    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  text: t('home.slides.slide'+xstring+'.title'), image: t('home.slides.slide'+xstring+'.image') %>
   <% end %>
 
   <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+t('home.slides').length.to_s %>>
@@ -13,13 +13,14 @@
     <div class="container">
       <div class="row">
         <% t('plans').length.times do |x| %>
+        <% xstring = x.to_s %>
         <div class="col-xs-12 col-md-3 padding-box">
           <div class="plan-card flex-column between padding-box <%= "emergency" if x == t('plans').length - 1 %>">
             <div>
-              <h1 style="color: <%= t('plans.plan'+x.to_s+'.color') %>"><%= t('plans.plan'+x.to_s+".price") %></h1>
-              <h3><%= t('plans.plan'+x.to_s+".title") %></h3>
+              <h1 style="color: <%= t('plans.plan'+xstring+'.color') %>"><%= t('plans.plan'+xstring+".price") %></h1>
+              <h3><%= t('plans.plan'+xstring+".title") %></h3>
             </div>
-            <p><%= t('plans.plan'+x.to_s+".subtitle")  %></p>
+            <p><%= t('plans.plan'+xstring+".subtitle")  %></p>
           </div>
         </div>
         <% end %>
@@ -32,7 +33,7 @@
     <h1 class="title_top"><%= t('home.slide_calltoaction.title') %></h1>
     <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
     <div class="inscription-wrapper center">
-      <%= simple_form_for @tester do |f| %>
+      <%= simple_form_for @guest do |f| %>
         <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
         <%= f.button :submit, value: t('commons.register') %>
       <% end %>

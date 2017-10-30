@@ -18,6 +18,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'devise-i18n'
 
+group :production do
+  gem 'postmark-rails'
+end
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
@@ -29,4 +33,6 @@ group :development, :test do
   gem 'poltergeist'
   gem 'launchy'
   gem 'minitest-reporters'
+  gem "letter_opener"
+
 end

@@ -1,10 +1,10 @@
 class UserMailer < ApplicationMailer
   default from: 'noreply@parentheze.com'
 
-  def welcome_email(user)
-    @user = user
+  def welcome(guest)
+    @user = guest
     @url  = 'http://www.parentheze.com'
-    mail(to: @user.email, subject: 'Inscription pour la béta de parentheze')
+    mail(to: @user.email, from: "maxime@parentheze.com", subject: 'Inscription à la béta de parentheze', :track_opens => 'true')
   end
 
 end

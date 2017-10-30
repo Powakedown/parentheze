@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :testers, only: [:create]
+  resources :guests, only: [:create]
 
   devise_for :users
   root to: 'pages#home'
