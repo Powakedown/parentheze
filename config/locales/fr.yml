@@ -62,7 +62,7 @@ fr:
     forfait3: "forfait soiree + nuit + grasse mat' à 48€ pour la garde des enfants"
     flechebas: "fleche de défilement vers le bas"
   flash:
-    tester:
+    guest:
       new: "Oh yeah! Inscription à la béta enregistrée, vous allez recevoir un mail."
   placeholder:
     email: "précisez votre email"
