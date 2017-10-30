@@ -7,4 +7,8 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, from: "maxime@parentheze.com", subject: 'Inscription à la béta de parentheze', :track_opens => 'true')
   end
 
+  def welcome_redirection(guest)
+    @user = guest
+
+  end
 end
