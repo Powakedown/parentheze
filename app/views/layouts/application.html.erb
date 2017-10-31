@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=1">
     <title><%= yield(:title_tag).blank? ? t('metas.title.generic') : yield(:title_tag) %></title>
+    <%= analytics_init if GoogleAnalytics.valid_tracker? %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
