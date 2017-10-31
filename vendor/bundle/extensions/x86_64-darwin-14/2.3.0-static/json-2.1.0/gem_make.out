@@ -1,0 +1,13 @@
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/json-2.1.0/ext/json
+/usr/local/opt/rbenv/versions/2.3.3/bin/ruby -r ./siteconf20171031-88910-1gjfevv.rb extconf.rb
+creating Makefile
+
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/apple/code/parentheze/vendor/bundle/gems/json-2.1.0/ext/json
+make "DESTDIR=" install
