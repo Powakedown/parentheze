@@ -20,6 +20,7 @@ gem 'devise-i18n'
 
 group :production do
   gem 'postmark-rails'
+  gem 'google-analytics-rails', '~> 1.1', '>= 1.1.1'
 end
 
 group :development, :test do
