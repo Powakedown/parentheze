@@ -11,6 +11,7 @@ fr:
     titles:
       home: "Parentheze, la nouvelle vie des parents."
       generic: "Parentheze, la nouvelle vie des parents."
+      thankyou: "Merci et à bientôt"
   navbar:
     login: "connexion"
     signup: "s'enregistrer"
