@@ -1,4 +1,6 @@
-<div class="fullscreen relative flex-column text-center home" style="background-image: url(<%= t('inscription.redirection.image') %>))">
+<% content_for :title_tag do t('metas.titles.thankyou') end %>
+
+<div class="fullscreen relative flex-column text-center home" style="background-image: url(<%= t('inscription.redirection.image') %>)">
   <div>
     <h1><%= t('inscription.redirection.title') %></h1>
     <p><%= t('inscription.redirection.text') %></p>
