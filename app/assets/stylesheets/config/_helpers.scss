@@ -201,5 +201,7 @@ input, select {
 .checkbox input[type="checkbox"] {
   top: -20px;
 }
-
+.alert-warning, .alert-info, .alert-success {
+  border: none
+}
 
