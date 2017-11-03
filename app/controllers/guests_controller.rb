@@ -3,9 +3,14 @@ class GuestsController < ApplicationController
 
   def create
     @guest = Guest.new(params_guest)
-    if @guest.save!
+    begin
+      @guest.save!
       UserMailer.welcome(@guest).deliver_now
       render :welcome
+    rescue => e
+      @error = e.message
+      redirect_to "/home#slide_calltoaction"
+      flash[:alert] =  "#{@error}"
     end
   end
 
