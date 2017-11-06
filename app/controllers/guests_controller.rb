@@ -6,6 +6,7 @@ class GuestsController < ApplicationController
     begin
       @guest.save!
       UserMailer.welcome(@guest).deliver_now
+      flash[:notice] =  t('inscription.redirection.emailsent')
       render :welcome
     rescue => e
       @error = e.message

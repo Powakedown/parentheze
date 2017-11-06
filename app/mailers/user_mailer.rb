@@ -9,6 +9,5 @@ class UserMailer < ApplicationMailer
 
   def welcome_redirection(guest)
     @user = guest
-
   end
 end

@@ -41,6 +41,7 @@ fr:
       title: "Merci et à bientôt!"
       text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
       image: "http://res.cloudinary.com/doodlid/image/upload/v1509373509/confirmation_m1bpvc.jpg"
+      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
   plans:
     plan0:
       price: "12€"
