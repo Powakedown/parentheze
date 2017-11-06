@@ -17,7 +17,9 @@ justin@justinaguilar.com
 slideDown
 ==============================================
 */
-
+.withdelay{
+  animation-delay: 1s;
+ }
 
 .slideDown{
   animation-name: slideDown;
@@ -163,15 +165,6 @@ slideLeft
   50%{
     transform: translateX(-8%);
   }
-  65%{
-    transform: translateX(4%);
-  }
-  80%{
-    transform: translateX(-4%);
-  }
-  95%{
-    transform: translateX(2%);
-  }
   100% {
     transform: translateX(0%);
   }
@@ -184,20 +177,42 @@ slideLeft
   50%{
     -webkit-transform: translateX(-8%);
   }
-  65%{
-    -webkit-transform: translateX(4%);
-  }
-  80%{
-    -webkit-transform: translateX(-4%);
-  }
-  95%{
-    -webkit-transform: translateX(2%);
-  }
   100% {
     -webkit-transform: translateX(0%);
   }
 }
 
+
+.slideLeft-nobounce{
+  animation-name: slideLeft-bounce;
+  -webkit-animation-name: slideLeft-bounce;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+
+  visibility: visible !important;
+}
+
+@keyframes slideLeft-nobounce {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideLeft-bounce {
+  0% {
+    -webkit-transform: translateX(150%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
 /*
 ==============================================
 slideRight
@@ -447,7 +462,7 @@ fadeIn
 
 /*
 ==============================================
-expandOpen
+expandOpen-withdelay
 ==============================================
 */
 
@@ -500,6 +515,9 @@ expandOpen
     -webkit-transform: scale(1);
   }
 }
+
+
+
 
 /*
 ==============================================
@@ -583,6 +601,76 @@ bigEntrance
   }
 }
 
+.bigEntrance-withdelay{
+  animation-name: bigEntrance-withdelay;
+  -webkit-animation-name: bigEntrance-withdelay;
+
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+
+  visibility: visible !important;
+}
+
+@keyframes bigEntrance-withdelay {
+  0% {
+    transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  30% {
+    transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.99) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bigEntrance-withdelay {
+  50% {
+    -webkit-transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+    opacity: 0.2;
+  }
+  60% {
+    -webkit-transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: scale(0.98) rotate(1deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: scale(1.01) rotate(-1deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+    opacity: 1;
+  }
+}
 /*
 ==============================================
 hatch

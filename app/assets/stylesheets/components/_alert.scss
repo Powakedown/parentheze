@@ -3,13 +3,52 @@
 * ------------------------------------- */
 
 .alert {
+  position: fixed;
+  right: 0px;
+  top: 150px;
   margin: 0;
   text-align: center;
-  color: white;
+  color: $dark-gray;
+  background-color: #FFF;
+  font-size: 16px;
+  // width: 25%;
+  min-width: calc(15% + 140px);
+  max-width: calc(20% + 140px);
+  height: 60px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 4px 0 0 4px;
+  z-index: 500;
+  padding: 0px;
+  border: none;
+  i {
+    color: white;
+    font-size: 36px;
+  }
+  .fa-times {
+    color: $red;
+    opacity: 1;
+  }
 }
+
 .alert-info {
   background: $green;
+  width: 80px;
 }
 .alert-warning {
-  background: $red;
+  background-color: $red;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  border-radius: 4px 0 0 4px;
+}
+.alert-message {
+  max-width: calc(100% - 140px)
+}
+.alert-close-warning {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
 }
