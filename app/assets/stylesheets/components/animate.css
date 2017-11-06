@@ -218,7 +218,36 @@ slideLeft
 slideRight
 ==============================================
 */
+.slideRight-away{
+  animation-name: slideRight-away;
+  -webkit-animation-name: slideRight-away;
 
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+
+  visibility: visible !important;
+}
+
+@keyframes slideRight-away{
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+@-webkit-keyframes slideRight-away{
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
 
 .slideRight{
   animation-name: slideRight;

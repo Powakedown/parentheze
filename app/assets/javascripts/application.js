@@ -23,8 +23,3 @@ $(document).ready(function() {
     }, 500);
   });
 });
-
-
-$('.alert').on('closed.bs.alert', function () {
-  $('.alert').addClass('slideRight');
-})
