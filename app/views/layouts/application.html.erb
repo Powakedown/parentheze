@@ -14,9 +14,6 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <% if Rails.env.production? %>
-      <h1>EN PRODUCTION</h1>
-    <% end %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>
