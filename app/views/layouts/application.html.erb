@@ -7,11 +7,16 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= analytics_init if GoogleAnalytics.valid_tracker? %>
+    <% if Rails.env.production? %>
+      <%= analytics_init if GoogleAnalytics.valid_tracker? %>
+    <% end %>
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <% if Rails.env.production? %>
+      <h1>EN PRODUCTION</h1>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>
