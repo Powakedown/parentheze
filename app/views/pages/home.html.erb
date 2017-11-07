@@ -36,7 +36,7 @@
       <div class="inscription-wrapper center">
         <%= simple_form_for @guest do |f| %>
           <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
-          <%= f.button :submit, value: t('commons.register') %>
+          <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
         <% end %>
       </div>
       <%= render 'shared/scroller', target_page: "slide0", icon: "fa-arrow-circle-up" %>
