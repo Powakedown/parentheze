@@ -1,4 +1,8 @@
 .inscription-wrapper {
   width: 50%;
-
+}
+@media (max-width : 667px) {
+  .inscription-wrapper {
+    width: 90%;
+  }
 }
