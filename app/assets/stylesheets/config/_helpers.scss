@@ -1,7 +1,7 @@
 $shadow: 0 2px 5px 0 rgba(0,0,0,0.07),0 2px 0 0 rgba(0,0,0,0.03);
 $border-light: 1px solid $medium-gray;
 $border-medium: 2px solid $dark-gray;
-$border-radius: 4px;
+$border-radius: 13px;
 $border-color: $medium-gray;
 $padding-side: 0 20px 0 20px;
 $white-space: 20px;
@@ -21,6 +21,9 @@ $input-height: 56px !important;
   }
   &.under-navbar-slim {
     height: calc(100vh - 45px);
+  }
+  &.under-breadcrumb {
+    height: calc(100vh - 100px);
   }
 }
 .minfullscreen {
