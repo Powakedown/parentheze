@@ -5,7 +5,7 @@
   <div class="breadcrumb">
     <div class="center flexbox">
       <% t('survey.questions').length.times do |x| %>
-        <div class="step flexbox" id="step<%= x.to_s %>"><%= x+1 %></div>
+        <div class="step flexbox" id="question<%= (x+1).to_s %>"><%= x+1 %></div>
       <% end %>
     </div>
   </div>
@@ -13,10 +13,10 @@
     <div class="row">
       <div class="col-xs-12 col-sm-9 col-sm-offset-2 col-md-6 col-md-offset-3">
       <div>
-        <h1 class="margin-bottom-medium">Vous sortiriez plus souvent si :</h1>
-          <div class="btn wrap tall btn-blue flexbox center margin-bottom-medium"> vous aviez des amis de confiance à côté </div>
-          <div class="btn wrap tall btn-yellow flexbox center margin-bottom-medium"> la garde des enfants était moins chère </div>
-          <div class="btn wrap tall btn-pink flexbox center"> vous ne prévoyez pas de sortir </div>
+        <h1 class="margin-bottom-medium slideLeft">Vous sortiriez plus souvent si :</h1>
+          <div class="slideLeft delay1 btn wrap tall btn-blue flexbox center margin-bottom-medium"> vous aviez des amis de confiance à côté </div>
+          <div class="slideLeft delay2 btn wrap tall btn-yellow flexbox center margin-bottom-medium"> la garde des enfants était moins chère </div>
+          <div class="slideLeft delay3 btn wrap tall btn-pink flexbox center"> vous ne prévoyez pas de sortir </div>
       </div>
       </div>
     </div>
