@@ -1,32 +1,46 @@
 <% content_for :title_tag do t('survey.title') end %>
-
+<% questions_number = t('survey.questions').length %>
 
 <div class="survey">
   <div class="breadcrumb">
     <div class="center flexbox">
-      <% t('survey.questions').length.times do |x| %>
-        <div class="step flexbox" id="question<%= (x+1).to_s %>"><%= x+1 %></div>
+      <% t('survey.questions').each_with_index do |value, x| %>
+        <div class="step flexbox" id="breadcrumb-question<%= x %>"><%= x+1 %></div>
       <% end %>
     </div>
   </div>
-  <div class="container fullscreen under-breadcrumb flexbox">
-    <div class="row">
-      <div class="col-xs-12 col-sm-9 col-sm-offset-2 col-md-6 col-md-offset-3">
-      <div>
-        <h1 class="margin-bottom-medium slideLeft">Vous sortiriez plus souvent si :</h1>
-          <div class="slideLeft delay1 btn wrap tall btn-blue flexbox center margin-bottom-medium"> vous aviez des amis de confiance à côté </div>
-          <div class="slideLeft delay2 btn wrap tall btn-yellow flexbox center margin-bottom-medium"> la garde des enfants était moins chère </div>
-          <div class="slideLeft delay3 btn wrap tall btn-pink flexbox center"> vous ne prévoyez pas de sortir </div>
+    <% t('survey.questions').each do |question| %>
+      <div id="<%= question[0] %>">
+        <div class="fullscreen under-breadcrumb flexbox">
+          <div class="survey-block">
+            <h1 class="margin-bottom-medium slideLeft"><%= question.second[:title] %></h1>
+            <% question.second[:answers].each_with_index do |answer, x| %>
+              <div class="answer slideLeft delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium"><%= answer[1] %></div>
+              <% end %>
+          </div>
+        </div>
       </div>
-      </div>
-    </div>
-  </div>
+    <% end %>
 </div>
 
 <% content_for(:after_js) do %>
   <script>
     $(document).ready(function(){
-      $('#question1').addClass('active');
+      // INIT
+      var current_question = 0
+      $('#breadcrumb-question'+current_question).addClass('active');
+
+      for (i = 1; i < <%= questions_number %> ; i++) {
+        $('#question'+i).hide();
+      }
+
+      $('.answer').click(function(e){
+        $('#question'+current_question).hide();
+        $('#breadcrumb-question'+current_question).removeClass('active');
+        current_question += 1;
+        $('#question'+current_question).show();
+        $('#breadcrumb-question'+current_question).addClass('active');
+      });
     });
   </script>
 <% end %>

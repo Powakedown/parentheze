@@ -156,15 +156,15 @@ slideLeft
   -webkit-animation-timing-function: ease-in-out;
 
   visibility: visible !important;
-  &.delay1 {
+  &.delay0 {
     animation-name: slideLeftdelayfirst;
     -webkit-animation-name: slideLeftdelayfirst;
   }
-  &.delay2 {
+  &.delay1 {
     animation-name: slideLeftdelaysecond;
     -webkit-animation-name: slideLeftdelaysecond;
   }
-  &.delay3 {
+  &.delay2 {
     animation-name: slideLeftdelaythird;
     -webkit-animation-name: slideLeftdelaythird;
   }
