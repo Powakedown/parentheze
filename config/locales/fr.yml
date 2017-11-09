@@ -39,24 +39,29 @@ fr:
   survey:
     title: "Rapide enquète:"
     questions:
-      question1:
+      question0:
         title: "Vous êtes parent?"
-        answer1: "Oui"
-        answer2: "Non"
+        answers:
+          answer1: "Oui"
+          answer2: "Non"
+      question1:
+        title: "Vos enfants sont en âge..."
+        answers:
+          answer1: "d'être gardés par une babysitter"
+          answer2: "trop jeune pour être confié à d'autres"
+          answer3: "de se garder tout seul"
       question2:
-        title: "Vos enfants sont en âge d'être gardés par une babysitter"
-        answer1: "Oui"
-        answer2: "Non"
-      question3:
         title: "Ils vous énervent ces parents qui..."
-        answer1: "ont toujours une solution de garde facile"
-        answer2: "dont les grands parents sont à côtés"
-        answer3: "non, ici tout va bien!"
-      question4:
+        answers:
+          answer1: "ont toujours une solution de garde facile"
+          answer2: "dont les grands parents sont à côtés"
+          answer3: "non, ici tout va bien!"
+      question3:
         title: "Vous sortiriez plus souvent si..."
-        answer1: "vous aviez des amis de confiance à côté"
-        answer2: "la garde des enfants était moins chère"
-        answer3: "vous ne prévoyez pas de sortir"
+        answers:
+          answer1: "vous aviez des amis de confiance à côté"
+          answer2: "la garde des enfants était moins chère"
+          answer3: "vous ne prévoyez pas de sortir"
   inscription:
     redirection:
       title: "Merci et à bientôt!"
