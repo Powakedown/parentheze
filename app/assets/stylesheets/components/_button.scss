@@ -2,7 +2,7 @@
   color: white;
   background-color: $yellow;
   border-radius: $border-radius;
-  height: 56px;
+  min-height: 56px;
   border: none;
   padding: 0px 30px 0px 30px;
   width: 100%;
@@ -17,6 +17,12 @@
   &:hover {
     background-color: $light-yellow;
     color: white;
+  }
+  &.wrap {
+    white-space: normal;
+  }
+  &.tall {
+    min-height: 70px;
   }
 }
 .btn-slim, a.btn-slim {
@@ -39,19 +45,19 @@ input {
     border: none;
   }
 }
-.btn-pink {
+.btn-pink, .btn-2 {
   background-color: $pink;
 }
 .btn-gray {
   background-color: $dark-gray;
 }
-.btn-blue {
-  background-color: blue;
+.btn-blue, .btn-0 {
+  background-color: $light-blue;
 }
 .btn-red {
   background-color: red;
 }
-.btn-yellow {
+.btn-yellow, .btn-1 {
   background-color: $yellow;
 }
 .btn-inverse {

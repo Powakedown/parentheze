@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get "/home" => "pages#home"
+  get "/survey" => "guests#survey"
 
   # MAIL
   get "/welcome_redirection" => "guests#welcome_redirection"

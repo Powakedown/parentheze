@@ -1,0 +1,38 @@
+.breadcrumb {
+  background-color: transparent;
+  height: 61px;
+  // position: absolute;
+  width: 100%;
+  margin: 0px;
+}
+.step {
+  position: relative;
+  height: 45px;
+  width: 45px;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 50%;
+  color: white;
+  background-color: $medium-gray;
+  margin: 10px;
+  &.active {
+    background-color: $light-blue;
+    color: white;
+  }
+  &::before{
+    content: "";
+    border-top: 2px solid $gray;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 10px;
+  }
+  &::after{
+    content: "";
+    border-top: 2px solid $gray;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 10px;
+  }
+}

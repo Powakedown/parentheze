@@ -1,0 +1,46 @@
+<% content_for :title_tag do t('survey.title') end %>
+<% questions_number = t('survey.questions').length %>
+
+<div class="survey">
+  <div class="breadcrumb">
+    <div class="center flexbox">
+      <% t('survey.questions').each_with_index do |value, x| %>
+        <div class="step flexbox" id="breadcrumb-question<%= x %>"><%= x+1 %></div>
+      <% end %>
+    </div>
+  </div>
+    <% t('survey.questions').each do |question| %>
+      <div id="<%= question[0] %>">
+        <div class="fullscreen under-breadcrumb flexbox">
+          <div class="survey-block">
+            <h1 class="margin-bottom-medium slideLeft"><%= question.second[:title] %></h1>
+            <% question.second[:answers].each_with_index do |answer, x| %>
+              <div class="answer slideLeft delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium"><%= answer[1] %></div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+    $(document).ready(function(){
+      // INIT
+      var current_question = 0
+      $('#breadcrumb-question'+current_question).addClass('active');
+
+      for (i = 1; i < <%= questions_number %> ; i++) {
+        $('#question'+i).hide();
+      }
+
+      $('.answer').click(function(e){
+        $('#question'+current_question).hide();
+        $('#breadcrumb-question'+current_question).removeClass('active');
+        current_question += 1;
+        $('#question'+current_question).show();
+        $('#breadcrumb-question'+current_question).addClass('active');
+      });
+    });
+  </script>
+<% end %>
