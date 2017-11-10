@@ -40,23 +40,27 @@ fr:
     title: "Rapide enquète:"
     questions:
       question0:
+        picto: "heart-o"
         title: "Vous êtes parent?"
         answers:
           answer1: "Oui"
           answer2: "Non"
       question1:
+        picto: "hand-peace-o"
         title: "Vos enfants sont en âge..."
         answers:
           answer1: "d'être gardés par une babysitter"
           answer2: "trop jeune pour être confié à d'autres"
           answer3: "de se garder tout seul"
       question2:
+        picto: "quote-right"
         title: "Ils vous énervent ces parents qui..."
         answers:
           answer1: "ont toujours une solution de garde facile"
           answer2: "dont les grands parents sont à côtés"
           answer3: "non, ici tout va bien!"
       question3:
+        picto: "cab"
         title: "Vous sortiriez plus souvent si..."
         answers:
           answer1: "vous aviez des amis de confiance à côté"
