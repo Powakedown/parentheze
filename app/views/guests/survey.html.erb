@@ -13,7 +13,7 @@
       <div id="<%= question[0] %>">
         <div class="fullscreen under-breadcrumb flexbox">
           <div class="survey-block">
-            <h1 class="margin-bottom-medium slideLeft"><%= question.second[:title] %></h1>
+            <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question.second[:picto] %> bounce"></i> <%= question.second[:title] %></h1>
             <% question.second[:answers].each_with_index do |answer, x| %>
               <div class="answer slideLeft delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium"><%= answer[1] %></div>
               <% end %>
@@ -34,6 +34,7 @@
         $('#question'+i).hide();
       }
 
+      // ON ANSWER
       $('.answer').click(function(e){
         $('#question'+current_question).hide();
         $('#breadcrumb-question'+current_question).removeClass('active');
