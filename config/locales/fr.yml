@@ -50,8 +50,8 @@ fr:
         title: "Vos enfants sont en âge..."
         answers:
           answer1: "d'être gardés par une babysitter"
-          answer2: "trop jeune pour être confié à d'autres"
-          answer3: "de se garder tout seul"
+          answer2: "trop jeunes pour être confiés à d'autres"
+          answer3: "de se garder tout seuls"
       question2:
         picto: "quote-right"
         title: "Ils vous énervent ces parents qui..."
