@@ -15,7 +15,7 @@ fr:
   navbar:
     login: "connexion"
     signup: "s'enregistrer"
-    manifesto: "manisfeste"
+    manifesto: "manifeste"
   home:
     slides:
       slide0:
