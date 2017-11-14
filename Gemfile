@@ -36,5 +36,6 @@ group :development, :test do
   gem 'launchy'
   gem 'minitest-reporters'
   gem 'rspec-rails', '~> 3.6'
+  gem 'letter_opener'
 end
 
