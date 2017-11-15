@@ -23,7 +23,7 @@ $input-height: 56px !important;
     height: calc(100vh - 45px);
   }
   &.under-breadcrumb {
-    height: calc(100vh - 100px);
+    height: calc(100vh - 65px);
   }
 }
 .minfullscreen {
@@ -32,6 +32,11 @@ $input-height: 56px !important;
 }
 .margin-bottom-medium {
   margin-bottom: 40px !important;
+}
+@media (max-width : 375px){
+  .margin-bottom-medium {
+    margin-bottom: 25px !important;
+  }
 }
 .margin-bottom-small {
   margin-bottom: 10px !important;

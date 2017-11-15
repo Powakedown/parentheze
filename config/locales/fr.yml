@@ -39,33 +39,65 @@ fr:
   survey:
     title: "Rapide enquète:"
     questions:
-      question0:
+      question1:
         picto: "heart-o"
         title: "Vous êtes parent?"
         answers:
-          answer1: "Oui"
-          answer2: "Non"
-      question1:
+          answer1:
+            text: "Oui"
+            link: "1"
+          answer2:
+            text: "Non"
+            link: "100"
+      question2:
         picto: "hand-peace-o"
         title: "Vos enfants sont en âge..."
         answers:
-          answer1: "d'être gardés par une babysitter"
-          answer2: "trop jeunes pour être confiés à d'autres"
-          answer3: "de se garder tout seuls"
-      question2:
-        picto: "quote-right"
-        title: "Ils vous énervent ces parents qui..."
-        answers:
-          answer1: "ont toujours une solution de garde facile"
-          answer2: "dont les grands parents sont à côtés"
-          answer3: "non, ici tout va bien!"
-      question3:
-        picto: "cab"
-        title: "Vous sortiriez plus souvent si..."
-        answers:
-          answer1: "vous aviez des amis de confiance à côté"
-          answer2: "la garde des enfants était moins chère"
-          answer3: "vous ne prévoyez pas de sortir"
+          answer1:
+            text: "d'être gardés par une babysitter"
+            link: "1"
+          answer2:
+            text: "trop jeunes pour être confiés à d'autres"
+            link: "1"
+          answer3:
+            text: "de se garder tout seuls"
+            link: "100"
+      # question3:
+      #   picto: "quote-right"
+      #   title: "Ils vous énervent ces parents qui..."
+      #   answers:
+      #     answer1:
+      #       text: "ont toujours une solution de garde facile"
+      #       link: "1"
+      #     answer2:
+      #       text: "dont les grands parents sont à côtés"
+      #       link: "1"
+      #     answer3:
+      #       text: "non, ici tout va bien!"
+      #       link: "1"
+      # question4:
+      #   picto: "cab"
+      #   title: "Vous sortiriez plus souvent si..."
+      #   answers:
+      #     answer1:
+      #       text: "vous aviez des amis de confiance à côté"
+      #       link: "1"
+      #     answer2:
+      #       text: "la garde des enfants était moins chère"
+      #       link: "1"
+      #     answer3:
+      #       text: "vous ne prévoyez pas de sortir"
+      #       link: "1"
+      # question100:
+      #   title: "Parentheze est réservé aux parents, qui sait... peut-être à bientôt"
+      #   answers:
+      #     answer1: "En attendant profitez-en, sortez!"
+      # question200:
+      #   title: "Peut être que vous..."
+      #   answers:
+      #     answer1: "pouvez garder les enfants des voisins le temps d'une soirée?"
+      #     answer2: "avez des amis intéressé par l'échange de garde..."
+      #     answer2: "n'êtes intéressé."
   inscription:
     redirection:
       title: "Merci et à bientôt!"

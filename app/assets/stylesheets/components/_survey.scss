@@ -6,8 +6,20 @@
 .survey-block{
   width: 35%;
 }
-@media (max-width: 1440px) {
+@media (max-width: 375px) {
+  .survey-block{
+    width: 95%;
+  }
+}
+@media (min-width: 376px) and (max-width: 768px) {
+  .survey-block{
+    width: 75%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1440px) {
   .survey-block{
     width: 45%;
   }
 }
+
+

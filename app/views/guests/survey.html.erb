@@ -15,8 +15,8 @@
           <div class="survey-block">
             <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question.second[:picto] %> bounce"></i> <%= question.second[:title] %></h1>
             <% question.second[:answers].each_with_index do |answer, x| %>
-              <div class="answer slideLeft delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium"><%= answer[1] %></div>
-              <% end %>
+              <div class="answer slideLeft delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium" id="<%= answer[0] %>" goto="<%= answer.second[:link] %>"><%= answer.second[:text] %></div>
+            <% end %>
           </div>
         </div>
       </div>
