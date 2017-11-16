@@ -1,11 +1,10 @@
 <% content_for :title_tag do t('survey.title') end %>
-<% questions_number = t('survey.questions').length %>
 
 <div class="survey">
   <div class="breadcrumb">
     <div class="center flexbox">
-      <% t('survey.questions').each_with_index do |value, x| %>
-        <div class="step flexbox" id="breadcrumb-question<%= x %>"><%= x+1 %></div>
+      <% @breadcrumb_length.times do |x| %>
+        <div class="step flexbox" id="breadcrumb-question<%= x+1 %>"><%= x+1 %></div>
       <% end %>
     </div>
   </div>
@@ -13,10 +12,14 @@
       <div id="<%= question[0] %>">
         <div class="fullscreen under-breadcrumb flexbox">
           <div class="survey-block">
-            <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question.second[:picto] %> bounce"></i> <%= question.second[:title] %></h1>
-            <% question.second[:answers].each_with_index do |answer, x| %>
-              <div class="answer slideLeft delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium"><%= answer[1] %></div>
-              <% end %>
+            <%= image_tag(question[1][:picture], class:"slideLeft") if question[1][:picture] %>
+            <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
+            <h3 class="margin-bottom-medium slideLeft"><%= question[1][:subtitle] %></h3>
+            <% question[1][:answers].each_with_index do |answer, x| %>
+                <div class="answer <%= question[1][:button_effect] %> delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium" id="<%= answer[0] %>" goto="<%= answer[1][:link] %>">
+                  <%= answer[1][:text] %>
+                </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -27,20 +30,28 @@
   <script>
     $(document).ready(function(){
       // INIT
-      var current_question = 0
+      var current_question = 1
       $('#breadcrumb-question'+current_question).addClass('active');
 
-      for (i = 1; i < <%= questions_number %> ; i++) {
+      for (i = 1; i <= <%= @questions_number %> ; i++) {
         $('#question'+i).hide();
       }
 
+      $('#question1').show();
+
       // ON ANSWER
       $('.answer').click(function(e){
-        $('#question'+current_question).hide();
-        $('#breadcrumb-question'+current_question).removeClass('active');
-        current_question += 1;
-        $('#question'+current_question).show();
-        $('#breadcrumb-question'+current_question).addClass('active');
+        if ($(this).attr("goto").length > 4) {
+          window.open($(this).attr("goto"));
+        }
+        else {
+          console.log($(this).attr("goto"));
+          $('#question'+current_question).hide();
+          $('#breadcrumb-question'+current_question).removeClass('active');
+          current_question = $(this).attr("goto");
+          $('#question'+current_question).show();
+          $('#breadcrumb-question'+current_question).addClass('active');
+        }
       });
     });
   </script>

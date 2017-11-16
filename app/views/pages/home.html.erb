@@ -4,7 +4,7 @@
 
   <% t('home.slides').length.times do |x| %>
     <% xstring = x.to_s %>
-    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  text: t('home.slides.slide'+xstring+'.title'), image: t('home.slides.slide'+xstring+'.image') %>
+    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image') %>
   <% end %>
 
   <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+t('home.slides').length.to_s %>>

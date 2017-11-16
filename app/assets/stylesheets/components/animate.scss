@@ -973,6 +973,53 @@ pulse
 
 /*
 ==============================================
+pulse
+==============================================
+*/
+
+.flash{
+  animation-name: flash;
+  -webkit-animation-name: flash;
+
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  0% {
+    transform: scale(0.9);
+    background-color: $light-blue;
+  }
+  50% {
+    transform: scale(1);
+    background-color: $light-yellow;
+  }
+  100% {
+    transform: scale(0.9);
+    background-color: $light-blue;
+  }
+}
+
+@-webkit-keyframes flash {
+  0% {
+    transform: scale(0.9);
+    background-color: $light-blue;
+  }
+  50% {
+    transform: scale(1);
+    background-color: $light-yellow;
+  }
+  100% {
+    transform: scale(0.9);
+    background-color: $light-blue;
+  }
+}
+
+/*
+==============================================
 floating
 ==============================================
 */

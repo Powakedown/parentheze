@@ -3,7 +3,7 @@
 
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$headers-font: 'Montserrat', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,75 +14,82 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
-
-
 /*-------------------------------------------------
  * TYPOS
  *------------------------------------------------- */
 body {
   font-family: $body-font
 }
-
- h1, h2{
-  font-family: 'Montserrat', sans-serif;
+h1, h2{
+  font-family: $headers-font;
   font-weight: 900;
-  text-shadow: $shadow;
   letter-spacing: -0.2px;
   margin-bottom: 20px;
   margin-top: 0px;
-  i {
+  .fa {
     position: absolute;
-    left: -110px;
+    left: -80px;
+    top: 10px;
+    font-size: 70%;
   }
  }
- h3 {
-  font-size: 34px;
-  letter-spacing: 0.2px;
-  font-weight: bold;
- }
+h3 {
+font-size: 34px;
+letter-spacing: 0.2px;
+font-weight: bold;
+}
+h4 {
+font-size: 20px;
+letter-spacing: 0.2px;
+font-weight: normal;
+}
+p{
+font-size: 16px;
+font-family: $body-font;
+font-weight: 300;
+line-height: 18px;
+}
+a {
+font-family: $body-font;
+}
 
- p{
-  font-size: 16px;
-  font-family: 'Open sans', sans-serif;
-  font-weight: 300;
-  line-height: 18px;
- }
-
- a {
-  font-family: $body-font;
- }
-
-
+//MOBILE
 @media (max-device-width : 667px){
-h1 {
-  font-size: 40px;
-  line-height: 40px;
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+    .fa {
+      position: absolute;
+      left: -40px;
+      top: 4px;
+    }
 }
-h2 {
-  font-size: 30px;
-  line-height: 40px;
+  h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
-}
-
+//IPAD PORTRAIT
 @media (min-device-width: 768px) and (orientation : portrait) {
-h1 {
-  font-size: 81px;
-  line-height: 72px;
+  h1 {
+    font-size: 81px;
+    line-height: 72px;
+  }
+  h2 {
+    font-size: 56px;
+    line-height: 60px;
+  }
 }
-h2 {
-  font-size: 56px;
-  line-height: 60px;
-}
-}
+//DESKTOP
 @media (min-device-width: 769px) {
-h1 {
-  font-size: 81px;
-  line-height: 72px;
-}
-h2 {
-  font-size: 56px;
-  line-height: 72px;
-}
+  h1 {
+    font-size: 81px;
+    line-height: 72px;
+  }
+  h2 {
+    font-size: 56px;
+    line-height: 72px;
+  }
 }
 
 

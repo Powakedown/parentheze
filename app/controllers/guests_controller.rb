@@ -19,6 +19,11 @@ class GuestsController < ApplicationController
    @guest = Guest.find_by_email(params[:guest][:email])
   end
 
+  def survey
+    @questions_number = t('survey.questions').length
+    @breadcrumb_length = 4
+  end
+
 
   private
 
