@@ -12,12 +12,12 @@
       <div id="<%= question[0] %>">
         <div class="fullscreen under-breadcrumb flexbox">
           <div class="survey-block">
-            <%= image_tag(question.second[:picture], class:"slideLeft") if question.second[:picture] %>
-            <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question.second[:picto] || nil %> bounce"></i> <%= question.second[:title] %></h1>
-            <h3 class="margin-bottom-medium slideLeft"><%= question.second[:subtitle] || nil %></h3>
-            <% question.second[:answers].each_with_index do |answer, x| %>
-                <div class="answer slideLeft delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium" id="<%= answer[0] %>" goto="<%= answer.second[:link] %>">
-                  <%= answer.second[:text] %>
+            <%= image_tag(question[1][:picture], class:"slideLeft") if question[1][:picture] %>
+            <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
+            <h3 class="margin-bottom-medium slideLeft"><%= question[1][:subtitle] %></h3>
+            <% question[1][:answers].each_with_index do |answer, x| %>
+                <div class="answer <%= question[1][:button_effect] %> delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium" id="<%= answer[0] %>" goto="<%= answer[1][:link] %>">
+                  <%= answer[1][:text] %>
                 </div>
             <% end %>
           </div>
@@ -42,11 +42,6 @@
       // ON ANSWER
       $('.answer').click(function(e){
         if ($(this).attr("goto").length > 4) {
-          window.open($(this).attr("goto"));
-
-        }
-        else if ($(this).attr("goto") == "Sortir") {
-          console.log('sortir');
           window.open($(this).attr("goto"));
         }
         else {

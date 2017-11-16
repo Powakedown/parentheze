@@ -20,15 +20,19 @@ fr:
     slides:
       slide0:
         title: "LA NOUVELLE VIE DES PARENTS"
+        text: "Échange de garde d'enfants et mutualisation de babysitter"
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_party.jpg"
       slide1:
         title: "Parce que nous adorons nos enfants..."
+        text: ""
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kit_jumping.jpg"
       slide2:
         title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
+        text: ""
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_lover.jpg"
       slide3:
         title: "Parentheze, vous propose de faciliter l’échange de garde entre parents."
+        text: ""
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
     slide_plan:
       title: "Rencontrez des parents comme vous,"
@@ -50,6 +54,7 @@ fr:
           answer2:
             text: "Non"
             link: "5"
+        button_effect: "slideLeft"
       question2:
         picto: "hand-peace-o"
         title: "Vos enfants sont en âge..."
@@ -63,6 +68,7 @@ fr:
           answer3:
             text: "de se garder tout seuls"
             link: "6"
+        button_effect: "slideLeft"
       question3:
         picto: "quote-right"
         title: "Ils vous énervent ces parents qui..."
@@ -76,19 +82,21 @@ fr:
           answer3:
             text: "non, ici tout va bien!"
             link: "4"
+        button_effect: "slideLeft"
       question4:
         picto: "cab"
         title: "Vous sortiriez plus souvent si..."
         answers:
           answer1:
             text: "vous aviez des amis de confiance à côté"
-            link: "7"
+            link: "8"
           answer2:
             text: "la garde des enfants était moins chère"
-            link: "7"
+            link: "8"
           answer3:
             text: "vous ne prévoyez pas de sortir"
             link: "7"
+        button_effect: "slideLeft"
       question5:
         title: "Parentheze est réservé aux parents"
         subtitle: "qui sait... peut-être à bientôt."
@@ -96,18 +104,20 @@ fr:
           answer1:
             text: "En attendant profitez-en, sortez!"
             link: "http://www.allocine.com"
+        button_effect: "slideLeft"
       question6:
         title: "Peut être que vous..."
         answers:
           answer1:
             text: "pouvez garder les enfants des voisins le temps d'une soirée?"
-            link: "7"
+            link: "8"
           answer2:
             text: "avez des amis intéressé par l'échange de garde..."
-            link: "7"
+            link: "8"
           answer3:
             text: "n'êtes intéressé."
             link: "7"
+        button_effect: "slideLeft"
       question7:
         title: "Désolé du dérangement"
         subtitle: "Notre service s'adresse aux parents qui cherchent des nouveaux moyens de garde."
@@ -116,6 +126,15 @@ fr:
           answer1:
             text: "Sortir"
             link: "http://www.google.com"
+        button_effect: "slideLeft"
+      question8:
+        title: "Pour vous, parents, nous avons pensé à..."
+        answers:
+          answer1:
+            text: "Accéder au site"
+            link: "http://parentheze.herokuapp.com"
+        picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
+        button_effect: "flash"
   inscription:
     redirection:
       title: "Merci et à bientôt!"
