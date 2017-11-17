@@ -34,7 +34,7 @@ class GuestsController < ApplicationController
     rescue => e
       @error = e.message
       redirect_to "/home#inscription-beta"
-      flash[:alert] =  "#{@error}"
+      flash[:alert] = "#{@error}"
     end
   end
 
