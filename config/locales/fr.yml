@@ -135,12 +135,12 @@ fr:
             link: "http://www.google.com"
         button_effect: "slideLeft"
       question8:
-        data: "submit"
+        data: "none"
         title: "Pour vous, parents, nous avons pensé à..."
         answers:
           answer1:
             text: "Accéder au site"
-            link: "http://parentheze.herokuapp.com"
+            link: "/home"
         picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
         button_effect: "flash"
   inscription:

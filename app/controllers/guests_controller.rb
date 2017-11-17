@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :show, :update, :new]
-  before_action :find_guest, only: [:update, :show]
+  skip_before_action :authenticate_user!, only: [:create, :show, :update, :new, :welcome]
+  before_action :find_guest, only: [:update, :show, :welcome]
 
   def show
   end
@@ -8,7 +8,7 @@ class GuestsController < ApplicationController
   def new
     @questions_number = t('survey.questions').length
     @breadcrumb_length = 4
-    @guest = Guest.create(name: "guest", email: "guest_#{Time.now.to_i}#{rand(100)}@example.com")
+    @guest = Guest.create(name: "guest", email: "email@example.com")
     session[:guest_user_id] = @guest.id
   end
 
@@ -17,19 +17,24 @@ class GuestsController < ApplicationController
   end
 
   def update
-    guest = Guest.update(guest_params)
+    @guest.update(guest_params)
+    if @guest.email != "email@example.com"
+      redirect_to :welcome
+    elsif params[:guest][:email]
+      flash[:alert] =  "Veuillez entrez votre email"
+      redirect_to "/home#inscription-beta"
+    end
   end
 
   def welcome
     begin
-      @guest.save!
       UserMailer.welcome(@guest).deliver_now
       flash[:notice] =  t('inscription.redirection.emailsent')
       render :welcome
     rescue => e
       @error = e.message
-      redirect_to "/home#slide_calltoaction"
-      flash[:alert] =  "#{@error}"
+      redirect_to "/home#inscription-beta"
+      flash[:alert] = "#{@error}"
     end
   end
 

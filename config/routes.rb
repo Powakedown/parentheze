@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/home" => "pages#home"
 
   # MAIL
-  get "/welcome_redirection" => "guests#show"
+  get "/welcome" => "guests#welcome"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end
