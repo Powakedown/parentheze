@@ -47,19 +47,19 @@ input {
   }
 }
 .btn-pink, .btn-2 {
-  background-color: $pink;
+  background-color: $pink !important;
 }
 .btn-gray {
   background-color: $dark-gray;
 }
 .btn-blue, .btn-0 {
-  background-color: $light-blue;
+  background-color: $light-blue !important;
 }
 .btn-red {
   background-color: red;
 }
 .btn-yellow, .btn-1 {
-  background-color: $yellow;
+  background-color: $yellow !important;
 }
 .btn-inverse {
   color: $dark-gray !important;

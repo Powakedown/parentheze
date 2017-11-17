@@ -45,6 +45,7 @@ fr:
     questions_main_number: "4"
     questions:
       question1:
+        data: "parent"
         picto: "heart-o"
         title: "Vous êtes parent?"
         answers:
@@ -56,6 +57,7 @@ fr:
             link: "5"
         button_effect: "slideLeft"
       question2:
+        data: "kid_age"
         picto: "hand-peace-o"
         title: "Vos enfants sont en âge..."
         answers:
@@ -70,6 +72,7 @@ fr:
             link: "6"
         button_effect: "slideLeft"
       question3:
+        data: "jalous"
         picto: "quote-right"
         title: "Ils vous énervent ces parents qui..."
         answers:
@@ -84,6 +87,7 @@ fr:
             link: "4"
         button_effect: "slideLeft"
       question4:
+        data: "get_out"
         picto: "cab"
         title: "Vous sortiriez plus souvent si..."
         answers:
@@ -98,6 +102,7 @@ fr:
             link: "8"
         button_effect: "slideLeft"
       question5:
+        data: "none"
         title: "Parentheze est réservé aux parents"
         subtitle: "qui sait... peut-être à bientôt."
         answers:
@@ -106,6 +111,7 @@ fr:
             link: "http://www.allocine.com"
         button_effect: "slideLeft"
       question6:
+        data: "old_kid"
         title: "Peut être que vous..."
         answers:
           answer1:
@@ -119,6 +125,7 @@ fr:
             link: "7"
         button_effect: "slideLeft"
       question7:
+        data: "none"
         title: "Désolé du dérangement"
         subtitle: "Notre service s'adresse aux parents qui cherchent des nouveaux moyens de garde."
         picture: "https://media.giphy.com/media/e7Fdp0v1fZgti/giphy.gif"
@@ -128,6 +135,7 @@ fr:
             link: "http://www.google.com"
         button_effect: "slideLeft"
       question8:
+        data: "submit"
         title: "Pour vous, parents, nous avons pensé à..."
         answers:
           answer1:
