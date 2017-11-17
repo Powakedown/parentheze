@@ -1,8 +1,26 @@
 class GuestsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :show, :survey]
+  skip_before_action :authenticate_user!, only: [:create, :show, :survey, :update, :new]
+
+
+  def show
+   @guest = Guest.find(session[:guest_user_id])
+  end
+
+  def new
+    @questions_number = t('survey.questions').length
+    @breadcrumb_length = 4
+    @guest = User.new
+  end
 
   def create
-    @guest = Guest.new(params_guest)
+    # at the end of the survey
+    guest = User.create(guest_params)
+    guest.update(:name => "guest", :email => "guest_#{Time.now.to_i}#{rand(100)}@example.com")
+    guest.save!(:validate => false)
+    session[:guest_user_id] = guest.id
+  end
+
+  def update
     begin
       @guest.save!
       UserMailer.welcome(@guest).deliver_now
@@ -15,19 +33,9 @@ class GuestsController < ApplicationController
     end
   end
 
-  def welcome
-   @guest = Guest.find_by_email(params[:guest][:email])
-  end
-
-  def survey
-    @questions_number = t('survey.questions').length
-    @breadcrumb_length = 4
-  end
-
-
   private
 
-  def params_guest
-    params.require(:guest).permit(:email)
+  def guest_params
+    params.require(:guest).permit(:parent, :kid_age, :jalous, :get_out, :old:_kid, :email, :name)
   end
 end

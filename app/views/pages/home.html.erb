@@ -34,7 +34,7 @@
       <h1><%= t('home.slide_calltoaction.title') %></h1>
       <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
       <div class="inscription-wrapper center">
-        <%= simple_form_for @guest do |f| %>
+        <%= simple_form_for url: guest_path(@guest), method: :patch do |f| %>
           <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
           <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
         <% end %>

@@ -37,5 +37,6 @@ group :development, :test do
   gem 'minitest-reporters'
   gem 'rspec-rails', '~> 3.6'
   gem 'letter_opener'
+  gem 'traceroute'
 end
 

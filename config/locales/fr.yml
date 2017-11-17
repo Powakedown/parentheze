@@ -95,7 +95,7 @@ fr:
             link: "8"
           answer3:
             text: "vous ne prévoyez pas de sortir"
-            link: "7"
+            link: "8"
         button_effect: "slideLeft"
       question5:
         title: "Parentheze est réservé aux parents"
