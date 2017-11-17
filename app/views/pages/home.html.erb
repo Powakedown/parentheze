@@ -26,15 +26,15 @@
         <% end %>
       </div>
     </div>
-    <%= render 'shared/scroller', target_page: "slide_calltoaction", icon: "fa-arrow-circle-down" %>
+    <%= render 'shared/scroller', target_page: "inscription-beta", icon: "fa-arrow-circle-down" %>
   </div>
 
-  <div class="fullscreen relative flex-column center text-center" id="slide_calltoaction" >
+  <div class="fullscreen relative flex-column center text-center" id="inscription-beta" >
     <div class="container">
       <h1><%= t('home.slide_calltoaction.title') %></h1>
       <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
       <div class="inscription-wrapper center">
-        <%= simple_form_for url: guest_path(@guest), method: :patch do |f| %>
+        <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
           <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
           <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
         <% end %>
