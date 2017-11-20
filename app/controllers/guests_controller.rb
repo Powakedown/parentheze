@@ -3,13 +3,17 @@ class GuestsController < ApplicationController
   before_action :find_guest, only: [:update, :show, :welcome]
 
   def index
-    @parents = Guest.where(parent: 1).count
+    @guests = Guest.all
+    @guestcount = @guests.count
+    @visits = @guests.sum(:visit)
+    @parents = @guests.where(parent: 1).count
+    @questions = t('survey.questions').first(4)
   end
 
   def new
     @questions_number = t('survey.questions').length
     @breadcrumb_length = 4
-    @guest = Guest.create(name: "guest", email: "email@example.com")
+    @guest = Guest.create(name: "guest", email: "email@example.com", visit: 1)
     session[:guest_user_id] = @guest.id
   end
 

@@ -67,14 +67,16 @@ $input-height: 56px !important;
   display: flex !important;
   justify-content: center;
   align-items: center;
+  &.left {
+    justify-content: left;
+  }
+  &.sidestick {
+    justify-content: space-between;
+  }
 }
 .flex-horizontal {
   display: flex;
   justify-content: center;
-}
-.flex-left {
-  display: flex;
-  justify-content: left;
 }
 .flex-vertical {
   display: flex;
@@ -118,6 +120,13 @@ $input-height: 56px !important;
 //CONFIG
 a:hover {
   text-decoration: none !important;
+}
+//COMPONENTS
+.pastille {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  border: 1px solid $dark-gray;
 }
 //SPLITS
 .splitscreen-wrapper{

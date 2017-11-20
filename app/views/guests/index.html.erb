@@ -1,30 +1,98 @@
-<div class="dashboard fullscreen">
+<div class="dashboard">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-3">
-        <div class="card">
+    <div class="row margin-bottom-medium">
+      <div class="col-xs-12">
+        <h4 class="white">Pour formulaire: "<%= t('survey.title') %>"</h4>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card with-max-height">
           <h4>Nbre de visites totales :</h4>
-          <h2 class="pink"><%= Guest.count %></h2>
+          <h2 class="pink"><%= @visits %></h2>
         </div>
       </div>
-      <div class="col-xs-12 col-md-3">
-        <div class="card">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card with-max-height">
           <h4>Nbre de visiteurs uniques:</h4>
-          <h2><%= Guest.count %></h2>
+          <h2><%= @guestcount %></h2>
         </div>
       </div>
-      <div class="col-xs-12 col-md-3">
-        <div class="card">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card with-max-height">
           <h4>Nbre de visite par visiteur (moyenne):</h4>
-          <h2 class="blue"><%= Guest.count %></h2>
+          <h2 class="blue"><%= @visits/(@guestcount) %></h2>
         </div>
       </div>
-      <div class="col-xs-12 col-md-3">
-        <div class="card">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card with-max-height">
           <h4>Nbre de parents :</h4>
           <h2 class="yellow"><%= @parents %></h2>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h4 class="white">Chiffres brutes</h4>
+      </div>
+    </div>
+    <div class="row margin-bottom-medium">
+      <% @questions.each do |question| %>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+            <div class="card">
+              <h4><%= question[1][:title] %></h4>
+              <% question[1][:answers].each_with_index do |answer, index| %>
+                <div class="label">
+                  <span>... <%= answer[1][:text] %></span>
+                  <span><strong><%= ((@guests.where(question[1][:data].to_sym => index+1).count)*100)/(@guestcount) %>%</strong></span>
+                </div>
+              <% end %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h4 class="white">Personas</h4>
+      </div>
+      <div class="col-xs-12">
+        <div class="card">
+          <div class="label text-left green">
+            <span>
+              - des enfants en âge d'être gardé par une babysitter<br/>
+              - jaloux de ces parents qui ont toujours une solution de garde facile<br/>
+              - qui sortiraient plus souvent si la garde était moins chère<br/>
+            </span>
+            <strong><span><%=  @guests.where(parent:1, jalous:1, get_out:2).count*100/(@guestcount) %>%</span></strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="card">
+          <div class="label text-left green">
+            <span>
+              - des enfants en âge d'être gardé par une babysitter<br/>
+              - jaloux de ces parents qui ont toujours une solution de garde facile<br/>
+              >> qui sortiraient plus souvent s'ils avaient des amis de confiance à côté<br/>
+            </span>
+            <strong><span><%=  @guests.where(parent:1, jalous:2, get_out:1).count*100/(@guestcount) %>%</span></strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12">
+        <div class="card">
+          <div class="label text-left green">
+            <span>
+              - des enfants en âge d'être gardé par une babysitter<br/>
+              >> jaloux de ces parents dont les grand-parents sont côtés<br/>
+              - qui sortiraient plus souvent si la garde était moins chère<br/>
+            </span>
+            <strong><span><%=  @guests.where(parent:1, jalous:3, get_out:3).count*100/(@guests.where(parent:1).count) %>%</span></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
