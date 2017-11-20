@@ -1,0 +1,30 @@
+<div class="dashboard fullscreen">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <div class="card">
+          <h4>Nbre de visites totales :</h4>
+          <h2 class="pink"><%= Guest.count %></h2>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="card">
+          <h4>Nbre de visiteurs uniques:</h4>
+          <h2><%= Guest.count %></h2>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="card">
+          <h4>Nbre de visite par visiteur (moyenne):</h4>
+          <h2 class="blue"><%= Guest.count %></h2>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <div class="card">
+          <h4>Nbre de parents :</h4>
+          <h2 class="yellow"><%= @parents %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

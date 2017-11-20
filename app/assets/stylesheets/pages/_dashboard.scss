@@ -1,0 +1,15 @@
+.dashboard{
+  background-color: $purple;
+  padding-top: 70px;
+  .card {
+    background-color: white;
+    border: none;
+    padding: 30px;
+    color: $dark-gray;
+    height: 200px;
+    h4 {
+      min-height: 44px;
+    }
+  }
+
+}

@@ -1,8 +1,9 @@
 class GuestsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :show, :update, :new, :welcome]
+  skip_before_action :authenticate_user!, only: [:create, :show, :index, :update, :new, :welcome]
   before_action :find_guest, only: [:update, :show, :welcome]
 
-  def show
+  def index
+    @parents = Guest.where(parent: 1).count
   end
 
   def new

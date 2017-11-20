@@ -32,6 +32,15 @@ h1, h2{
     top: 10px;
     font-size: 70%;
   }
+  &.pink {
+    color: $pink;
+  }
+  &.blue {
+    color: $light-blue;
+  }
+  &.yellow {
+    color: $yellow;
+  }
  }
 h3 {
 font-size: 34px;
