@@ -20,6 +20,20 @@ $headers-font: 'Montserrat', sans-serif;
 body {
   font-family: $body-font
 }
+h1, h2, h3, h4, p {
+  &.pink {
+    color: $pink;
+  }
+  &.blue {
+    color: $light-blue;
+  }
+  &.yellow {
+    color: $yellow;
+  }
+  &.white {
+    color: white;
+  }
+}
 h1, h2{
   font-family: $headers-font;
   font-weight: 900;
@@ -32,7 +46,7 @@ h1, h2{
     top: 10px;
     font-size: 70%;
   }
- }
+}
 h3 {
 font-size: 34px;
 letter-spacing: 0.2px;

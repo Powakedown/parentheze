@@ -41,7 +41,7 @@ fr:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
   survey:
-    title: "Rapide enquète:"
+    title: "Rapide enquète"
     questions_main_number: "4"
     questions:
       question1:
