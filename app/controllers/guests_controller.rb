@@ -21,10 +21,6 @@ class GuestsController < ApplicationController
     }
   end
 
-  def create
-    # at the end of the survey
-  end
-
   def update
     @guest.update(guest_params)
     if @guest.email != "email@example.com"
