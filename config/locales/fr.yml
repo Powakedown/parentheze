@@ -22,6 +22,7 @@ fr:
         title: "LA NOUVELLE VIE DES PARENTS"
         text: "Échange de garde d'enfants et mutualisation de babysitter"
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_party.jpg"
+        link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
       slide1:
         title: "Parce que nous adorons nos enfants..."
         text: ""
@@ -34,12 +35,17 @@ fr:
         title: "Parentheze, vous propose de faciliter l’échange de garde entre parents."
         text: ""
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
+      slide4:
+        title: "Rencontrez des parents comme vous"
+        text: "à la recherche de nouvelles solution de garde, pour les parents d'aujourd'hui. Pour vous, nous avons mis au point..."
+        image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
     slide_plan:
-      title: "Rencontrez des parents comme vous,"
-      text: "nous avons prévu les outils et les forfaits pour faciliter et compenser la garde des enfants entre parents, parce que payer est parfois plus facile que de demander un service:"
+      title: "Pour l'échange de garde entre parent:"
+      text: "nous avons prévu les outils et les forfaits pour faciliter et compenser la garde des enfants au bénéfice des parents hôtes. Parce que payer est parfois plus facile que de demander un service."
     slide_calltoaction:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
+      link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
   survey:
     title: "Rapide enquète"
     questions_main_number: "4"
