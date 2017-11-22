@@ -5,20 +5,26 @@
     </div>
     <div>
       <p><%= t('commons.cookie.text') %></p>
-      <p><strong><span id="continue"> <%= t('commons.cookie.button1_text') %></span></strong><strong><span id="know-more"><%= t('commons.cookie.button2_text') %></span></strong></p>
+      <p><strong><a class="slide-away"> <%= t('commons.cookie.button1_text') %></a></strong><strong><span id="know-more"><%= t('commons.cookie.button2_text') %></span></strong></p>
     </div>
     <div>
-      <i class="fa fa-times"></i>
+      <i class="fa fa-times slide-away"></i>
     </div>
   </div>
 </div>
 
 <%= content_for :after_js do %>
-  <!-- <script>
+  <script>
     $(document).ready(function(){
-      $('#continue').on('click', function(){
-        $("#cookie-label").addClass('slideDown');
+      $('.slide-away').on('click', function(){
+        slideAway();
       })
     })
-  </script> -->
+    function slideAway() {
+      $("#cookie-label").addClass('slideDownOut');
+      setTimeout(function(){
+        $('#cookie-label').remove();
+      }, 1000);
+    }
+  </script>
 <% end %>

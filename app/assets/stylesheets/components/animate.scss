@@ -76,6 +76,37 @@ slideDown
   }
 }
 
+.slideDownOut{
+  animation-name: slideDownOut;
+  -webkit-animation-name: slideDownOut;
+
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
+}
+
+@keyframes slideDownOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(150%);
+  }
+}
+
+@-webkit-keyframes slideDownOut {
+  0% {
+    -webkit-transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(150%);
+  }
+}
+
 /*
 ==============================================
 slideUp

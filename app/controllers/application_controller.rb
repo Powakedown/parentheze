@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :cookie_presence
 
   def guest_user(with_retry = true)
     # Cache the value the first time it's gotten.
@@ -18,5 +19,7 @@ class ApplicationController < ActionController::Base
     u
   end
 
-
+  def cookie_presence
+    @cookie = cookies[:parentheze_guest].present?
+  end
 end

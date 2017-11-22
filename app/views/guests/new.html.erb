@@ -52,7 +52,6 @@
           window.open($(this).attr("goto"));
         }
         else {
-          console.log($(this).attr("goto"));
           $('#question'+current_question).hide();
           $('#breadcrumb-question'+current_question).removeClass('active');
           current_question = $(this).attr("goto");

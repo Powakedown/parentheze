@@ -1,0 +1,7 @@
+a {
+  color: $dark-gray;
+  cursor: pointer;
+  &:hover{
+    color: $blue;
+  }
+}

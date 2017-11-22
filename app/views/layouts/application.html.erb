@@ -12,7 +12,9 @@
     <% end %>
   </head>
   <body>
-    <%= render 'shared/cookie_approval' %>
+    <% unless @cookie %>
+      <%= render 'shared/cookie_approval' %>
+    <% end %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
