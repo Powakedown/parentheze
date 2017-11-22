@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: [:home, :scroll]
 
   def home
     if cookies[:parentheze_guest] && cookies[:parentheze_guest] != ""
@@ -9,5 +9,9 @@ class PagesController < ApplicationController
     else
       redirect_to new_guest_path
     end
+  end
+
+  def scroll
+    raise
   end
 end

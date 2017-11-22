@@ -35,6 +35,9 @@
   width: 40%;
 }
 .slide_plan {
+  h4 {
+    line-height: 30px;
+  }
   .plan-card {
     background-color: white;
     border: none;
@@ -42,9 +45,10 @@
     color: $medium-gray;
     h1 {
       font-family: $body-font;
-      font-size: 81px;
-      line-height: 80px;
+      font-size: 125px;
+      line-height: 150px;
     }
+
     &.emergency {
       background-color: $yellow;
       color: white;
