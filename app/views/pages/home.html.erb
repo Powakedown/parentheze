@@ -4,7 +4,7 @@
 
   <% t('home.slides').length.times do |x| %>
     <% xstring = x.to_s %>
-    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image'), step: "1" %>
+    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image'), step: x+1 %>
   <% end %>
 
   <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+t('home.slides').length.to_s %>>
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <%= render 'shared/scroller', target_page: "inscription-beta", link_image: t('home.slides.slide0.link_image') %>
+    <%= render 'shared/scroller', target_page: "inscription-beta", link_image: t('home.slides.slide0.link_image'), step: 5 %>
   </div>
 
   <div class="fullscreen relative flex-column center text-center" id="inscription-beta" >
@@ -49,7 +49,7 @@
           <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
         <% end %>
       </div>
-      <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image') %>
+      <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image'), step: 6 %>
     </div>
   </div>
 </div>

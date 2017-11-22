@@ -23,6 +23,9 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update(guest_params)
+    unless params[:guest][:step].nil?
+      redirect_back(fallback_location: '/home#slide1')
+    end
     if @guest.email != "email@example.com"
       redirect_to :welcome
     elsif params[:guest][:email]
