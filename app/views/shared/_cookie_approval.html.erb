@@ -1,14 +1,30 @@
-<div class="cookie-label flexbox slideUp">
-  <div class="cookie-content flex-horizontal">
+<div class="flexbox" id="cookie-label">
+  <div class="flex-horizontal">
     <div class="margin-bottom-medium">
       <%= image_tag t('commons.cookie.image') %>
     </div>
     <div>
       <p><%= t('commons.cookie.text') %></p>
-      <p><strong><span> <%= t('commons.cookie.button1_text') %></span></strong><strong><span><%= t('commons.cookie.button2_text') %></span></strong></p>
+      <p><strong><a class="slide-away"> <%= t('commons.cookie.button1_text') %></a></strong><strong><span id="know-more"><%= t('commons.cookie.button2_text') %></span></strong></p>
     </div>
     <div>
-      <i class="fa fa-times"></i>
+      <i class="fa fa-times slide-away"></i>
     </div>
   </div>
 </div>
+
+<%= content_for :after_js do %>
+  <script>
+    $(document).ready(function(){
+      $('.slide-away').on('click', function(){
+        slideAway();
+      })
+    })
+    function slideAway() {
+      $("#cookie-label").addClass('slideDownOut');
+      setTimeout(function(){
+        $('#cookie-label').remove();
+      }, 1000);
+    }
+  </script>
+<% end %>
