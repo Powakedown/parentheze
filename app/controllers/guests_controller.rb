@@ -15,10 +15,10 @@ class GuestsController < ApplicationController
     @breadcrumb_length = 4
     @guest = Guest.create(name: "guest", email: "email@example.com", visit: 1)
     session[:guest_user_id] = @guest.id
-  end
-
-  def create
-    # at the end of the survey
+    cookies[:parentheze_guest] = {
+      value: @guest.id,
+      expires: 1.year.from_now,
+    }
   end
 
   def update
