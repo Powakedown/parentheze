@@ -25,6 +25,9 @@
   &.tall {
     min-height: 70px;
   }
+  &.large {
+    width: 200px;
+  }
 }
 .btn-slim, a.btn-slim {
   color: white;
@@ -52,7 +55,10 @@ input {
 .btn-gray {
   background-color: $dark-gray;
 }
-.btn-blue, .btn-0 {
+.btn-blue {
+  background-color: $blue;
+}
+.btn-light-blue, .btn-0 {
   background-color: $light-blue !important;
 }
 .btn-red {

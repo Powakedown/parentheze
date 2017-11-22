@@ -4,13 +4,13 @@
 
   <% t('home.slides').length.times do |x| %>
     <% xstring = x.to_s %>
-    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image') %>
+    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image') %>
   <% end %>
 
   <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+t('home.slides').length.to_s %>>
     <h2><%= t('home.slide_plan.title') %></h2>
     <p class="margin-bottom-medium"><%= t('home.slide_plan.text') %></p>
-    <div class="container">
+    <div class="container margin-bottom-small">
       <div class="row">
         <% t('plans').length.times do |x| %>
         <% xstring = x.to_s %>
@@ -26,7 +26,9 @@
         <% end %>
       </div>
     </div>
-    <%= render 'shared/scroller', target_page: "inscription-beta", icon: "fa-arrow-circle-down" %>
+    <%= link_to "#inscription-beta", class:"next_page scroll" do %>
+      <div class="btn large btn-blue flexbox center">Intéressé ?</div>
+    <% end %>
   </div>
 
   <div class="fullscreen relative flex-column center text-center" id="inscription-beta" >
@@ -39,8 +41,7 @@
           <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
         <% end %>
       </div>
-      <%= render 'shared/scroller', target_page: "slide0", icon: "fa-arrow-circle-up" %>
+      <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image') %>
     </div>
   </div>
-
 </div>
