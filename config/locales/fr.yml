@@ -2,7 +2,7 @@ fr:
   commons:
     register: "S'inscrire"
     cookie:
-      image: "http://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
+      image: "https://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
       text: "Ce site utilise des cookies afin de faciliter votre navigation et mesurer l'audience de notre site. En continuant à utiliser notre site, vous consentez à l'utilisation des coookies."
       button1_text: "Continuer"
       button2_text: "en savoir plus"
@@ -28,20 +28,20 @@ fr:
       slide0:
         title: "Profitez! Ce soir les enfants dorment chez des amis"
         text: "Échange de garde d'enfants et mutualisation de babysitter"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_party.jpg"
-        link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_party.jpg"
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
       slide1:
         title: "Parce que nous adorons nos enfants..."
         text: ""
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kit_jumping.jpg"
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kit_jumping.jpg"
       slide2:
         title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
         text: ""
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_lover.jpg"
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_lover.jpg"
       slide3:
         title: "Parentheze propose de faciliter l’échange de garde entre parents."
         text: ""
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
       slide4:
         title: "Rencontrez des parents comme vous"
         text: "à la recherche de nouvelles solutions de garde, simples et innovantes."
@@ -60,7 +60,7 @@ fr:
     slide_calltoaction:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
-      link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
+      link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
   survey:
     title: "Rapide enquète"
     questions_main_number: "4"
@@ -165,7 +165,7 @@ fr:
     redirection:
       title: "Merci et à bientôt!"
       text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
-      image: "http://res.cloudinary.com/doodlid/image/upload/v1509373509/confirmation_m1bpvc.jpg"
+      image: "https://res.cloudinary.com/doodlid/image/upload/v1509373509/confirmation_m1bpvc.jpg"
       emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
   plans:
     # plan0:
