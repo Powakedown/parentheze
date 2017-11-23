@@ -1,3 +1,4 @@
-<%= link_to "#"+target_page, class:"next_page scroll" do %>
+<%= link_to "#"+target_page, method: :patch, remote: true, class:"next_page scroll" do %>
   <%= image_tag link_image, class:"pulse" %>
 <% end %>
+

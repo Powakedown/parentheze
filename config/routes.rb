@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "/home" => "pages#home"
+  patch "/home" => "pages#update"
+  patch "/" => "pages#update"
+  get "/scroll" => "pages#scroll"
 
   # MAIL
   get "/welcome" => "guests#welcome"

@@ -1,4 +1,4 @@
-.btn, input.btn, button.btn {
+.btn, input.btn {
   color: white;
   background-color: $yellow;
   border-radius: $border-radius;
@@ -27,6 +27,14 @@
   }
   &.large {
     width: 200px;
+  }
+}
+.btn-submit{
+  &.btn, &.btn-default {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    border: none;
   }
 }
 .btn-slim, a.btn-slim {
@@ -96,6 +104,9 @@ input#case_photo {
   a {
     color: white;
   }
+}
+input, select {
+  height: $input-height;
 }
 .submit-hidden {
   position: absolute;

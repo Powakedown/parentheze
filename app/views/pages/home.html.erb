@@ -4,31 +4,39 @@
 
   <% t('home.slides').length.times do |x| %>
     <% xstring = x.to_s %>
-    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image') %>
+    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image'), step: x+1 %>
   <% end %>
 
   <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+t('home.slides').length.to_s %>>
     <h2><%= t('home.slide_plan.title') %></h2>
-    <p class="margin-bottom-medium"><%= t('home.slide_plan.text') %></p>
-    <div class="container margin-bottom-small">
+    <div class="container margin-bottom-medium">
       <div class="row">
         <% t('plans').length.times do |x| %>
         <% xstring = x.to_s %>
-        <div class="col-xs-12 col-md-3 padding-box">
-          <div class="plan-card flex-column between padding-box <%= "emergency" if x == t('plans').length - 1 %>">
+        <div class="col-xs-12 col-md-4 padding-box">
+          <p><%= t('home.slide_plan.card_uptitle0') %></p>
+          <div class="plan-card flex-column between padding-box <%#= "emergency" if x == t('plans').length - 1 %>">
             <div>
               <h1 style="color: <%= t('plans.plan'+xstring+'.color') %>"><%= t('plans.plan'+xstring+".price") %></h1>
               <h3><%= t('plans.plan'+xstring+".title") %></h3>
             </div>
-            <p><%= t('plans.plan'+xstring+".subtitle")  %></p>
+            <p><%= t('plans.plan'+xstring+".subtitle_html") %></p>
           </div>
         </div>
         <% end %>
+        <div class="col-xs-12 col-md-8 padding-box">
+          <p><%= t('home.slide_plan.card_uptitle1') %> :</p>
+          <div class="flex-column between padding-box text-left <%#= "emergency" if x == t('plans').length - 1 %>">
+            <ul>
+              <% t('home.slide_plan.labels').each do |label| %>
+                <li><h4><%= label[1] %></h4></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <%= link_to "#inscription-beta", class:"next_page scroll" do %>
-      <div class="btn large btn-blue flexbox center">Intéressé ?</div>
-    <% end %>
+    <%= render 'shared/scroller', target_page: "inscription-beta", link_image: t('home.slides.slide0.link_image'), step: 5 %>
   </div>
 
   <div class="fullscreen relative flex-column center text-center" id="inscription-beta" >
@@ -41,7 +49,18 @@
           <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
         <% end %>
       </div>
-      <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image') %>
+      <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image'), step: 6 %>
     </div>
   </div>
 </div>
+
+
+<%= content_for :after_js do %>
+  <script>
+    const mysubmits = document.querySelectorAll('.submit-button');
+    mysubmits.forEach((button) => {
+      // button.classList.remove("btn");
+      // button.classList.remove("btn-default");
+    });
+  </script>
+<% end %>

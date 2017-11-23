@@ -35,16 +35,15 @@
 
 <% content_for(:after_js) do %>
   <script>
-    $(document).ready(function(){
-      // INIT
-      var current_question = 1
-      $('#breadcrumb-question'+current_question).addClass('active');
+    // INIT
+    var current_question = 1
+    $('#breadcrumb-question'+current_question).addClass('active');
 
-      for (i = 1; i <= <%= @questions_number %> ; i++) {
-        $('#question'+i).hide();
-      }
+    for (i = 1; i <= <%= @questions_number %> ; i++) {
+      $('#question'+i).hide();
+    }
 
-      $('#question1').show();
+    $('#question1').show();
 
       // ON ANSWER
       $('.answer').click(function(e){

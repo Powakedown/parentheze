@@ -22,10 +22,11 @@ fr:
     login: "connexion"
     signup: "s'enregistrer"
     manifesto: "manifeste"
+    plans: "exemple de forfait"
   home:
     slides:
       slide0:
-        title: "LA NOUVELLE VIE DES PARENTS"
+        title: "Profitez! Ce soir les enfants dorment chez des amis"
         text: "Échange de garde d'enfants et mutualisation de babysitter"
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_party.jpg"
         link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
@@ -43,11 +44,19 @@ fr:
         image: "http://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
       slide4:
         title: "Rencontrez des parents comme vous"
-        text: "à la recherche de nouvelles solution de garde, pour les parents d'aujourd'hui. Pour vous, nous avons mis au point..."
+        text: "à la recherche de nouvelles solutions de garde, simples et innovantes."
         image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
     slide_plan:
-      title: "Pour l'échange de garde entre parent:"
-      text: "nous avons prévu les outils et les forfaits pour faciliter et compenser la garde des enfants au bénéfice des parents hôtes. Parce que payer est parfois plus facile que de demander un service."
+      title: "Pensé pour les parents d'aujourd'hui"
+      card_uptitle0: "Exemple de forfait"
+      card_uptitle1: "Fonctionnalités"
+      labels:
+        label0: "Réservé aux parents, pas de babysitter"
+        label1: "Des forfaits de garde pour compenser les parents hôtes"
+        label2: "Des gardes pour la soirée, la nuit et même la grasse matinée!"
+        label3: "Géolocalisation des membres autour de vous"
+        label4: "Réputation pour chaque garde"
+        label5: "Outil d'invitations pour rencontres préliminaires"
     slide_calltoaction:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
@@ -162,26 +171,26 @@ fr:
       image: "http://res.cloudinary.com/doodlid/image/upload/v1509373509/confirmation_m1bpvc.jpg"
       emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
   plans:
+    # plan0:
+    #   price: "12€"
+    #   title: "no-stress"
+    #   subtitle: "2h en journée"
+    #   color: "#469AE0"
     plan0:
-      price: "12€"
-      title: "no-stress"
-      subtitle: "2h en journée"
-      color: "#469AE0"
-    plan1:
       price: "22€"
       title: "la soirée"
-      subtitle: "20h-Minuit Repas non compris"
+      subtitle_html: "20h-Minuit Repas non compris<br/>payé aux parents hôtes en échange de la garde des enfants"
       color: "#E12787"
-    plan2:
-      price: "48€"
-      title: "la soirée + la nuit + la grasse mat'"
-      subtitle: "20h-Minuit Repas non compris"
-      color: "#F1B255"
-    plan3:
-      price: "44€"
-      title: "Panique! Grêve à l'école"
-      subtitle: "la journée"
-      color: "white"
+    # plan2:
+    #   price: "48€"
+    #   title: "la soirée + la nuit + la grasse mat'"
+    #   subtitle: "20h-Midi Repas non compris"
+    #   color: "#F1B255"
+    # plan3:
+    #   price: "44€"
+    #   title: "Panique! Grêve à l'école"
+    #   subtitle: "la journée"
+    #   color: "white"
   footer:
     facebook: "https://www.facebook.com/groups/1860665404215862/"
     twitter: "https://medium.com/@parentgenial"
