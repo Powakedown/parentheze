@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :update]
 
   def home
-    if cookies[:parentheze_guest] && cookies[:parentheze_guest] != ""
+    if @cookie
       @guest = guest_user
       @guest.visit += 1
       @guest.save

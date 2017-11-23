@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :guests, only: [:create, :new, :update, :show, :index]
 
   devise_for :users
-  root to: 'pages#home'
+  root to: "pages#home"
   get "/home" => "pages#home"
   patch "/home" => "pages#update"
   patch "/" => "pages#update"

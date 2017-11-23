@@ -45,19 +45,19 @@
 
     $('#question1').show();
 
-    // ON ANSWER
-    $('.answer').click(function(e){
-      if ($(this).attr("goto").length > 4) {
-        window.open($(this).attr("goto"));
-      }
-      else {
-        console.log($(this).attr("goto"));
-        $('#question'+current_question).hide();
-        $('#breadcrumb-question'+current_question).removeClass('active');
-        current_question = $(this).attr("goto");
-        $('#question'+current_question).show();
-        $('#breadcrumb-question'+current_question).addClass('active');
-      }
+      // ON ANSWER
+      $('.answer').click(function(e){
+        if ($(this).attr("goto").length > 4) {
+          window.open($(this).attr("goto"));
+        }
+        else {
+          $('#question'+current_question).hide();
+          $('#breadcrumb-question'+current_question).removeClass('active');
+          current_question = $(this).attr("goto");
+          $('#question'+current_question).show();
+          $('#breadcrumb-question'+current_question).addClass('active');
+        }
+      });
     });
   </script>
 <% end %>
