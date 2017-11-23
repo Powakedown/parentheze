@@ -15,7 +15,7 @@ class GuestsController < ApplicationController
   def new
     @questions_number = t('survey.questions').length
     @breadcrumb_length = 4
-    @guest = Guest.create(email: "email@example.com", visit: 0, step: 0)
+    @guest = Guest.create(name: "guest", email: "email@example.com", visit: 0, step: 0)
     session[:guest_user_id] = @guest.id
     cookies[:parentheze_guest] = {
       value: @guest.id,

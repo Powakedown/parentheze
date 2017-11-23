@@ -20,7 +20,7 @@
               <%= simple_form_for :guest, method: :patch do |f| %>
                 <% if question[1][:data] != "none" %>
                   <%= f.input_field question[1][:data], as: :hidden, value: x+1 %>
-                  <%= f.button :submit, value: answer[1][:text], label: false, class:"answer #{question[1][:button_effect]} delay#{x.to_s} btn wrap tall btn-#{x.to_s} flexbox center margin-bottom-medium", id:answer[0], goto: answer[1][:link]  %>
+                  <%= f.button :submit, value: answer[1][:text], label: false, class:"answer #{question[1][:button_effect]} delay#{x.to_s} btn wrap tall btn-#{x.to_s} flexbox center margin-bottom-medium", id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
                 <% else %>
                   <div class="answer <%= question[1][:button_effect] %> delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium", id=<%= answer[0] %>, goto=<%= answer[1][:link] %>><%= answer[1][:text] %></div>
                 <% end %>
@@ -58,6 +58,5 @@
           $('#breadcrumb-question'+current_question).addClass('active');
         }
       });
-    });
   </script>
 <% end %>
