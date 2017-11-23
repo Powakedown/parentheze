@@ -8,12 +8,14 @@ class GuestsController < ApplicationController
     @visits = @guests.sum(:visit)
     @parents = @guests.where(parent: 1).count
     @questions = t('survey.questions').first(4)
+    @form_end = @guests.where.not(get_out: nil).count * 100/(@guestcount)
+    @guests_on_landing = @guests.where.not(visit: 0).count * 100/(@guestcount)
   end
 
   def new
     @questions_number = t('survey.questions').length
     @breadcrumb_length = 4
-    @guest = Guest.create(name: "guest", email: "email@example.com", visit: 1, step: 0)
+    @guest = Guest.create(name: "guest", email: "email@example.com", visit: 0, step: 0)
     session[:guest_user_id] = @guest.id
     cookies[:parentheze_guest] = {
       value: @guest.id,

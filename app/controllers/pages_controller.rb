@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def update
     @guest = guest_user
-    @guest.step += 5
+    @guest.step += 1
     @guest.save
     redirect_to root_path
   end

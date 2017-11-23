@@ -22,17 +22,31 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <h4>Nbre de visite par visiteur (moyenne):</h4>
+          <h4>Nbre moyen de visite par visiteur :</h4>
           <h2 class="blue"><%= @visits/(@guestcount) %></h2>
+          <p>(sur page d'accueil)</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <h4>Nbre de parents :</h4>
-          <h2 class="yellow"><%= @parents %></h2>
+          <h4>Parents :</h4>
+          <h2 class="yellow"><%= @parents*100/(@guestcount) %>%</h2>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card with-max-height">
+          <h4>Formulaires parcourus jusqu'à la fin:</h4>
+          <h2 class="pink"><%= @form_end %>%</h2>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card with-max-height">
+          <h4>Visiteurs attérrissants sur la home:</h4>
+          <h2 class="pink"><%= @guests_on_landing %>%</h2>
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h4 class="white">Chiffres brutes</h4>
