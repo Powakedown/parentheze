@@ -56,6 +56,12 @@
   .slide1, .slide2, .slide4 {
     width: 70%;
   }
+  .slide1, .slide4{
+    margin-left: 25%;
+  }
+  .slide2{
+    margin-right: 25%;
+  }
 }
 @media (min-device-width : 376px) and (max-device-width : 768px){
   .slide0, .slide-plan {
