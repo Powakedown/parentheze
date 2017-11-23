@@ -18,7 +18,6 @@ $input-height: 70px !important;
   height: 100vh;
   background-size: cover;
   background-position: center center;
-  // background-attachment: fixed;
   &.under-navbar {
     height: calc(100vh - 70px);
   }
@@ -28,7 +27,11 @@ $input-height: 70px !important;
   &.under-breadcrumb {
     height: calc(100vh - 65px);
   }
+  @media (min-width : 1024px) {
+      background-attachment: fixed;
+  }
 }
+
 .minfullscreen {
   width: 100%;
   min-height: 100vh;
