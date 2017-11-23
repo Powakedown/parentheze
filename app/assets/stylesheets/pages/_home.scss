@@ -12,16 +12,13 @@
   position: absolute;
   right: 5%;
   width: 40%;
-}
-@media (max-device-width : 667px){
-  .slide1 {
-    width: 60%;
-  }
+  text-align: left;
 }
 .slide2 {
   position: absolute;
   left: 5%;
   width: 40%;
+  text-align: left;
 }
 .slide3 {
   position: absolute;
@@ -35,6 +32,7 @@
   width: 40%;
 }
 .slide_plan {
+  width: 80%;
   h4 {
     line-height: 30px;
   }
@@ -53,5 +51,29 @@
       background-color: $yellow;
       color: white;
     }
+  }
+}
+@media (max-device-width : 375px){
+  .slide0, .slide4 {
+    width: 80%;
+  }
+  .slide1, .slide2, .slide4 {
+    width: 70%;
+  }
+}
+@media (min-device-width : 376px) and (max-device-width : 768px){
+  .slide0, .slide-plan {
+    width: 80%;
+  }
+  .slide1, .slide2, .slide4 {
+    width: 60%;
+  }
+}
+@media (min-device-width : 769px) and (max-device-width : 1024px){
+  .slide0, .slide4, .slide-plan {
+    width: 80%;
+  }
+  .slide1, .slide2{
+    width: 60%;
   }
 }

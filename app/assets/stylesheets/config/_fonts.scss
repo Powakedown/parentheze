@@ -66,9 +66,24 @@ line-height: 18px;
 a {
 font-family: $body-font;
 }
-
 //MOBILE
-@media (max-device-width : 667px){
+@media (max-device-width: 375px){
+  h1 {
+    font-size: 35px;
+    line-height: 37px;
+    .fa {
+      position: absolute;
+      left: -40px;
+      top: 4px;
+    }
+}
+  h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+//SM
+@media (min-device-width: 376px) and (max-device-width : 667px){
   h1 {
     font-size: 40px;
     line-height: 40px;

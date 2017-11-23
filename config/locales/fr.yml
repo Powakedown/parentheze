@@ -101,9 +101,6 @@ fr:
             text: "ont toujours une solution de garde facile"
             link: "4"
           answer2:
-            text: "dont les grands parents sont à côtés"
-            link: "4"
-          answer3:
             text: "non, ici tout va bien!"
             link: "4"
         button_effect: "slideLeft"

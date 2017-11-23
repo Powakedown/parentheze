@@ -15,6 +15,5 @@ class PagesController < ApplicationController
     @guest = guest_user
     @guest.step += 1
     @guest.save
-    redirect_to root_path
   end
 end
