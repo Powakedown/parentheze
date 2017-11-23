@@ -1,9 +1,4 @@
-<%#= link_to "#"+target_page, class:"next_page scroll" do %>
-  <%#= image_tag link_image, class:"pulse" %>
-<%# end %>
-<%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
-  <%= f.input_field :step, as: :hidden, value: step %>
-  <%= f.button :submit, value: "", style: "background:url('http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png')", label: false, class:"btn-submit next_page scroll pulse submit-button" %>
+<%= link_to "#"+target_page, method: :patch, remote: true, class:"next_page scroll" do %>
+  <%= image_tag link_image, class:"pulse" %>
 <% end %>
-
 
