@@ -22,4 +22,5 @@ class ApplicationController < ActionController::Base
   def cookie_presence
     @cookie = cookies[:parentheze_guest].present?
   end
+
 end
