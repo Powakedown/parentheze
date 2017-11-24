@@ -9,10 +9,10 @@ class GuestsController < ApplicationController
     @parents = @guests.where(parent: 1).count
     @questions = t('survey.questions').first(4)
     @form_end = @guests.where.not(get_out: nil).count * 100/(@guestcount)
-    @guests_on_landing_count = @guests.where.not(visit: 0).count
-    @guests_on_landing =  @guests_on_landing_count * 100/(@guestcount)
+    @guests_with_visit = @guests.where.not(visit: 0)
+    @guests_on_landing =  @guests_with_visit.count * 100/(@guestcount)
     @guest_steps = []
-    1.upto(6) {|x| @guest_steps << Guest.find_by_sql("SELECT * FROM guests WHERE step >= #{x}").count * 100 / (@guests_on_landing_count) }
+    0.upto(6) {|x| @guest_steps << @guests_with_visit.where(step: (x..6)).count * 100 / (@guests_with_visit.count)}
   end
 
   def new
