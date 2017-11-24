@@ -45,6 +45,16 @@
           <h2 class="pink"><%= @guests_on_landing %>%</h2>
         </div>
       </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="card with-max-height">
+          <h4>Steps:</h4>
+          <div class="step-diag-wrapper">
+            <% 6.times do |x| %>
+              <div class="step-diag" style="height: <%= 1*@guest_steps[x] %>px"><%= @guest_steps[x] %>%</div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="row">

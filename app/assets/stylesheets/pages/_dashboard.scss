@@ -40,6 +40,20 @@
     }
 
   }
-
-
+  .step-diag-wrapper{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-bottom: 1px solid $dark-gray;
+  }
+  .step-diag{
+    width: 30px;
+    background-color: $yellow;
+    min-height: 2px;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+  }
 }
