@@ -12,9 +12,7 @@ class GuestsController < ApplicationController
     @guests_on_landing_count = @guests.where.not(visit: 0).count
     @guests_on_landing =  @guests_on_landing_count * 100/(@guestcount)
     @guest_steps = []
-    6.times do |x|
-      @guest_steps << Guest.find_by_sql("SELECT * FROM guests WHERE step >= #{x}").count * 100 / (@guests_on_landing_count)
-    end
+    1.upto(6) {|x| @guest_steps << Guest.find_by_sql("SELECT * FROM guests WHERE step >= #{x}").count * 100 / (@guests_on_landing_count) }
   end
 
   def new
