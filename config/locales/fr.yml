@@ -48,6 +48,7 @@ fr:
         image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
     slide_plan:
       title: "Pensé pour les parents d'aujourd'hui"
+      text: "Parce que payer est parfois plus facile que de demander un service."
       card_uptitle0: "Exemple de forfait"
       card_uptitle1: "Fonctionnalités"
       labels:
