@@ -1,0 +1,11 @@
+<% content_for :title_tag do t('metas.titles.home') end %>
+
+<div class="home">
+  <%= render "slide_with_button", target_page: "slide1", id: "slide0" ,  title: t('home.slides.slide0.title'), text: t('home.slides.slide0.text'), image: t('home.slides.slide0.image'), link_image: t('home.slides.slide0.link_image') %>
+
+  <%= render "slide_with_split", target_page: "slide2", id:"slide1", title: t('home_phase1.slides.slide1'), text: t('home_phase1.slides.slide1.text'), image: t('home_phase1.slides.slide1.image') %>
+
+  <%= render "footer", target_page: "slide0", id:"slide3" %>
+</div>
+
+

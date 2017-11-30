@@ -4,7 +4,7 @@
 
   <% t('home.slides').length.times do |x| %>
     <% xstring = x.to_s %>
-    <%= render "slide", target_page: "slide"+(xstring.to_i+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image'), step: x+1 %>
+    <%= render "slide", target_page: "slide"+(x+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image') %>
   <% end %>
 
   <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+t('home.slides').length.to_s %>>
@@ -55,13 +55,3 @@
   </div>
 </div>
 
-
-<%= content_for :after_js do %>
-  <script>
-    const mysubmits = document.querySelectorAll('.submit-button');
-    mysubmits.forEach((button) => {
-      // button.classList.remove("btn");
-      // button.classList.remove("btn-default");
-    });
-  </script>
-<% end %>

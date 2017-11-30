@@ -19,7 +19,8 @@
 
               <%= simple_form_for :guest, method: :patch do |f| %>
                 <% if question[1][:data] != "none" %>
-                  <%= f.input_field question[1][:data], as: :hidden, value: x+1 %>
+                  <%= f.input_field question[1][:data],  as: :hidden, value: x+1 %>
+                  <%= f.input_field :form_step,  as: :hidden, value: answer[1][:link] %>
                   <%= f.button :submit, value: answer[1][:text], label: false, class:"answer #{question[1][:button_effect]} delay#{x.to_s} btn wrap tall btn-#{x.to_s} flexbox center margin-bottom-medium", id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
                 <% else %>
                   <div class="answer <%= question[1][:button_effect] %> delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium", id=<%= answer[0] %>, goto=<%= answer[1][:link] %>><%= answer[1][:text] %></div>
@@ -36,14 +37,14 @@
 <% content_for(:after_js) do %>
   <script>
     // INIT
-    var current_question = 1
+    var current_question = <%= @form_step %>
     $('#breadcrumb-question'+current_question).addClass('active');
 
     for (i = 1; i <= <%= @questions_number %> ; i++) {
       $('#question'+i).hide();
     }
 
-    $('#question1').show();
+    $('#question'+current_question).show();
 
       // ON ANSWER
       $('.answer').click(function(e){
@@ -51,11 +52,11 @@
           window.open($(this).attr("goto"));
         }
         else {
-          $('#question'+current_question).hide();
-          $('#breadcrumb-question'+current_question).removeClass('active');
-          current_question = $(this).attr("goto");
-          $('#question'+current_question).show();
-          $('#breadcrumb-question'+current_question).addClass('active');
+          // $('#question'+current_question).hide();
+          // $('#breadcrumb-question'+current_question).removeClass('active');
+          // current_question = $(this).attr("goto");
+          // $('#question'+current_question).show();
+          // $('#breadcrumb-question'+current_question).addClass('active');
         }
       });
   </script>
