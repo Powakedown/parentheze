@@ -28,12 +28,12 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update(guest_params)
-    if @guest.email != "email@example.com"
-      redirect_to :welcome
-    elsif params[:guest][:email]
-      flash[:alert] =  "Veuillez entrez votre email"
-      redirect_to "/home#inscription-beta"
-    end
+    # if @guest.email != "email@example.com"
+    #   redirect_to :welcome
+    # elsif params[:guest][:email]
+    #   flash[:alert] =  "Veuillez entrez votre email"
+    #   redirect_to "/home#inscription-beta"
+    # end
   end
 
   def welcome
