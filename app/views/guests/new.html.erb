@@ -12,7 +12,10 @@
       <div id="<%= question[0] %>">
         <div class="fullscreen under-breadcrumb flexbox">
           <div class="survey-block">
-            <%= image_tag(question[1][:picture], class:"slideLeft") if question[1][:picture] %>
+            <% if question[1][:picture] %>
+              <div style="background-image: url(<%= question[1][:picture] %>)" class="img-anim slideLeft delay0"></div>
+            <% end %>
+            <%#= image_tag(question[1][:picture], class:"slideLeft") if question[1][:picture] %>
             <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
             <h3 class="margin-bottom-medium slideLeft"><%= question[1][:subtitle] %></h3>
             <% question[1][:answers].each_with_index do |answer, x| %>
@@ -23,7 +26,7 @@
                   <%= f.input_field :form_step,  as: :hidden, value: answer[1][:link] %>
                   <%= f.button :submit, value: answer[1][:text], label: false, class:"answer #{question[1][:button_effect]} delay#{x.to_s} btn wrap tall btn-#{x.to_s} flexbox center margin-bottom-medium", id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
                 <% else %>
-                  <div class="answer <%= question[1][:button_effect] %> delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium", id=<%= answer[0] %>, goto=<%= answer[1][:link] %>><%= answer[1][:text] %></div>
+                  <%= link_to answer[1][:text],answer[1][:link], :class => "answer #{question[1][:button_effect]} delay#{x.to_s} btn wrap tall btn#{x.to_s} flexbox center margin-bottom-medium" %>
                 <% end %>
               <% end %>
 
@@ -37,7 +40,7 @@
 <% content_for(:after_js) do %>
   <script>
     // INIT
-    var current_question = <%= @form_step %>
+    var current_question = <%= @current_question %>
     $('#breadcrumb-question'+current_question).addClass('active');
 
     for (i = 1; i <= <%= @questions_number %> ; i++) {
@@ -45,19 +48,5 @@
     }
 
     $('#question'+current_question).show();
-
-      // ON ANSWER
-      $('.answer').click(function(e){
-        if ($(this).attr("goto").length > 4) {
-          window.open($(this).attr("goto"));
-        }
-        else {
-          // $('#question'+current_question).hide();
-          // $('#breadcrumb-question'+current_question).removeClass('active');
-          // current_question = $(this).attr("goto");
-          // $('#question'+current_question).show();
-          // $('#breadcrumb-question'+current_question).addClass('active');
-        }
-      });
   </script>
 <% end %>
