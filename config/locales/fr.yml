@@ -124,6 +124,7 @@ fr:
         data: "none"
         title: "Parentheze est réservé aux parents"
         subtitle: "qui sait... peut-être à bientôt."
+        picture: "https://media.giphy.com/media/l0HlW3N3s4jOB1mVi/giphy.gif"
         answers:
           answer1:
             text: "En attendant profitez-en, sortez!"

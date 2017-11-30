@@ -19,7 +19,7 @@ class GuestsController < ApplicationController
   def new
     @guest = Guest.create!
     session[:guest_user_id] = @guest.id
-    @form_step = session[:form_step] = 1
+    @current_question = session[:form_step] = 1
     cookies[:parentheze_guest] = {
       value: @guest.id,
       expires: 1.year.from_now,
@@ -28,7 +28,7 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update(guest_params)
-    @form_step = session[:form_step] = params[:guest][:form_step]
+    @current_question = session[:form_step] = params[:guest][:form_step]
     render :new
       # if @guest.email != "email@example.com"
       #   redirect_to :welcome
