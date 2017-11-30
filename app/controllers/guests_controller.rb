@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create, :index, :update, :new, :welcome]
   before_action :find_guest, only: [:update, :welcome]
+  before_action :init_form, only: [:update, :new]
 
   def index
     @guests = Guest.all
@@ -16,10 +17,9 @@ class GuestsController < ApplicationController
   end
 
   def new
-    @questions_number = t('survey.questions').length
-    @breadcrumb_length = 4
     @guest = Guest.create!
     session[:guest_user_id] = @guest.id
+    @form_step = session[:form_step] = 1
     cookies[:parentheze_guest] = {
       value: @guest.id,
       expires: 1.year.from_now,
@@ -28,12 +28,14 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update(guest_params)
-    if @guest.email != "email@example.com"
-      redirect_to :welcome
-    elsif params[:guest][:email]
-      flash[:alert] =  "Veuillez entrez votre email"
-      redirect_to "/home#inscription-beta"
-    end
+    @form_step = session[:form_step] = params[:guest][:form_step]
+    render :new
+      # if @guest.email != "email@example.com"
+      #   redirect_to :welcome
+      # elsif params[:guest][:email]
+      #   flash[:alert] =  "Veuillez entrez votre email"
+      #   redirect_to "/home#inscription-beta"
+      # end
   end
 
   def welcome
@@ -56,5 +58,10 @@ class GuestsController < ApplicationController
 
   def guest_params
     params.require(:guest).permit(:parent, :kid_age, :jalous, :get_out, :old_kid, :email, :name, :step)
+  end
+
+  def init_form
+    @questions_number = t('survey.questions').length
+    @breadcrumb_length = 4
   end
 end
