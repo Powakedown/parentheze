@@ -46,6 +46,7 @@
       <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
       <div class="inscription-wrapper center margin-bottom-medium">
         <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
+          <%= f.input_field :bordelais, as: :boolean, inline_label: 'show password', label: false, required: false %>
           <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
           <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
         <% end %>

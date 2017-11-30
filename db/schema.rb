@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171123131359) do
+ActiveRecord::Schema.define(version: 20171130150632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20171123131359) do
     t.integer "get_out"
     t.integer "visit", default: 0
     t.integer "step", default: 0
+    t.boolean "bordelais"
   end
 
   create_table "users", force: :cascade do |t|
