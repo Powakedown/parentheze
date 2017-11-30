@@ -29,13 +29,14 @@ class GuestsController < ApplicationController
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    render :new
-      # if @guest.email != "email@example.com"
-      #   redirect_to :welcome
-      # elsif params[:guest][:email]
-      #   flash[:alert] =  "Veuillez entrez votre email"
-      #   redirect_to "/home#inscription-beta"
-      # end
+    if @guest.email != "email@example.com"
+      redirect_to :welcome
+    elsif params[:guest][:email]
+      flash[:alert] =  "Veuillez entrez votre email"
+      redirect_to "/home#inscription-beta"
+    else
+      render :new
+    end
   end
 
   def welcome
@@ -57,7 +58,7 @@ class GuestsController < ApplicationController
   end
 
   def guest_params
-    params.require(:guest).permit(:parent, :kid_age, :jalous, :get_out, :old_kid, :email, :name, :step)
+    params.require(:guest).permit(:parent, :kid_age, :jalous, :get_out, :old_kid, :email, :name, :step, :bordelais)
   end
 
   def init_form
