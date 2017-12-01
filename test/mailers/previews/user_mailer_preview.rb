@@ -1,9 +1,7 @@
 class UserMailerPreview < ActionMailer::Preview
   def welcome
-    redirect_to root_path
     user = User.first
-    # UserMailer.welcome(user)
-    self_notification(user)
+    UserMailer.welcome(user)
   end
 
   def self_notification(guest)
