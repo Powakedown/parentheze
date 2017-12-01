@@ -102,7 +102,10 @@ fr:
             text: "ont toujours une solution de garde facile"
             link: "4"
           answer2:
-            text: "non, ici tout va bien!"
+            text: "ont les moyens de sortir souvent"
+            link: "4"
+          answer3:
+            text: "non ici tout va bien"
             link: "4"
         button_effect: "slideLeft"
       question4:

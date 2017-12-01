@@ -10,4 +10,10 @@ class UserMailer < ApplicationMailer
   def welcome_redirection(guest)
     @user = guest
   end
+
+  def self_notification(guest)
+    @user = guest
+    mail(to: "abriko@yahoo.fr", from: "parentgenial@parentheze.com", subject: 'Nouveau Guest sur Parentheze', :track_opens => 'true')
+  end
+
 end

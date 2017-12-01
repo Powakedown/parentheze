@@ -20,4 +20,10 @@ class PagesController < ApplicationController
   def home_parent
 
   end
+
+  private
+
+  def params_guest
+    params.require(:guest).permit(:email)
+  end
 end
