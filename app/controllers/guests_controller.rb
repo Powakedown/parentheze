@@ -7,13 +7,12 @@ class GuestsController < ApplicationController
     @guests = Guest.all
     @guestcount = @guests.count
     @visits = @guests.sum(:visit)
-    @parents = @guests.where(parent: 1).count
+    @parents = @guests.parenting.count
     @questions = t('survey.questions').first(4)
-    @form_end = @guests.where.not(get_out: nil).count * 100/(@guestcount)
-    @guests_with_visit = @guests.where.not(visit: 0)
-    @guests_on_landing =  @guests_with_visit.count * 100/(@guestcount)
+    @form_completed_p = @guests.where.not(get_out: nil).count * 100/(@guestcount)
+    @guests_visitors_p =  @guests.visitors.count * 100/(@guestcount)
     @guest_steps = []
-    0.upto(6) {|x| @guest_steps << @guests_with_visit.where(step: (x..6)).count * 100 / (@guests_with_visit.count)}
+    0.upto(6) {|x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@guests.visitors.count)}
   end
 
   def new
@@ -42,6 +41,7 @@ class GuestsController < ApplicationController
   def welcome
     begin
       UserMailer.welcome(@guest).deliver_now
+      UserMailer.self_notification(@guest).deliver_now
       flash[:notice] =  t('inscription.redirection.emailsent')
       render :welcome
     rescue => e
