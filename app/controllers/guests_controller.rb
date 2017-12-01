@@ -28,10 +28,10 @@ class GuestsController < ApplicationController
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    if @guest.email != "email@example.com"
+    if @guest.email != "email@example.com" && @guest.valid?
       redirect_to :welcome
     elsif params[:guest][:email]
-      flash[:alert] =  "Veuillez entrez votre email"
+      flash[:alert] =  "Veuillez entrez un email valide"
       redirect_to "/home#inscription-beta"
     else
       render :new

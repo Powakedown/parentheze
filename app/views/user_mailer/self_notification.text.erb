@@ -1,0 +1,27 @@
+Un nouveau guest sur Parentheze:
+
+Détails sur le guest:
+
+Email: <%= @user.email %>
+Parent: <%= @user.have_kid? %>
+Jalous: <%= @user.be_jalous? %>
+Target_kid: <%= @user.with_kid_in_age? %>
+Landed on homepage: <%= @user.visit %>
+Step on the run: <%= @user.step %>
+....................................................
+Réponses:
+
+<%= t('survey.questions.question1.title') %>
+>> <%= @user.parent || "sans réponse" %>
+
+<%= t('survey.questions.question2.title') %>
+>> <%= @user.kid_age || "sans réponse" %>
+
+<%= t('survey.questions.question3.title') %>
+>> <%= @user.jalous || "sans réponse" %>
+
+<%= t('survey.questions.question4.title') %>
+>> <%= @user.get_out || "sans réponse" %>
+
+<%= t('survey.questions.question6.title') %>
+>> <%= @user.old_kid || "sans réponse" %>
