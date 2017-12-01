@@ -5,7 +5,6 @@ class UserMailer < ApplicationMailer
     @user = guest
     @url  = 'http://www.parentheze.com'
     mail(to: @user.email, from: "parentgenial@parentheze.com", subject: 'Inscription à la béta de parentheze', :track_opens => 'true')
-    self_notification(guest)
   end
 
   def welcome_redirection(guest)

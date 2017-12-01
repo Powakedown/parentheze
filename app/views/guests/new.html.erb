@@ -16,7 +16,6 @@
             <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
             <h3 class="margin-bottom-medium slideLeft"><%= question[1][:subtitle] %></h3>
             <% question[1][:answers].each_with_index do |answer, x| %>
-
               <%= simple_form_for :guest, method: :patch do |f| %>
                 <% if question[1][:data] != "none" %>
                   <%= f.input_field question[1][:data], as: :hidden, value: x+1 %>
@@ -25,7 +24,6 @@
                   <div class="answer <%= question[1][:button_effect] %> delay<%= x.to_s %> btn wrap tall btn-<%= x.to_s %> flexbox center margin-bottom-medium", id=<%= answer[0] %>, goto=<%= answer[1][:link] %>><%= answer[1][:text] %></div>
                 <% end %>
               <% end %>
-
             <% end %>
           </div>
         </div>

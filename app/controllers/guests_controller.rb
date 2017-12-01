@@ -38,6 +38,7 @@ class GuestsController < ApplicationController
   def welcome
     begin
       UserMailer.welcome(@guest).deliver_now
+      UserMailer.self_notification(@guest).deliver_now
       flash[:notice] =  t('inscription.redirection.emailsent')
       render :welcome
     rescue => e
