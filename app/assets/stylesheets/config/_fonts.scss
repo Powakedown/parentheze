@@ -109,8 +109,8 @@ font-family: $body-font;
     line-height: 60px;
   }
 }
-//DESKTOP
-@media (min-device-width: 769px) {
+//MD
+@media (min-device-width: 769px) and (max-device-width: 1024px) {
   h1 {
     font-size: 81px;
     line-height: 72px;
@@ -120,5 +120,14 @@ font-family: $body-font;
     line-height: 72px;
   }
 }
-
-
+//LG
+@media (min-device-width: 1024px) {
+  h1 {
+    font-size: 81px;
+    line-height: 72px;
+  }
+  h2 {
+    font-size: 56px;
+    line-height: 72px;
+  }
+}
