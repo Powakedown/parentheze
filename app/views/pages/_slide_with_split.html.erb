@@ -1,7 +1,12 @@
-<div class="fullscreen relative flexbox" style="background-image: url(<%= image %>)" id=<%= id %>>
-  <div class="<%= id %>">
-    <h1 class=""><%= title %></h1>
-    <h4 class="margin-bottom-medium"><%= text %></h4>
-    <%= render 'shared/scroller', target_page: target_page, link_image: link_image %>
+<div class="fullscreen relative flexbox" id=<%= id %>>
+  <div class="row">
+    <div style="background-image: url(<%= image %>)" class="full-height col-xs-12 col-md-6"></div>
+    <div class="full-height col-xs-12 col-md-6 flex-column black-on-white double-padding-box">
+      <div>
+        <h1 class=""><%= title %></h1>
+        <h4 class="margin-bottom-medium"><%= text %></h4>
+        <%= render 'shared/scroller', target_page: target_page, link_image: link_image %>
+      </div>
+    </div>
   </div>
 </div>
