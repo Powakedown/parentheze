@@ -30,38 +30,43 @@ fr:
         text: "Échange de garde d'enfants et mutualisation de babysitter"
         image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_party.jpg"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-      slide1:
-        title: "Parce que nous adorons nos enfants..."
-        text: ""
-        image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kit_jumping.jpg"
-      slide2:
-        title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
-        text: ""
-        image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_lover.jpg"
-      slide3:
-        title: "Parentheze propose de faciliter l’échange de garde entre parents."
-        text: ""
-        image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
-      slide4:
-        title: "Rencontrez des parents comme vous"
-        text: "à la recherche de nouvelles solutions de garde, simples et innovantes."
-        image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
+      # slide1:
+      #   title: "Parce que nous adorons nos enfants..."
+      #   text: ""
+      #   image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kit_jumping.jpg"
+      # slide2:
+      #   title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
+      #   text: ""
+      #   image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_parent_lover.jpg"
+      # slide3:
+      #   title: "Parentheze propose de faciliter l’échange de garde entre parents."
+      #   text: ""
+      #   image: "https://res.cloudinary.com/doodlid/image/upload/v1508851317/parentheze/home1_kid_cool.jpg"
+      # slide4:
+      #   title: "Rencontrez des parents comme vous"
+      #   text: "à la recherche de nouvelles solutions de garde, simples et innovantes."
+      #   image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
     slide_plan:
       title: "Pensé pour les parents d'aujourd'hui"
-      text: "Parce que payer est parfois plus facile que de demander un service."
-      card_uptitle0: "Exemple de forfait"
-      card_uptitle1: "Fonctionnalités"
+      text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
+    slide_detail:
+      title: "Réservé aux parents"
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
       labels:
-        label0: "Réservé aux parents, pas de babysitter"
+        label0: "Pas de babysitter"
         label1: "Des forfaits de garde pour compenser les parents hôtes"
-        label2: "Des gardes pour la soirée, la nuit et même la grasse matinée!"
-        label3: "Géolocalisation des membres autour de vous"
-        label4: "Réputation pour chaque garde"
-        label5: "Outil d'invitations pour rencontres préliminaires"
+        label2: "Géolocalisation des membres autour de vous"
+        label3: "Réputation pour chaque garde"
+        label4: "Outil d'invitations pour rencontres préliminaires"
     slide_calltoaction:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
       link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
+    slide_with_split:
+      title: "Trouvez des parents comme vous:"
+      text: "autour de vous, et qui vivent sur le rythme des enfants. Parentheze a été pensé pour les parents d’aujourd’hui. Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
+      link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
   survey:
     title: "Rapide enquète"
     questions_main_number: "4"
@@ -173,26 +178,26 @@ fr:
       image: "https://res.cloudinary.com/doodlid/image/upload/v1509373509/confirmation_m1bpvc.jpg"
       emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
   plans:
-    # plan0:
-    #   price: "12€"
-    #   title: "no-stress"
-    #   subtitle: "2h en journée"
-    #   color: "#469AE0"
     plan0:
+      price: "12€"
+      title: "no-stress"
+      subtitle: "2h en journée"
+      color: "#469AE0"
+    plan1:
       price: "22€"
       title: "la soirée"
-      subtitle_html: "20h-Minuit Repas non compris<br/>payé aux parents hôtes en échange de la garde des enfants"
+      subtitle: "20h-Minuit Repas non compris"
       color: "#E12787"
-    # plan2:
-    #   price: "48€"
-    #   title: "la soirée + la nuit + la grasse mat'"
-    #   subtitle: "20h-Midi Repas non compris"
-    #   color: "#F1B255"
-    # plan3:
-    #   price: "44€"
-    #   title: "Panique! Grêve à l'école"
-    #   subtitle: "la journée"
-    #   color: "white"
+    plan2:
+      price: "48€"
+      title: "la soirée + la nuit + la grasse mat'"
+      subtitle: "20h-Midi Repas non compris"
+      color: "#F1B255"
+    plan3:
+      price: "44€"
+      title: "Panique! Grêve à l'école"
+      subtitle: "la journée"
+      color: "white"
   footer:
     facebook: "https://www.facebook.com/groups/1860665404215862/"
     twitter: "https://medium.com/@parentgenial"

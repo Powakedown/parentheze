@@ -28,7 +28,7 @@
   width: 40%;
 }
 .slide_plan {
-  width: 80%;
+  width: 95%;
   h4 {
     line-height: 30px;
   }
@@ -39,10 +39,13 @@
     color: $medium-gray;
     h1 {
       font-family: $body-font;
-      font-size: 125px;
-      line-height: 150px;
     }
-
+    @media (min-device-width: 1421px) {
+      h1 {
+        font-size: 125px;
+        line-height: 150px;
+      }
+    }
     &.emergency {
       background-color: $yellow;
       color: white;
@@ -70,7 +73,7 @@
   }
 }
 @media (min-device-width : 376px) and (max-device-width : 768px){
-  .slide0, .slide-plan {
+  .slide0 {
     width: 80%;
   }
   .slide1, .slide2, .slide4 {
@@ -79,9 +82,14 @@
 }
 @media (min-device-width : 769px) and (max-device-width : 1024px){
   .slide0, .slide4, .slide-plan {
-    width: 80%;
+    width: 95%;
   }
   .slide1, .slide2{
     width: 60%;
+  }
+}
+@media (min-device-width : 1025px){
+  .slide-plan {
+    width: 80%;
   }
 }
