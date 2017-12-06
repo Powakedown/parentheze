@@ -183,6 +183,20 @@ fr:
             link: "/home"
         picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
         button_effect: "flash"
+  stats:
+    charac:
+      char1:
+        text: "des enfants en âge d'être gardé par une babysitter"
+        icon: "child"
+      char2:
+        text: "jaloux de ces parents qui sortent tout le temps"
+        icon: "binoculars"
+      char3:
+        text: "qui sortiraient plus souvent si la garde des enfants était moinds chère"
+        icon: "cab"
+      char4:
+        text: "sont prêts à garder les enfants des voisins"
+        icon: "home"
   inscription:
     redirection:
       title: "Merci et à bientôt!"

@@ -80,13 +80,13 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
-          <div class="label text-left green">
-            <span>
-              - des enfants en âge d'être gardé par une babysitter<br/>
-              - jaloux de ces parents qui ont toujours une solution de garde facile<br/>
-              - qui sortiraient plus souvent si la garde était moins chère<br/>
-            </span>
-            <strong><span><%=  @guests.where(parent:1, jalous:1, get_out:2).count*100/(@guestcount) %>%</span></strong>
+          <div class="label green">
+            <div>
+              <% ["1","2","3"].each do |x| %>
+                <div class="flex-horizontal left margin-top-bot"><i class="fa fa-<%= t('stats.charac.char'+x+'.icon') %> pastille flexbox"></i>  <%= t('stats.charac.char'+x+'.text') %></div>
+              <% end %>
+            </div>
+            <strong><span><%= @guests.where(parent:1, jalous:1, get_out:2).count*100/(@guestcount) %>%</span></strong>
           </div>
         </div>
       </div>
@@ -94,25 +94,12 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
           <div class="label text-left green">
-            <span>
-              - des enfants en âge d'être gardé par une babysitter<br/>
-              - jaloux de ces parents qui ont toujours une solution de garde facile<br/>
-              >> qui sortiraient plus souvent s'ils avaient des amis de confiance à côté<br/>
-            </span>
-            <strong><span><%=  @guests.where(parent:1, jalous:2, get_out:1).count*100/(@guestcount) %>%</span></strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="card">
-          <div class="label text-left green">
-            <span>
-              - des enfants en âge d'être gardé par une babysitter<br/>
-              >> jaloux de ces parents dont les grand-parents sont côtés<br/>
-              - qui sortiraient plus souvent si la garde était moins chère<br/>
-            </span>
-            <strong><span><%=  @guests.where(parent:1, jalous:3, get_out:3).count*100/(@guests.where(parent:1).count) %>%</span></strong>
+            <div>
+              <% ["3","4"].each do |x| %>
+                <div class="flex-horizontal left margin-top-bot"><i class="fa fa-<%= t('stats.charac.char'+x+'.icon') %> pastille flexbox"></i>  <%= t('stats.charac.char'+x+'.text') %></div>
+              <% end %>
+            </div>
+            <strong><span><%= @guests.where(parent:1, jalous:2, get_out:1).count*100/(@guestcount) %>%</span></strong>
           </div>
         </div>
       </div>
