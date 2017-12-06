@@ -8,13 +8,14 @@ class GuestsController < ApplicationController
   def index
     @guests = Guest.all
     @guestcount = @guests.count
-    @visits = Guest.where.not(visit: 0).count
+    @visits = @guests.visitors.count
+    @visitors_p = @visits * 100 / (@guestcount)
     @parents = @guests.count(:parent)
+    @average_visits = average(@guests,:visit)
     @questions = t('survey.questions').first(5)
-    @form_completed_p = @guests.count(:get_out) * 100 / (@guestcount)
-    @guests_visitors_p = @visits * 100 / (@guestcount)
+    @form_completed_p = completion(@guests, :get_out)
     @guest_steps = []
-    0.upto(6) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@guests.visitors.count) }
+    0.upto(4) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@guests.visitors.count) }
   end
 
   def new

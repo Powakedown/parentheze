@@ -23,4 +23,12 @@ class ApplicationController < ActionController::Base
   def cookie_presence
     @cookie = cookies[:parentheze_guest].present?
   end
+
+  def average(collection, column)
+    collection.average(column).to_digits.to_f.round(2)
+  end
+
+  def completion(collection, column)
+    collection.count(column) * 100 / collection.count
+  end
 end

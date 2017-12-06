@@ -19,13 +19,13 @@
         <div class="card with-max-height">
           <h4>Visiteurs uniques sur la home :</h4>
           <h2 class="pink"><%= @visits %></h2>
-          <p><%= @guests_visitors_p %>%</p>
+          <p><%= @visitors_p %>%</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
           <h4>Nbre moyen de visite par visiteur :</h4>
-          <h2 class="blue"><%= @visits/(@guestcount) %></h2>
+          <h2 class="blue"><%= @average_visits %></h2>
           <p>(sur page d'accueil)</p>
         </div>
       </div>
@@ -45,7 +45,7 @@
         <div class="card with-max-height">
           <h4>Steps (only by clic):</h4>
           <div class="step-diag-wrapper">
-            <% 7.times do |x| %>
+            <% 5.times do |x| %>
               <div class="step-diag" style="height: <%= 1*@guest_steps[x] %>px"><%= @guest_steps[x] %>%</div>
             <% end %>
           </div>

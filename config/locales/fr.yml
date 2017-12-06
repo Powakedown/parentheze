@@ -51,7 +51,7 @@ fr:
       text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
     slide_detail:
       title: "Réservé aux parents"
-      image:
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
       labels:
         label0: "Pas de babysitter"
         label1: "Des forfaits de garde pour compenser les parents hôtes"
@@ -81,7 +81,7 @@ fr:
             link: "2"
           answer2:
             text: "Non"
-            link: "5"
+            link: "8"
         button_effect: "slideLeft"
       question2:
         data: "kid_age"
@@ -104,11 +104,11 @@ fr:
         title: "Ils vous énervent ces parents qui..."
         answers:
           answer1:
-            text: "ont toujours une solution de garde facile"
+            text: 'sortent "tout le temps". Mais comment font-ils !?'
             link: "4"
-          answer2:
-            text: "ont les moyens de sortir souvent"
-            link: "4"
+          # answer2:
+          #   text: "ont les moyens de sortir souvent"
+          #   link: "4"
           answer3:
             text: "non ici tout va bien"
             link: "4"
@@ -120,23 +120,25 @@ fr:
         answers:
           answer1:
             text: "vous aviez des amis de confiance à côté"
-            link: "8"
+            link: "5"
           answer2:
             text: "la garde des enfants était moins chère"
-            link: "8"
+            link: "5"
           answer3:
             text: "vous ne prévoyez pas de sortir"
-            link: "8"
+            link: "5"
         button_effect: "slideLeft"
       question5:
-        data: "none"
-        title: "Parentheze est réservé aux parents"
-        subtitle: "qui sait... peut-être à bientôt."
-        picture: "https://media.giphy.com/media/l0HlW3N3s4jOB1mVi/giphy.gif"
+        data: "host"
+        picto: "github-alt"
+        title: "Et vous, vous seriez prêt à..."
         answers:
           answer1:
-            text: "En attendant profitez-en, sortez!"
-            link: "http://www.allocine.com"
+            text: "garder les enfants de vos gentils voisins"
+            link: "9"
+          answer2:
+            text: "non merci, très peu pour moi!"
+            link: "9"
         button_effect: "slideLeft"
       question6:
         data: "old_kid"
@@ -144,10 +146,10 @@ fr:
         answers:
           answer1:
             text: "pouvez garder les enfants des voisins le temps d'une soirée?"
-            link: "8"
+            link: "9"
           answer2:
             text: "avez des amis intéressé par l'échange de garde..."
-            link: "8"
+            link: "9"
           answer3:
             text: "n'êtes intéressé."
             link: "7"
@@ -164,10 +166,20 @@ fr:
         button_effect: "slideLeft"
       question8:
         data: "none"
-        title: "Pour vous, parents, nous avons pensé à..."
+        title: "Parentheze est réservé aux parents"
+        subtitle: "qui sait... peut-être à bientôt."
+        picture: "https://media.giphy.com/media/l0HlW3N3s4jOB1mVi/giphy.gif"
         answers:
           answer1:
-            text: "Accéder au site"
+            text: "En attendant profitez-en, sortez!"
+            link: "http://www.allocine.com"
+        button_effect: "slideLeft"
+      question9:
+        data: "none"
+        title: "Parents, ceci est pour vous..."
+        answers:
+          answer1:
+            text: "Nous avons pensé à tout !"
             link: "/home"
         picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
         button_effect: "flash"
