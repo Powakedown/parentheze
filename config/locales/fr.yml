@@ -51,7 +51,7 @@ fr:
       text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
     slide_detail:
       title: "Réservé aux parents"
-      image: "http://res.cloudinary.com/doodlid/image/upload/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
+      image:
       labels:
         label0: "Pas de babysitter"
         label1: "Des forfaits de garde pour compenser les parents hôtes"
@@ -104,11 +104,11 @@ fr:
         title: "Ils vous énervent ces parents qui..."
         answers:
           answer1:
-            text: 'sortent "tout le temps". Mais comment font-ils !?'
+            text: "ont toujours une solution de garde facile"
             link: "4"
-          # answer2:
-          #   text: "ont les moyens de sortir souvent"
-          #   link: "4"
+          answer2:
+            text: "ont les moyens de sortir souvent"
+            link: "4"
           answer3:
             text: "non ici tout va bien"
             link: "4"
@@ -164,20 +164,10 @@ fr:
         button_effect: "slideLeft"
       question8:
         data: "none"
-        title: "Et vous, vous seriez prêt à..."
+        title: "Pour vous, parents, nous avons pensé à..."
         answers:
           answer1:
-            text: "garder les enfants de vos gentils voisins"
-            link: "8"
-          answer2:
-            text: "non merci, très peu pour moi!"
-            link: "8"
-      question9:
-        data: "none"
-        title: "Parents, ceci est pour vous..."
-        answers:
-          answer1:
-            text: "Nous avons pensé à tout !"
+            text: "Accéder au site"
             link: "/home"
         picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
         button_effect: "flash"

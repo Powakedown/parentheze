@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :update, :home_parent]
+  skip_before_action :authenticate_user!, only: %i[home update home_parent]
 
   def home
     if @cookie
@@ -17,9 +19,7 @@ class PagesController < ApplicationController
     @guest.save
   end
 
-  def home_parent
-
-  end
+  def home_parent; end
 
   private
 

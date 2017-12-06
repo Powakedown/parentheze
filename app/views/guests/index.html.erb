@@ -10,14 +10,16 @@
     <div class="row margin-bottom-medium">
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <h4>Nbre de visites totales :</h4>
-          <h2 class="pink"><%= @visits %></h2>
+          <h4>Visiteurs uniques:</h4>
+          <h2><%= @guestcount %></h2>
+          <p>(atterrissage sur le formulaire)</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <h4>Nbre de visiteurs uniques:</h4>
-          <h2><%= @guestcount %></h2>
+          <h4>Visiteurs uniques sur la home :</h4>
+          <h2 class="pink"><%= @visits %></h2>
+          <p><%= @guests_visitors_p %>%</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -39,15 +41,9 @@
           <h2 class="pink"><%= @form_completed_p %>%</h2>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card with-max-height">
-          <h4>Visiteurs attérrissants sur la home:</h4>
-          <h2 class="pink"><%= @guests_visitors_p %>%</h2>
-        </div>
-      </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="card with-max-height">
-          <h4>Steps:</h4>
+          <h4>Steps (only by clic):</h4>
           <div class="step-diag-wrapper">
             <% 7.times do |x| %>
               <div class="step-diag" style="height: <%= 1*@guest_steps[x] %>px"><%= @guest_steps[x] %>%</div>

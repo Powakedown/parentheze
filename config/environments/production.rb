@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://www.parentheze.com" }
+  config.action_mailer.default_url_options = { host: 'http://www.parentheze.com' }
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_key: ENV['POSTMARK_API_KEY'] }
 
   # Google analytics track ID
-  GA.tracker = "UA-77540621-2"
+  GA.tracker = 'UA-77540621-2'
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -59,7 +61,7 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -87,7 +89,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)

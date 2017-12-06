@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 class GuestsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create, :index, :update, :new, :welcome]
-  before_action :find_guest, only: [:update, :welcome]
-  before_action :init_form, only: [:update, :new]
+  skip_before_action :authenticate_user!, only: %i[create index update new welcome]
+  before_action :find_guest, only: %i[update welcome]
+  before_action :init_form, only: %i[update new]
 
   def index
     @guests = Guest.all
     @guestcount = @guests.count
-    @visits = @guests.sum(:visit)
-    @parents = @guests.parenting.count
-    @questions = t('survey.questions').first(4)
-    @form_completed_p = @guests.where.not(get_out: nil).count * 100/(@guestcount)
-    @guests_visitors_p =  @guests.visitors.count * 100/(@guestcount)
+    @visits = Guest.where.not(visit: 0).count
+    @parents = @guests.count(:parent)
+    @questions = t('survey.questions').first(5)
+    @form_completed_p = @guests.count(:get_out) * 100 / (@guestcount)
+    @guests_visitors_p = @visits * 100 / (@guestcount)
     @guest_steps = []
-    0.upto(6) {|x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@guests.visitors.count)}
+    0.upto(6) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@guests.visitors.count) }
   end
 
   def new
@@ -21,34 +23,32 @@ class GuestsController < ApplicationController
     @current_question = session[:form_step] = 1
     cookies[:parentheze_guest] = {
       value: @guest.id,
-      expires: 1.year.from_now,
+      expires: 1.year.from_now
     }
   end
 
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    if @guest.email != "email@example.com" && @guest.valid?
+    if @guest.email != 'email@example.com' && @guest.valid?
       redirect_to :welcome
     elsif params[:guest][:email]
-      flash[:alert] =  "Veuillez entrez un email valide"
-      redirect_to "/home#inscription-beta"
+      flash[:alert] = 'Veuillez entrez un email valide'
+      redirect_to '/home#inscription-beta'
     else
       render :new
     end
   end
 
   def welcome
-    begin
-      UserMailer.welcome(@guest).deliver_now
-      UserMailer.self_notification(@guest).deliver_now
-      flash[:notice] =  t('inscription.redirection.emailsent')
-      render :welcome
-    rescue => e
-      @error = e.message
-      redirect_to "/home#inscription-beta"
-      flash[:alert] = "#{@error}"
-    end
+    UserMailer.welcome(@guest).deliver_now
+    UserMailer.self_notification(@guest).deliver_now
+    flash[:notice] = t('inscription.redirection.emailsent')
+    render :welcome
+  rescue => e
+    @error = e.message
+    redirect_to '/home#inscription-beta'
+    flash[:alert] = @error.to_s
   end
 
   private
