@@ -10,9 +10,9 @@
     <div class="row margin-bottom-medium">
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <h4>Visiteurs uniques:</h4>
+          <h4>Visiteurs uniques sur le formulaire:</h4>
           <h2><%= @guestcount %></h2>
-          <p>(atterrissage sur le formulaire)</p>
+          <p></p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -69,6 +69,11 @@
                   <span><strong><%= ((@guests.where(question[1][:data].to_sym => index+1).count)*100)/(@guestcount) %>%</strong></span>
                 </div>
               <% end %>
+
+              <div class="label">
+                <span>... rien </span>
+                <span><strong><%= ((@guests.where(question[1][:data].to_sym => nil).count)*100)/(@guestcount) %>%</strong></span>
+              </div>
             </div>
         </div>
       <% end %>

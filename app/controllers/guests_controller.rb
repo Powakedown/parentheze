@@ -34,7 +34,7 @@ class GuestsController < ApplicationController
     if @guest.email != 'email@example.com' && @guest.valid?
       redirect_to :welcome
     elsif params[:guest][:email]
-      flash[:alert] = 'Veuillez entrez un email valide'
+      flash[:alert] = t('errors.email_valid')
       redirect_to '/home#inscription-beta'
     else
       render :new

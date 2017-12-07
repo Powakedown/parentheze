@@ -8,6 +8,7 @@ fr:
       button2_text: "en savoir plus"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
+    email_valid: "Veuillez entrez un email valide"
   activerecord:
       errors:
         messages:
@@ -212,15 +213,15 @@ fr:
     plan1:
       price: "22€"
       title: "la soirée"
-      subtitle: "20h-Minuit Repas non compris"
+      subtitle: "4h en soirée - Repas non compris"
       color: "#E12787"
     plan2:
-      price: "48€"
+      price: "42€"
       title: "la soirée + la nuit + la grasse mat'"
-      subtitle: "20h-Midi Repas non compris"
+      subtitle: "Ex: 20h-midi - Repas non compris"
       color: "#F1B255"
     plan3:
-      price: "44€"
+      price: "35€"
       title: "Panique! Grêve à l'école"
       subtitle: "la journée"
       color: "white"
