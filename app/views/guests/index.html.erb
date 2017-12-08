@@ -10,20 +10,22 @@
     <div class="row margin-bottom-medium">
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <h4>Nbre de visites totales :</h4>
-          <h2 class="pink"><%= @visits %></h2>
+          <h4>Visiteurs uniques sur le formulaire:</h4>
+          <h2><%= @guestcount %></h2>
+          <p></p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <h4>Nbre de visiteurs uniques:</h4>
-          <h2><%= @guestcount %></h2>
+          <h4>Visiteurs uniques sur la home :</h4>
+          <h2 class="pink"><%= @visits %></h2>
+          <p><%= @visitors_p %>%</p>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
           <h4>Nbre moyen de visite par visiteur :</h4>
-          <h2 class="blue"><%= @visits/(@guestcount) %></h2>
+          <h2 class="blue"><%= @average_visits %></h2>
           <p>(sur page d'accueil)</p>
         </div>
       </div>
@@ -39,17 +41,11 @@
           <h2 class="pink"><%= @form_completed_p %>%</h2>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="card with-max-height">
-          <h4>Visiteurs attérrissants sur la home:</h4>
-          <h2 class="pink"><%= @guests_visitors_p %>%</h2>
-        </div>
-      </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="card with-max-height">
-          <h4>Steps:</h4>
+          <h4>Steps (only by clic):</h4>
           <div class="step-diag-wrapper">
-            <% 7.times do |x| %>
+            <% 5.times do |x| %>
               <div class="step-diag" style="height: <%= 1*@guest_steps[x] %>px"><%= @guest_steps[x] %>%</div>
             <% end %>
           </div>
@@ -73,6 +69,11 @@
                   <span><strong><%= ((@guests.where(question[1][:data].to_sym => index+1).count)*100)/(@guestcount) %>%</strong></span>
                 </div>
               <% end %>
+
+              <div class="label">
+                <span>... rien </span>
+                <span><strong><%= ((@guests.where(question[1][:data].to_sym => nil).count)*100)/(@guestcount) %>%</strong></span>
+              </div>
             </div>
         </div>
       <% end %>
@@ -84,13 +85,13 @@
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
-          <div class="label text-left green">
-            <span>
-              - des enfants en âge d'être gardé par une babysitter<br/>
-              - jaloux de ces parents qui ont toujours une solution de garde facile<br/>
-              - qui sortiraient plus souvent si la garde était moins chère<br/>
-            </span>
-            <strong><span><%=  @guests.where(parent:1, jalous:1, get_out:2).count*100/(@guestcount) %>%</span></strong>
+          <div class="label green">
+            <div>
+              <% ["1","2","3"].each do |x| %>
+                <div class="flex-horizontal left margin-top-bot"><i class="fa fa-<%= t('stats.charac.char'+x+'.icon') %> pastille flexbox"></i>  <%= t('stats.charac.char'+x+'.text') %></div>
+              <% end %>
+            </div>
+            <strong><span><%= @guests.where(parent:1, jalous:1, get_out:2).count*100/(@guestcount) %>%</span></strong>
           </div>
         </div>
       </div>
@@ -98,25 +99,12 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="card">
           <div class="label text-left green">
-            <span>
-              - des enfants en âge d'être gardé par une babysitter<br/>
-              - jaloux de ces parents qui ont toujours une solution de garde facile<br/>
-              >> qui sortiraient plus souvent s'ils avaient des amis de confiance à côté<br/>
-            </span>
-            <strong><span><%=  @guests.where(parent:1, jalous:2, get_out:1).count*100/(@guestcount) %>%</span></strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="card">
-          <div class="label text-left green">
-            <span>
-              - des enfants en âge d'être gardé par une babysitter<br/>
-              >> jaloux de ces parents dont les grand-parents sont côtés<br/>
-              - qui sortiraient plus souvent si la garde était moins chère<br/>
-            </span>
-            <strong><span><%=  @guests.where(parent:1, jalous:3, get_out:3).count*100/(@guests.where(parent:1).count) %>%</span></strong>
+            <div>
+              <% ["3","4"].each do |x| %>
+                <div class="flex-horizontal left margin-top-bot"><i class="fa fa-<%= t('stats.charac.char'+x+'.icon') %> pastille flexbox"></i>  <%= t('stats.charac.char'+x+'.text') %></div>
+              <% end %>
+            </div>
+            <strong><span><%= @guests.where(parent:1, jalous:2, get_out:1).count*100/(@guestcount) %>%</span></strong>
           </div>
         </div>
       </div>

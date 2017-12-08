@@ -1,0 +1,37 @@
+# inherit_from: .rubocop_todo.yml
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - 'vendor/**/*'
+    - 'Gemfile'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'tmp/*'
+    - 'Guardfile'
+    - 'Gemfile'
+    - 'node_modules/**/*' #webpacker & rails 5.1
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context', 'feature', 'scenario', 'namespace']
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'lib/tasks/auto_annotate_models.rake' #in case you use the gem anotate
+
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 120 #default is 80
+
+Rails/Output:
+  Exclude:
+    - 'db/*.rb'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
