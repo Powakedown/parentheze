@@ -3,29 +3,24 @@
 <div class="home">
 
   <% t('home.slides').each do |x| %>
-    <%# xstring = x.to_s %>
-    <%= render "slide", target_page: "slide"+(x+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image') %>
+    <%= render "slide", target_page: "slide#{x[0][-1].to_i+1}", id: "slide#{x[0][-1]}",  title: x[1][:title], text: x[1][:text], image: x[1][:image], link_image: x[1][:link_image] %>
   <% end %>
 
-
-
   <%= render 'pages/slide_with_split', image: t('home.slide_with_split.image'), title: t('home.slide_with_split.title'), text: t('home.slide_with_split.text'), id: "slide1", target_page: "slide2", link_image: t('home.slide_with_split.link_image') %>
-
 
   <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+(t('home.slides').length+1).to_s %>>
     <h2><%= t('home.slide_plan.title') %></h2>
     <h4 class="yellow"><%= t('home.slide_plan.text') %></h4>
     <div class="margin-bottom-medium">
       <div class="row">
-        <% t('plans').length.times do |x| %>
-          <% xstring = x.to_s %>
+        <% t('plans').each do |x| %>
           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 padding-box">
-            <div class="plan-card flex-column between padding-box <%= "emergency" if x == t('plans').length - 1 %>">
+            <div class="plan-card flex-column between padding-box <%= "emergency" if x[0][-1].to_i == t('plans').length - 1 %>">
               <div>
-                <h1 style="color: <%= t('plans.plan'+xstring+'.color') %>"><%= t('plans.plan'+xstring+".price") %></h1>
-                <h3><%= t('plans.plan'+xstring+".title") %></h3>
+                <h1 style="color: <%= x[1][:color] %>"><%= x[1][:price] %></h1>
+                <h3><%= x[1][:title] %></h3>
               </div>
-              <p><%= t('plans.plan'+xstring+".subtitle") %></p>
+              <p><%= x[1][:subtitle] %></p>
             </div>
           </div>
         <% end %>
