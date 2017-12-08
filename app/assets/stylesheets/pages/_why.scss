@@ -1,8 +1,4 @@
 // Specific CSS for your home-page
-.home {
-  color: white;
-  background-color: $purple;
-}
 .slide0 {
   text-align: center;
   width: 60%;
@@ -26,34 +22,6 @@
 .slide4 {
   margin-left: 40%;
   width: 40%;
-}
-.slide_plan {
-  width: 95%;
-  .plans {
-    width: 75%;
-    margin: auto;
-  }
-  h4 {
-    line-height: 30px;
-  }
-  .plan-card {
-    background-color: white;
-    border: none;
-    height: 340px;
-    color: $medium-gray;
-    h1 {
-      font-family: $body-font;
-      font-size: 95px;
-      line-height: 130px;
-    }
-    h3 {
-      font-size: 26px;
-    }
-    &.emergency {
-      background-color: $yellow;
-      color: white;
-    }
-  }
 }
 @media (max-device-width : 375px){
   .slide4 {

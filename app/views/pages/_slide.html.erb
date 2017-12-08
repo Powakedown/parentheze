@@ -2,6 +2,11 @@
   <div class="<%= id %>">
     <h1 class=""><%= title %></h1>
     <h4 class="margin-bottom-medium"><%= text %></h4>
-    <%= render 'shared/scroller', target_page: target_page, link_image: link_image %>
+    <% if button_text %>
+      <%= link_to button_text, "#"+target_page , class:"btn btn-yellow flexbox large center scroll" %>
+    <% end %>
+    <% if link_image %>
+      <%= render 'shared/scroller', target_page: target_page, link_image: link_image %>
+    <% end %>
   </div>
 </div>
