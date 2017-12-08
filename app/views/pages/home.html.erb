@@ -2,8 +2,8 @@
 
 <div class="home">
 
-  <% t('home.slides').length.times do |x| %>
-    <% xstring = x.to_s %>
+  <% t('home.slides').each do |x| %>
+    <%# xstring = x.to_s %>
     <%= render "slide", target_page: "slide"+(x+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image') %>
   <% end %>
 

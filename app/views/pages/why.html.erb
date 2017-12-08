@@ -1,0 +1,34 @@
+<% content_for :title_tag do t('metas.titles.home') end %>
+
+<div class="home">
+
+  <% t('why.slides').each do |x| %>
+    <% xstring = x.to_s %>
+    <%= render "slide", target_page: "slide"+(x+1).to_s, id: "slide"+xstring ,  title: t('home.slides.slide'+xstring+'.title'), text: t('home.slides.slide'+xstring+'.text'), image: t('home.slides.slide'+xstring+'.image'), link_image: t('home.slides.slide0.link_image') %>
+  <% end %>
+
+  <%= render 'pages/slide_with_split', image: t('home.slide_with_split.image'), title: t('home.slide_with_split.title'), text: t('home.slide_with_split.text'), id: "slide1", target_page: "slide2", link_image: t('home.slide_with_split.link_image') %>
+
+  <div class="minfullscreen stretch relative flex-column center text-center padding-box slide_plan" id=<%= "slide"+(t('home.slides').length+1).to_s %>>
+    <h2><%= t('home.slide_plan.title') %></h2>
+    <h4 class="yellow"><%= t('home.slide_plan.text') %></h4>
+    <div class="margin-bottom-medium">
+      <div class="row">
+        <% t('plans').each do |x| %>
+          <% xstring = x.to_s %>
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 padding-box">
+            <div class="plan-card flex-column between padding-box <%= "emergency" if x == t('plans').length - 1 %>">
+              <div>
+                <h1 style="color: <%= t('plans.plan'+xstring+'.color') %>"><%= t('plans.plan'+xstring+".price") %></h1>
+                <h3><%= t('plans.plan'+xstring+".title") %></h3>
+              </div>
+              <p><%= t('plans.plan'+xstring+".subtitle") %></p>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+    <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image'), step: 5 %>
+  </div>
+

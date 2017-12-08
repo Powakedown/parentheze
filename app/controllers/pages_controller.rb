@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :update, :home_parent]
+  skip_before_action :authenticate_user!, only: [:home, :update, :home_parent, :why]
 
   def home
     if @cookie
@@ -18,6 +18,10 @@ class PagesController < ApplicationController
   end
 
   def home_parent
+
+  end
+
+  def why
 
   end
 

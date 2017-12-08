@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   patch "/" => "pages#update"
   get "/scroll" => "pages#scroll"
   get "/home_parent" => "pages#home_parent"
+  get "/why" => "pages#why"
 
   # MAIL
   get "/welcome" => "guests#welcome"
