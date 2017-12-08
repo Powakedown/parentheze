@@ -9,6 +9,7 @@ class Guest < ApplicationRecord
   scope :want_to_get_out, -> { where(get_out: [1,2])}
   scope :visitors, -> { where.not(visit: 0)}
   scope :subscriber, -> { where.not(email: "email@example.com")}
+  scope :not_tester, -> { where.not(email: "max@max.com")}
 
   def have_kid?
     parent == 1

@@ -4,7 +4,7 @@ class GuestsController < ApplicationController
   before_action :init_form, only: [:update, :new]
 
   def index
-    @guests = Guest.all
+    @guests = Guest.not_tester
     @guestcount = @guests.count
     @visits = @guests.sum(:visit)
     @parents = @guests.parenting.count
@@ -16,19 +16,31 @@ class GuestsController < ApplicationController
   end
 
   def new
-    @guest = Guest.create!
-    session[:guest_user_id] = @guest.id
-    @current_question = session[:form_step] = 1
-    cookies[:parentheze_guest] = {
-      value: @guest.id,
-      expires: 1.year.from_now,
-    }
+    if cookie
+      if cookies[:parentheze_mail] != "max@max.com"
+        redirect_to root_path
+      else
+        @current_question = session[:form_step] = 1
+      end
+    else
+      @guest = Guest.create!
+      session[:guest_user_id] = @guest.id
+      @current_question = session[:form_step] = 1
+      cookies[:parentheze_guest] = {
+        value: @guest.id,
+        expires: 1.year.from_now
+      }
+    end
   end
 
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    if @guest.email != "email@example.com" && @guest.valid?
+    if @guest.email != "email@example.com" && @guest.valid? && @guest.email != "max@max.com"
+      cookies[:parentheze_mail] = {
+        value: @guest.email,
+        expires: 1.year.from_now
+      }
       redirect_to :welcome
     elsif params[:guest][:email]
       flash[:alert] =  "Veuillez entrez un email valide"
