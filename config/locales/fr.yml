@@ -8,6 +8,7 @@ fr:
       button2_text: "en savoir plus"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
+    email_valid: "Veuillez entrez un email valide"
   activerecord:
       errors:
         messages:
@@ -81,7 +82,7 @@ fr:
             link: "2"
           answer2:
             text: "Non"
-            link: "5"
+            link: "8"
         button_effect: "slideLeft"
       question2:
         data: "kid_age"
@@ -120,23 +121,25 @@ fr:
         answers:
           answer1:
             text: "vous aviez des amis de confiance à côté"
-            link: "8"
+            link: "5"
           answer2:
             text: "la garde des enfants était moins chère"
-            link: "8"
+            link: "5"
           answer3:
             text: "vous ne prévoyez pas de sortir"
-            link: "8"
+            link: "5"
         button_effect: "slideLeft"
       question5:
-        data: "none"
-        title: "Parentheze est réservé aux parents"
-        subtitle: "qui sait... peut-être à bientôt."
-        picture: "https://media.giphy.com/media/l0HlW3N3s4jOB1mVi/giphy.gif"
+        data: "host"
+        picto: "github-alt"
+        title: "Et vous, vous seriez prêt à..."
         answers:
           answer1:
-            text: "En attendant profitez-en, sortez!"
-            link: "http://www.allocine.com"
+            text: "garder les enfants de vos gentils voisins"
+            link: "9"
+          answer2:
+            text: "non merci, très peu pour moi!"
+            link: "9"
         button_effect: "slideLeft"
       question6:
         data: "old_kid"
@@ -144,10 +147,10 @@ fr:
         answers:
           answer1:
             text: "pouvez garder les enfants des voisins le temps d'une soirée?"
-            link: "8"
+            link: "9"
           answer2:
             text: "avez des amis intéressé par l'échange de garde..."
-            link: "8"
+            link: "9"
           answer3:
             text: "n'êtes intéressé."
             link: "7"
@@ -164,14 +167,14 @@ fr:
         button_effect: "slideLeft"
       question8:
         data: "none"
-        title: "Et vous, vous seriez prêt à..."
+        title: "Parentheze est réservé aux parents"
+        subtitle: "qui sait... peut-être à bientôt."
+        picture: "https://media.giphy.com/media/l0HlW3N3s4jOB1mVi/giphy.gif"
         answers:
           answer1:
-            text: "garder les enfants de vos gentils voisins"
-            link: "8"
-          answer2:
-            text: "non merci, très peu pour moi!"
-            link: "8"
+            text: "En attendant profitez-en, sortez!"
+            link: "http://www.allocine.com"
+        button_effect: "slideLeft"
       question9:
         data: "none"
         title: "Parents, ceci est pour vous..."
@@ -181,6 +184,20 @@ fr:
             link: "/home"
         picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
         button_effect: "flash"
+  stats:
+    charac:
+      char1:
+        text: "des enfants en âge d'être gardé par une babysitter"
+        icon: "child"
+      char2:
+        text: "jaloux de ces parents qui sortent tout le temps"
+        icon: "binoculars"
+      char3:
+        text: "qui sortiraient plus souvent si la garde des enfants était moinds chère"
+        icon: "cab"
+      char4:
+        text: "sont prêts à garder les enfants des voisins"
+        icon: "home"
   inscription:
     redirection:
       title: "Merci et à bientôt!"
@@ -196,15 +213,15 @@ fr:
     plan1:
       price: "22€"
       title: "la soirée"
-      subtitle: "20h-Minuit Repas non compris"
+      subtitle: "4h en soirée - Repas non compris"
       color: "#E12787"
     plan2:
-      price: "48€"
+      price: "42€"
       title: "la soirée + la nuit + la grasse mat'"
-      subtitle: "20h-Midi Repas non compris"
+      subtitle: "Ex: 20h-midi - Repas non compris"
       color: "#F1B255"
     plan3:
-      price: "44€"
+      price: "35€"
       title: "Panique! Grêve à l'école"
       subtitle: "la journée"
       color: "white"

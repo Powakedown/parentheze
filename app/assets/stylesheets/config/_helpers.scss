@@ -52,6 +52,10 @@ $input-height: 70px !important;
     margin-bottom: 25px !important;
   }
 }
+.margin-top-bot {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .margin-bottom-small {
   margin-bottom: 10px !important;
 }
@@ -91,6 +95,10 @@ $input-height: 70px !important;
 .flex-horizontal {
   display: flex;
   justify-content: center;
+  align-items: center;
+  &.left {
+    justify-content: left;
+  }
 }
 .flex-vertical {
   display: flex;
@@ -139,9 +147,13 @@ a:hover {
 //COMPONENTS
 .pastille {
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  border: 1px solid $dark-gray;
+  width: 30px;
+  height: 30px;
+  color: white;
+  background-color: $dark-gray;
+  font-size: 15px;
+  float: left;
+  margin-right: 10px;
 }
 //SPLITS
 .splitscreen-wrapper{

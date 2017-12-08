@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class CheckboxInput < SimpleForm::Inputs::BooleanInput
   def input
     if nested_boolean_style?
       build_hidden_field_for_checkbox +
-        template.label_tag(nil, class: classes) {
+        template.label_tag(nil, class: classes) do
           build_check_box_without_hidden_field + check_box_replacement + inline_label
-        }
+        end
     else
       build_check_box
     end
@@ -17,7 +19,7 @@ class CheckboxInput < SimpleForm::Inputs::BooleanInput
   end
 
   def classes
-    classes = ['checkbox', 'custom']
+    classes = %w[checkbox custom]
     classes << 'checked' if checked?
     classes.join(' ')
   end
