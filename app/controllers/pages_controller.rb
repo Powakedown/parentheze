@@ -19,11 +19,7 @@ class PagesController < ApplicationController
     @guest.save
   end
 
-  def home_parent; end
-
-  def why
-
-  end
+  def why; end
 
   private
 
