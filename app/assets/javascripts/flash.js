@@ -1,6 +1,6 @@
 window.setTimeout(function(){
-  $('.alert').addClass('slideRight-away')
+  $(".alert").addClass("slideRight-away")
   setTimeout(function(){
-    $('.alert').hide();
+    $(".alert").hide();
   }, 1000);
 }, 5000);

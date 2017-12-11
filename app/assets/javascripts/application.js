@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
   $(window).scroll(function() {
-    $('#animatedElement').each(function(){
+    $("#animatedElement").each(function(){
     var imagePos = $(this).offset().top;
 
     var topOfWindow = $(window).scrollTop();
@@ -15,11 +15,11 @@ $(document).ready(function() {
     });
   });
 
-  $(document).on('click', 'a.scroll', function(event){
+  $(document).on("click", "a.scroll", function(event){
     event.preventDefault();
 
-    $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
+    $("html, body").animate({
+        scrollTop: $( $.attr(this, "href") ).offset().top
     }, 500);
   });
 
