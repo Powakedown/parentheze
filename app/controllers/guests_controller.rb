@@ -19,12 +19,10 @@ class GuestsController < ApplicationController
   end
 
   def new
-    if cookie #&& !tester
+    if cookie && !tester
       redirect_to root_path
     else
-      #if !tester
-        @guest = guest_user
-      #end
+      @guest = guest_user
       @current_question = session[:form_step] = 1
     end
   end
@@ -32,7 +30,7 @@ class GuestsController < ApplicationController
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    if @guest.email != "email@example.com" && @guest.valid? && @guest.email != 'max@max.com'
+    if @guest.email != "email@example.com" && @guest.valid?
       cookies[:parentheze_mail] = {
         value: @guest.email,
         expires: 1.year.from_now
