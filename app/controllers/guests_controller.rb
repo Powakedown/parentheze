@@ -19,20 +19,13 @@ class GuestsController < ApplicationController
   end
 
   def new
-    if cookie
-      if cookies[:parentheze_mail] != "max@max.com"
-        redirect_to root_path
-      else
-        @current_question = session[:form_step] = 1
-      end
+    if cookie #&& !tester
+      redirect_to root_path
     else
-      @guest = Guest.create!
-      session[:guest_user_id] = @guest.id
+      #if !tester
+        @guest = guest_user
+      #end
       @current_question = session[:form_step] = 1
-      cookies[:parentheze_guest] = {
-        value: @guest.id,
-        expires: 1.year.from_now
-      }
     end
   end
 

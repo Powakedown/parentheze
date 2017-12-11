@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def cookie
-    @cookie = cookies[:parentheze_guest].present?
+    cookies[:parentheze_guest].present?
   end
 
   def average(collection, column)
@@ -30,5 +30,9 @@ class ApplicationController < ActionController::Base
 
   def completion(collection, column)
     collection.count(column) * 100 / collection.count
+  end
+
+  def tester
+    cookies[:parentheze_mail] == 'max@max.com'
   end
 end
