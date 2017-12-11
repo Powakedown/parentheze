@@ -10,13 +10,15 @@ class GuestsController < ApplicationController
       @guests = Guest.not_tester
       @guestcount = @guests.count
       @visits = @guests.visitors.count
-      @visitors_p = @visits * 100 / (@guestcount)
-      @parents = @guests.count(:parent)
+      @visitors_p = percentage(@visits, @guestcount)
+      @parents = percentage(@guests.count(:parent), @guestcount)
       @average_visits = average(@guests, :visit)
       @questions = t('survey.questions').first(5)
       @form_completed_p = completion(@guests, :get_out)
+      @target1 = percentage(@guests.target1, @guestcount)
+      @target2 = percentage(@guests.target2, @guestcount)
       @guest_steps = []
-      0.upto(4) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@visits) }
+      0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
     else
       redirect_to root_path
     end
@@ -34,7 +36,7 @@ class GuestsController < ApplicationController
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    if @guest.email != "email@example.com" && @guest.valid?
+    if @guest.email != "email@example.com" && @guest.valid? && !params[:guest][:email].nil?
       cookies[:parentheze_mail] = {
         value: @guest.email,
         expires: 1.year.from_now
@@ -62,15 +64,15 @@ class GuestsController < ApplicationController
   private
 
   def find_guest
-    @guest = Guest.find(session[:guest_user_id])
+    @guest = guest_user
   end
 
   def guest_params
-    params.require(:guest).permit(:parent, :kid_age, :jalous, :get_out, :old_kid, :email, :name, :step, :bordelais)
+    params.require(:guest).permit(:parent, :kid_age, :jalous, :get_out, :old_kid, :email, :name, :step, :bordelais, :host)
   end
 
   def init_form
     @questions_number = t('survey.questions').length
-    @breadcrumb_length = 4
+    @breadcrumb_length = 5
   end
 end
