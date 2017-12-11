@@ -8,14 +8,13 @@ body{
   margin: 0px;
   padding: 0px;
 }
-.banner{
+.banner {
   background-color: $purple !important;
   position: relative;
-}
-.banner {
   position: relative;
   color: white;
   height: 100vh;
+  width: 100%;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: center;
@@ -37,13 +36,16 @@ body{
   color: white;
   margin-bottom: 20px;
 }
-.banner .btn-primary{
-  background-color: $yellow !important;
-  border-color: $yellow;
+.banner .btn-primary {
+  background-color: #F0CA7C !important;
+  border-color: #F0CA7C;
   background-image: none;
-  text-shadow:none;
-  margin-bottom: 30px;
+  text-shadow: none;
+  margin-bottom: 10px;
   border-radius: 20em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.42857143;
+  color: white;
 }
 .banner .btn-primary:hover{
   background-color: $lightyellow !important;
@@ -58,6 +60,7 @@ body{
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   letter-spacing: 0px;
+  margin-top: 10px;
  }
 
  p{
@@ -65,8 +68,8 @@ body{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   line-height: 30px;
-  width: 600px;
-
+  width: 80%;
+  margin: auto;
  }
 
 
@@ -134,21 +137,13 @@ h2 {
   line-height: 1.3333333;
   border-radius: 6px;
 }
-.banner .btn-primary {
-  background-color: #F0CA7C !important;
-  border-color: #F0CA7C;
-  background-image: none;
-  text-shadow: none;
-  margin-bottom: 30px;
-  border-radius: 20em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.42857143;
-  color: white;
-}
 .img-rounded{
   border-radius:50%;
   padding-left: 5px;
   padding-right: 5px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }
 a{
   text-decoration: none;
@@ -161,11 +156,11 @@ a{
   <!-- This file lives in public/404.html -->
 <div class="banner">
   <div class="banner-content">
-    <img src="giphy-downsized-fail3.gif", alt="enfant à la plage renversé par une vague", class= "img-rounded"/>
+    <img src="https://media.giphy.com/media/6tMe6PtimsGuk/giphy.gif", alt="enfant à la plage renversé par une vague", class= "img-rounded"/>
     <h1>Padaboum...</h1>
-    <p>Erreur 500, nous sommes désolé mais quelque chose s'est mal passé.</p>
-    <p>Si les symtômes persistent, contactez et racontez votre life à <a href="mailto:parentgenial@parentheze.com">parentgenial@parentheze.com</a></p>
-    <a href="http://www.parentheze.com" class="btn btn-primary btn-lg">Retour à la page d'accueil</a>
+    <p>Erreur 500, nous sommes d&eacute;sol&eacute; mais quelque chose s'est mal pass&eacute;.</p>
+    <p>Si les symt&ocirc;mes persistent, contactez et racontez votre life &agrave; <a href="mailto:parentgenial@parentheze.com">parentgenial@parentheze.com</a></p>
+    <a href="http://www.parentheze.com" class="btn btn-primary btn-lg">Retour &agrave; la page d'accueil</a>
   </div>
 </div>
 </body>
