@@ -6,40 +6,35 @@ class GuestsController < ApplicationController
   before_action :init_form, only: %i[update new]
 
   def index
-    @guests = Guest.not_tester
-    @guestcount = @guests.count
-    @visits = @guests.visitors.count
-    @visitors_p = @visits * 100 / (@guestcount)
-    @parents = @guests.count(:parent)
-    @average_visits = average(@guests, :visit)
-    @questions = t('survey.questions').first(5)
-    @form_completed_p = completion(@guests, :get_out)
-    @guest_steps = []
-    0.upto(4) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@visits) }
+    if tester
+      @guests = Guest.not_tester
+      @guestcount = @guests.count
+      @visits = @guests.visitors.count
+      @visitors_p = @visits * 100 / (@guestcount)
+      @parents = @guests.count(:parent)
+      @average_visits = average(@guests, :visit)
+      @questions = t('survey.questions').first(5)
+      @form_completed_p = completion(@guests, :get_out)
+      @guest_steps = []
+      0.upto(4) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@visits) }
+    else
+      redirect_to root_path
+    end
   end
 
   def new
-    if cookie
-      if cookies[:parentheze_mail] != "max@max.com"
-        redirect_to root_path
-      else
-        @current_question = session[:form_step] = 1
-      end
+    if cookie && !tester
+      redirect_to root_path
     else
-      @guest = Guest.create!
-      session[:guest_user_id] = @guest.id
+      @guest = guest_user
       @current_question = session[:form_step] = 1
-      cookies[:parentheze_guest] = {
-        value: @guest.id,
-        expires: 1.year.from_now
-      }
     end
   end
 
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    if @guest.email != "email@example.com" && @guest.valid? && @guest.email != 'max@max.com'
+    if @guest.email != "email@example.com" && @guest.valid?
       cookies[:parentheze_mail] = {
         value: @guest.email,
         expires: 1.year.from_now
