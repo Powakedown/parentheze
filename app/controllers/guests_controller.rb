@@ -6,16 +6,20 @@ class GuestsController < ApplicationController
   before_action :init_form, only: %i[update new]
 
   def index
-    @guests = Guest.not_tester
-    @guestcount = @guests.count
-    @visits = @guests.visitors.count
-    @visitors_p = @visits * 100 / (@guestcount)
-    @parents = @guests.count(:parent)
-    @average_visits = average(@guests, :visit)
-    @questions = t('survey.questions').first(5)
-    @form_completed_p = completion(@guests, :get_out)
-    @guest_steps = []
-    0.upto(4) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@visits) }
+    if tester
+      @guests = Guest.not_tester
+      @guestcount = @guests.count
+      @visits = @guests.visitors.count
+      @visitors_p = @visits * 100 / (@guestcount)
+      @parents = @guests.count(:parent)
+      @average_visits = average(@guests, :visit)
+      @questions = t('survey.questions').first(5)
+      @form_completed_p = completion(@guests, :get_out)
+      @guest_steps = []
+      0.upto(4) { |x| @guest_steps << @guests.visitors.where(step: (x..6)).count * 100 / (@visits) }
+    else
+      redirect_to root_path
+    end
   end
 
   def new
