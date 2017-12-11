@@ -36,7 +36,7 @@ class GuestsController < ApplicationController
   def update
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
-    if @guest.email != "email@example.com" && @guest.valid? && !params[:guest][:email].nil?
+    if @guest.email != 'email@example.com' && @guest.valid? && !params[:guest][:email].nil?
       cookies[:parentheze_mail] = {
         value: @guest.email,
         expires: 1.year.from_now
