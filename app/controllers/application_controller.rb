@@ -37,6 +37,14 @@ class ApplicationController < ActionController::Base
   end
 
   def tester
-    cookies[:parentheze_mail] == 'max@max.com'
+    cookies[:parentheze_mail] == 'parentgenial@parentheze.com'
+  end
+
+  def percentage(serie, total)
+    if serie.is_a? Integer
+      serie * 100 / total
+    else
+      serie.count * 100 / total
+    end
   end
 end

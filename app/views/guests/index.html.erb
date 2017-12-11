@@ -32,7 +32,7 @@
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
           <h4>Parents :</h4>
-          <h2 class="yellow"><%= @parents*100/(@guestcount) %>%</h2>
+          <h2 class="yellow"><%= @parents %>%</h2>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -91,7 +91,9 @@
                 <div class="flex-horizontal left margin-top-bot"><i class="fa fa-<%= t('stats.charac.char'+x+'.icon') %> pastille flexbox"></i>  <%= t('stats.charac.char'+x+'.text') %></div>
               <% end %>
             </div>
-            <strong><span><%= @guests.where(parent:1, jalous:1, get_out:2).count*100/(@guestcount) %>%</span></strong>
+            <div class="flexbox">
+              <h2><%= @target1 %>%</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -104,7 +106,9 @@
                 <div class="flex-horizontal left margin-top-bot"><i class="fa fa-<%= t('stats.charac.char'+x+'.icon') %> pastille flexbox"></i>  <%= t('stats.charac.char'+x+'.text') %></div>
               <% end %>
             </div>
-            <strong><span><%= @guests.where(parent:1, jalous:2, get_out:1).count*100/(@guestcount) %>%</span></strong>
+            <div class="flexbox">
+              <h2><%= @target2 %>%</h2>
+            </div>
           </div>
         </div>
       </div>
