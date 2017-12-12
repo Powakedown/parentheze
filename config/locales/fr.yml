@@ -43,13 +43,13 @@ fr:
         label1: "Des forfaits de garde pour compenser les parents hôtes"
         label2: "Géolocalisation des membres autour de vous"
         label3: "Réputation pour chaque garde"
-        label4: "Outil d'invitations pour rencontres préliminaires"
+        label4: "Outil d'invitation pour faire connaissance"
     slide_calltoaction:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
       link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
     slide_with_split:
-      title: "Trouvez des parents comme vous:"
+      title: "Trouvez des parents comme vous :"
       text: "autour de vous, et qui vivent sur le rythme des enfants. Parentheze a été pensé pour les parents d’aujourd’hui. Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
       image: "https://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
       link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
@@ -260,7 +260,7 @@ Payer et être payé en retour est la plus simple des manières de fonctionner e
       color: "#F1B255"
     plan3:
       price: "35€"
-      title: "Panique! Grêve à l'école"
+      title: "Panique ! Grève à l'école"
       subtitle: "la journée"
       color: "white"
   footer:
