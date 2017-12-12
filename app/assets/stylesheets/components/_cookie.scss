@@ -5,14 +5,18 @@
   z-index: 1500;
   width: 100%;
   height: 110px;
-  padding: 10px;
+
   box-shadow: 0 2px 0px 4px rgba(0, 0, 0, 0), 0 2px 6px 6px rgba(0, 0, 0, 0.05);
-  p{
-  color: $dark-gray;
+  .cookie-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   div {
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 20px;
+  }
+  p{
+    color: $dark-gray;
   }
   a {
     margin-right: 10px;
@@ -21,35 +25,28 @@
     width: 40px;
     height: 40px;
   }
-  .cookie-content{
-    width: 80%;
-  }
   .fa{
     font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
   }
 }
-
 @media (max-width: 375px) {
   #cookie-label{
-  position: fixed;
-  background-color: white;
   top: 70px;
-  z-index: 1500;
   width: 100%;
   height: calc(100vh - 70px);
-  padding: 10px;
   text-align: center;
   .cookie-content{
-    width: 80%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
   }
   img {
     width: 60px;
     height: 60px;
-  }
-  .fa{
-    font-size: 24px;
   }
 }
 
