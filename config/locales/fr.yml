@@ -113,7 +113,7 @@ Payer et être payé en retour est la plus simple des manières de fonctionner e
       question1:
         data: "parent"
         picto: "heart-o"
-        title: "Vous êtes parent?"
+        title: "Vous êtes parent ?"
         answers:
           answer1:
             text: "Oui"
