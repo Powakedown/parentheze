@@ -29,7 +29,7 @@ $input-height: 70px !important;
     height: calc(100vh - 45px);
   }
   &.under-breadcrumb {
-    height: calc(100vh - 65px);
+    min-height: calc(100vh - 65px);
   }
   @media (min-width : 1024px) {
       background-attachment: fixed;
