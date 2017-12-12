@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     @cached_guest_user ||= Guest.find(session[:guest_user_id] || cookies[:parentheze_guest] ||= create_guest_user.id)
   rescue ActiveRecord::RecordNotFound # if session[:guest_user_id] invalid
     session[:guest_user_id] = nil
+    cookies[:parentheze_guest] = nil
     guest_user if with_retry
   end
 
@@ -37,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def tester
-    cookies[:parentheze_mail] == 'parentgenial@parentheze.com'
+    guest_user.email == "parentgenial@parentheze.com"
   end
 
   def percentage(serie, total)
