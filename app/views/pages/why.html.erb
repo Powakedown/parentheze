@@ -2,7 +2,7 @@
 
 <div class="home">
   <% t('why.slides').each_with_index do |x, index| %>
-    <%= render "slide", target_page: "slide#{index+1}", id: "slide#{index}",  title: x[1][:title], text: x[1][:text], image: x[1][:image], link_image: x[1][:link_image], button_text: x[1][:button_text] %>
-    <%= render "slide_manifeste", title: t('why.manifeste.slide'+index.to_s+'.title'), text: t('why.manifeste.slide'+index.to_s+'.text'), id: index+1 %>
+    <%= render "slide", target_page: "slide_m#{index}", id: "slide#{index}",  title: x[1][:title], text: x[1][:text], image: x[1][:image], link_image: x[1][:link_image], button_text: x[1][:button_text] %>
+    <%= render "slide_manifeste", title: t('why.manifeste.slide'<<index.to_s<<'.title'), image: t('why.manifeste.slide'<<index.to_s<<'.image'), text: t('why.manifeste.slide'<<index.to_s<<'.text'), id: "slide_m#{index}", target_page: "slide#{index+1}" %>
   <% end %>
 </div>
