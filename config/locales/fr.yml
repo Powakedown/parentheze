@@ -82,28 +82,49 @@ fr:
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     manifeste:
       slide0:
-        title: '“Les parents s’occupent de tout, mais s’occupe d’eux ?”'
+        title: 'Les parents s’occupent de tout, mais qui s’occupe d’eux ?'
         text: "Les parents sont un pilier majeur de notre société. Ils sont responsables des générations à venir et font de l’éducation de leurs enfants une priorité. Ils construisent ainsi le monde de demain. Ils sont le coeur de toutes les organisations. Ils rassurent, gèrent et stabilisent.
-Ils sont actifs et hyper sollicités. Ils vivent au rythme battant de leurs enfants et savent se montrer comme eux inépuisables. Ils sont investis, engagés, et placent en priorité, de manière désintéressée, le bonheur de leurs enfants.
-Les parents s’occupent de tout. Mais qui s’occupe d’eux?"
+Ils sont actifs et hyper sollicités. Ils vivent au rythme battant de leurs enfants et savent se montrer, comme eux, inépuisables. Ils sont investis, engagés, et placent en priorité, de manière désintéressée, le bonheur de leurs enfants.
+Les parents s’occupent de tout. Mais qui s’occupe d’eux ?"
       slide1:
         title: "Se préoccuper des parents pour la première fois"
-        text: "La politique familiale ne s’intéresse aux parents que pour s’assurer qu’ils élèvent bien un maximum de futurs contribuables, parents à terme et générateur de croissance. Les innombrables services et loisirs réservés aux familles ne s’intéressent à leurs enfants que pour atteindre le portefeuille des parents.
-Personne ne s’intéresse aux parents pour ce qu’ils sont: des gens comme les autres qui ont des envies communes mais des contraintes particulières.
-Chez Parentheze, on a envie de dire aux parents:
+        text: "La politique familiale ne s’intéresse aux parents que pour s’assurer qu’ils ont bien les moyens de s'occuper correctement de leurs enfants. Les innombrables services et loisirs réservés aux familles ne s’intéressent qu'aux enfants mais ne soulagent en rien la pression subit par les parents.
+Personne ne s’intéresse aux parents pour ce qu’ils sont : des gens comme les autres qui ont des envies communes mais des contraintes particulières.
+Chez Parentheze, on a envie de dire aux parents :
 “Chers parents, posez-vous, on s’occupe de tout.”"
       slide2:
-        title: "Assez de sacrifice, des solutions!"
-        text: "Les parents paient cher la moindre part de liberté et de tranquillité. Il y a les petits sacrifices récurrents comme celui d’aller manger une bouffe passable dans un fast food uniquement car la présence de jeux pour les enfants fait passer un repas plus tranquille. Il y a les coupes dans le budget comme s’offrir une baby-sitter pour sortir simplement à deux et se retrouver. Il y a toutes ces soirées exaltantes sur le papier mais à moitié vécues parce que les enfants fatiguent et s’impatientent. Il y a ces journées de galère, de grève à l’école et d’imprévus divers où, désemparé, on prévient le boss ou le client qu’on est obligé de prendre notre journée. Parce que les meilleurs entrepreneurs sont souvent jeunes et sans enfant quand ils se lancent. Parce qu’ils sont déjà lancés dans de grands projets quand ils deviennent à leur tour parents et découvrent alors les besoins. Parce que les canaux de distribution n’avaient pas de place pour des services rentables dédiés aux parents, les parents n’avaient encore aucune réponse satisfaisantes à leurs besoins de liberté.
-Les nouveaux usages du digital et des réseaux permettent enfin de proposer une réponse à ces besoins.
-La réponse s’appelle Parentheze. Les besoins des parents et de leur famille sont immenses et nombreux sont ceux qui essaient de leur rendre service, plus pour le pire que pour le meilleur.
-"
+        title: "Assez de sacrifices, des solutions !"
+        text: "Les parents paient cher la moindre part de liberté et de tranquillité.
+        Il y a les petits sacrifices récurrents comme celui d’aller manger une bouffe passable,
+        dans un fast food, uniquement car la présence de jeux pour les enfants fait passer un repas plus tranquille.
+        Il y a les coupes dans le budget comme s’offrir une baby-sitter, pour sortir simplement à deux et se retrouver.
+        Il y a toutes ces soirées exaltantes sur le papier mais à moitié vécues parce que les enfants fatiguent et s’impatientent.
+        Il y a ces journées de galère, de grève à l’école et d’imprévus divers où, désemparé,
+        on prévient le boss ou le client qu’on est obligé de prendre notre journée.
+        Les besoins des parents et de leur famille sont immenses et nombreux sont ceux qui essaient de leur rendre service,
+        pour le meilleur comme pour le pire."
       slide3:
-        title: "Parentheze facilite les usages qui existent déjà."
+        title: "Pourquoi personne ne s'était attaqué au problème?"
+        text: "Parce que les meilleurs entrepreneurs sont souvent jeunes et sans enfant quand ils se lancent.
+        Parce qu’ils sont déjà lancés dans de grands projets quand ils deviennent à leur tour parents et découvrent alors les besoins.
+        Parce qu'avant le numérique, il était impossible de proposer un service rentable et de qualité uniquement dédiés aux parents.
+        Les parents n’avaient encore aucune réponse satisfaisantes à leurs besoins de liberté.
+        Nous proposons aujourd'hui une réponse, elle s’appelle Parentheze."
+      slide4:
+        title: "Parentheze facilite des usages qui existent déjà."
+        text: "Les parents qui reçoivent la garde d’enfant sont compensés en € pour cela car le temps passés à rendre service,
+        même à des amis, ne leur est pas gratuit. Nous savons le sentiment d’être redevable très inconfortable et cela nous pousse
+        à ne rien demander à l’entourage et, quand on est parent, à mettre définitivement une croix sur nos sorties.
+        Payer et être payé en retour est la plus simple des manières de fonctionner et donc la seule possible."
+      slide5:
+        title: "Comment ça marche?"
         text: "Parentheze propose un service simple, rapide, avec un minimum de frein et une prise en main totale.
-Parentheze permet ainsi de faciliter la garde leurs enfants par des amis, des parents d’élèves ou de camarades, ou des voisins de confiance. Ce pour un prix qui permet de reprendre goût aux sorties. Les compensations sont faites en € parce que c’est simple et cohérent. Pas de système de point, source d’exclusion. Pas de gratuit, source d’engagement nécessaire et de sentiment redevable. Pas de pub et pas de placement de produit. Parentheze se rémunère en prenant une commission sur chaque garde. Se rémunérer permet de proposer une qualité de produit et de service à la hauteur des attentes et des besoins des parents. On ne peut pas s’investir à plein temps uniquement par simple bonne volonté.
-Les parents qui reçoivent la garde d’enfant sont compensés en € pour cela car le temps passés à rendre service, même à des amis, ne leur ai pas gratuit. Nous savons le sentiment d’être redevable très inconfortable et cela nous pousse à ne rien demander à l’entourage et, quand on est parent, à mettre définitivement une croix sur nos sorties.
-Payer et être payé en retour est la plus simple des manières de fonctionner et donc la seule possible."
+        Parentheze permet ainsi de faciliter la garde de leurs enfants par des amis, des parents d’élèves ou de camarades,
+        ou des voisins de confiance. Et ce pour un prix qui permet de reprendre goût aux sorties.
+        Les compensations sont faites en € parce que c’est simple et cohérent.
+        Pas de système de point, source d’exclusion. Pas de gratuit, source d’engagement nécessaire et de sentiment de redevabilité.
+        Pas de pub et pas de placement de produit. Parentheze se rémunère en prenant une commission sur chaque garde.
+        Se rémunérer permet de proposer une qualité de produit et de service à la hauteur des attentes et des besoins des parents."
       slide5:
         title: "Nous avons pensé à tout, nous sommes parents et Parentheze est notre produit."
   survey:
