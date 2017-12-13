@@ -80,6 +80,11 @@ fr:
         text: ""
         image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+      slide5:
+        title: "Chers parents, posez-vous, on s’occupe de tout."
+        text: ""
+        image: "http://res.cloudinary.com/doodlid/image/upload/q_60/v1513193663/parentheze/parents_home.jpg"
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     manifeste:
       slide0:
         title: 'Les parents s’occupent de tout, mais qui s’occupe d’eux ?'
@@ -128,7 +133,7 @@ fr:
         engager une baby-sitter et au final passer votre soirée à regarder votre montre."
       slide5:
         title: "Comment ça marche?"
-        image: ""
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1513194127/parentheze/parents_how.png"
         text: "Parentheze propose un service simple, rapide, avec prise en main totale pour limiter ce genre de frein.
         Les parents qui reçoivent la garde des enfants sont compensés en € pour cela car le temps passés à rendre service,
         même à des amis, ne leur ai pas gratuit.
