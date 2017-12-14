@@ -1,11 +1,11 @@
-<div class="fullscreen relative flexbox" style="background-image: url(<%= slide[1][:image] %>)" id="<%= slide[0] %>">
-  <div class="<%= slide[0] %>">
-    <h1 class=""><%= slide[1][:title] %></h1>
-    <h4 class="margin-bottom-medium"><%= slide[1][:text] %></h4>
-    <% if slide[1][:link_image] %>
-      <%= render 'shared/scroller', target_page: target_page, link_image: slide[1][:link_image] %>
+<div class="fullscreen relative flex-vertical" style="background-image: url(<%= slide[:image] %>)" id="slide<%= index %>">
+  <div class="slide<%= index %>">
+    <h1 class=""><%= slide[:title] %></h1>
+    <h4 class="margin-bottom-medium"><%= slide[:text] %></h4>
+    <% if slide[:link_image] %>
+      <%= render 'shared/scroller', target_page: target_page, link_image: slide[:link_image] %>
     <% else %>
-      <%= link_to slide[1][:button_text], "#"<<target_page , class:"btn btn-yellow flexbox large center scroll" %>
+      <%= link_to slide[:button_text], "#"<<target_page , class:"btn btn-yellow flexbox btn-large center scroll" %>
     <% end %>
   </div>
 </div>

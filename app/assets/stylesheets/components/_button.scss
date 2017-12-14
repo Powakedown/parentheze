@@ -19,15 +19,15 @@
     background-color: $light-yellow;
     color: white;
   }
-  &.wrap {
-    white-space: normal;
-  }
-  &.tall {
-    min-height: 70px;
-  }
-  &.large {
-    max-width: 350px;
-  }
+}
+.btn-wrap {
+  white-space: normal;
+}
+.btn-tall {
+  min-height: 70px;
+}
+.btn-large {
+  max-width: 350px;
 }
 .btn-submit{
   &.btn, &.btn-default {

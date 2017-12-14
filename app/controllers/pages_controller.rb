@@ -5,6 +5,10 @@ class PagesController < ApplicationController
 
   def home
     if cookie
+      @slides = t('home.slides')
+      @slide_shows = t('home.slide_with_split')
+      @slide_plan = t('home.slide_plan')
+      @slide_subscribe = t('home.slide_calltoaction.')
       @guest = guest_user
       @guest.visit += 1
       @guest.save
