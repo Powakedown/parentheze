@@ -20,7 +20,10 @@ class PagesController < ApplicationController
     render plain: "one more step"
   end
 
-  def why; end
+  def why
+    @slides = t('why.slides')
+    @slides_manifeste = t('why.manifeste')
+  end
 
   private
 
