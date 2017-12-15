@@ -8,7 +8,6 @@ class PagesController < ApplicationController
       @slides = t('home.slides')
       @slide_shows = t('home.slide_with_split')
       @slide_plan = t('home.slide_plan')
-      @slide_subscribe = t('home.slide_calltoaction.')
       @guest = guest_user
       @guest.visit += 1
       @guest.save
@@ -25,6 +24,7 @@ class PagesController < ApplicationController
   end
 
   def why
+    @guest = guest_user
     @slides = t('why.slides')
     @slides_manifeste = t('why.manifeste')
   end

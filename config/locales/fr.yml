@@ -60,6 +60,7 @@ fr:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
       link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
+      checkbox: "Vous habitez la métropole bordelaise ou proche."
     slide_with_split:
       slide0:
         title: "Trouvez des parents comme vous :"
@@ -89,32 +90,27 @@ fr:
         target_page: "slide_manifeste"
       slide1:
         title: "Parce que nous adorons nos enfants..."
-        text: ""
         image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_kit_jumping.jpg"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
         target_page: "slide_manifeste"
       slide2:
         title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
-        text: ""
         image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_lover.jpg"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
         target_page: "slide_manifeste"
       slide3:
         title: "Parentheze propose de faciliter l’échange de garde entre parents."
-        text: ""
         image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_kid_cool.jpg"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
         target_page: "slide_manifeste"
       slide4:
         title: "Pour les parents à la recherche de solutions nouvelles."
-        text: ""
         image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
         target_page: "slide_manifeste"
       slide5:
         title: "Chers parents, posez-vous, on s’occupe de tout."
-        text: ""
-        image: "http://res.cloudinary.com/doodlid/image/upload/q_60/v1513193663/parentheze/parents_home.jpg"
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1513328712/mother_kid_xtep44.jpg"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
         target_page: "slide_manifeste"
     manifeste:

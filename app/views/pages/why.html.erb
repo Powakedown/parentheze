@@ -1,8 +1,9 @@
-<% content_for :title_tag do t('metas.titles.home') end %>
+<% content_for :title_tag do t('metas.titles.why') end %>
 
 <div class="home">
   <% @slides.each_with_index do |slide, index| %>
     <%= render partial: "slide", locals: { slide: @slides.values[index], index: index, target_page: "slide_manifeste#{index}" } %>
     <%= render partial: "slide_manifeste", locals: { slide: @slides_manifeste.values[index], index: index, target_page: "slide#{index+1}"} %>
   <% end %>
+  <%= render 'slide_subscription' %>
 </div>

@@ -22,7 +22,6 @@
             </div>
           </div>
         <% end %>
-
       </div>
     </div>
     <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
@@ -30,23 +29,5 @@
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[1], index: 3, target_page: "inscription-beta" } %>
 
-  <div class="container-fluid full-height flexbox text-center" id="inscription-beta" >
-    <div class="container">
-      <h1><%= @slide_subscribe[:title] %></h1>
-      <p class="margin-bottom-medium"><%= @slide_subscribe[:text] %></p>
-      <div class="inscription-wrapper center margin-bottom-medium">
-        <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
-          <p class=" margin-bottom-medium">
-           <label class="checkbox">
-             <input type="checkbox" class="boolean optional" checked="checked" id="bordelais" name="guest[bordelais]" value="1" />
-             <label for="bordelais">Vous habitez la métropole bordelaise ou proche.</label>
-           </label>
-          </p>
-          <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
-          <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
-        <% end %>
-      </div>
-      <%= render 'shared/scroller', target_page: "slide0", link_image: @slide_subscribe[:link_image], step: 6 %>
-    </div>
-  </div>
+  <%= render 'slide_subscription' %>
 </div>
