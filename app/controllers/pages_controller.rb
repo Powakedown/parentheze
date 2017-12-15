@@ -5,6 +5,9 @@ class PagesController < ApplicationController
 
   def home
     if cookie
+      @slides = t('home.slides')
+      @slide_shows = t('home.slide_with_split')
+      @slide_plan = t('home.slide_plan')
       @guest = guest_user
       @guest.visit += 1
       @guest.save
@@ -20,7 +23,11 @@ class PagesController < ApplicationController
     render plain: "one more step"
   end
 
-  def why; end
+  def why
+    @guest = guest_user
+    @slides = t('why.slides')
+    @slides_manifeste = t('why.manifeste')
+  end
 
   private
 

@@ -85,20 +85,10 @@ $input-height: 70px !important;
   display: flex !important;
   justify-content: center;
   align-items: center;
-  &.left {
-    justify-content: left;
-  }
-  &.sidestick {
-    justify-content: space-between;
-  }
 }
 .flex-horizontal {
   display: flex;
   justify-content: center;
-  align-items: center;
-  &.left {
-    justify-content: left;
-  }
 }
 .flex-vertical {
   display: flex;
@@ -115,9 +105,12 @@ $input-height: 70px !important;
   &.center {
     justify-content: center;
   }
-  &.between {
+}
+.flex-between {
     justify-content: space-between;
-  }
+}
+.flex-left {
+    justify-content: left;
 }
 .flex-wrap {
   flex-wrap: wrap;
@@ -252,4 +245,11 @@ input[type="checkbox"] {
 ul {
   -webkit-padding-start: 8%;
   padding-left: 8%;
+}
+//IMAGE
+.image_for_title{
+  position: absolute;
+  top: 20px;
+  left: -115px;
+  border-radius: 50%;
 }

@@ -1,0 +1,101 @@
+.slide0 {
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slide-plan {
+  .plans {
+    width: 80%;
+    margin: auto;
+  }
+  h4 {
+    line-height: 30px;
+  }
+  .plan-card {
+    background-color: white;
+    border: none;
+    height: 340px;
+    color: $medium-gray;
+    h1 {
+      font-family: $body-font;
+      font-size: 95px;
+      line-height: 130px;
+    }
+    h3 {
+      font-size: 26px;
+    }
+    &.emergency {
+      background-color: $yellow;
+      color: white;
+    }
+  }
+}
+.slide1 {
+  margin-left: auto;
+  margin-right: 10%;
+  width: 40%;
+  text-align: left;
+}
+.slide2 {
+  margin-right: auto;
+  margin-left: 10%;
+  width: 40%;
+  text-align: left;
+}
+.slide3, .slide5{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  width: 80%;
+  text-align: center;
+}
+.slide4 {
+  margin-left: auto;
+  margin-right: 10%;
+  width: 40%;
+}
+@media (max-device-width : 375px){
+  .slide0 {
+    width: 70%;
+    text-align: right;
+    margin-right: 10%;
+    margin-top: 25%;
+    margin-left: 25%;
+  }
+  .slide4 {
+    width: 80%;
+  }
+  .slide1, .slide2, .slide4 {
+    width: 70%;
+  }
+  .slide1, .slide4{
+    margin-right: auto;
+    margin-left: 25%;
+  }
+  .slide2{
+    margin-left: auto;
+    margin-right: 25%;
+  }
+}
+@media (min-device-width : 376px) and (max-device-width : 768px){
+  .slide1, .slide2, .slide4 {
+    width: 60%;
+  }
+}
+@media (min-device-width : 769px) and (max-device-width : 1024px){
+  .slide0, .slide4, .slide-plan {
+    width: 90%;
+  }
+  .slide1, .slide2{
+    width: 60%;
+  }
+}
+@media (min-device-width : 1024px){
+  .slide-plan {
+    .plans {
+      width: 100%;
+    }
+  }
+}
+

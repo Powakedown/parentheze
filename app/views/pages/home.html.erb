@@ -2,70 +2,32 @@
 
 <div class="home">
 
-  <% t('home.slides').each do |x| %>
-    <%= render "slide", target_page: "slide#{x[0][-1].to_i+1}", id: "slide#{x[0][-1]}",  title: x[1][:title], text: x[1][:text], image: x[1][:image], link_image: x[1][:link_image] %>
-  <% end %>
+  <%= render partial: "slide", locals: { slide: @slides.values[0], index: 0, target_page: "slide1" } %>
 
-  <%= render 'pages/slide_with_split', image: t('home.slide_with_split.image'), title: t('home.slide_with_split.title'), text: t('home.slide_with_split.text'), id: "slide1", target_page: "slide2", link_image: t('home.slide_with_split.link_image') %>
+  <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[0], index: 1, target_page: "slide2" } %>
 
-  <div class="container-fluid minfullscreen flex-column text-center double-padding-box slide-plan" id=<%= "slide"+(t('home.slides').length+1).to_s %>>
-    <h2><%= t('home.slide_plan.title') %></h2>
+  <div class="container-fluid minfullscreen flex-column text-center double-padding-box slide-plan" id="slide2">
+    <h2><%= @slide_plan[:title] %></h2>
     <h4 class="yellow"><%= t('home.slide_plan.text') %></h4>
     <div class="margin-bottom-medium">
       <div class="row plans">
-        <% t('plans').each do |x| %>
+        <% @slide_plan[:plans].each do |plan| %>
           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 padding-box">
-            <div class="plan-card flex-column between padding-box <%= "emergency" if x[0][-1].to_i == t('plans').length - 1 %>">
+            <div class="plan-card flex-column flex-between padding-box <%= "emergency" if plan[0] == :plan3  %>">
               <div>
-                <h1 style="color: <%= x[1][:color] %>"><%= x[1][:price] %></h1>
-                <h3><%= x[1][:title] %></h3>
+                <h1 style="color: <%= plan[1][:color] %>"><%= plan[1][:price] %></h1>
+                <h3><%= plan[1][:title] %></h3>
               </div>
-              <p><%= x[1][:subtitle] %></p>
+              <p><%= plan[1][:subtitle] %></p>
             </div>
           </div>
         <% end %>
-
       </div>
     </div>
-    <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image'), step: 5 %>
+    <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
   </div>
 
-  <div class="container-fluid full-height text-center black-on-white" id="slide3">
-    <div class="row">
-      <div style="background-image: url(<%= t('home.slide_detail.image') %>)" class="full-height col-xs-12 col-md-6"></div>
-      <div class="full-height col-xs-12 col-md-6 flex-column black-on-white double-padding-box">
-        <div>
-          <h1><%= t('home.slide_detail.title') %></h1>
-          <div class="flex-column between padding-box text-left">
-            <ul>
-              <% t('home.slide_detail.labels').each do |label| %>
-                <li><h4><%= label[1] %></h4></li>
-              <% end %>
-            </ul>
-          </div>
-          <%= render 'shared/scroller', target_page: "inscription-beta", link_image: t('home.slide_with_split.link_image') %>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[1], index: 3, target_page: "inscription-beta" } %>
 
-  <div class="container-fluid full-height flexbox text-center" id="inscription-beta" >
-    <div class="container">
-      <h1><%= t('home.slide_calltoaction.title') %></h1>
-      <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
-      <div class="inscription-wrapper center margin-bottom-medium">
-        <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
-          <p class=" margin-bottom-medium">
-           <label class="checkbox">
-             <input type="checkbox" class="boolean optional" checked="checked" id="bordelais" name="guest[bordelais]" value="1" />
-             <label for="bordelais">Vous habitez la métropole bordelaise ou proche.</label>
-           </label>
-          </p>
-          <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
-          <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
-        <% end %>
-      </div>
-      <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image'), step: 6 %>
-    </div>
-  </div>
+  <%= render 'slide_subscription' %>
 </div>
