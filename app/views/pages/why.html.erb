@@ -3,7 +3,7 @@
 <div class="home">
   <% @slides.each_with_index do |slide, index| %>
     <%= render partial: "slide", locals: { slide: @slides.values[index], index: index, target_page: "slide_manifeste#{index}" } %>
-    <%= render partial: "slide_manifeste", locals: { slide: @slides_manifeste.values[index], index: index, target_page: "slide#{index+1}"} %>
+    <%= render partial: "slide_manifeste", locals: { slide: @slides_manifeste.values[index], index: index, target_page: index == 6 ? "slide#{index+1}" : "inscription-beta"} %>
   <% end %>
   <%= render 'slide_subscription' %>
 </div>
