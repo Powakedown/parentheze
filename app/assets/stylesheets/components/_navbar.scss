@@ -7,7 +7,10 @@
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
-  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;;
   align-items: center;
   justify-content: space-between;
   z-index: 500;
@@ -41,7 +44,10 @@
 
 /* Right section */
 .navbar-wagon-right {
-  display: flex;
+    display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;;
   align-items: center;
   justify-content: space-between;
 }

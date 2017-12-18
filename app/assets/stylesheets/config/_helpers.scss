@@ -82,20 +82,36 @@ $input-height: 70px !important;
   padding: 4%;
 }
 .flexbox {
-  display: flex !important;
+    display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   justify-content: center;
   align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
 }
 .flex-horizontal {
-  display: flex;
+    display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;;
   justify-content: center;
 }
 .flex-vertical {
-  display: flex;
+    display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;;
   align-items: center;
 }
 .flex-column {
-  display: flex;
+    display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -204,7 +220,10 @@ a:hover {
       border-radius: 50%;
       width: 45px;
       height: 45px;
-      display: flex;
+        display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;;
       justify-content: center;
       align-items: center;
       color: black;

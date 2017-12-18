@@ -22,5 +22,4 @@ $(document).ready(function() {
         scrollTop: $( $.attr(this, "href") ).offset().top
     }, 500);
   });
-
 });
