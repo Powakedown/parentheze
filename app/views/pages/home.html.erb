@@ -15,11 +15,11 @@
           <% @slide_plan[:plans].each do |plan| %>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 padding-box">
               <div class="plan-card flex-column flex-between padding-box <%= "emergency" if plan[0] == :plan3  %>">
-                <div>
+                <div class="full-width">
                   <h1 style="color: <%= plan[1][:color] %>"><%= plan[1][:price] %></h1>
                   <h3><%= plan[1][:title] %></h3>
                 </div>
-                <h5><%= plan[1][:subtitle] %></h5>
+                <h5 class="full-width"><%= plan[1][:subtitle] %></h5>
               </div>
             </div>
           <% end %>
