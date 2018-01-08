@@ -8,7 +8,7 @@
     color: $dark-gray;
     min-height: 100px;
     margin-bottom: 20px;
-    h4{
+    p{
       min-height: 44px;
     }
     &.with-max-height{
@@ -41,7 +41,6 @@
     &.green {
       border-left: 10px solid $green;
     }
-
   }
   .step-diag-wrapper{
     width: 100%;

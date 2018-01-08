@@ -18,7 +18,8 @@ $headers-font: 'Montserrat', sans-serif;
  * TYPOS
  *------------------------------------------------- */
 body {
-  font-family: $body-font
+  font-family: $body-font;
+  font-size: calc(2.1vh + 0.8vmin);
 }
 h1, h2, h3, h4, p {
   &.pink {
@@ -37,97 +38,53 @@ h1, h2, h3, h4, p {
 h1, h2{
   font-family: $headers-font;
   font-weight: 900;
-  letter-spacing: -0.2px;
-  margin-bottom: 20px;
+  letter-spacing: 0em;
+  line-height: 0.9em;
+  margin-bottom: 0.2em;
   margin-top: 10px;
+  font-size: 3em;
   .fa {
     position: absolute;
-    left: -80px;
-    top: 10px;
+    left: -0.2em;
+    top: 1em;
     font-size: 70%;
   }
 }
+h2 {
+  font-size: 2em;
+  line-height: 1.2em;
+}
 h3 {
-font-size: 34px;
-letter-spacing: 0.2px;
-font-weight: bold;
+  font-size: 1.5em;
+  letter-spacing: 0em;
+  font-weight: bold;
 }
 h4 {
-font-size: 20px;
-letter-spacing: 0.2px;
-font-weight: normal;
+  font-size: 1.2em;
+  letter-spacing: 0.2em;
+  font-weight: normal;
+}
+h5 {
+  font-size: 0.8em;
+  font-weight: normal;
+  font-family: $body-font;
+}
+h6 {
+  font-size: 0.6em;
+  font-weight: normal;
+  font-family: $body-font;
 }
 p{
-font-size: 21px;
-font-family: $body-font;
-font-weight: 300;
-line-height: 33px;
+  font-size: 0.9em;
+  font-family: $body-font;
+  font-weight: 300;
+  line-height: 1.4em;
+}
+@media (max-device-width: 475px ) {
+  p{
+    font-size: 1.2em;
+  }
 }
 a {
-font-family: $body-font;
-}
-//MOBILE
-@media (max-device-width: 375px){
-  h1 {
-    font-size: 35px;
-    line-height: 37px;
-    .fa {
-      position: absolute;
-      left: -40px;
-      top: 4px;
-    }
-}
-  h2 {
-    font-size: 30px;
-    line-height: 40px;
-  }
-}
-//SM
-@media (min-device-width: 376px) and (max-device-width : 667px){
-  h1 {
-    font-size: 40px;
-    line-height: 40px;
-    .fa {
-      position: absolute;
-      left: -40px;
-      top: 4px;
-    }
-}
-  h2 {
-    font-size: 30px;
-    line-height: 40px;
-  }
-}
-//IPAD PORTRAIT
-@media (min-device-width: 768px) and (orientation : portrait) {
-  h1 {
-    font-size: 81px;
-    line-height: 72px;
-  }
-  h2 {
-    font-size: 56px;
-    line-height: 62px;
-  }
-}
-//MD
-@media (min-device-width: 769px) and (max-device-width: 1024px) {
-  h1 {
-    font-size: 81px;
-    line-height: 72px;
-  }
-  h2 {
-    font-size: 56px;
-    line-height: 62px;
-  }
-}
-//LG
-@media (min-device-width: 1024px) {
-  h1 {
-    font-size: 81px;
-    line-height: 72px;
-  }
-  h2 {
-    font-size: 56px;
-    line-height: 62px;
-  }
+  font-family: $body-font;
 }

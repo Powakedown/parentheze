@@ -1,19 +1,23 @@
 <div class="container-fluid fullscreen flexbox text-center" id="inscription-beta" >
-  <div class="container">
-    <h1><%= t('home.slide_calltoaction.title') %></h1>
-    <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
-    <div class="inscription-wrapper center margin-bottom-medium">
-      <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
-        <p class=" margin-bottom-medium">
-         <label class="checkbox">
-           <input type="checkbox" class="boolean optional" checked="checked" id="bordelais" name="guest[bordelais]" value="1" />
-           <label for="bordelais"><%= t('home.slide_calltoaction.checkbox') %></label>
-         </label>
-        </p>
-        <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
-        <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
-      <% end %>
+  <div class="row full-width">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h1><%= t('home.slide_calltoaction.title') %></h1>
+      <p class="margin-bottom-medium"><%= t('home.slide_calltoaction.text') %></p>
+      <div class="row center margin-bottom-medium">
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
+          <p class=" margin-bottom-medium">
+           <label class="checkbox">
+             <input type="checkbox" class="boolean optional" checked="checked" id="bordelais" name="guest[bordelais]" value="1" />
+             <label for="bordelais"><%= t('home.slide_calltoaction.checkbox') %></label>
+           </label>
+          </p>
+          <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
+          <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" } %>
+        <% end %>
+        </div>
+      </div>
+      <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image'), step: 6 %>
     </div>
-    <%= render 'shared/scroller', target_page: "slide0", link_image: t('home.slide_calltoaction.link_image'), step: 6 %>
   </div>
 </div>
