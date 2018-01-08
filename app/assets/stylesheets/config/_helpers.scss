@@ -262,6 +262,11 @@ input[type="checkbox"] {
 .alert-warning, .alert-info, .alert-success {
   border: none
 }
+input{
+  border-radius: $border-radius !important;
+  font-size: 20px !important;
+
+}
 //LIST
 ul {
   -webkit-padding-start: 8%;
