@@ -82,33 +82,30 @@ $input-height: 70px !important;
   padding: 4%;
 }
 .flexbox {
-    display: -webkit-box;
+  display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   justify-content: center;
   align-items: center;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
 }
 .flex-horizontal {
-    display: -webkit-box;
+  display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;;
   justify-content: center;
+  align-items: center;
 }
 .flex-vertical {
-    display: -webkit-box;
+  display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;;
   align-items: center;
 }
 .flex-column {
-    display: -webkit-box;
+  display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;;
@@ -123,10 +120,10 @@ $input-height: 70px !important;
   }
 }
 .flex-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 .flex-left {
-    justify-content: left;
+  justify-content: left;
 }
 .flex-wrap {
   flex-wrap: wrap;
