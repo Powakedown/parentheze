@@ -22,7 +22,6 @@ $input-height: 70px !important;
 }
 .fullscreen {
   width:100%;
-  height: 100vh; //for IE
   min-height: 100vh;
   background-size: cover;
   background-position: center center;
@@ -41,7 +40,6 @@ $input-height: 70px !important;
 }
 .minfullscreen {
   width: 100%;
-  height: 100vh; //for IE
   min-height: 100vh;
 }
 .full-height {

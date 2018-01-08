@@ -16,6 +16,9 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <!--[if IE]>
+      <%= stylesheet_link_tag 'all-ie-only', media: 'all' %>
+    <![endif]-->
     <% if Rails.env.production? %>
       <%= analytics_init if GoogleAnalytics.valid_tracker? %>
     <% end %>
