@@ -10,40 +10,40 @@
     <div class="row margin-bottom-medium">
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <p>Visiteurs uniques sur le formulaire:</p>
+          <h5>Visiteurs uniques sur le formulaire:</h5>
           <h2><%= @guestcount %></h2>
-          <p></p>
+          <h5></h5>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <p>Visiteurs uniques sur la home :</p>
+          <h5>Visiteurs uniques sur la home :</h5>
           <h2 class="pink"><%= @visits %></h2>
-          <h5><%= @visitors_p %>%</h5>
+          <h6><%= @visitors_p %>%</h6>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <p>Nbre moyen de visite par visiteur :</p>
+          <h5>Nbre moyen de visite par visiteur :</h5>
           <h2 class="blue"><%= @average_visits %></h2>
-          <h5>(sur page d'accueil)</h5>
+          <h6>(sur page d'accueil)</h6>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <p>Parents :</p>
+          <h5>Parents :</h5>
           <h2 class="yellow"><%= @parents %>%</h2>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card with-max-height">
-          <p>Formulaires parcourus jusqu'à la fin:</p>
+          <h5>Formulaires parcourus jusqu'à la fin:</h5>
           <h2 class="pink"><%= @form_completed_p %>%</h2>
         </div>
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="card with-max-height">
-          <p>Steps (only by clic):</p>
+          <h5>Steps (only by clic):</h5>
           <div class="step-diag-wrapper">
             <% 5.times do |x| %>
               <div class="step-diag" style="height: <%= 1*@guest_steps[x] %>px"><%= @guest_steps[x] %>%</div>
