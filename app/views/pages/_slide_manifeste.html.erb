@@ -1,16 +1,18 @@
-<div class="container-fluid fullscreen black-on-white flexbox double-padding-box" id=<%= 'slide_manifeste'<<index.to_s %>>
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <%= image_tag(slide[:image], class: "center visible-xs-block visible-sm-block") %>
-    </div>
-    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-      <h2><%= image_tag(slide[:image], class: "image_for_title hidden-xs hidden-sm") %><%= slide[:title] %></h2>
-    </div>
-    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-      <p class="margin-bottom-medium"><%= slide[:text] %></p>
-    </div>
-    <div class="col-xs-12 text-center">
-    <%= render 'shared/scroller', target_page: target_page, link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/e_colorize:100/v1512466553/parentheze/btn_oui_blue_oxcch8.png" %>
+<div class="container-fluid full-width black-on-white flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen flexbox" id=<%= 'slide_manifeste'<<index.to_s %>>
+    <div class="row full-width">
+      <div class="col-xs-12 text-center">
+        <%= image_tag(slide[:image], class: "center visible-xs-block visible-sm-block") %>
+      </div>
+      <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <h2><%= image_tag(slide[:image], class: "image_for_title hidden-xs hidden-sm") %><%= slide[:title] %></h2>
+      </div>
+      <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <p class="margin-bottom-medium"><%= slide[:text] %></p>
+      </div>
+      <div class="col-xs-12 text-center">
+      <%= render 'shared/scroller', target_page: target_page, link_image: "http://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/e_colorize:100/v1512466553/parentheze/btn_oui_blue_oxcch8.png" %>
+      </div>
     </div>
   </div>
 </div>

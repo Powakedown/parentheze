@@ -6,27 +6,29 @@
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[0], index: 1, target_page: "slide2" } %>
 
-  <div class="container-fluid fullscreen flex-column text-center slide-plan" id="slide2">
-    <div class="plans">
-      <h2><%= @slide_plan[:title] %></h2>
-      <p class="yellow"><%= t('home.slide_plan.text') %></p>
-      <div class="margin-bottom-medium">
-        <div class="row">
-          <% @slide_plan[:plans].each do |plan| %>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 padding-box">
-              <div class="plan-card flex-column flex-between padding-box <%= "emergency" if plan[0] == :plan3  %>">
-                <div class="full-width">
-                  <h1 style="color: <%= plan[1][:color] %>"><%= plan[1][:price] %></h1>
-                  <h3><%= plan[1][:title] %></h3>
+  <div class="flex-parent">
+    <div class="container-fluid fullscreen text-center flexbox slide-plan" id="slide2">
+        <div class="plans">
+          <h2><%= @slide_plan[:title] %></h2>
+          <p class="yellow"><%= t('home.slide_plan.text') %></p>
+          <div class="margin-bottom-medium">
+            <div class="row">
+              <% @slide_plan[:plans].each do |plan| %>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 padding-box">
+                  <div class="plan-card flex-column flex-between padding-box <%= "emergency" if plan[0] == :plan3  %>">
+                    <div class="full-width">
+                      <h1 style="color: <%= plan[1][:color] %>"><%= plan[1][:price] %></h1>
+                      <h3><%= plan[1][:title] %></h3>
+                    </div>
+                    <h5 class="full-width"><%= plan[1][:subtitle] %></h5>
+                  </div>
                 </div>
-                <h5 class="full-width"><%= plan[1][:subtitle] %></h5>
-              </div>
+              <% end %>
             </div>
-          <% end %>
+          </div>
+        <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
         </div>
-      </div>
     </div>
-    <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
   </div>
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[1], index: 3, target_page: "inscription-beta" } %>

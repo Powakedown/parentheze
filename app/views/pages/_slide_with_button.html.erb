@@ -1,10 +1,12 @@
-<div class="fullscreen relative flexbox" style="background-image: url(<%= image %>)" id=<%= id %>>
-  <div class="<%= id %>">
-    <h1 class=""><%= title %></h1>
-    <h4 class="margin-bottom-medium"><%= text %></h4>
-    <div class="btn btn-yellow flexbox center large">Commencer l'inscription</div>
-    <% if scroll %>
-      <%= render 'shared/scroller', target_page: target_page, link_image: link_image %>
-    <% end %>
+<div class="fullscreen relative  flex-parent"> <!-- for IE bug -->
+  <div class="flexbox full-width" style="background-image: url(<%= image %>)" id=<%= id %>>
+    <div class="<%= id %>">
+      <h1 class=""><%= title %></h1>
+      <h4 class="margin-bottom-medium"><%= text %></h4>
+      <div class="btn btn-yellow flexbox center large">Commencer l'inscription</div>
+      <% if scroll %>
+        <%= render 'shared/scroller', target_page: target_page, link_image: link_image %>
+      <% end %>
+    </div>
   </div>
 </div>
