@@ -6,8 +6,8 @@
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[0], index: 1, target_page: "slide2" } %>
 
-  <div class="container-fluid fullscreen flex-column text-center slide-plan" id="slide2">
-    <div class="plans">
+  <div class="container-fluid fullscreen flex-parent text-center slide-plan" id="slide2">
+    <div class="flex-column plans">
       <h2><%= @slide_plan[:title] %></h2>
       <p class="yellow"><%= t('home.slide_plan.text') %></p>
       <div class="margin-bottom-medium">
