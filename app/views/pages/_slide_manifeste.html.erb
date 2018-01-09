@@ -1,5 +1,5 @@
-<div class="flex-parent"> <!-- for IE bug -->
-  <div class="container-fluid fullscreen black-on-white flexbox double-padding-box" id=<%= 'slide_manifeste'<<index.to_s %>>
+<div class="container-fluid fullscreen black-on-white flex-parent double-padding-box"> <!-- for IE bug -->
+  <div class="flexbox" id=<%= 'slide_manifeste'<<index.to_s %>>
     <div class="row">
       <div class="col-xs-12 text-center">
         <%= image_tag(slide[:image], class: "center visible-xs-block visible-sm-block") %>
