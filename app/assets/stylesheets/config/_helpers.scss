@@ -7,8 +7,15 @@ $padding-side: 0 20px 0 20px;
 $white-space: 20px;
 $input-height: 70px !important;
 
-.full-width {
-  width: 100%; //for IE
+%full-width, .full-width {
+  width: 100%;
+}
+%full-height, .full-height {
+  min-height: 100vh;
+  height: auto !important;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
 }
 .relative {
   position: relative;
@@ -22,9 +29,8 @@ $input-height: 70px !important;
 }
 .fullscreen {
   width:100%;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center center;
+  @extend %full-width;
+  @extend %full-height;
   &.under-navbar {
     height: calc(100vh - 70px);
   }
@@ -35,24 +41,15 @@ $input-height: 70px !important;
     min-height: calc(100vh - 65px);
   }
   @media (min-width : 1024px) {
-      background-attachment: fixed;
+    background-attachment: fixed;
   }
 }
-.minfullscreen {
-  width: 100%;
-  min-height: 100vh;
-}
-.full-height {
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
-}
 .margin-bottom-medium {
-  margin-bottom: 4% !important;
+  margin-bottom: 1.3em !important;
 }
 @media (max-width : 375px){
   .margin-bottom-medium {
-    margin-bottom: 25px !important;
+    margin-bottom: 0.8em !important;
   }
 }
 .margin-top-bot {
@@ -60,7 +57,7 @@ $input-height: 70px !important;
   margin-bottom: 5px;
 }
 .margin-bottom-small {
-  margin-bottom: 10px !important;
+  margin-bottom: 0.7em !important;
 }
 .center {
   margin-left: auto;
@@ -160,7 +157,7 @@ a:hover {
   height: 30px;
   color: white;
   background-color: $dark-gray;
-  font-size: 15px;
+  font-size: 1em;
   float: left;
   margin-right: 10px;
 }
