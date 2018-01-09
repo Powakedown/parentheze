@@ -6,7 +6,7 @@
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[0], index: 1, target_page: "slide2" } %>
 
-   <div class="flex-parent">
+  <div class="flex-parent">
     <div class="container-fluid fullscreen text-center flexbox slide-plan" id="slide2">
         <div class="plans">
           <h2><%= @slide_plan[:title] %></h2>
@@ -26,10 +26,11 @@
               <% end %>
             </div>
           </div>
+        <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
         </div>
-      <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
     </div>
   </div>
+
   <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[1], index: 3, target_page: "inscription-beta" } %>
 
   <%= render 'slide_subscription' %>
