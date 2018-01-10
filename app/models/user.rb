@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :phone, presence: true
 
   has_many :bookings
-  has_many :wishes
-  has_many :ratings
+  has_many :user_wishes
+  has_many :wishes, through: :user_wishes
 
 end
