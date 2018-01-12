@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def tester
-    guest_user.email == "parentgenial@parentheze.com"
+    guest_user.email == 'parentgenial@parentheze.com'
   end
 
   def percentage(serie, total)

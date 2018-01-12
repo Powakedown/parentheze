@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     @guest = guest_user
     @guest.step += 1
     @guest.save
-    render plain: "one more step"
+    render plain: 'one more step'
   end
 
   def why
