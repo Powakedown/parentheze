@@ -1,5 +1,8 @@
 fr:
   commons:
+    button:
+      next: "suivant"
+      end: "terminer"
     register: "S'inscrire"
     cookie:
       image: "https://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
@@ -9,10 +12,6 @@ fr:
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
     email_valid: "Veuillez entrez un email valide"
-  activerecord:
-      errors:
-        messages:
-          record_invalid: 'La validation a échoué : %{errors}'
   metas:
     titles:
       home: "Parentheze, la nouvelle vie des parents."
@@ -22,9 +21,54 @@ fr:
       why: "Pourquoi parentheze ?"
   navbar:
     login: "connexion"
-    signup: "s'enregistrer"
+    sign_up: "s'enregistrer"
+    sign_in: "se connecter"
+    sign_out: "se déconnecter"
     manifesto: "manifeste"
     plans: "exemple de forfait"
+  seed:
+    wishes:
+     wish1: "J’ai besoin de faire garder mes enfants"
+     wish2: "Je suis prêt à accueillir les enfants de mes voisins"
+     wish3: "J’accepte les invitations pour faire connaissance"
+     wish4: "J'accepte les échanges et les dons de matériel entre voisins"
+  inscription:
+    title: "Inscription :"
+    redirection:
+      title: "Merci et à bientôt!"
+      text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
+      image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
+      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
+    screen1:
+      title: "Donnée de connexion"
+      details: "Votre mail n’est pas communiqué à des tiers."
+      field1: "Email"
+      field2: "Mot de passe (minimum 6 caractères incluant lettres et chiffres) :"
+      field3: "Confirmer le mot de passe :"
+      addon: "Déjà inscrit ?"
+    screen2:
+      title: "Informations visibles sur le réseau"
+      details: "Seules ces informations seront visibles publiquement."
+      field1: "Prénom du premier parent :"
+      field2: "Prénom du deuxième parent :"
+      placeholder2: "laisser libre si parent solo"
+      field3: "Nombre d’enfants concernés par la garde :"
+    screen3:
+      title: "Informations non visibles sur le réseau"
+      details: "L’adresse permet de calculer les distances
+              entre les membres mais ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
+      field1: "Adresse postale :"
+      field2: "Numéro de téléphone :"
+      placeholder2: "communiqué au moment des gardes"
+    screen4:
+      title: "Besoins"
+      details: ""
+    screen5:
+      title: "Photo de profil"
+      details: "Une bonne photo permet de se faire connaître
+              rapidement des connaissances et des parents du quartier ou de l’école.
+              La photo doit vous bien représenter :"
+      field1: "télécharger une photo"
   home:
     slides:
       slide0:
@@ -310,12 +354,6 @@ fr:
       char4:
         text: "sont prêts à garder les enfants des voisins"
         icon: "home"
-  inscription:
-    redirection:
-      title: "Merci et à bientôt!"
-      text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
-      image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
-      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
   footer:
     facebook: "https://www.facebook.com/groups/1860665404215862/"
     twitter: "https://medium.com/@parentgenial"
@@ -332,23 +370,33 @@ fr:
       new: "Oh yeah! Inscription à la béta enregistrée, vous allez recevoir un mail."
   placeholder:
     email: "précisez votre email"
-  #SPECIFIC
+  # GENERIC
   activerecord:
     errors:
+      messages:
+        already_confirmed: a déjà été confirmé(e)
+        confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
+        expired: est expiré, veuillez en demander un autre
+        not_found: n’a pas été trouvé(e)
+        not_locked: n’était pas verrouillé(e)
+        not_saved:
+          one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
+          other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: "Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record} dépendant(e) existe"
+          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
       models:
         guest:
           attributes:
             email:
               blank: "ne peut pas être vide"
-  # GENERIC
-  activerecord:
-    errors:
-      messages:
-        record_invalid: 'La validation a échoué : %{errors}'
-        restrict_dependent_destroy:
-          has_one: "Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record} dépendant(e) existe"
-          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
-
+        user:
+          attributes:
+            mother_first_name:
+              blank: "Un prénom de parent est indispensable."
+            kids:
+              not_a_number: ""
     attributes:
       user:
         confirmation_sent_at: Date d'envoi de la confirmation
@@ -473,16 +521,6 @@ fr:
       send_instructions: Vous allez recevoir sous quelques minutes un courriel comportant des instructions pour déverrouiller votre compte.
       send_paranoid_instructions: Si votre courriel existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour déverrouiller votre compte.
       unlocked: Votre compte a été déverrouillé avec succès. Veuillez vous connecter.
-  errors:
-    messages:
-      already_confirmed: a déjà été confirmé(e)
-      confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
-      expired: est expiré, veuillez en demander un autre
-      not_found: n’a pas été trouvé(e)
-      not_locked: n’était pas verrouillé(e)
-      not_saved:
-        one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
-        other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
   date:
     abbr_day_names:
     - dim

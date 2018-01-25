@@ -1,0 +1,63 @@
+<div class="flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen relative flexbox text-left" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg')" id="">
+    <div class="parentheze-login">
+      <h4><%= t('inscription.title') %></h4>
+      <div class="breadcrumb">
+        <div class="center flex-line">
+          <% (1..@signup_length).each do |x| %>
+            <div class="step flexbox <%= 'active' if x == 2 %>" id="breadcrumb-question<%= x %>"><%= x %></div>
+          <% end %>
+        </div>
+      </div>
+
+        <div id="screen1">
+          <%= simple_form_for @user do |f| %>
+            <div class="login-box">
+              <h3><%= t('inscription.screen2.title') %></h3>
+              <p><%= t('inscription.screen2.details') %></p>
+              <%= f.input :mother_first_name, required: true, autofocus: true, label: t('inscription.screen2.field1') %>
+              <%= f.input :father_first_name, required: false, label: t('inscription.screen2.field2'), placeholder: t('inscription.screen2.placeholder2') %>
+              <%= f.input :kids, required: true, label: t('inscription.screen1.field3') %>
+              <div class="form-actions">
+                <%= f.button :submit, "suivant" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="screen2">
+          <%= simple_form_for @user do |f| %>
+            <div class="login-box">
+              <h3><%= t('inscription.screen3.title') %></h3>
+              <p><%= t('inscription.screen3.details') %></p>
+              <%= f.input :address, required: true, autofocus: true, label: t('inscription.screen3.field1') %>
+              <%= f.input :phone, required: false, label: t('inscription.screen3.field2'), placeholder: t('inscription.screen3.placeholder2') %>
+              <div class="form-actions">
+                <%= f.button :submit, "suivant" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="screen3">
+          <%= simple_form_for [@user, @wishes] do |f| %>
+            <div class="login-box">
+              <h3><%= t('inscription.screen4.title') %></h3>
+              <p><%= t('inscription.screen4.details') %></p>
+              <%= f.input :wishes, label:  %>
+             <label class="checkbox">
+               <input type="checkbox" class="boolean optional" checked="checked" id="bordelais" name="guest[bordelais]" value="1" />
+               <label for="bordelais"><%= t('inscription.screen4.field1') %></label>
+             </label>
+              <div class="form-actions">
+                <%= f.button :submit, "suivant" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+

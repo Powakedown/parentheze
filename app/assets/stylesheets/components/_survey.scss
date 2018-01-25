@@ -11,6 +11,9 @@
     background-size: cover;
   }
 }
+.answer {
+  height: calc($input-height + 14px);
+}
 .survey-block{
   width: 35%;
 }

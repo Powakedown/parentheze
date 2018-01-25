@@ -12,4 +12,11 @@ Rails.application.routes.draw do
 
   # MAIL
   get '/welcome', to: 'guests#welcome'
+
+  # INSCRIPTION
+  resources :users, only: %i[show update] do
+    member do
+      get 'inscription'
+    end
+  end
 end

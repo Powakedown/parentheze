@@ -1,0 +1,74 @@
+.parentheze-login{
+  font-family: $body-font;
+  color: white;
+  text-align: left;
+  h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  h4 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 0;
+  }
+  p {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .breadcrumb {
+    background-color: transparent;
+    height: 39px;
+    width: 100%;
+    margin: 25px 0 25px 0;
+    padding: 0;
+  }
+  .step {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 0;
+    color: $dark-gray;
+    background-color: white;
+    &.active {
+      background-color: $light-blue;
+      color: white;
+    }
+  }
+}
+.login-box {
+  position: relative;
+  width: 375px;
+  height: 594px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  color: $dark-gray;
+  input {
+    background-color: white;
+    border-radius: 8px;
+    border: solid 1px $dark-gray;
+    width: 315px;
+    &.numeric {
+      width: 80px;
+    }
+  }
+  input[type="submit"]{
+    background-color: $blue;
+    color: white;
+    border: none;
+    font-size: 16px;
+  }
+  .form-actions {
+    position: absolute;
+    bottom: 30px;
+    button {
+      background-color: $blue;
+      border: 0px;
+      color: white;
+    }
+  }
+}
