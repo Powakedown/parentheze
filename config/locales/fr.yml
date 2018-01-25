@@ -26,12 +26,6 @@ fr:
     sign_out: "se déconnecter"
     manifesto: "manifeste"
     plans: "exemple de forfait"
-  seed:
-    wishes:
-     wish1: "J’ai besoin de faire garder mes enfants"
-     wish2: "Je suis prêt à accueillir les enfants de mes voisins"
-     wish3: "J’accepte les invitations pour faire connaissance"
-     wish4: "J'accepte les échanges et les dons de matériel entre voisins"
   inscription:
     title: "Inscription :"
     redirection:
@@ -61,14 +55,45 @@ fr:
       field2: "Numéro de téléphone :"
       placeholder2: "communiqué au moment des gardes"
     screen4:
-      title: "Besoins"
-      details: ""
+      title: "Envies et besoins"
+      details: "Vous pouvez décocher les besoins et envies qui ne vous correspondent pas. Vous pouvez aussi les modifier plus tard dans votre profil."
+      fields:
+        field1: "J’ai besoin de faire garder mes enfants"
+        field2: "Je suis prêt à accueillir les enfants de mes voisins"
+        field3: "J’accepte les invitations pour faire connaissance "
+        field4: "J'accepte les échanges et les dons de matériel entre voisins"
     screen5:
       title: "Photo de profil"
       details: "Une bonne photo permet de se faire connaître
               rapidement des connaissances et des parents du quartier ou de l’école.
               La photo doit vous bien représenter :"
       field1: "télécharger une photo"
+      alt: "exemple de bonne photo"
+      examples:
+        example1:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_01.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example2:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_02.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example3:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_03.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example4:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_04.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example5:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_05.jpg"
+          icon: "fa-minus-circle"
+          color: "#D0021B"
+        example6:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_06.jpg"
+          icon: "fa-minus-circle"
+          color: "#D0021B"
   home:
     slides:
       slide0:

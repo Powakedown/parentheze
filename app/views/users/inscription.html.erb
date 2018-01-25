@@ -40,15 +40,34 @@
         </div>
 
         <div id="screen3">
-          <%= simple_form_for [@user, @wishes] do |f| %>
+          <%= simple_form_for @user do |f| %>
             <div class="login-box">
               <h3><%= t('inscription.screen4.title') %></h3>
-              <p><%= t('inscription.screen4.details') %></p>
-              <%= f.input :wishes, label:  %>
-             <label class="checkbox">
-               <input type="checkbox" class="boolean optional" checked="checked" id="bordelais" name="guest[bordelais]" value="1" />
-               <label for="bordelais"><%= t('inscription.screen4.field1') %></label>
-             </label>
+              <p class="margin-bottom-medium"><%= t('inscription.screen4.details') %></p>
+              <% t('inscription.screen4.fields').each do |x| %>
+                <label class="checkbox margin-bottom-medium">
+                <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="guest[bordelais]" value="1" />
+                <label for="<%= x[0] %>"><%= x[1] %></label>
+                </label>
+              <% end %>
+              <div class="form-actions">
+                <%= f.button :submit, "suivant" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="screen4">
+          <%= simple_form_for @user do |f| %>
+            <div class="login-box">
+              <h3><%= t('inscription.screen5.title') %></h3>
+              <p class="margin-bottom-medium"><%= t('inscription.screen5.details') %></p>
+              <% t('inscription.screen5.examples').each do |x| %>
+                <div class="img-example-container relative">
+                  <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
+                  <%= image_tag x[1][:photo], alt: t('inscription.screen5.alt'), class: "img-example" %>
+                </div>
+              <% end %>
               <div class="form-actions">
                 <%= f.button :submit, "suivant" %>
               </div>

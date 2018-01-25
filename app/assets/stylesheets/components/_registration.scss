@@ -71,4 +71,23 @@
       color: white;
     }
   }
+  .img-example-container {
+    width: 100px;
+    float: left;
+    display: inline;
+    margin: 2px;
+    i {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      border: 1px solid white;
+      bottom: 5px;
+      right: 5px;
+    }
+  }
+  .img-example {
+    width: 100px;
+    border-radius: $border-radius;
+  }
+
 }
