@@ -5,13 +5,13 @@
       <div class="breadcrumb">
         <div class="center flex-line">
           <% (1..@signup_length).each do |x| %>
-            <div class="step flexbox <%= 'active' if x == 2 %>" id="breadcrumb-question<%= x %>"><%= x %></div>
+            <div class="step flexbox" id="breadcrumb-step<%= x %>"><%= x %></div>
           <% end %>
         </div>
       </div>
 
-        <div id="screen1">
-          <%= simple_form_for @user do |f| %>
+        <div id="screen2">
+          <%= simple_form_for @user, remote: true do |f| %>
             <div class="login-box">
               <h3><%= t('inscription.screen2.title') %></h3>
               <p><%= t('inscription.screen2.details') %></p>
@@ -25,8 +25,8 @@
           <% end %>
         </div>
 
-        <div id="screen2">
-          <%= simple_form_for @user do |f| %>
+        <div id="screen3">
+          <%= simple_form_for @user, remote: true do |f| %>
             <div class="login-box">
               <h3><%= t('inscription.screen3.title') %></h3>
               <p><%= t('inscription.screen3.details') %></p>
@@ -39,8 +39,8 @@
           <% end %>
         </div>
 
-        <div id="screen3">
-          <%= simple_form_for @user do |f| %>
+        <div id="screen4">
+          <%= simple_form_for @user, remote: true do |f| %>
             <div class="login-box">
               <h3><%= t('inscription.screen4.title') %></h3>
               <p class="margin-bottom-medium"><%= t('inscription.screen4.details') %></p>
@@ -57,8 +57,8 @@
           <% end %>
         </div>
 
-        <div id="screen4">
-          <%= simple_form_for @user do |f| %>
+        <div id="screen5">
+          <%= simple_form_for @user, remote: true do |f| %>
             <div class="login-box">
               <h3><%= t('inscription.screen5.title') %></h3>
               <p class="margin-bottom-medium"><%= t('inscription.screen5.details') %></p>
@@ -79,4 +79,18 @@
   </div>
 </div>
 
+<% content_for(:after_js) do %>
+  <script>
+    var current_step = <%= @current_step.to_s %>
+    active_step = document.getElementById('breadcrumb-step'+current_step)
+    active_step.className += " active";
+
+    for (i = 2; i <= <%= @signup_length %> ; i++) {
+      if( i != current_step){
+        document.getElementById('screen'+i).style.display = 'none';
+      }
+    }
+
+  </script>
+<% end %>
 

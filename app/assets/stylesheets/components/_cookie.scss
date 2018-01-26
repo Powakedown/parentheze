@@ -1,13 +1,12 @@
-#cookie-label{
+#cookie-label {
   position: fixed;
   background-color: white;
   bottom: 0px;
   z-index: 1500;
   width: 100%;
   height: 150px;
-
   box-shadow: 0 2px 0px 4px rgba(0, 0, 0, 0), 0 2px 6px 6px rgba(0, 0, 0, 0.05);
-  .cookie-content{
+  .cookie-content {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -18,7 +17,7 @@
   div {
     padding: 20px;
   }
-  p{
+  p {
     color: $dark-gray;
   }
   a {
@@ -28,7 +27,7 @@
     width: 40px;
     height: 40px;
   }
-  .fa{
+  .fa {
     font-size: 24px;
     position: absolute;
     top: 20px;
@@ -37,12 +36,12 @@
   }
 }
 @media (max-width: 375px) {
-  #cookie-label{
+  #cookie-label {
   top: 70px;
   width: 100%;
   height: calc(100vh - 70px);
   text-align: center;
-  .cookie-content{
+  .cookie-content {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
