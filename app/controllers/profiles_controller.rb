@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class ProfilesController < ApplicationController
   def inscription
     @user = current_user
     @current_step = 2

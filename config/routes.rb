@@ -14,9 +14,11 @@ Rails.application.routes.draw do
   get '/welcome', to: 'guests#welcome'
 
   # INSCRIPTION
-  resources :users, only: %i[show update] do
-    member do
-      get 'inscription'
+  resources :users do
+    resources :profiles, only: %i[show update] do
+      member do
+        get 'inscription'
+      end
     end
   end
 end
