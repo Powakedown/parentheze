@@ -15,10 +15,6 @@ Rails.application.routes.draw do
 
   # INSCRIPTION
   resources :users do
-    resources :profiles, only: %i[show update] do
-      member do
-        get 'inscription'
-      end
-    end
+    resources :profiles, only: %i[new create show update]
   end
 end

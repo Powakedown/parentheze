@@ -1,8 +1,13 @@
 class ProfilesController < ApplicationController
-  def inscription
+  def new
     @user = current_user
-    @current_step = 2
+    @profile = Profile.new
+    @current_step = @profile.step || 2
     @signup_length = 5
+  end
+
+  def create
+
   end
 
   def show
@@ -10,7 +15,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    raise
-    @current_step += 1
+
   end
 end

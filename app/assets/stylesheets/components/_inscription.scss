@@ -47,6 +47,7 @@
   border-radius: 8px;
   padding: 30px;
   color: $dark-gray;
+  margin-bottom: 20px;
   input {
     background-color: white;
     border-radius: 8px;
@@ -64,8 +65,15 @@
   }
   .form-actions {
     position: absolute;
-    bottom: 30px;
+    width: 315px;
+    height: 98px;
+    bottom: 10px;
+    .login-button {
+      margin-bottom: 10px;
+    }
     button {
+      bottom: 0px;
+      left: 30px;
       background-color: $blue;
       border: 0px;
       color: white;

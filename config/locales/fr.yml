@@ -2,6 +2,7 @@ fr:
   commons:
     button:
       next: "suivant"
+      previous: "précédent"
       end: "terminer"
     register: "S'inscrire"
     cookie:
@@ -46,7 +47,8 @@ fr:
       field1: "Prénom du premier parent :"
       field2: "Prénom du deuxième parent :"
       placeholder2: "laisser libre si parent solo"
-      field3: "Nombre d’enfants concernés par la garde :"
+      field3: "Enfant(s) concernés par la garde :"
+      placeholder3: "1,2..."
     screen3:
       title: "Informations non visibles sur le réseau"
       details: "L’adresse permet de calculer les distances

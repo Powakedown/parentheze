@@ -36,7 +36,7 @@
 <% content_for(:after_js) do %>
   <script>
     // INIT
-    var current_question = <%= @current_question %>
+    var current_question = <%= session[:current_question] %>
     $('#breadcrumb-question'+current_question).addClass('active');
 
     for (i = 1; i <= <%= @questions_number %> ; i++) {

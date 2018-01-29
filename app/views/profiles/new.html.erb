@@ -1,0 +1,125 @@
+<div class="flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen relative flexbox text-left" style="background-image: url('http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg')" id="">
+    <div class="parentheze-login">
+      <h4><%= t('inscription.title') %></h4>
+      <div class="breadcrumb">
+        <div class="center flex-line">
+          <% (1..@signup_length).each do |x| %>
+            <div class="step flexbox" id="breadcrumb-step<%= x %>"><%= x %></div>
+          <% end %>
+        </div>
+      </div>
+
+        <div id="screen2">
+          <%= simple_form_for [ @user, @profile ] do |f| %>
+            <div class="login-box">
+              <h3><%= t('inscription.screen2.title') %></h3>
+              <p><%= t('inscription.screen2.details') %></p>
+              <%= f.input :mother_first_name, required: true, autofocus: true, label: t('inscription.screen2.field1') %>
+              <%= f.input :father_first_name, required: false, label: t('inscription.screen2.field2'), placeholder: t('inscription.screen2.placeholder2') %>
+              <%= f.input :kids, required: true, label: t('inscription.screen2.field3'), placeholder: t('inscription.screen2.placeholder3') %>
+              <div class="form-actions">
+                <div class="login-button btn btn-blue flexbox full-width" id="submit2"><p><%= t('commons.button.next') %></p></div>
+              </div>
+            </div>
+        </div>
+
+        <div id="screen3">
+            <div class="login-box">
+              <h3><%= t('inscription.screen3.title') %></h3>
+              <p><%= t('inscription.screen3.details') %></p>
+              <%= f.input :address, required: true, autofocus: true, label: t('inscription.screen3.field1') %>
+              <%= f.input :phone, required: false, label: t('inscription.screen3.field2'), placeholder: t('inscription.screen3.placeholder2') %>
+              <div class="form-actions">
+                <div class="login-button btn btn-blue flexbox full-width" id="submit3"><p><%= t('commons.button.next') %></p></div>
+                <p class="text-center clickable previous" id="prev3"><%= t('commons.button.previous') %></p>
+              </div>
+            </div>
+        </div>
+
+        <div id="screen4">
+            <div class="login-box">
+              <h3><%= t('inscription.screen4.title') %></h3>
+              <p class="margin-bottom-medium"><%= t('inscription.screen4.details') %></p>
+              <% t('inscription.screen4.fields').each do |x| %>
+                <label class="checkbox margin-bottom-medium">
+                <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="guest[bordelais]" value="1" />
+                <label for="<%= x[0] %>"><%= x[1] %></label>
+                </label>
+              <% end %>
+              <div class="form-actions">
+                <div class="login-button btn btn-blue flexbox full-width" id="submit4"><p><%= t('commons.button.next') %></p></div>
+                <p class="text-center clickable previous" id="prev4"><%= t('commons.button.previous') %></p>
+              </div>
+            </div>
+        </div>
+
+        <div id="screen5">
+            <div class="login-box">
+              <h3><%= t('inscription.screen5.title') %></h3>
+              <p class="margin-bottom-medium"><%= t('inscription.screen5.details') %></p>
+              <div class="img-examples">
+                <% t('inscription.screen5.examples').each do |x| %>
+                  <div class="img-example-container relative">
+                    <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
+                    <%= image_tag x[1][:photo], alt: t('inscription.screen5.alt'), class: "img-example" %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="form-actions">
+                <%= f.button :submit, "suivant", class:"login-button" %>
+                <p class="text-center clickable previous" id="prev5"><%= t('commons.button.previous') %></p>
+              </div>
+          <% end %>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+  <script>
+    window.onload = function() {
+      var current_step = <%= @current_step.to_s %>
+      target_step = document.getElementById('breadcrumb-step'+current_step)
+      target_step.className += " active";
+
+      let submits = document.getElementsByClassName( 'login-button' );
+      let comebacks = document.getElementsByClassName( 'previous' );
+
+      for (i = 2; i <= <%= @signup_length %> ; i++) {
+        if( i != current_step){
+          document.getElementById('screen'+i).style.display = 'none';
+        }
+      }
+
+      for ( let comeback of comebacks) {
+        comeback.onclick = function() {
+          current_step = this.id.charAt(this.id.length-1)
+          target_step_dot = document.getElementById('breadcrumb-step'+(parseInt(current_step)-1))
+          current_step_dot = document.getElementById('breadcrumb-step'+parseInt(current_step))
+          target_step_dot.className = "step flexbox active";
+          current_step_dot.className = "step flexbox";
+
+          document.getElementById('screen'+current_step).style.display = 'none';
+          document.getElementById('screen'+(parseInt(current_step)-1)).style.display = 'block';
+        }
+      }
+
+      for ( let submit of submits ) {
+        submit.onclick = function() {
+          // console.log(parseInt(this.id.charAt(this.id.length-1))+1);
+          current_step = this.id.charAt(this.id.length-1)
+          target_step_dot = document.getElementById('breadcrumb-step'+(parseInt(current_step)+1))
+          current_step_dot = document.getElementById('breadcrumb-step'+parseInt(current_step))
+          target_step_dot.className = "step flexbox active";
+          current_step_dot.className = "step flexbox";
+
+          document.getElementById('screen'+current_step).style.display = 'none';
+          document.getElementById('screen'+(parseInt(current_step)+1)).style.display = 'block';
+        }
+      }
+    };
+  </script>
+<% end %>
+
