@@ -2,6 +2,8 @@
   font-family: $body-font;
   color: white;
   text-align: left;
+  margin-top: 100px;
+  margin-bottom: 100px;
   h3 {
     font-size: 28px;
     font-weight: bold;
@@ -48,6 +50,9 @@
   padding: 30px;
   color: $dark-gray;
   margin-bottom: 20px;
+  &.login-box-tall {
+    height: 960px;
+  }
   input {
     background-color: white;
     border-radius: 8px;
@@ -97,5 +102,28 @@
     width: 100px;
     border-radius: $border-radius;
   }
-
+  .info-frame {
+    border: 4px solid #FAFAFA;
+    border-radius: 15px;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 10px;
+    position: relative;
+    .info-title {
+      margin-bottom: 0px;
+      // color: $medium-gray;
+    }
+    .fa {
+      margin-right: 5px;
+    }
+    .info-frame-title {
+      font-size: 10px;
+      color: $blue;
+      background-color: white;
+      border: 5px solid white;
+      position: absolute;
+      top: -15px;
+      right: 10px;
+    }
+  }
 }

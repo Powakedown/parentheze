@@ -21,7 +21,7 @@ body {
   font-family: $body-font;
   font-size: calc(2.1vh + 0.8vmin);
 }
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, i {
   &.pink {
     color: $pink;
   }
@@ -33,6 +33,12 @@ h1, h2, h3, h4, p {
   }
   &.white {
     color: white;
+  }
+  &.red {
+    color: $red;
+  }
+  &.green {
+    color: $green;
   }
 }
 h1, h2{

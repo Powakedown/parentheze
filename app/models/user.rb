@@ -9,12 +9,16 @@ class User < ApplicationRecord
                     format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/, message: 'non valide' }
   validates :email, uniqueness: { conditions: -> { where.not(email: ['email@example.com', 'parentgenial@parentheze.com']) } }
 
-  delegate :mother_first_name, :father_first_name, :address, :kids, :phone, :comment, to: :profile, :allow_nil => true
+  # delegate :mother_first_name, :father_first_name, :address, :kids, :phone, :comment, to: :profile, :allow_nil => true
 
   has_one :profile
   has_one :preprofile
   has_many :bookings
   has_many :user_wishes
   has_many :wishes, through: :user_wishes
+
+  def self.validated?
+    validated == true
+  end
 
 end

@@ -15,11 +15,13 @@ Rails.application.routes.draw do
 
   # INSCRIPTION
   resources :users do
-    resources :profiles, only: %i[new create show update]
+    resources :profiles, only: %i[new create show update] do
+      member do
+        get 'previous'
+      end
+    end
     resources :preprofiles, only: %i[create update]
   end
-
-  get '/previous', to: 'preprofiles#previous'
 
   mount Attachinary::Engine => "/attachinary"
 

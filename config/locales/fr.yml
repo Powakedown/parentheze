@@ -96,6 +96,16 @@ fr:
           photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_06.jpg"
           icon: "fa-minus-circle"
           color: "#D0021B"
+    screen6:
+      title: "Récapitulatif"
+      details: "vérifiez vos informations et validez ou modifiez les :"
+      nofather: "- parent solo"
+      noneed1: "Je n’ai pas besoin de faire garder mes enfants"
+      noneed2: "Je suis pas prêt à accueillir les enfants de mes voisins"
+      noneed3: "Je n’accepte pas les invitations pour faire connaissance "
+      noneed4: "Je n’accepte pas les échanges et les dons de matériel entre voisins"
+      frame-title1: "Informations visibles sur le réseau"
+      frame-title2: "Informations non visibles sur le réseau"
   home:
     slides:
       slide0:
