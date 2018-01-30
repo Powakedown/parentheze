@@ -29,6 +29,7 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag params[:controller] %>
+    <%= cloudinary_js_config %>
     <%= yield(:after_js) %>
   </body>
 </html>

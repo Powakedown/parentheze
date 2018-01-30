@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126104245) do
+ActiveRecord::Schema.define(version: 20180129164002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", id: :serial, force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.integer "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
@@ -49,6 +64,23 @@ ActiveRecord::Schema.define(version: 20180126104245) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "preprofiles", force: :cascade do |t|
+    t.string "address"
+    t.integer "kids"
+    t.string "mother_first_name"
+    t.string "father_first_name"
+    t.bigint "user_id"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "need1"
+    t.integer "need2"
+    t.integer "need3"
+    t.integer "need4"
+    t.integer "step"
+    t.index ["user_id"], name: "index_preprofiles_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -101,6 +133,7 @@ ActiveRecord::Schema.define(version: 20180126104245) do
 
   add_foreign_key "bookings", "plans"
   add_foreign_key "bookings", "users"
+  add_foreign_key "preprofiles", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "user_wishes", "users"
   add_foreign_key "user_wishes", "wishes"
