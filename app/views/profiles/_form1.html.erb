@@ -1,0 +1,15 @@
+<div id="screen2">
+  <%= simple_form_for [ @user, @profile ] do |f| %>
+    <div class="login-box">
+      <h3><%= t('inscription.screen2.title') %></h3>
+      <p><%= t('inscription.screen2.details') %></p>
+
+      <%= f.input :mother_first_name, required: true, autofocus: true, label: t('inscription.screen2.field1') %>
+      <%= f.input :father_first_name, required: false, label: t('inscription.screen2.field2'), placeholder: t('inscription.screen2.placeholder2') %>
+      <%= f.input :kids, required: true, label: t('inscription.screen2.field3'), placeholder: t('inscription.screen2.placeholder3') %>
+      <div class="form-actions">
+        <%= f.button :submit, "suivant", class:"login-button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

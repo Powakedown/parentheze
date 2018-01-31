@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   # INSCRIPTION
   resources :users do
-    resources :profiles, only: %i[new create show update] do
+    resources :profiles, only: %i[new create show edit update] do
       member do
         get 'previous'
       end
