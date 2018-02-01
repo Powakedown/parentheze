@@ -1,0 +1,6 @@
+<% t('inscription.screen4.fields').each_with_index do |x,index| %>
+  <label class="checkbox margin-bottom-medium">
+  <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="preprofile[need<%= index %>]" value="1" />
+  <label for="<%= x[0] %>"><%= x[1] %></label>
+  </label>
+<% end %>

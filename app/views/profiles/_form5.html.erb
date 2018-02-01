@@ -1,0 +1,9 @@
+<div class="img-examples">
+  <% t('inscription.screen5.examples').each do |x| %>
+    <div class="img-example-container relative">
+      <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
+      <%= image_tag x[1][:photo], alt: t('inscription.screen5.alt'), class: "img-example" %>
+    </div>
+  <% end %>
+</div>
+<%= f.input :photo, as: :attachinary %>

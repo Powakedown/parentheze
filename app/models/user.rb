@@ -11,10 +11,9 @@ class User < ApplicationRecord
 
   # delegate :mother_first_name, :father_first_name, :address, :kids, :phone, :comment, to: :profile, :allow_nil => true
 
-  has_one :profile
-  has_one :preprofile
+  has_one :profile, dependent: :destroy
   has_many :bookings
-  has_many :user_wishes
+  has_many :user_wishes, dependent: :destroy
   has_many :wishes, through: :user_wishes
 
   def self.validated?

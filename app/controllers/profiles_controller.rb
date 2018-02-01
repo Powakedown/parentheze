@@ -1,12 +1,19 @@
 class ProfilesController < ApplicationController
   before_action :params_user, only: %i[create new edit update previous]
 
+  def new
+    @profile = @user.profile || Profile.new(user: @user, step: 2)
+    @profile.save!
+    @step = @profile.step
+    render :edit
+  end
+
   def show
 
   end
 
   def edit
-    @profile = @user.profile || Profile.new(user: @user, step: 2)
+    @profile = @user.profile
     @profile.save!
     @step = @profile.step
   end
@@ -19,7 +26,7 @@ class ProfilesController < ApplicationController
     else
       notice = ""
       @profile.errors.messages.each do |key, value|
-        notice << "- " << value.first << ". <br/>"
+        notice << value.first << ". <br/>"
       end
       redirect_to edit_user_profile_path, alert: notice
 

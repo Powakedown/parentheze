@@ -40,6 +40,8 @@ fr:
       field1: "Email"
       field2: "Mot de passe (minimum 6 caractères incluant lettres et chiffres) :"
       field3: "Confirmer le mot de passe :"
+      field4: "Nouveau mot de passe :"
+      field5: "Confirmer le nouveau mot de passe :"
       addon: "Déjà inscrit ?"
     screen2:
       title: "Informations visibles sur le réseau"

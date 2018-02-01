@@ -17,7 +17,7 @@
         <div class="login-box">
           <h3><%= t('inscription.screen1.title') %></h3>
           <p><%= t('inscription.screen1.details') %></p>
-          <%= f.input :email, required: true, autofocus: true, label: t('inscription.screen1.field1') %>
+          <%= f.input :email, required: true, autofocus: true, label: t('inscription.screen1.field1'), input_html: {value: session[:email] || "" } %>
           <%= f.input :password, required: true, label: t('inscription.screen1.field2') %>
           <%= f.input :password_confirmation, required: true, label: t('inscription.screen1.field3') %>
           <div class="form-actions">

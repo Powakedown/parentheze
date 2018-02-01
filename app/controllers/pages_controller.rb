@@ -4,15 +4,19 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home update home_parent why]
 
   def home
-    if cookie
-      @slides = t('home.slides')
-      @slide_shows = t('home.slide_with_split')
-      @slide_plan = t('home.slide_plan')
-      @guest = guest_user
-      @guest.visit += 1
-      @guest.save
+    if current_user
+      redirect_to new_user_profile_path(current_user) if current_user.profile.step == 2
     else
-      redirect_to new_guest_path
+      if cookie
+        @slides = t('home.slides')
+        @slide_shows = t('home.slide_with_split')
+        @slide_plan = t('home.slide_plan')
+        @guest = guest_user
+        @guest.visit += 1
+        @guest.save
+      else
+        redirect_to new_guest_path
+      end
     end
   end
 

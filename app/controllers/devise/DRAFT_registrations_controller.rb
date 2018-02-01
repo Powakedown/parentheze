@@ -1,8 +1,14 @@
-class Registrations::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
   def after_sign_up_path_for(resource)
+    after_sign_in_path_for(resource)
+  end
+
+  protected
+
+  def after_update_path_for(resource)
     after_sign_in_path_for(resource)
   end
 
@@ -17,14 +23,14 @@ class Registrations::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   # DELETE /resource
   # def destroy

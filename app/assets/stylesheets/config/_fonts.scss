@@ -21,12 +21,12 @@ body {
   font-family: $body-font;
   font-size: calc(2.1vh + 0.8vmin);
 }
-h1, h2, h3, h4, p, i {
+h1, h2, h3, h4, p, i, a {
   &.pink {
     color: $pink;
   }
   &.blue {
-    color: $light-blue;
+    color: $blue;
   }
   &.yellow {
     color: $yellow;

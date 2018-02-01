@@ -12,111 +12,26 @@
         </div>
       <% end %>
 
-      <% if @step == 2 %>
-        <%= render 'form1' %>
-      <% end %>
-
-      <% if @step == 3 %>
-        <div id="screen3">
+      <% %w(1 2 3 4 5).each do |step| %>
+        <% if @step == step.to_i %>
           <%= simple_form_for [ @user, @profile ] do |f| %>
             <div class="login-box">
-              <%= f.error_notification %>
-              <h3><%= t('inscription.screen3.title') %></h3>
-              <p><%= t('inscription.screen3.details') %></p>
-              <%= f.input :address, required: true, autofocus: true, label: t('inscription.screen3.field1') %>
-              <%= f.input :phone, required: false, label: t('inscription.screen3.field2'), placeholder: t('inscription.screen3.placeholder2') %>
+              <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
+              <p><%= t('inscription.screen'<<step<<'.details') %></p>
+              <%= render 'form'+step, f: f %>
               <div class="form-actions">
                 <%= f.button :submit, "suivant", class:"login-button" %>
-                <p class="text-center clickable"><%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile) %></p>
+                <p class="text-center clickable">
+                  <% if @step == 2 %>
+                    <%= link_to t('commons.button.previous'), edit_user_registration_path %>
+                  <% else %>
+                    <%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile)  %></p>
+                  <% end %>
+                </p>
               </div>
             </div>
           <% end %>
-        </div>
-      <% end %>
-
-      <% if @step == 4 %>
-        <div id="screen4">
-          <%= simple_form_for [ @user, @profile ] do |f| %>
-            <div class="login-box">
-              <h3><%= t('inscription.screen4.title') %></h3>
-              <p class="margin-bottom-medium"><%= t('inscription.screen4.details') %></p>
-              <% t('inscription.screen4.fields').each_with_index do |x,index| %>
-                <label class="checkbox margin-bottom-medium">
-                <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="preprofile[need<%= index %>]" value="1" />
-                <label for="<%= x[0] %>"><%= x[1] %></label>
-                </label>
-              <% end %>
-              <div class="form-actions">
-                <%= f.button :submit, "suivant", class:"login-button" %>
-                <p class="text-center clickable"><%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile) %></p>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-
-      <% if @step == 5 %>
-        <div id="screen5">
-          <%= simple_form_for [ @user, @profile ] do |f| %>
-            <div class="login-box">
-              <h3><%= t('inscription.screen5.title') %></h3>
-              <p class="margin-bottom-medium"><%= t('inscription.screen5.details') %></p>
-              <div class="img-examples">
-                <% t('inscription.screen5.examples').each do |x| %>
-                  <div class="img-example-container relative">
-                    <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
-                    <%= image_tag x[1][:photo], alt: t('inscription.screen5.alt'), class: "img-example" %>
-                  </div>
-                <% end %>
-              </div>
-              <%= f.input :photo, as: :attachinary %>
-              <div class="form-actions">
-                <%= f.button :submit, "suivant", class:"login-button" %>
-                <p class="text-center clickable"><%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile) %></p>
-              </div>
-          <% end %>
-        </div>
-      <% end %>
-
-      <% if @step == 6 %>
-        <div id="screen5">
-          <%= simple_form_for [ @user, @profile ] do |f| %>
-            <div class="login-box login-box-tall">
-              <h3><%= t('inscription.screen6.title') %></h3>
-              <p class="margin-bottom-medium info-title"><%= t('inscription.screen6.details') %></p>
-
-              <div class="info-frame margin-bottom-small">
-                <p class="info-frame-title"><%= t('inscription.screen6.frame-title1') %></p>
-                <p class="info-title"><%= t('inscription.screen2.field1') %></p>
-                <p><strong><%= @user.preprofile.mother_first_name %></strong></p>
-                <p  class="info-title"><%= t('inscription.screen2.field2') %></p>
-                <p><strong><%= @user.preprofile.father_first_name || t('inscription.screen6.nofather')%></strong></p>
-                <p  class="info-title"><%= t('inscription.screen2.field3') %></p>
-                <p><strong><%= @user.preprofile.kids %></strong></p>
-                <p  class="info-title"><%= t('inscription.screen4.title') %></p>
-                <p><i class="fa fa-<%= @user.preprofile.need1.present? ? "check green" : "minus-circle red" %>" aria-hidden="true"></i><strong><%= @user.preprofile.need1.present? ? t('inscription.screen4.fields.field1') : t('inscription.screen6.noneed1') %></strong></p>
-                <p><i class="fa fa-<%= @user.preprofile.need2.present? ? "check green" : "minus-circle red" %>" aria-hidden="true"></i><strong><%= @user.preprofile.need2.present? ? t('inscription.screen4.fields.field2') : t('inscription.screen6.noneed2') %></strong></p>
-                <p><i class="fa fa-<%= @user.preprofile.need3.present? ? "check green" : "minus-circle red" %>" aria-hidden="true"></i><strong><%= @user.preprofile.need3.present? ? t('inscription.screen4.fields.field3') : t('inscription.screen6.noneed3') %></strong></p>
-                <p><i class="fa fa-<%= @user.preprofile.need4.present? ? "check green" : "minus-circle red" %>" aria-hidden="true"></i><strong><%= @user.preprofile.need4.present? ? t('inscription.screen4.fields.field4') : t('inscription.screen6.noneed4') %></strong></p>
-                <p  class="info-title"><%= t('inscription.screen5.title') %></p>
-                <% if @user.preprofile.photo? %>
-                  <%= cl_image_tag @user.preprofile.photo.path, width: 150, height: 100, crop: :fill %>
-                <% end %>
-              </div>
-              <div class="info-frame">
-                <p class="info-frame-title"><%= t('inscription.screen6.frame-title2') %></p>
-                <p class="info-title"><%= t('inscription.screen3.field1') %></p>
-                <p class="<%= "red" if @user.preprofile.address.blank? %>"><strong><%= @user.preprofile.address.presence || "Adresse à renseigner" %></strong></p>
-                <p class="info-title"><%= t('inscription.screen3.field2') %></p>
-                <p class="<%= "blue" if @user.preprofile.phone.blank? %>"><strong><%= @user.preprofile.phone.presence || "Téléphone non renseigné" %></strong></p>
-              </div>
-
-              <div class="form-actions">
-                <%= f.button :submit, "suivant", class:"login-button" %>
-                <p class="text-center clickable"><%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile) %></p>
-              </div>
-          <% end %>
-        </div>
+        <% end %>
       <% end %>
 
     </div>
