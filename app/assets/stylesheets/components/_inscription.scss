@@ -49,10 +49,7 @@
   padding: 30px;
   color: $dark-gray;
   .login-fields {
-    min-height: 310px;
-  }
-  .login-fields {
-    min-height: 450px;
+    height: 470px;
   }
   .login-fields-tall {
     min-height: 530px;
@@ -60,7 +57,7 @@
   input {
     background-color: white;
     border-radius: 8px;
-    border: solid 1px $dark-gray;
+    border: solid 1px $medium-gray;
     width: 315px;
     &.numeric {
       width: 80px;

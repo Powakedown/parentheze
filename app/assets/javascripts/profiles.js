@@ -8,10 +8,10 @@ function onPlaceChanged() {
 
   var profileAddress = document.getElementById('profile_address');
   profileAddress.blur();
-  profileAddress.value = components.address;
+  profileAddress.value = components.address + ', ' + components.zip_code + ' ' + components.city + ', ' + components.country_code;
 
-  document.getElementById('profile_zip_code').value = components.zip_code;
-  document.getElementById('profile_city').value = components.city;
+  // document.getElementById('profile_zip_code').value = components.zip_code;
+  // document.getElementById('profile_city').value = components.city;
 
   if (components.country_code) {
     var selector = '#profile_country option[value="' + components.country_code + '"]';

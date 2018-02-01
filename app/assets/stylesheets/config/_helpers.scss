@@ -248,15 +248,13 @@ a:hover {
 input[type="checkbox"] {
   width: 40px;
 }
-.checkbox input[type="checkbox"] {
-  top: -20px;
-}
 .alert-warning, .alert-info, .alert-success {
   border: none
 }
-input{
+input, textarea{
   border-radius: $border-radius !important;
   font-size: 20px;
+  resize: none;
 }
 .help-block {
   font-size: 16px;
