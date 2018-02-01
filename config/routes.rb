@@ -14,13 +14,12 @@ Rails.application.routes.draw do
   get '/welcome', to: 'guests#welcome'
 
   # INSCRIPTION
-  resources :users do
+  resources :users, only: %i[] do
     resources :profiles, only: %i[new create show edit update] do
       member do
         get 'previous'
       end
     end
-    resources :preprofiles, only: %i[create update]
   end
 
   mount Attachinary::Engine => "/attachinary"

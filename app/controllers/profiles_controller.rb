@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = @user.profile || Profile.new(user: @user, step: 2)
+    @profile.step = 2
     @profile.save!
     @step = @profile.step
     render :edit
