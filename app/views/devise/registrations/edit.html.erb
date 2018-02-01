@@ -3,32 +3,35 @@
 
     <div class="parentheze-login">
       <h4><%= t('inscription.title') %></h4>
-      <div class="breadcrumb">
-        <div class="center flex-line">
-          <% (1..5).each do |x| %>
-            <div class="step flexbox <%= 'active' if x == 1 %>" id="breadcrumb-question<%= x %>"><%= x %></div>
-          <% end %>
+      <% if @user.profile.step != 10 %>
+        <div class="breadcrumb">
+          <div class="center flex-line">
+            <% (1..5).each do |x| %>
+              <div class="step flexbox <%= 'active' if x == 1 %>" id="breadcrumb-question<%= x %>"><%= x %></div>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
-        <div class="login-box login-box-tall">
-          <h3><%= t('inscription.screen1.title') %></h3>
-          <p><%= t('inscription.screen1.details') %></p>
+        <div class="login-box">
+          <div class="login-fields-tall">
+            <h3><%= t('inscription.screen1.title') %></h3>
+            <p><%= t('inscription.screen1.details') %></p>
 
-          <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :email, required: true, autofocus: true %>
 
-          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <p>
-              <%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %>
-            </p>
-          <% end %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>
+                <%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %>
+              </p>
+            <% end %>
+            <%= f.input :current_password, required: true, label: t('inscription.screen1.field6'), placeholder: t('inscription.screen1.placeholder1') %>
 
-          <%= f.input :password, autocomplete: "off", required: false, label: t('inscription.screen1.field4')%>
-          <p class="blue"><%= t(".leave_blank_if_you_don_t_want_to_change_it") %></p>
-          <%= f.input :password_confirmation, required: false, label: t('inscription.screen1.field5') %>
-          <p class="blue"><%= t(".we_need_your_current_password_to_confirm_your_changes") %></p>
-          <%= f.input :current_password , required: true, label: t('inscription.screen1.field2') %>
+            <%= f.input :password, autocomplete: "off", required: false, label: t('inscription.screen1.field4')%>
+            <p class="blue"><%= t(".leave_blank_if_you_don_t_want_to_change_it") %></p>
+            <%= f.input :password_confirmation, required: false, label: t('inscription.screen1.field5') %>
+          </div>
           <div class="form-actions text-center">
             <%= f.button :submit, "suivant", class:"margin-bottom-small" %>
             <p><%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete, class:"red" %></p>

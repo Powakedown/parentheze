@@ -260,7 +260,7 @@ input{
 }
 .help-block {
   font-size: 16px;
-  position: absolute;
+  word-wrap: break-word;
 }
 .clickable {
   cursor: pointer;

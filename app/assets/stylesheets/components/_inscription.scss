@@ -44,14 +44,17 @@
 .login-box {
   position: relative;
   width: 375px;
-  height: 594px;
+  min-height: 594px;
   background-color: white;
   border-radius: 8px;
   padding: 30px;
   color: $dark-gray;
   margin-bottom: 20px;
-  &.login-box-tall {
-    height: 800px;
+  .login-fields {
+    min-height: 430px;
+  }
+  .login-fields-tall {
+    min-height: 580px;
   }
   input {
     background-color: white;
@@ -69,9 +72,8 @@
     font-size: 16px;
   }
   .form-actions {
-    position: absolute;
     width: 315px;
-    height: 98px;
+    height: 100px;
     bottom: 10px;
     .login-button {
       margin-bottom: 10px;
