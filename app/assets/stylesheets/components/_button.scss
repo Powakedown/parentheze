@@ -10,7 +10,7 @@
   width: 100%;
   min-width: 200px;
   box-shadow: none;
-  font-size: 24px;
+  font-size: 16px;
   -webkit-box-shadow: none;
   border-bottom:none;
   cursor: pointer;
@@ -27,6 +27,7 @@
 }
 input.btn-tall {
   min-height: 70px;
+  font-size: 24px;
 }
 .btn-large {
   max-width: 350px;

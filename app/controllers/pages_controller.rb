@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def home
     if current_user
-      redirect_to new_user_profile_path(current_user) if current_user.profile.step == 2
+      redirect_to new_user_profile_path(current_user) if current_user.profile.step < 6
     end
     if cookie
       @slides = t('home.slides')
