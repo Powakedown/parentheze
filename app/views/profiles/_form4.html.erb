@@ -1,7 +1,19 @@
-<% t('inscription.screen4.fields').each_with_index do |x,index| %>
-  <label class="checkbox margin-bottom-medium">
-  <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="preprofile[need<%= index %>]" value="1" />
-  <label for="<%= x[0] %>"><%= x[1] %></label>
-  </label>
+<%= simple_form_for :profile, url: user_profile_path, method: :patch do |f| %>
+  <div class="login-fields">
+    <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
+    <p><%= t('inscription.screen'<<step<<'.details') %></p>
+    <% t('inscription.screen4.fields').each_with_index do |x,index| %>
+      <label class="checkbox margin-bottom-medium">
+      <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="profile[need<%= index %>]" value="true" />
+      <label for="<%= x[0] %>"><%= x[1] %></label>
+      </label>
+    <% end %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "suivant", class:"login-button" %>
+    <p class="text-center clickable">
+      <%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile)  %></p>
+    </p>
+  </div>
 <% end %>
 

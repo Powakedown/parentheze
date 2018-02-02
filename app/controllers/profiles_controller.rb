@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = @user.profile || Profile.new(user: @user, step: 2)
-    @profile.step = 2
+    @profile.step = 2 if @profile.step < 2
     @profile.save!
     @step = @profile.step
     render :edit
@@ -22,20 +22,25 @@ class ProfilesController < ApplicationController
   def update
     @profile = @user.profile
     @profile.step += 1
-    if @profile.update(profile_params)
+
+    if @profile.step5?
+      @user.user_wishes.destroy_all
+      wishes = Wish.all.to_a
+      wishes.each do |wish|
+        UserWish.create( user: @user, wish: wish, status: profile_params[("need"<<wish.number.to_s).to_sym] )
+      end
+      @profile.save
       redirect_to edit_user_profile_path
     else
-      notice = ""
-      @profile.errors.messages.each do |key, value|
-        notice << value.first << ". <br/>"
+      if @profile.update(profile_params)
+        redirect_to edit_user_profile_path
+      else
+        notice = ""
+        @profile.errors.messages.each do |key, value|
+          notice << value.first << ". <br/>"
+        end
+        redirect_to edit_user_profile_path, alert: notice
       end
-      redirect_to edit_user_profile_path, alert: notice
-
-    end
-
-    if @profile.step == 5
-      # UserWish.create( user: @user, wish: ) if params[:profile][:need1] == 1
-
     end
   end
 
@@ -53,6 +58,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :user, :phone, :need1, :need2, :need3, :need4, :photo)
+    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :user, :phone, :need0, :need1, :need2, :need3, :photo)
   end
 end

@@ -1,9 +1,26 @@
-<div class="img-examples">
-  <% t('inscription.screen5.examples').each do |x| %>
-    <div class="img-example-container relative">
-      <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
-      <%= image_tag x[1][:photo], alt: t('inscription.screen5.alt'), class: "img-example" %>
+<%= simple_form_for [ @user, @profile ] do |f| %>
+  <div class="login-fields">
+    <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
+    <p><%= t('inscription.screen'<<step<<'.details') %></p>
+    <div class="img-examples">
+      <% t('inscription.screen5.examples').each do |x| %>
+        <div class="img-example-container relative">
+          <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
+          <%= image_tag x[1][:photo], alt: t('inscription.screen5.alt'), class: "img-example" %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
-<%= f.input :photo, as: :attachinary %>
+    <div>
+      <label class="text-center fileUpload">
+         <span class=""><i class="fa fa-camera upload"></i></span>
+         <%= f.input :photo, as: :attachinary, label: false %>
+      </label>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "suivant", class:"login-button" %>
+    <p class="text-center clickable">
+      <%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile)  %></p>
+    </p>
+  </div>
+<% end %>

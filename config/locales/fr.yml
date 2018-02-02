@@ -68,10 +68,10 @@ fr:
       title: "Envies et besoins"
       details: "Vous pouvez décocher les besoins et envies qui ne vous correspondent pas. Vous pouvez aussi les modifier plus tard dans votre profil."
       fields:
-        field1: "J’ai besoin de faire garder mes enfants"
-        field2: "Je suis prêt à accueillir les enfants de mes voisins"
-        field3: "J’accepte les invitations pour faire connaissance "
-        field4: "J'accepte les échanges et les dons de matériel entre voisins"
+        field0: "J’ai besoin de faire garder mes enfants"
+        field1: "Je suis prêt à accueillir les enfants de mes voisins"
+        field2: "J’accepte les invitations pour faire connaissance "
+        field3: "J'accepte les échanges et les dons de matériel entre voisins"
     screen5:
       title: "Photo de profil"
       details: "Une bonne photo permet de se faire connaître
@@ -448,6 +448,10 @@ fr:
               confirmation: "la confirmation de mot de passe n'a pu se faire, saisissez le de nouveau."
             password:
               too_short: "le mot de passe est trop court."
+        profile:
+          attributes:
+            photo:
+              blank: "Vous devez charger une photo de vous."
     attributes:
       user:
         confirmation_sent_at: Date d'envoi de la confirmation

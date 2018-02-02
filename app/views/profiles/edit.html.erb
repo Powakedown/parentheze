@@ -14,25 +14,9 @@
 
       <% %w(2 3 4 5).each do |step| %>
         <% if @step == step.to_i %>
-          <%= simple_form_for [ @user, @profile ] do |f| %>
-            <div class="login-box">
-              <div class="login-fields">
-                <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
-                <p><%= t('inscription.screen'<<step<<'.details') %></p>
-                <%= render 'form'+step, f: f %>
-              </div>
-              <div class="form-actions">
-                <%= f.button :submit, "suivant", class:"login-button" %>
-                <p class="text-center clickable">
-                  <% if @step == 2 %>
-                    <%= link_to t('commons.button.previous'), edit_user_registration_path %>
-                  <% else %>
-                    <%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile)  %></p>
-                  <% end %>
-                </p>
-              </div>
-            </div>
-          <% end %>
+          <div class="login-box">
+            <%= render 'form'<<step, step: step %>
+          </div>
         <% end %>
       <% end %>
 
