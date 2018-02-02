@@ -10,6 +10,8 @@ fr:
       text: "Ce site utilise des cookies afin de faciliter votre navigation et mesurer l'audience de notre site. En continuant à utiliser notre site, vous consentez à l'utilisation des coookies."
       button1_text: "Continuer"
       button2_text: "en savoir plus"
+    button:
+      downloading: "téléchargement"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
     email_valid: "Veuillez entrez un email valide"
