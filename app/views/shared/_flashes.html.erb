@@ -3,8 +3,8 @@
     <div class="alert-badge info flexbox">
       <i class="fa fa-bell-o bigEntrance withdelay" aria-hidden="true"></i>
     </div>
-    <div class="alert-message">
-      <%= notice %>
+    <div class="alert-message text-left flexbox">
+      <%= simple_format(notice) %>
     </div>
     <div type="button" class="alert-close" data-dismiss="alert" aria-label="close"><i class="fa fa-times info" aria-hidden="true"></i></div>
   </div>
@@ -14,8 +14,8 @@
     <div class="alert-badge warning flexbox">
       <i class="fa fa-exclamation-triangle bigEntrance withdelay" aria-hidden="true"></i>
     </div>
-    <div class="alert-message">
-      <%= alert %>
+    <div class="alert-message text-left flexbox">
+      <%= simple_format(alert) %>
     </div>
     <div type="button" class="alert-close" data-dismiss="alert" aria-label="close"><i class="fa fa-times warning" aria-hidden="true"></i></div>
   </div>

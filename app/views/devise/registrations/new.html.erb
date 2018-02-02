@@ -1,17 +1,34 @@
-<h2><%= t(".sign_up") %></h2>
+<div class="flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen relative flexbox text-left" style="background-image: url(<%= t('inscription.image') %>)">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <div class="parentheze-login">
+      <h4><%= t('inscription.title') %></h4>
+      <div class="breadcrumb">
+        <div class="center flex-line">
+          <% @breadcrumb_length = 5 %>
+          <% (1..@breadcrumb_length).each do |x| %>
+            <div class="step flexbox <%= 'active' if x == 1 %>" id="breadcrumb-question<%= x %>"><%= x %></div>
+          <% end %>
+        </div>
+      </div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true %>
-    <%= f.input :password_confirmation, required: true %>
+        <div class="login-box">
+          <h3><%= t('inscription.screen1.title') %></h3>
+          <p><%= t('inscription.screen1.details') %></p>
+          <%= f.input :email, required: true, autofocus: true, label: t('inscription.screen1.field1'), input_html: {value: session[:email] || "" } %>
+          <%= f.input :password, required: true, label: t('inscription.screen1.field2') %>
+          <%= f.input :password_confirmation, required: true, label: t('inscription.screen1.field3') %>
+          <div class="form-actions">
+            <%= f.button :submit, "suivant", class:"margin-bottom-small" %>
+            <p class="text-center"><%= t('inscription.screen1.addon') %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, t(".sign_up") %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+

@@ -618,8 +618,8 @@ expandOpen-withdelay
   animation-name: expandOpen;
   -webkit-animation-name: expandOpen;
 
-  animation-duration: 1.2s;
-  -webkit-animation-duration: 1.2s;
+  animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
 
   animation-timing-function: ease-out;
   -webkit-animation-timing-function: ease-out;
@@ -629,16 +629,10 @@ expandOpen-withdelay
 
 @keyframes expandOpen {
   0% {
-    transform: scale(1.8);
+    transform: scale(1.2);
   }
   50% {
-    transform: scale(0.95);
-  }
-  80% {
     transform: scale(1.05);
-  }
-  90% {
-    transform: scale(0.98);
   }
   100% {
     transform: scale(1);

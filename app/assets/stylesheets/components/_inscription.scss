@@ -1,0 +1,130 @@
+.parentheze-login{
+  font-family: $body-font;
+  color: white;
+  text-align: left;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  h4 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 0;
+  }
+  p {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .breadcrumb {
+    background-color: transparent;
+    height: 39px;
+    width: 100%;
+    margin: 25px 0 25px 0;
+    padding: 0;
+  }
+  .step {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin: 0;
+    color: $dark-gray;
+    background-color: white;
+    &.active {
+      background-color: $light-blue;
+      color: white;
+    }
+  }
+}
+.login-box {
+  position: relative;
+  width: 375px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  color: $dark-gray;
+  .login-fields {
+    height: 470px;
+  }
+  .login-fields-tall {
+    min-height: 530px;
+  }
+  input {
+    background-color: white;
+    border-radius: 8px;
+    border: solid 1px $medium-gray;
+    width: 315px;
+    &.numeric {
+      width: 80px;
+    }
+  }
+  input[type="submit"]{
+    background-color: $blue;
+    color: white;
+    border: none;
+    font-size: 16px;
+  }
+  .form-actions {
+    width: 315px;
+    .login-button {
+      margin-bottom: 10px;
+    }
+    button {
+      bottom: 0px;
+      left: 30px;
+      background-color: $blue;
+      border: 0px;
+      color: white;
+    }
+  }
+  .img-examples {
+    height: 210px;
+  }
+  .img-example-container {
+    width: 100px;
+    float: left;
+    display: inline;
+    margin: 2px;
+    i {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      border: 1px solid white;
+      bottom: 5px;
+      right: 5px;
+    }
+  }
+  .img-example {
+    width: 100px;
+    border-radius: $border-radius;
+  }
+  .info-frame {
+    border: 4px solid #FAFAFA;
+    border-radius: 15px;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 10px;
+    position: relative;
+    .info-title {
+      margin-bottom: 0px;
+      // color: $medium-gray;
+    }
+    .fa {
+      margin-right: 5px;
+    }
+    .info-frame-title {
+      font-size: 10px;
+      color: $blue;
+      background-color: white;
+      border: 5px solid white;
+      position: absolute;
+      top: -15px;
+      right: 10px;
+    }
+  }
+}

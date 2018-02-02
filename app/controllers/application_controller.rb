@@ -25,6 +25,14 @@ class ApplicationController < ActionController::Base
     u
   end
 
+  def after_sign_in_path_for(resource_or_scope)
+    if current_user.validated?
+      current_user
+    else
+      new_user_profile_path(current_user)
+    end
+  end
+
   def cookie
     @cookie = cookies[:parentheze_guest].present?
   end

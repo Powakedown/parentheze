@@ -1,8 +1,8 @@
 <div class="survey">
   <div class="breadcrumb">
     <div class="center flex-line">
-      <% @breadcrumb_length.times do |x| %>
-        <div class="step flexbox" id="breadcrumb-question<%= x+1 %>"><%= x+1 %></div>
+      <% (1..@breadcrumb_length).each do |x| %>
+        <div class="step flexbox" id="breadcrumb-question<%= x %>"><%= x %></div>
       <% end %>
     </div>
   </div>
@@ -21,7 +21,7 @@
                 <% if question[1][:data] != "none" %>
                   <%= f.input_field question[1][:data],  as: :hidden, value: x+1 %>
                   <%= f.input_field :form_step,  as: :hidden, value: answer[1][:link] %>
-                  <%= f.button :submit, value: answer[1][:text], label: false, class:"answer #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} flexbox center margin-bottom-medium", remote: true, id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
+                  <%= f.button :submit, value: answer[1][:text], label: false, class:"answer btn-tall #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} flexbox center margin-bottom-medium", remote: true, id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
                 <% else %>
                   <%= link_to answer[1][:text],answer[1][:link], :class => "answer #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn#{x.to_s} flexbox center margin-bottom-medium" %>
                 <% end %>
@@ -32,17 +32,3 @@
       </div>
   <% end %>
 </div>
-
-<% content_for(:after_js) do %>
-  <script>
-    // INIT
-    var current_question = <%= @current_question %>
-    $('#breadcrumb-question'+current_question).addClass('active');
-
-    for (i = 1; i <= <%= @questions_number %> ; i++) {
-      $('#question'+i).hide();
-    }
-
-    $('#question'+current_question).show();
-  </script>
-<% end %>

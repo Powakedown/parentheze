@@ -1,0 +1,26 @@
+<div class="flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen relative flexbox text-left" style="background-image: url(<%= t('inscription.image') %>)">
+    <div class="parentheze-login">
+      <% if @step < 6 %>
+      <h4><%= t('inscription.title') %></h4>
+        <div class="breadcrumb">
+          <div class="center flex-line">
+            <% (1..5).each do |x| %>
+              <div class="step flexbox <%= "active" if x == @step %>"><%= x %></div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <% %w(2 3 4 5 6).each do |step| %>
+        <% if @step == step.to_i %>
+          <div class="login-box <%= "expandOpen" if step == "6" %>" style="background-image: url(<%= t('inscription.screen'+step+'.image') %>)">
+            <%= render 'form'<<step, step: step %>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

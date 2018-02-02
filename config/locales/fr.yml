@@ -1,5 +1,11 @@
 fr:
   commons:
+    button:
+      next: "suivant"
+      previous: "précédent"
+      end: "terminer"
+      downloading: "téléchargement"
+      back_to_root: "revenir à l'accueil"
     register: "S'inscrire"
     cookie:
       image: "https://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
@@ -9,10 +15,6 @@ fr:
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
     email_valid: "Veuillez entrez un email valide"
-  activerecord:
-      errors:
-        messages:
-          record_invalid: 'La validation a échoué : %{errors}'
   metas:
     titles:
       home: "Parentheze, la nouvelle vie des parents."
@@ -22,9 +24,98 @@ fr:
       why: "Pourquoi parentheze ?"
   navbar:
     login: "connexion"
-    signup: "s'enregistrer"
+    sign_up: "s'enregistrer"
+    sign_in: "se connecter"
+    sign_out: "se déconnecter"
     manifesto: "manifeste"
     plans: "exemple de forfait"
+  inscription:
+    title: "Inscription :"
+    image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+    redirection:
+      title: "Merci et à bientôt!"
+      text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
+      image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
+      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
+    screen1:
+      title: "Donnée de connexion"
+      details: "Votre mail n’est pas communiqué à des tiers."
+      image: ""
+      placeholder1: "à renseigner"
+      field1: "Email :"
+      placeholder2: "laisser vide si aucun changement"
+      field2: "Mot de passe (minimum 6 caractères incluant lettres et chiffres) :"
+      field3: "Confirmer le mot de passe :"
+      field4: "Nouveau mot de passe (minimum 6 caractères incluant lettres et chiffres):"
+      field5: "Confirmer le nouveau mot de passe :"
+      field6: "Mot de passe actuel :"
+      field7: "Mot de passe :"
+      addon: "Déjà inscrit ?"
+      remember_me: "Se souvenir de moi"
+    screen2:
+      title: "Informations visibles sur le réseau"
+      details: "Seules ces informations seront visibles publiquement."
+      image: ""
+      field1: "Prénom du premier parent :"
+      field2: "Prénom du deuxième parent :"
+      placeholder2: "laisser libre si parent solo"
+      field3: "Enfant(s) concernés par la garde :"
+      placeholder3: "1,2..."
+    screen3:
+      title: "Informations non visibles sur le réseau"
+      details: "L’adresse permet de calculer les distances
+              entre les membres mais ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
+      image: ""
+      field1: "Adresse postale :"
+      field2: "Numéro de téléphone :"
+      placeholder2: "communiqué au moment des gardes"
+    screen4:
+      title: "Envies et besoins"
+      details: "Vous pouvez décocher les besoins et envies qui ne vous correspondent pas. Vous pouvez aussi les modifier plus tard dans votre profil."
+      image: ""
+      fields:
+        field0: "J’ai besoin de faire garder mes enfants"
+        field1: "Je suis prêt à accueillir les enfants de mes voisins"
+        field2: "J’accepte les invitations pour faire connaissance "
+        field3: "J'accepte les échanges et les dons de matériel entre voisins"
+    screen5:
+      title: "Photo de profil"
+      details: "Une bonne photo permet de se faire connaître
+              rapidement des connaissances et des parents du quartier ou de l’école.
+              La photo doit vous bien représenter :"
+      image: ""
+      field1: "télécharger une photo"
+      alt: "exemple de bonne photo"
+      examples:
+        example1:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_01.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example2:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_02.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example3:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_03.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example4:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_04.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example5:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_05.jpg"
+          icon: "fa-minus-circle"
+          color: "#D0021B"
+        example6:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_06.jpg"
+          icon: "fa-minus-circle"
+          color: "#D0021B"
+    screen6:
+      title: "Bien joué !"
+      details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
+      image: ""
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
   home:
     slides:
       slide0:
@@ -310,12 +401,6 @@ fr:
       char4:
         text: "sont prêts à garder les enfants des voisins"
         icon: "home"
-  inscription:
-    redirection:
-      title: "Merci et à bientôt!"
-      text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
-      image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
-      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
   footer:
     facebook: "https://www.facebook.com/groups/1860665404215862/"
     twitter: "https://medium.com/@parentgenial"
@@ -332,23 +417,43 @@ fr:
       new: "Oh yeah! Inscription à la béta enregistrée, vous allez recevoir un mail."
   placeholder:
     email: "précisez votre email"
-  #SPECIFIC
+  # GENERIC
   activerecord:
     errors:
+      messages:
+        already_confirmed: a déjà été confirmé(e)
+        confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
+        expired: est expiré, veuillez en demander un autre
+        not_found: n’a pas été trouvé(e)
+        not_locked: n’était pas verrouillé(e)
+        not_saved:
+          one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
+          other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
+        record_invalid: 'La validation a échoué : %{errors}'
+        restrict_dependent_destroy:
+          has_one: "Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record} dépendant(e) existe"
+          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
       models:
         guest:
           attributes:
             email:
               blank: "ne peut pas être vide"
-  # GENERIC
-  activerecord:
-    errors:
-      messages:
-        record_invalid: 'La validation a échoué : %{errors}'
-        restrict_dependent_destroy:
-          has_one: "Vous ne pouvez pas supprimer l'enregistrement car un(e) %{record} dépendant(e) existe"
-          has_many: "Vous ne pouvez pas supprimer l'enregistrement parce que les %{record} dépendants existent"
-
+        user:
+          attributes:
+            mother_first_name:
+              blank: "Un prénom de parent est indispensable."
+            kids:
+              not_a_number: ""
+            current_password:
+              blank: "le mot de passe est nécessaire."
+            password_confirmation:
+              confirmation: "la confirmation de mot de passe n'a pu se faire, saisissez le de nouveau."
+            password:
+              too_short: "le mot de passe est trop court."
+        profile:
+          attributes:
+            photo:
+              blank: "Vous devez charger une photo de vous."
     attributes:
       user:
         confirmation_sent_at: Date d'envoi de la confirmation
@@ -376,113 +481,6 @@ fr:
         updated_at: Date de mise à jour
     models:
       user: Utilisateur
-  devise:
-    confirmations:
-      confirmed: Votre compte a été confirmé avec succès.
-      new:
-        resend_confirmation_instructions: Renvoyer les instructions de confirmation
-      send_instructions: Vous allez recevoir sous quelques minutes un courriel comportant des instructions pour confirmer votre compte.
-      send_paranoid_instructions: Si votre courriel existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
-    failure:
-      already_authenticated: Vous êtes déjà connecté(e).
-      inactive: Votre compte n’est pas encore activé.
-      invalid: "%{authentication_keys} ou mot de passe incorrect."
-      last_attempt: Il vous reste une chance avant que votre compte soit bloqué.
-      locked: Votre compte est verrouillé.
-      not_found_in_database: "%{authentication_keys} ou mot de passe incorrect."
-      timeout: Votre session est expirée, veuillez vous reconnecter pour continuer.
-      unauthenticated: Vous devez vous connecter ou vous enregistrer pour continuer.
-      unconfirmed: Vous devez confirmer votre compte par courriel.
-    mailer:
-      confirmation_instructions:
-        action: Confirmer mon courriel
-        greeting: Bienvenue %{recipient}!
-        instruction: 'Vous pouvez confirmer votre courriel grâce au lien ci-dessous:'
-        subject: Instructions de confirmation
-      password_change:
-        greeting: Bonjour %{recipient}!
-        message: Nous vous contactons pour vous notifier que votre mot de passe a été modifié.
-        subject: Mot de passe modifié.
-      reset_password_instructions:
-        action: Changer mon mot de passe
-        greeting: Bonjour %{recipient}!
-        instruction: 'Quelqu''un a demandé un lien pour changer votre mot de passe, le voici :'
-        instruction_2: Si vous n'avez pas émis cette demande, merci d'ignorer ce courriel.
-        instruction_3: Votre mot de passe ne changera pas tant que vous n'aurez pas cliqué sur ce lien et renseigné un nouveau mot de passe.
-        subject: Instructions pour changer le mot de passe
-      unlock_instructions:
-        action: Débloquer mon compte
-        greeting: Bonjour %{recipient}!
-        instruction: 'Suivez ce lien pour débloquer votre compte:'
-        message: Votre compte a été bloqué suite à un nombre d'essais de connexions manquées trop important
-        subject: Instructions pour déverrouiller le compte
-    omniauth_callbacks:
-      failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
-      success: Autorisé avec succès par votre compte %{kind}.
-    passwords:
-      edit:
-        change_my_password: Changer mon mot de passe
-        change_your_password: Changer votre mot de passe
-        confirm_new_password: Confirmez votre nouveau mot de passe
-        new_password: Nouveau mot de passe
-      new:
-        forgot_your_password: Mot de passe oublié ?
-        send_me_reset_password_instructions: Envoyez-moi des instructions pour réinitialiser mon mot de passe
-      no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un courriel de réinitialisation de mot de passe. Si vous venez en effet d’un tel courriel, vérifiez que vous avez copié l’adresse URL en entier.
-      send_instructions: Vous allez recevoir sous quelques minutes un courriel vous indiquant comment réinitialiser votre mot de passe.
-      send_paranoid_instructions: Si votre courriel existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
-      updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
-      updated_not_active: Votre mot de passe a été modifié avec succès.
-    registrations:
-      destroyed: Au revoir ! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.
-      edit:
-        are_you_sure: "Êtes-vous sûr ?"
-        cancel_my_account: Supprimer mon compte
-        currently_waiting_confirmation_for_email: 'Confirmation en attente pour: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: laissez ce champ vide pour le laisser inchangé
-        title: "Éditer %{resource}"
-        unhappy: 'Pas content '
-        update: Modifier
-        we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
-      new:
-        sign_up: Inscription
-      signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
-      signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
-      signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.
-      signed_up_but_unconfirmed: Un message avec un lien de confirmation vous a été envoyé par mail. Veuillez suivre ce lien pour activer votre compte.
-      update_needs_confirmation: Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse de courriel. Veuillez consulter vos courriels et cliquer sur le lien de confirmation pour confirmer votre nouvelle adresse.
-      updated: Votre compte a été modifié avec succès.
-    sessions:
-      already_signed_out: Déconnecté(e).
-      new:
-        sign_in: Connexion
-      signed_in: Connecté(e) avec succès.
-      signed_out: Déconnecté(e) avec succès.
-    shared:
-      links:
-        back: Retour
-        didn_t_receive_confirmation_instructions: Vous n'avez pas reçu le courriel de confirmation ?
-        didn_t_receive_unlock_instructions: Vous n'avez pas reçu le courriel de déblocage ?
-        forgot_your_password: Mot de passe oublié ?
-        sign_in: Connexion
-        sign_in_with_provider: Connexion avec %{provider}
-        sign_up: Inscription
-    unlocks:
-      new:
-        resend_unlock_instructions: Renvoyer les instructions de déblocage
-      send_instructions: Vous allez recevoir sous quelques minutes un courriel comportant des instructions pour déverrouiller votre compte.
-      send_paranoid_instructions: Si votre courriel existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour déverrouiller votre compte.
-      unlocked: Votre compte a été déverrouillé avec succès. Veuillez vous connecter.
-  errors:
-    messages:
-      already_confirmed: a déjà été confirmé(e)
-      confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
-      expired: est expiré, veuillez en demander un autre
-      not_found: n’a pas été trouvé(e)
-      not_locked: n’était pas verrouillé(e)
-      not_saved:
-        one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
-        other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"
   date:
     abbr_day_names:
     - dim

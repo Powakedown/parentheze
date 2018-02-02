@@ -10,16 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110153706) do
+ActiveRecord::Schema.define(version: 20180202090021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachinary_files", id: :serial, force: :cascade do |t|
+    t.string "attachinariable_type"
+    t.integer "attachinariable_id"
+    t.string "scope"
+    t.string "public_id"
+    t.string "version"
+    t.integer "width"
+    t.integer "height"
+    t.string "format"
+    t.string "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id"
     t.integer "rating"
     t.string "comment"
-    t.string "host"
+    t.integer "host"
     t.bigint "plan_id"
     t.string "date"
     t.datetime "created_at", null: false
@@ -51,11 +66,29 @@ ActiveRecord::Schema.define(version: 20180110153706) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "address"
+    t.integer "kids"
+    t.string "comment"
+    t.string "phone"
+    t.string "mother_first_name"
+    t.string "father_first_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.integer "rating"
+    t.integer "step"
+    t.string "zip_code"
+    t.string "city"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "user_wishes", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "wish_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status"
     t.index ["user_id"], name: "index_user_wishes_on_user_id"
     t.index ["wish_id"], name: "index_user_wishes_on_wish_id"
   end
@@ -73,12 +106,7 @@ ActiveRecord::Schema.define(version: 20180110153706) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "mother_first_name"
-    t.string "father_first_name"
-    t.string "address"
-    t.integer "kids"
-    t.string "comment"
-    t.string "phone"
+    t.boolean "validated"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -87,10 +115,13 @@ ActiveRecord::Schema.define(version: 20180110153706) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "number"
   end
 
   add_foreign_key "bookings", "plans"
   add_foreign_key "bookings", "users"
+  add_foreign_key "preprofiles", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "user_wishes", "users"
   add_foreign_key "user_wishes", "wishes"
 end
