@@ -2,9 +2,14 @@
   <div class="login-fields">
     <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
     <p><%= t('inscription.screen'<<step<<'.details') %></p>
+    <input type="hidden" class="boolean optional" checked="checked" id="noneed" name="profile[noneed]" value="true" />
     <% t('inscription.screen4.fields').each_with_index do |x,index| %>
       <label class="checkbox margin-bottom-medium">
-      <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="profile[need<%= index %>]" value="true" />
+      <% if @user.wishes.where(number: index).present? %>
+        <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="profile[need<%= index %>]" value="true" />
+      <% else %>
+        <input type="checkbox" class="boolean optional" id="<%= x[0] %>" name="profile[need<%= index %>]" value="true" />
+      <% end %>
       <label for="<%= x[0] %>"><%= x[1] %></label>
       </label>
     <% end %>

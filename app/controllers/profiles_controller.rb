@@ -26,8 +26,8 @@ class ProfilesController < ApplicationController
     if @profile.step5?
       @user.user_wishes.destroy_all
       wishes = Wish.all.to_a
-      wishes.each do |wish|
-        UserWish.create( user: @user, wish: wish, status: profile_params[("need"<<wish.number.to_s).to_sym] )
+      wishes.each_with_index do |wish, index|
+        UserWish.create( user: @user, wish: wish) if profile_params[("need"<<index.to_s).to_sym] == "true"
       end
       @profile.save
       redirect_to edit_user_profile_path
@@ -58,6 +58,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :user, :phone, :need0, :need1, :need2, :need3, :photo)
+    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :user, :phone, :noneed, :need0, :need1, :need2, :need3, :photo)
   end
 end
