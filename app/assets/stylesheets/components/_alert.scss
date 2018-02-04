@@ -18,13 +18,33 @@
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;;
+  display: -webkit-flex;
+  text-align: left;
   justify-content: left;
   align-items: stretch;
   border-radius: 4px;
   z-index: 1000;
   padding: 0px;
   border: none;
+  &.alert-danger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+  }
+  &.alert-danger:before {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 4px 0 0 4px;
+    background-color: $red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    content: "⚠";
+  }
   i {
     color: white;
     font-size: 36px;
@@ -36,7 +56,7 @@
     opacity: 1;
   }
 }
-.alert-badge {
+.alert-badge, {
   width: 60px;
   margin-right: 20px;
   border-radius: 4px 0 0 4px;

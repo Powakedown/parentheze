@@ -446,10 +446,16 @@ fr:
               not_a_number: ""
             current_password:
               blank: "le mot de passe est nécessaire."
+              invalid: "le mot de passe n'est pas valide"
             password_confirmation:
               confirmation: "la confirmation de mot de passe n'a pu se faire, saisissez le de nouveau."
             password:
               too_short: "le mot de passe est trop court."
+              blank: "veuillez entrer un mot de passe."
+            email:
+              taken: "Ce mail n'est pas disponible."
+              blank: "veuillez entrer un email."
+              invalid: "Ce mail n'est pas valide."
         profile:
           attributes:
             photo:

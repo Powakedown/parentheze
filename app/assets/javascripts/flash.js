@@ -3,4 +3,4 @@ window.setTimeout(function(){
   setTimeout(function(){
     $(".alert").hide();
   }, 900);
-}, 5000);
+}, 8000);

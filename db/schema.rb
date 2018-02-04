@@ -73,13 +73,11 @@ ActiveRecord::Schema.define(version: 20180202090021) do
     t.string "phone"
     t.string "mother_first_name"
     t.string "father_first_name"
+    t.integer "rating"
+    t.integer "step"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.integer "rating"
-    t.integer "step"
-    t.string "zip_code"
-    t.string "city"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -106,7 +104,6 @@ ActiveRecord::Schema.define(version: 20180202090021) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "validated"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -120,7 +117,6 @@ ActiveRecord::Schema.define(version: 20180202090021) do
 
   add_foreign_key "bookings", "plans"
   add_foreign_key "bookings", "users"
-  add_foreign_key "preprofiles", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "user_wishes", "users"
   add_foreign_key "user_wishes", "wishes"
