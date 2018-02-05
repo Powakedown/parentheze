@@ -24,12 +24,13 @@
                   </div>
                 </div>
               <% end %>
-            </div>
           </div>
-        <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
         </div>
+        <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
+      </div>
     </div>
   </div>
+</div>
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_shows.values[1], index: 3, target_page: "inscription-beta" } %>
 

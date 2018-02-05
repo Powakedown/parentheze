@@ -84,19 +84,16 @@ $input-height: 56px;
   flex-direction: row;
 }
 .flexbox {
-  align-items: center;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
 }
 .flex-line {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
@@ -105,7 +102,6 @@ $input-height: 56px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -228,7 +224,6 @@ a:hover {
       display: -webkit-box;
       display: -moz-box;
       display: -ms-flexbox;
-      display: -webkit-flex;;
       justify-content: center;
       align-items: center;
       color: black;

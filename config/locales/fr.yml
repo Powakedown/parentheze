@@ -122,6 +122,8 @@ fr:
         title: "Profitez ! Ce soir les enfants dorment chez des amis"
         text: "Échange de garde d'enfants et mutualisation de babysitter"
         image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
+        after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
+        calltoaction: "Créer mon compte"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     slide_plan:
       title: "Pensé pour les parents d'aujourd'hui"

@@ -2,11 +2,15 @@ class ProfilesController < ApplicationController
   before_action :params_user, only: %i[create new edit update previous]
 
   def new
-    @profile = @user.profile || Profile.new(user: @user, step: 2)
-    @profile.step = 2 if @profile.step < 2
-    @profile.save!
-    @step = @profile.step
-    render :edit
+    if current_user?
+      @profile = @user.profile || Profile.new(user: @user, step: 2)
+      @profile.step = 2 if @profile.step < 2
+      @profile.save!
+      @step = @profile.step
+      render :edit
+    else
+      redirect_to new_user_profile_path(@user)
+    end
   end
 
   def show
@@ -14,32 +18,38 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = @user.profile
-    @profile.save!
-    @step = @profile.step
+    if current_user?
+      @profile = @user.profile
+      @profile.save!
+      @step = @profile.step
+    else
+      redirect_to edit_user_profile_path(@user)
+    end
   end
 
   def update
-    @profile = @user.profile
-    @profile.step += 1
+    if current_user?
+      @profile = @user.profile
+      @profile.step += 1
 
-    if @profile.step5?
-      @user.user_wishes.destroy_all
-      wishes = Wish.all.to_a
-      wishes.each_with_index do |wish, index|
-        UserWish.create( user: @user, wish: wish) if profile_params[("need"<<index.to_s).to_sym] == "true"
-      end
-      @profile.save
-      redirect_to edit_user_profile_path
-    else
-      if @profile.update(profile_params)
+      if @profile.step5?
+        @user.user_wishes.destroy_all
+        wishes = Wish.all.to_a
+        wishes.each_with_index do |wish, index|
+          UserWish.create( user: @user, wish: wish) if profile_params[("need"<<index.to_s).to_sym] == "true"
+        end
+        @profile.save
         redirect_to edit_user_profile_path
       else
-        notice = ""
-        @profile.errors.messages.each do |key, value|
-          notice << value.first << ". <br/>"
+        if @profile.update(profile_params)
+          redirect_to edit_user_profile_path
+        else
+          notice = ""
+          @profile.errors.messages.each do |key, value|
+            notice << value.first << ". <br/>"
+          end
+          redirect_to edit_user_profile_path, alert: notice
         end
-        redirect_to edit_user_profile_path, alert: notice
       end
     end
   end
