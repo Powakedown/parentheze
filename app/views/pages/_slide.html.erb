@@ -3,6 +3,14 @@
     <div class="slide<%= index %>">
       <h1 class=""><%= slide[:title] %></h1>
       <p class="margin-bottom-medium"><%= slide[:text] %></p>
+      <% if current_page?(root_path) %>
+        <% unless current_user %>
+          <%= link_to t(slide[:calltoaction]), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
+        <% else %>
+          <div class="btn btn-yellow margin-bottom-medium"><%= t('home.slides.slide0.after_subscription') %></div>
+        <% end %>
+      <% end %>
+
       <div class="margin-bottom-medium">
         <% if slide[:link_image] %>
           <%= render 'shared/scroller', target_page: target_page, link_image: slide[:link_image] %>
