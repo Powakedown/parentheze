@@ -63,8 +63,13 @@ function getAddressComponents(place) {
   };
 }
 
+function testMail(e) {
+  console.log(e.keyCode);
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   var profileAddress = document.getElementById('profile_address');
+  var profileEmail = document.getElementById('user_email');
 
   if (profileAddress) {
     var autocomplete = new google.maps.places.Autocomplete(profileAddress, { types: ['geocode'] });
@@ -75,6 +80,11 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+
+  if (profileEmail) {
+    profileEmail.addEventListener("keydown", testMail, false);
+  }
+
 });
 
 
