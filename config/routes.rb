@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     end
   end
 
+  # ADMIN
+  get '/admin', to: 'users#index'
+
   mount Attachinary::Engine => "/attachinary"
 
 end
