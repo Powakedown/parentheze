@@ -1,8 +1,22 @@
 //= require attachinary
+var patternName = /^[^0-9][\w'\-áéíóúäëïöüÄőŐűŰZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÉÈÊĒÀÄ][^0-9_!.¡?÷?¿+=@#$%^&*(){}|~<>;:\[\]]{0,}$/;
+var patternNumber = /^\d+$/;
+var patternPhone = /(0|\\+33|0033)[1-9][0-9]{8}/;
 
-$(document).ready(function() {
-  $('.attachinary-input').attachinary();
-});
+
+function testIt(input) {
+  var input = this;
+  setTimeout(function(){
+  if(input.value.match(input.param)){
+    input.style.cssText = null;
+    console.log('correct');
+  }
+  else {
+    input.style.borderColor = "red";
+    console.log('bad');
+  }
+  }, 10);
+}
 
 function onPlaceChanged() {
   var place = this.getPlace();
@@ -64,7 +78,14 @@ function getAddressComponents(place) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+
+  $('.attachinary-input').attachinary();
+
   var profileAddress = document.getElementById('profile_address');
+  var profileName1 = document.getElementById('profile_mother_first_name');
+  var profileName2 = document.getElementById('profile_father_first_name');
+  var profilekids = document.getElementById('profile_kids');
+  var profilephone = document.getElementById('profile_phone');
 
   if (profileAddress) {
     var autocomplete = new google.maps.places.Autocomplete(profileAddress, { types: ['geocode'] });
@@ -75,6 +96,26 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+
+  if (profileName1) {
+    profileName1.param = patternName;
+    profileName1.addEventListener("keydown", testIt, true);
+  }
+
+  if (profileName2) {
+    profileName2.param = patternName;
+    profileName2.addEventListener("keydown", testIt, true);
+  }
+
+  if (profilekids) {
+    profilekids.param = patternNumber;
+    profilekids.addEventListener("keydown", testIt, true);
+  }
+
+  // if (profilephone) {
+  //   profilephone.addEventListener("keydown", testIt, true);
+  //   profilekids.param = patternPhone;
+  // }
 });
 
 

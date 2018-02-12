@@ -22,7 +22,7 @@
           <%= f.input :password_confirmation, required: true, label: t('inscription.screen1.field3') %>
           <div class="form-actions">
             <%= f.button :submit, "suivant", class:"margin-bottom-small" %>
-            <p class="text-center"><%= t('inscription.screen1.addon') %></p>
+            <p class="text-center"><%= link_to t('inscription.screen1.addon'), new_user_session_path %></p>
           </div>
         </div>
       <% end %>
@@ -30,5 +30,27 @@
   </div>
 </div>
 
+<%= content_for :after_js do %>
+  <script>
+    var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
+    function testMail(e) {
+      if(this.value.match(pattern)){
+        this.style.cssText = null;
+      }
+      else if (this.value.length > 3) {
+        this.style.borderColor = "red";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var profileEmail = document.getElementById('user_email');
+
+      if (profileEmail) {
+        profileEmail.addEventListener("keydown", testMail, false);
+      }
+
+    });
+  </script>
+<% end %>
 
