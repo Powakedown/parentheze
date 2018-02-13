@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
   def new
     if current_user?
-      @profile = @user.profile || Profile.new(user: @user, step: 2)
+      @profile = @user.profile || Profile.new(user: @user, step: 2, validation: 0)
       @profile.step = 2 if @profile.step < 2
       @profile.save!
       @step = @profile.step
@@ -54,6 +54,29 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def validate
+    @profile = Profile.find(params[:id])
+    @profile.validation = 1
+    if @profile.save
+      flash[:notice] = "Profile validé"
+      redirect_to admin_validations_path
+    else
+      flash[:alert] = "Validation échouée, vérifier les logs"
+      redirect_to admin_validations_path
+    end
+  end
+
+  def request_update
+    @profile = Profile.find(params[:id])
+    @profile.step = 2
+    @profile.validation = 2
+    if @profile.save
+      flash[:notice] = "Profile envoyé en attente de modification"
+      # flash[:notice] = params[:parent1]
+      redirect_to admin_validations_path
+    end
+  end
+
   def previous
     @profile = @user.profile
     @profile.step -= 1
@@ -69,5 +92,9 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :user, :phone, :noneed, :need0, :need1, :need2, :need3, :photo, :lat, :lng )
+  end
+
+  def request_update_params
+    params.require(:profile).permet(:address, :kids, :mother_first_name, :father_first_name, :phone, :photo)
   end
 end

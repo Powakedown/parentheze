@@ -18,12 +18,16 @@ Rails.application.routes.draw do
     resources :profiles, only: %i[new create show edit update] do
       member do
         get 'previous'
+        get 'validate'
+        get 'request_update'
       end
     end
   end
 
   # ADMIN
-  get '/admin', to: 'users#index'
+  get '/admin', to: 'admins#password_check'
+  get '/admin/password_verification', to: 'admins#password_verification'
+  get '/admin/validations', to: 'admins#validations'
 
   mount Attachinary::Engine => "/attachinary"
 
