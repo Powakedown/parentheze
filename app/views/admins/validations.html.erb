@@ -17,6 +17,7 @@
         <% @profiles.each do |profile| %>
         <%= simple_form_for :profile, url: request_update_user_profile_path(profile.user, profile), method: :get do |f| %>
           <div class="card">
+            <p>Cocher les points à rectifier, ils seront ajouter au mail : </p>
             <div class="row margin-bottom-medium">
               <div class="col-xs-12 col-md-9">
                 <div class="row">
@@ -75,8 +76,15 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-xs-12 col-md-4 ">
+                  <div class="col-xs-12 col-md-12 ">
                     <p>Besoins :</p>
+                    <div class="row">
+                    <% profile.user.wishes.each do |wish| %>
+                      <div class="col-xs-12 col-md-3">
+                        <p><%= wish.name %></p>
+                      </div>
+                    <% end %>
+                    </div>
                   </div>
                   <div class="col-xs-12 col-md-4 ">
                     <p></p>
