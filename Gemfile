@@ -38,7 +38,6 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.6'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
