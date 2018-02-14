@@ -14,4 +14,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( profiles.js pages.js devise/sessions.js devise/registrations.js guests.js users.js admins.js)
+Rails.application.config.assets.precompile += %w( profiles.js pages.js devise/sessions.js devise/registrations.js guests.js users.js admins.js my_registrations.js)

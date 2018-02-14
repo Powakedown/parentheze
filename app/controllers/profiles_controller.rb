@@ -14,7 +14,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -43,6 +42,9 @@ class ProfilesController < ApplicationController
       else
         if @profile.update(profile_params)
           redirect_to edit_user_profile_path
+          if @profile.step6?
+            UserMailer.new_registration(@user).deliver_now
+          end
         else
           notice = ""
           @profile.errors.messages.each do |key, value|
@@ -60,6 +62,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       flash[:notice] = "Profile validé"
       redirect_to admin_validations_path
+      UserMailer.validation(@profile.user).deliver_now
     else
       flash[:alert] = "Validation échouée, vérifier les logs"
       redirect_to admin_validations_path
@@ -72,7 +75,7 @@ class ProfilesController < ApplicationController
     @profile.validation = 2
     if @profile.save
       flash[:notice] = "Profile envoyé en attente de modification"
-      # flash[:notice] = params[:parent1]
+      UserMailer.request_update(@profile.user).deliver_now
       redirect_to admin_validations_path
     end
   end

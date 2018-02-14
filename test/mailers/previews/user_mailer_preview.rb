@@ -13,4 +13,9 @@ class UserMailerPreview < ActionMailer::Preview
     @user = User.last
     UserMailer.new_registration(@user)
   end
+
+  def validation
+    @user = User.last
+    UserMailer.validation(@user)
+  end
 end

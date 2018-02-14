@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "pages#home"
   resources :guests, only: %i[create new update show index]
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "my_registrations" }
 
   get "/home", to: "pages#home"
   patch "/home", to: "pages#update"
