@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UserMailerPreview < ActionMailer::Preview
   def welcome
     @user = Guest.first
@@ -9,5 +7,10 @@ class UserMailerPreview < ActionMailer::Preview
   def self_notification
     @user = Guest.first
     UserMailer.self_notification(@user)
+  end
+
+  def new_registration
+    @user = User.last
+    UserMailer.new_registration(@user)
   end
 end

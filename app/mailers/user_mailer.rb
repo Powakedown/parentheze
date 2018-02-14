@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class UserMailer < ApplicationMailer
-  default from: 'parentgenial@parentheze.com'
+  # default from: 'parentgenial@parentheze.com'
 
   def welcome(guest)
     @user = guest
