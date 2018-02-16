@@ -14,6 +14,6 @@ Projet de solution collaborative destinée à révolutionner les usages, créer 
 
 - Prototype html/css >> OK
 
-- Site de pré-inscription >> en cours
+- Site de pré-inscription >> OK
 
-- Plateforme Béta >> à venir
+- Plateforme Béta >> DEVELOPMENT
