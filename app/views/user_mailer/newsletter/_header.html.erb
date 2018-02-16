@@ -7,13 +7,13 @@
             <td style="border-collapse:collapse;min-width:600px;width:100%;" align="center">
               <div style="position:relative;" class="sim-row">
                 <!-- INTRO TITLE -->
-                <%= render "header_title", head_title: head_title, head_subtitle: head_subtitle %>
+                <%= render "user_mailer/newsletter/header_title", head_title: head_title, head_subtitle: head_subtitle %>
                 <!-- INTRO POSTER -->
-                <%= render "header_poster", poster: poster, head_text: head_text %>
+                <%= render "user_mailer/newsletter/header_poster", poster: poster, head_text: head_text %>
               </div>
             </td>
           </tr>
-          <%= render "label_info", title: label_title, text: label_text %>
+          <%= render "user_mailer/newsletter/label_info", title: label_title, text: label_text %>
         </tbody>
       </table>
     </div>

@@ -22,6 +22,7 @@ fr:
       thankyou: "Merci et à bientôt"
       report: "Stats Report"
       why: "Pourquoi parentheze ?"
+      admin: "Admin"
   navbar:
     login: "connexion"
     sign_up: "s'enregistrer"
@@ -241,7 +242,7 @@ fr:
       slide3:
         title: "Pourquoi personne ne s'était attaqué au problème?"
         image: "http://res.cloudinary.com/doodlid/image/upload/v1513180421/parentheze/parent_zuckerberg.png"
-        text: "Parce que les meilleurs entrepreneurs sont souvent jeunes et sans enfant quand ils ont changent le monde.
+        text: "Parce que les meilleurs entrepreneurs sont souvent jeunes et sans enfant quand ils changent le monde.
               Parce qu’ils sont déjà lancés dans de grands projets quand ils deviennent à leur tour parents et découvrent alors les besoins.
               Parce qu'avant le numérique, il était impossible de proposer un service rentable et de qualité uniquement dédiés aux parents.
               Les parents n’avaient encore aucune réponse satisfaisantes à leurs besoins de liberté.
@@ -462,6 +463,8 @@ fr:
           attributes:
             photo:
               blank: "Vous devez charger une photo de vous."
+            address:
+              blank: "Vous devez entrez une adresse."
     attributes:
       user:
         confirmation_sent_at: Date d'envoi de la confirmation

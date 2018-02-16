@@ -1,4 +1,4 @@
-<%= render "header",poster: "http://res.cloudinary.com/doodlid/image/upload/v1509024402/parentheze/welcome_header.jpg",
+<%= render "user_mailer/newsletter/header",poster: "http://res.cloudinary.com/doodlid/image/upload/v1509024402/parentheze/welcome_header.jpg",
                     head_title: "Bienvenue",
                     head_subtitle: "sur Parentheze (Béta)",
                     head_text: "Vous avez souhaité participé à la phase de test de Parentheze, nous vous tenons au courant quand tout est en place. Dés à présent, visitez la page facebook de Parentheze et n'hésitez pas à nous faire part de vos idées. À bientôt!",
@@ -6,17 +6,18 @@
                     label_text: "Retrouvez l'actualité de votre réseau réservé aux parents."
 
  %>
-<%= render "title", text: "En attendant..." %>
+<%= render "user_mailer/newsletter/title", text: "En attendant..." %>
 
 <!-- image: 286x286 -->
-<%= render "article", image: "http://res.cloudinary.com/doodlid/image/upload/v1509029041/parentheze/mailer_article_0.jpg",
+<%= render "user_mailer/newsletter/article", image: "http://res.cloudinary.com/doodlid/image/upload/v1509029041/parentheze/mailer_article_0.jpg",
                       uptitle: "Manifeste de Parentheze",
                       link: "https://medium.com/@parentgenial/manifeste-de-parentheze-2468f5c670eb",
                       title: "Les parents s’occupent de tout. Mais qui s’occupe d’eux?",
                       text: "Les parents sont un des piliers majeurs de notre société. Ils sont responsables des générations à venir et font de l’éducation de leurs enfants une priorité. Ils construisent ainsi le monde de demain. Ils sont le coeur de toutes les organisations. Ils rassurent, gèrent et stabilisent. Mais...",
                       button_text: "Lire l'article"
                        %>
-<%= render "title", text: "Les parents sont partout:" %>
-<%= render "external_links",image: "http://res.cloudinary.com/doodlid/image/upload/v1509092284/parentheze/mailer_extern_0.jpg",
+<%= render "user_mailer/newsletter/title", text: "Les parents sont partout:" %>
+<%= render "user_mailer/newsletter/external_links",image: "http://res.cloudinary.com/doodlid/image/upload/v1509092284/parentheze/mailer_extern_0.jpg",
                             title: "La maman au parc",
                             text: "' Tu peux pas t'échapper, impossible, et pourtant t'en rêve! '" %>
+<%= render "user_mailer/newsletter/footer" %>
