@@ -23,4 +23,22 @@ class UserMailer < ApplicationMailer
          subject: 'Nouveau Guest sur Parentheze',
          track_opens: 'true')
   end
+
+  def new_registration(user)
+    @user = user
+    @url  = 'http://www.parentheze.com'
+    mail(to: @user.email,
+         from: 'parentgenial@parentheze.com',
+         subject: 'Inscription à la béta de parentheze',
+         track_opens: 'true')
+  end
+
+  def validation(user)
+    @user = user
+    @url  = 'http://www.parentheze.com'
+    mail(to: @user.email,
+         from: 'parentgenial@parentheze.com',
+         subject: 'Votre profil est validé!',
+         track_opens: 'true')
+  end
 end

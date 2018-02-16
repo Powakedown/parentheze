@@ -1,29 +1,42 @@
 //= require attachinary
+var patternName = "^[^0-9][\\w'\\-áéíóúäëïöüÄőŐűŰZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÉÈÊĒÀÄ][^0-9_!.¡?÷?¿+=@#$%^&*(){}|~<>;:\\[\\]]{0,}$";
+var patternNumber = "^\\d+$";
+var patternPhone = "^(0|\\+33|0033)[1-9][0-9]{8}$";
 
-$(document).ready(function() {
-  $('.attachinary-input').attachinary();
-});
+
+function testIt(e) {
+  var input = this;
+  setTimeout(function(){
+  if(input.value.match(new RegExp(input.pattern))){
+    input.style.cssText = null;
+  }
+  else {
+    input.style.borderColor = "red";
+  }
+  }, 10);
+}
 
 function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
 
   var profileAddress = document.getElementById('profile_address');
+  var profilelat = document.getElementById('profile_lat');
+  var profilelng = document.getElementById('profile_lng');
+
   profileAddress.blur();
   profileAddress.value = components.address + ', ' + components.zip_code + ' ' + components.city + ', ' + components.country_code;
-
-  // document.getElementById('profile_zip_code').value = components.zip_code;
-  // document.getElementById('profile_city').value = components.city;
-
-  if (components.country_code) {
-    var selector = '#profile_country option[value="' + components.country_code + '"]';
-    document.querySelector(selector).selected = true;
-  }
+  profilelat.value = place.geometry.location.lat();
+  profilelng.value = place.geometry.location.lng();
+  // if (components.country_code) {
+  //   var selector = '#profile_country option[value="' + components.country_code + '"]';
+  //   document.querySelector(selector).selected = true;
+  // }
 }
 
 function getAddressComponents(place) {
-  // If you want lat/lng, you can look at:
-  // - place.geometry.location.lat()
+
+  // console.log(place.geometry.location.lat());
   // - place.geometry.location.lng()
 
   if (window.console && typeof console.log === "function") {
@@ -68,8 +81,24 @@ function testMail(e) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+
+  $('.attachinary-input').attachinary();
+
   var profileAddress = document.getElementById('profile_address');
-  var profileEmail = document.getElementById('user_email');
+
+  var profileName1 = document.getElementById('profile_mother_first_name');
+  var profileName2 = document.getElementById('profile_father_first_name');
+  var profileKids = document.getElementById('profile_kids');
+  var profilePhone = document.getElementById('profile_phone');
+
+  if(profileName1){
+    profileName1.pattern = profileName2.pattern = patternName;
+    profileKids.pattern = patternNumber;
+  }
+
+  if(profilePhone){
+    profilePhone.pattern = patternPhone;
+  }
 
   if (profileAddress) {
     var autocomplete = new google.maps.places.Autocomplete(profileAddress, { types: ['geocode'] });
@@ -81,10 +110,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  if (profileEmail) {
-    profileEmail.addEventListener("keydown", testMail, false);
-  }
+  var inputs = [profileName1, profileName2, profileKids, profilePhone]
 
+  for (var value of inputs) {
+    if (value) {
+      value.addEventListener("keydown", testIt, true);
+    }
+  }
 });
 
 

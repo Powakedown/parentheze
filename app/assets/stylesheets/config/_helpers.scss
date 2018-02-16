@@ -84,19 +84,16 @@ $input-height: 56px;
   flex-direction: row;
 }
 .flexbox {
-  align-items: center;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
 }
 .flex-line {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
@@ -105,7 +102,6 @@ $input-height: 56px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
-  display: -webkit-flex;;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -148,15 +144,31 @@ a:hover {
   text-decoration: none !important;
 }
 //COMPONENTS
+a:hover.pastille {
+  color: $light-yellow;
+}
 .pastille {
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 75px;
+  height: 75px;
   color: white;
   background-color: $dark-gray;
   font-size: 1em;
   float: left;
   margin-right: 10px;
+  &.pastille-yellow {
+    background-color: $yellow;
+  }
+  &.pastille-small {
+    width: 30px;
+    height: 30px;
+  }
+  &.pastille-action {
+    position: absolute;
+    right: 2%;
+    top: 100px;
+    z-index: 500;
+  }
 }
 //SPLITS
 .splitscreen-wrapper{
@@ -228,7 +240,6 @@ a:hover {
       display: -webkit-box;
       display: -moz-box;
       display: -ms-flexbox;
-      display: -webkit-flex;;
       justify-content: center;
       align-items: center;
       color: black;
@@ -252,26 +263,6 @@ a:hover {
   border: 1px solid $medium-gray;
   border-radius: $border-radius;
   }
-
-// FORM
-input[type="checkbox"] {
-  width: 40px;
-}
-.alert-warning, .alert-info, .alert-success {
-  border: none
-}
-input, textarea{
-  border-radius: $border-radius !important;
-  font-size: 20px;
-  resize: none;
-}
-.help-block {
-  font-size: 16px;
-  word-wrap: break-word;
-}
-.clickable {
-  cursor: pointer;
-}
 //LIST
 ul {
   -webkit-padding-start: 8%;

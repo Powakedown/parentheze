@@ -2,29 +2,29 @@ fr:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: 
-        confirmation_token: 
-        confirmed_at: 
-        created_at: 
+        confirmation_sent_at:
+        confirmation_token:
+        confirmed_at:
+        created_at:
         current_password: Mot de passe actuel
-        current_sign_in_at: 
-        current_sign_in_ip: 
+        current_sign_in_at:
+        current_sign_in_ip:
         email: Courriel
-        encrypted_password: 
-        failed_attempts: 
-        last_sign_in_at: 
-        last_sign_in_ip: 
-        locked_at: 
+        encrypted_password:
+        failed_attempts:
+        last_sign_in_at:
+        last_sign_in_ip:
+        locked_at:
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
-        remember_created_at: 
+        remember_created_at:
         remember_me: Se souvenir de moi
-        reset_password_sent_at: 
+        reset_password_sent_at:
         reset_password_token: Clé de Réinitialisation du Mot de Passe
-        sign_in_count: 
-        unconfirmed_email: 
+        sign_in_count:
+        unconfirmed_email:
         unlock_token: Clé de déblocage
-        updated_at: 
+        updated_at:
     models:
       user: Utilisateur
   devise:
@@ -97,7 +97,7 @@ fr:
         we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
       new:
         sign_up: Inscription
-      signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
+      signed_up: Bienvenue ! Veuillez compléter votre profil afin d'accèder au réseau des parents.
       signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
       signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.
       signed_up_but_unconfirmed: Un message avec un lien de confirmation vous a été envoyé par mail. Veuillez suivre ce lien pour activer votre compte.

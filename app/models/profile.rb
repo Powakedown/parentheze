@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-  regex_name = /\A[^0-9][\w'\-áéíóúäëïöüÄőŐűŰZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÉÈÊĒÀÄ][^0-9_!.¡?÷?¿+=@#$%^&*(){}|~<>;:\[\]]{1,}\z/
+  regex_name = /\A[^0-9][\w'\-áéíóúäëïöüÄőŐűŰZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÉÈÊĒÀÄ][^0-9_!.¡?÷?¿+=@#$%^&*(){}|~<>;:\[\]]{0,}\z/
   regex_phone = /(0|\\+33|0033)[1-9][0-9]{8}/
 
   validates :mother_first_name, format: { with: Regexp.new(regex_name), message: 'Le prénom du parent 1 n\'est pas valide' }, :if => :step3?

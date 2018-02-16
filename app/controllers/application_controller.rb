@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :cookie
 
+  # Uncomment when you *really understand* Pundit!
+  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  # def user_not_authorized
+  #   flash[:alert] = "You are not authorized to perform this action."
+  #   redirect_to(root_path)
+  # end
+
   def guest_user(with_retry = true)
     # Cache the value the first time it's gotten.
     @cached_guest_user ||= Guest.find(session[:guest_user_id] || cookies[:parentheze_guest] ||= create_guest_user.id)
@@ -26,7 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    if current_user.step == 10
+    if current_user.validate == 1
       current_user
     else
       new_user_profile_path(current_user)
@@ -56,4 +63,9 @@ class ApplicationController < ActionController::Base
       serie.count * 100 / total
     end
   end
+
+  def current_user?
+    current_user.id == params[:user_id].to_i
+  end
+
 end
