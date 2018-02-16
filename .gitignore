@@ -4,4 +4,7 @@ tmp/**/*
 tmp/*
 *.swp
 .DS_Store
-public/assetsxjhhwhywgv :sjvdvd ,ÈÏ  nj=l ;cfcjo j
+public/assets
+
+# Ignore application configuration
+/config/application.yml

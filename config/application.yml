@@ -10,8 +10,7 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-
-POSTMARK_API_KEY: '9b472b42-4cf9-40eb-9486-9b2dfff6d703'
-CLOUDINARY_URL: "cloudinary://255591178273543:9v3yqvWeBSQXBrGNHBLs_Z-r12U@doodlid"
-GOOGLE_API_BROWSER_KEY: "AIzaSyDcyXDA-xavcv_lp2f8_ePa0qRi4ZGo6hk"
-ADMIN_PASSWORD: "pretemoitaplume"
+POSTMARK_API_KEY: '78a54cfa-e162-45a4-b12a-7da0d8f3e767'
+CLOUDINARY_URL: "CLOUDINARY_URL=cloudinary://717557913673685:-WZ4df_cuyjrUtilsxaG4mDCL1s@doodlid"
+GOOGLE_API_BROWSER_KEY: "AIzaSyAsf3B0dSkz3sw4e79AbCVK1o8neHGDVM4"
+ADMIN_PASSWORD: "rouleroule"

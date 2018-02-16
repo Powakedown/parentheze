@@ -12,6 +12,8 @@ class Profile < ApplicationRecord
 
   belongs_to :user
 
+  delegate :email, :admin, to: :user, :allow_nil => true
+
   alias_attribute :parent1, :mother_first_name
   alias_attribute :parent2, :father_first_name
 
