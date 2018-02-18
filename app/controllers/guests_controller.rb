@@ -13,7 +13,7 @@ class GuestsController < ApplicationController
       @visitors_p = percentage(@visits, @guestcount)
       @parents = percentage(@guests.count(:parent), @guestcount)
       @average_visits = average(@guests, :visit)
-      @questions = t('survey.questions').first(5)
+      @questions = t('.questions').first(5)
       @form_completed_p = completion(@guests, :get_out)
       @target1 = percentage(@guests.target1, @guestcount)
       @target2 = percentage(@guests.target2, @guestcount)
@@ -68,7 +68,7 @@ class GuestsController < ApplicationController
   end
 
   def init_form
-    @questions_number = t('survey.questions').length
+    @questions_number = t('.questions').length
     @breadcrumb_length = 5
   end
 end
