@@ -41,4 +41,14 @@ class UserMailer < ApplicationMailer
          subject: 'Votre profil est validé!',
          track_opens: 'true')
   end
+
+  def request_update(user, params)
+    @user = user
+    @url  = 'http://www.parentheze.com'
+    @params = params
+    mail(to: @user.email,
+         from: 'parentgenial@parentheze.com',
+         subject: 'Votre profil sur Parentheze',
+         track_opens: 'true')
+  end
 end
