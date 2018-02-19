@@ -29,9 +29,8 @@ class PagesController < ApplicationController
 
   def why
     @guest = guest_user
-    @session_ways = session_ways
-    @slides = t('why.slides')
-    @slides_manifeste = t('why.manifeste')
+    @slides = t('.slides')
+    @slides_manifeste = t('.manifeste')
   end
 
   private

@@ -277,14 +277,14 @@ fr:
           title: "Nous avons pensé à tout, nous sommes parents et Parentheze est notre produit."
           image: ""
           target_page: ""
-  guest:
+  guests:
     title: "Rapide enquète"
     questions_main_number: "4"
     no_reply: "sans réponse"
     questions:
       question1:
         data: "parent"
-        picto: "heart-o"
+        picto: "far fa-heart"
         title: "Vous êtes parent ?"
         answers:
           answer1:
@@ -296,7 +296,7 @@ fr:
         button_effect: "slideLeft"
       question2:
         data: "kid_age"
-        picto: "hand-peace-o"
+        picto: "far fa-hand-peace"
         title: "Vos enfants sont en âge..."
         answers:
           answer1:
@@ -311,7 +311,7 @@ fr:
         button_effect: "slideLeft"
       question3:
         data: "jalous"
-        picto: "quote-right"
+        picto: "fas fa-quote-right"
         title: "Ils vous énervent ces parents qui..."
         answers:
           answer1:
@@ -326,7 +326,7 @@ fr:
         button_effect: "slideLeft"
       question4:
         data: "get_out"
-        picto: "cab"
+        picto: "fas fa-taxi"
         title: "Vous sortiriez plus souvent si..."
         answers:
           answer1:
@@ -341,7 +341,7 @@ fr:
         button_effect: "slideLeft"
       question5:
         data: "host"
-        picto: "github-alt"
+        picto: "fab fa-github-alt"
         title: "Et vous, vous seriez prêt à..."
         answers:
           answer1:
