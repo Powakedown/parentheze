@@ -10,7 +10,7 @@
     <div class="container-fluid fullscreen text-center flexbox slide-plan" id="slide2">
         <div class="plans">
           <h2><%= @slide_plan[:title] %></h2>
-          <p class="yellow"><%= t('home.slide_plan.text') %></p>
+          <p class="yellow"><%= t('pages.home.slide_plan.text') %></p>
           <div class="margin-bottom-medium">
             <div class="row">
               <% @slide_plan[:plans].each do |plan| %>
@@ -18,7 +18,7 @@
               <% end %>
           </div>
         </div>
-        <%= render 'shared/scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
+        <%= render 'scroller', target_page: "slide3", link_image: t('home.slides.slide0.link_image') %>
       </div>
     </div>
   </div>

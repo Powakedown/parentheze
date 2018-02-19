@@ -7,11 +7,6 @@ fr:
       downloading: "téléchargement"
       back_to_root: "revenir à l'accueil"
     register: "S'inscrire"
-    cookie:
-      image: "https://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
-      text: "Ce site utilise des cookies afin de faciliter votre navigation et mesurer l'audience de notre site. En continuant à utiliser notre site, vous consentez à l'utilisation des coookies."
-      button1_text: "Continuer"
-      button2_text: "en savoir plus"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
     email_valid: "Veuillez entrez un email valide"
@@ -24,13 +19,19 @@ fr:
       why: "Pourquoi parentheze ?"
       admin: "Admin"
       new-profiles: "Création de profil"
-  navbar:
-    login: "connexion"
-    sign_up: "s'enregistrer"
-    sign_in: "se connecter"
-    sign_out: "se déconnecter"
-    manifesto: "manifeste"
-    plans: "exemple de forfait"
+  shared:
+    navbar:
+      login: "connexion"
+      sign_up: "s'enregistrer"
+      sign_in: "se connecter"
+      sign_out: "se déconnecter"
+      manifesto: "manifeste"
+      plans: "exemple de forfait"
+    cookie:
+      image: "https://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
+      text: "Ce site utilise des cookies afin de faciliter votre navigation et mesurer l'audience de notre site. En continuant à utiliser notre site, vous consentez à l'utilisation des coookies."
+      button1_text: "Continuer"
+      button2_text: "en savoir plus"
   inscription:
     title: "Inscription :"
     image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
@@ -118,164 +119,165 @@ fr:
       details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
       image: ""
       image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
-  home:
-    slides:
-      slide0:
-        title: "Profitez ! Ce soir les enfants dorment chez des amis"
-        text: "Échange de garde d'enfants et mutualisation de babysitter"
-        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
-        after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
-        calltoaction: "Créer mon compte"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-    slide_plan:
-      title: "Pensé pour les parents d'aujourd'hui"
-      text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
-      plans:
-        plan0:
-          price: "12€"
-          title: "no-stress"
-          subtitle: "2h en journée"
-          color: "#469AE0"
-        plan1:
-          price: "22€"
-          title: "la soirée"
-          subtitle: "4h en soirée - Repas non compris"
-          color: "#E12787"
-        plan2:
-          price: "42€"
-          title: "la soirée + la nuit + la grasse mat'"
-          subtitle: "Ex: 20h-midi - Repas non compris"
-          color: "#F1B255"
-        plan3:
-          price: "35€"
-          title: "Panique ! Grève à l'école"
-          subtitle: "la journée"
-          color: "white"
-    slide_calltoaction:
-      title: "Inscrivez-vous"
-      text: "le service est en phase de test, participez à la béta gratuitement."
-      link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
-      checkbox: "Vous habitez la métropole bordelaise ou proche."
-    slide_with_split:
-      slide0:
-        title: "Trouvez des parents comme vous :"
-        text:
-          text0: "autour de vous, et qui vivent sur le rythme des enfants.
-                  Parentheze a été pensé pour les parents d’aujourd’hui.
-                  Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
-        image: "https://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
-      slide1:
-        title: "Réservé aux parents"
-        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
-        text:
-          text0: "- Pas de babysitter"
-          text1: "- Des forfaits de garde pour compenser les parents hôtes"
-          text2: "- Géolocalisation des membres autour de vous"
-          text3: "- Réputation pour chaque garde"
-          text4: "- Outil d'invitation pour faire connaissance"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
-  why:
-    slides:
-      slide0:
-        title: "Pourquoi Parentheze ?"
-        text: "le réseau réservé aux parents d'aujourd'hui"
-        button_text: "LE MANIFESTE"
-        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512746266/priscilla-du-preez-149915_jdvhkp.jpg"
-        target_page: "slide_manifeste"
-      slide1:
-        title: "Parce que nous adorons nos enfants..."
-        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_kit_jumping.jpg"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-        target_page: "slide_manifeste"
-      slide2:
-        title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
-        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_lover.jpg"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-        target_page: "slide_manifeste"
-      slide3:
-        title: "Parentheze propose de faciliter l’échange de garde entre parents."
-        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_kid_cool.jpg"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-        target_page: "slide_manifeste"
-      slide4:
-        title: "Pour les parents à la recherche de solutions nouvelles."
-        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-        target_page: "slide_manifeste"
-      slide5:
-        title: "Chers parents, posez-vous, on s’occupe de tout."
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1513328712/mother_kid_xtep44.jpg"
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-        target_page: "slide_manifeste"
-    manifeste:
-      slide0:
-        title: 'Les parents s’occupent de tout, mais qui s’occupe d’eux ?'
-        image: 'http://res.cloudinary.com/doodlid/image/upload/v1513177233/parentheze/lynette_mother.png'
-        text: "Les parents sont un pilier majeur de notre société. Ils sont responsables des générations à venir et font de l’éducation de leurs enfants une priorité.
-              Ils construisent ainsi le monde de demain. Ils sont le coeur de toutes les organisations. Ils rassurent, gèrent et stabilisent.
-              Ils sont actifs et hyper sollicités. Ils vivent au rythme battant de leurs enfants et savent se montrer, comme eux, inépuisables.
-              Ils sont investis, engagés, et placent en priorité, de manière désintéressée, le bonheur de leurs enfants.
-              Les parents s’occupent de tout. Mais qui s’occupe d’eux ?"
-        target_page: "slide"
-      slide1:
-        title: "Se préoccuper des parents pour la première fois"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1513179669/parentheze/parent_care.png"
-        text: "La politique familiale ne s’intéresse aux parents que pour s’assurer qu’ils ont bien les moyens de s'occuper correctement de leurs enfants.
-              Les innombrables services et loisirs réservés aux familles ne s’intéressent qu'aux enfants et ne soulagent en rien la pression subit par les parents.
-              Personne ne s’intéresse aux parents pour ce qu’ils sont : des gens comme les autres qui ont des envies communes mais des contraintes particulières.
-              Chez Parentheze, on a envie de dire aux parents :
-              “Chers parents, posez-vous, on s’occupe de tout.”"
-        target_page: "slide"
-      slide2:
-        title: "Assez de sacrifices, des solutions !"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1513179381/parentheze/parent_sacrifice.png"
-        text: "Les parents paient cher la moindre part de liberté et de tranquillité.
-              Il y a les petits sacrifices récurrents comme celui d’aller manger une bouffe passable,
-              dans un fast food, uniquement car la présence de jeux pour les enfants fait passer un repas plus tranquille.
-              Il y a les coupes dans le budget comme s’offrir une baby-sitter, pour sortir simplement à deux et se retrouver.
-              Il y a toutes ces soirées exaltantes sur le papier mais à moitié vécues parce que les enfants fatiguent et s’impatientent.
-              Il y a ces journées de galère, de grève à l’école et d’imprévus divers où, désemparé,
-              on prévient le boss ou le client qu’on est obligé de prendre notre journée.
-              Les besoins des parents et de leur famille sont immenses et nombreux sont ceux qui essaient de leur rendre service,
-              pour le meilleur comme pour le pire."
-        target_page: "slide"
-      slide3:
-        title: "Pourquoi personne ne s'était attaqué au problème?"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1513180421/parentheze/parent_zuckerberg.png"
-        text: "Parce que les meilleurs entrepreneurs sont souvent jeunes et sans enfant quand ils changent le monde.
-              Parce qu’ils sont déjà lancés dans de grands projets quand ils deviennent à leur tour parents et découvrent alors les besoins.
-              Parce qu'avant le numérique, il était impossible de proposer un service rentable et de qualité uniquement dédiés aux parents.
-              Les parents n’avaient encore aucune réponse satisfaisantes à leurs besoins de liberté.
-              Nous proposons aujourd'hui une réponse, elle s’appelle Parentheze."
-        target_page: "slide"
-      slide4:
-        title: "Parentheze facilite des usages qui existent déjà."
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1513181229/parentheze/parent_babysitting.png"
-        text: "S'échanger la garde de nos enfants, nous, parents, le faisons déjà. Soirée pyjama et anniversaires créent les occasions
-              d'emmener ses enfants chez d'autres pour la soirée, la nuit, l'après midi. C'est vieux comme le monde, c'est gratuit et naturel.
-              Simplement, demain, vous avez envie de sortir, changer d'air, aller à une soirée d'anniversaire, vous allez peut-être demander à ses
-              chers voisins de vous garder les enfants une fois. Mais pas deux et pas de manière récurrente. Vous n'avez pas envie de déranger et
-              d'être redevable. C'est un sentiment très inconfortable. Vous allez mettre une croix sur vos sorties ou craquer la tirelire pour
-              engager une baby-sitter et au final passer votre soirée à regarder votre montre."
-        target_page: "slide"
-      slide5:
-        title: "Comment ça marche?"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1513194127/parentheze/parents_how.png"
-        text: "Parentheze propose un service simple, rapide, avec prise en main totale pour limiter ce genre de frein.
-              Les parents qui reçoivent la garde des enfants sont compensés en € pour cela car le temps passés à rendre service,
-              même à des amis, ne leur ai pas gratuit.
-              Des forfaits soirée, nuit, avec ou sans grasse matinée, des journées pour les imprévus en semaine, ont été pensés pour les parents d'aujourd'hui.
-              Payer et être payé en retour est la plus simple des manières de fonctionner et donc la seule possible.
-              Pas de système de point, source d’exclusion. Pas de gratuit, car c'est ce qui existe déjà et cela ne résoud rien.
-              Parentheze se rémunère en prenant une commission sur chaque garde.
-              Se rémunérer permet de proposer une qualité de produit et de service à la hauteur des attentes et des besoins des parents."
-        target_page: "slide"
-      slide6:
-        title: "Nous avons pensé à tout, nous sommes parents et Parentheze est notre produit."
-        image: ""
-        target_page: ""
-  survey:
+  pages:
+    home:
+      slides:
+        slide0:
+          title: "Profitez ! Ce soir les enfants dorment chez des amis"
+          text: "Échange de garde d'enfants et mutualisation de babysitter"
+          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
+          after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
+          calltoaction: "Créer mon compte"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+      slide_plan:
+        title: "Pensé pour les parents d'aujourd'hui"
+        text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
+        plans:
+          plan0:
+            price: "12€"
+            title: "no-stress"
+            subtitle: "2h en journée"
+            color: "#469AE0"
+          plan1:
+            price: "22€"
+            title: "la soirée"
+            subtitle: "4h en soirée - Repas non compris"
+            color: "#E12787"
+          plan2:
+            price: "42€"
+            title: "la soirée + la nuit + la grasse mat'"
+            subtitle: "Ex: 20h-midi - Repas non compris"
+            color: "#F1B255"
+          plan3:
+            price: "35€"
+            title: "Panique ! Grève à l'école"
+            subtitle: "la journée"
+            color: "white"
+      slide_subscription:
+        title: "Inscrivez-vous"
+        text: "le service est en phase de test, participez à la béta gratuitement."
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
+        checkbox: "Vous habitez la métropole bordelaise ou proche."
+      slide_with_split:
+        slide0:
+          title: "Trouvez des parents comme vous :"
+          text:
+            text0: "autour de vous, et qui vivent sur le rythme des enfants.
+                    Parentheze a été pensé pour les parents d’aujourd’hui.
+                    Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
+          image: "https://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+        slide1:
+          title: "Réservé aux parents"
+          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
+          text:
+            text0: "- Pas de babysitter"
+            text1: "- Des forfaits de garde pour compenser les parents hôtes"
+            text2: "- Géolocalisation des membres autour de vous"
+            text3: "- Réputation pour chaque garde"
+            text4: "- Outil d'invitation pour faire connaissance"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+    why:
+      slides:
+        slide0:
+          title: "Pourquoi Parentheze ?"
+          text: "le réseau réservé aux parents d'aujourd'hui"
+          button_text: "LE MANIFESTE"
+          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512746266/priscilla-du-preez-149915_jdvhkp.jpg"
+          target_page: "slide_manifeste"
+        slide1:
+          title: "Parce que nous adorons nos enfants..."
+          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_kit_jumping.jpg"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+          target_page: "slide_manifeste"
+        slide2:
+          title: "...mais que nous avons besoin de ce temps rien qu’à nous,"
+          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_lover.jpg"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+          target_page: "slide_manifeste"
+        slide3:
+          title: "Parentheze propose de faciliter l’échange de garde entre parents."
+          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_kid_cool.jpg"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+          target_page: "slide_manifeste"
+        slide4:
+          title: "Pour les parents à la recherche de solutions nouvelles."
+          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_1440/v1511276197/parentheze/roya-ann-miller-200123.jpg"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+          target_page: "slide_manifeste"
+        slide5:
+          title: "Chers parents, posez-vous, on s’occupe de tout."
+          image: "http://res.cloudinary.com/doodlid/image/upload/v1513328712/mother_kid_xtep44.jpg"
+          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+          target_page: "slide_manifeste"
+      manifeste:
+        slide0:
+          title: 'Les parents s’occupent de tout, mais qui s’occupe d’eux ?'
+          image: 'http://res.cloudinary.com/doodlid/image/upload/v1513177233/parentheze/lynette_mother.png'
+          text: "Les parents sont un pilier majeur de notre société. Ils sont responsables des générations à venir et font de l’éducation de leurs enfants une priorité.
+                Ils construisent ainsi le monde de demain. Ils sont le coeur de toutes les organisations. Ils rassurent, gèrent et stabilisent.
+                Ils sont actifs et hyper sollicités. Ils vivent au rythme battant de leurs enfants et savent se montrer, comme eux, inépuisables.
+                Ils sont investis, engagés, et placent en priorité, de manière désintéressée, le bonheur de leurs enfants.
+                Les parents s’occupent de tout. Mais qui s’occupe d’eux ?"
+          target_page: "slide"
+        slide1:
+          title: "Se préoccuper des parents pour la première fois"
+          image: "http://res.cloudinary.com/doodlid/image/upload/v1513179669/parentheze/parent_care.png"
+          text: "La politique familiale ne s’intéresse aux parents que pour s’assurer qu’ils ont bien les moyens de s'occuper correctement de leurs enfants.
+                Les innombrables services et loisirs réservés aux familles ne s’intéressent qu'aux enfants et ne soulagent en rien la pression subit par les parents.
+                Personne ne s’intéresse aux parents pour ce qu’ils sont : des gens comme les autres qui ont des envies communes mais des contraintes particulières.
+                Chez Parentheze, on a envie de dire aux parents :
+                “Chers parents, posez-vous, on s’occupe de tout.”"
+          target_page: "slide"
+        slide2:
+          title: "Assez de sacrifices, des solutions !"
+          image: "http://res.cloudinary.com/doodlid/image/upload/v1513179381/parentheze/parent_sacrifice.png"
+          text: "Les parents paient cher la moindre part de liberté et de tranquillité.
+                Il y a les petits sacrifices récurrents comme celui d’aller manger une bouffe passable,
+                dans un fast food, uniquement car la présence de jeux pour les enfants fait passer un repas plus tranquille.
+                Il y a les coupes dans le budget comme s’offrir une baby-sitter, pour sortir simplement à deux et se retrouver.
+                Il y a toutes ces soirées exaltantes sur le papier mais à moitié vécues parce que les enfants fatiguent et s’impatientent.
+                Il y a ces journées de galère, de grève à l’école et d’imprévus divers où, désemparé,
+                on prévient le boss ou le client qu’on est obligé de prendre notre journée.
+                Les besoins des parents et de leur famille sont immenses et nombreux sont ceux qui essaient de leur rendre service,
+                pour le meilleur comme pour le pire."
+          target_page: "slide"
+        slide3:
+          title: "Pourquoi personne ne s'était attaqué au problème?"
+          image: "http://res.cloudinary.com/doodlid/image/upload/v1513180421/parentheze/parent_zuckerberg.png"
+          text: "Parce que les meilleurs entrepreneurs sont souvent jeunes et sans enfant quand ils changent le monde.
+                Parce qu’ils sont déjà lancés dans de grands projets quand ils deviennent à leur tour parents et découvrent alors les besoins.
+                Parce qu'avant le numérique, il était impossible de proposer un service rentable et de qualité uniquement dédiés aux parents.
+                Les parents n’avaient encore aucune réponse satisfaisantes à leurs besoins de liberté.
+                Nous proposons aujourd'hui une réponse, elle s’appelle Parentheze."
+          target_page: "slide"
+        slide4:
+          title: "Parentheze facilite des usages qui existent déjà."
+          image: "http://res.cloudinary.com/doodlid/image/upload/v1513181229/parentheze/parent_babysitting.png"
+          text: "S'échanger la garde de nos enfants, nous, parents, le faisons déjà. Soirée pyjama et anniversaires créent les occasions
+                d'emmener ses enfants chez d'autres pour la soirée, la nuit, l'après midi. C'est vieux comme le monde, c'est gratuit et naturel.
+                Simplement, demain, vous avez envie de sortir, changer d'air, aller à une soirée d'anniversaire, vous allez peut-être demander à ses
+                chers voisins de vous garder les enfants une fois. Mais pas deux et pas de manière récurrente. Vous n'avez pas envie de déranger et
+                d'être redevable. C'est un sentiment très inconfortable. Vous allez mettre une croix sur vos sorties ou craquer la tirelire pour
+                engager une baby-sitter et au final passer votre soirée à regarder votre montre."
+          target_page: "slide"
+        slide5:
+          title: "Comment ça marche?"
+          image: "http://res.cloudinary.com/doodlid/image/upload/v1513194127/parentheze/parents_how.png"
+          text: "Parentheze propose un service simple, rapide, avec prise en main totale pour limiter ce genre de frein.
+                Les parents qui reçoivent la garde des enfants sont compensés en € pour cela car le temps passés à rendre service,
+                même à des amis, ne leur ai pas gratuit.
+                Des forfaits soirée, nuit, avec ou sans grasse matinée, des journées pour les imprévus en semaine, ont été pensés pour les parents d'aujourd'hui.
+                Payer et être payé en retour est la plus simple des manières de fonctionner et donc la seule possible.
+                Pas de système de point, source d’exclusion. Pas de gratuit, car c'est ce qui existe déjà et cela ne résoud rien.
+                Parentheze se rémunère en prenant une commission sur chaque garde.
+                Se rémunérer permet de proposer une qualité de produit et de service à la hauteur des attentes et des besoins des parents."
+          target_page: "slide"
+        slide6:
+          title: "Nous avons pensé à tout, nous sommes parents et Parentheze est notre produit."
+          image: ""
+          target_page: ""
+  guest:
     title: "Rapide enquète"
     questions_main_number: "4"
     no_reply: "sans réponse"
