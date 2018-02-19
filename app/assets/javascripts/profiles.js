@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var inputs = [profileName1, profileName2, profileKids, profilePhone]
 
-  for (var value of inputs) {
+  for (var value in inputs) {
     if (value) {
       value.addEventListener("keydown", testIt, true);
     }
