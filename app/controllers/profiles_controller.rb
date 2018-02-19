@@ -73,9 +73,10 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @profile.step = 2
     @profile.validation = 2
-    if @profile.save
+    if true
+      @updates_requested = request_update_params
+      UserMailer.request_update(@profile.user, @updates_requested).deliver_now
       flash[:notice] = "Profile envoyé en attente de modification"
-      UserMailer.request_update(@profile.user).deliver_now
       redirect_to admin_validations_path
     end
   end
@@ -98,6 +99,6 @@ class ProfilesController < ApplicationController
   end
 
   def request_update_params
-    params.require(:profile).permet(:address, :kids, :mother_first_name, :father_first_name, :phone, :photo)
+    params.permit(:address, :kids, :parent1, :parent2, :phone, :photo)
   end
 end
