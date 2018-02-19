@@ -277,6 +277,7 @@ fr:
   survey:
     title: "Rapide enquète"
     questions_main_number: "4"
+    no_reply: "sans réponse"
     questions:
       question1:
         data: "parent"
