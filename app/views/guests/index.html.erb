@@ -26,7 +26,7 @@
         <div class="card with-max-height">
           <h5>Nbre moyen de visite par visiteur :</h5>
           <h2 class="blue"><%= @average_visits %></h2>
-          <h6>(sur page d'accueil)</h6>
+          <h6>(visiteur parent sur page d'accueil)</h6>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -66,13 +66,13 @@
             <% question[1][:answers].each_with_index do |answer, index| %>
               <div class="label">
                 <span>... <%= answer[1][:text] %></span>
-                <span><strong><%= ((@guests.where(question[1][:data].to_sym => index+1).count)*100)/(@guestcount) %>%</strong></span>
+                <span><strong><%= ((@guests.parenting.where(question[1][:data].to_sym => index+1).count)*100)/(@parentcount) %>%</strong></span>
               </div>
             <% end %>
 
             <div class="label">
               <span>... rien </span>
-              <span><strong><%= ((@guests.where(question[1][:data].to_sym => nil).count)*100)/(@guestcount) %>%</strong></span>
+              <span><strong><%= ((@guests.parenting.where(question[1][:data].to_sym => nil).count)*100)/(@parentcount) %>%</strong></span>
             </div>
           </div>
         </div>

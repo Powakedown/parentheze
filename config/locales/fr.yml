@@ -23,6 +23,7 @@ fr:
       report: "Stats Report"
       why: "Pourquoi parentheze ?"
       admin: "Admin"
+      new-profiles: "Création de profil"
   navbar:
     login: "connexion"
     sign_up: "s'enregistrer"

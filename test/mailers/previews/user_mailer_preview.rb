@@ -18,4 +18,9 @@ class UserMailerPreview < ActionMailer::Preview
     @user = User.last
     UserMailer.validation(@user)
   end
+
+  def request_update
+    @user = User.last
+    UserMailer.request_update(@user, params)
+  end
 end
