@@ -76,11 +76,16 @@ function getAddressComponents(place) {
   };
 }
 
+function testMail(e) {
+  console.log(e.keyCode);
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
   $('.attachinary-input').attachinary();
 
   var profileAddress = document.getElementById('profile_address');
+
   var profileName1 = document.getElementById('profile_mother_first_name');
   var profileName2 = document.getElementById('profile_father_first_name');
   var profileKids = document.getElementById('profile_kids');

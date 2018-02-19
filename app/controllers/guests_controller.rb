@@ -9,14 +9,15 @@ class GuestsController < ApplicationController
     if tester
       @guests = Guest.not_tester
       @guestcount = @guests.count
-      @visits = @guests.visitors.count
+      @parentcount = @guests.parenting.count
+      @visits = @guests.visitors.parenting.count
       @visitors_p = percentage(@visits, @guestcount)
-      @parents = percentage(@guests.count(:parent), @guestcount)
+      @parents = percentage(@parentcount, @guestcount)
       @average_visits = average(@guests, :visit)
       @questions = t('.questions').first(5)
       @form_completed_p = completion(@guests, :get_out)
-      @target1 = percentage(@guests.target1, @guestcount)
-      @target2 = percentage(@guests.target2, @guestcount)
+      @target1 = percentage(@guests.target1, @parentcount)
+      @target2 = percentage(@guests.target2, @parentcount)
       @guest_steps = []
       0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
     else

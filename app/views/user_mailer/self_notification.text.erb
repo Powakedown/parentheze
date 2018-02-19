@@ -12,16 +12,16 @@ Step on the run: <%= @user.step %>
 Réponses:
 
 <%= t('survey.questions.question1.title') %>
->> <%= @user.parent || "sans réponse" %>
+<%= @user.parent ? t('survey.questions.question2.answers.answer'+@user.parent.to_s+'.text') : t('survey.no_reply') %>
 
 <%= t('survey.questions.question2.title') %>
->> <%= @user.kid_age || "sans réponse" %>
+<%= @user.kid_age ? t('survey.questions.question2.answers.answer'+@user.kid_age.to_s+'.text') : t('survey.no_reply') %>
 
 <%= t('survey.questions.question3.title') %>
->> <%= @user.jalous || "sans réponse" %>
+<%= @user.jalous ? t('survey.questions.question3.answers.answer'+@user.jalous.to_s+'.text') : t('survey.no_reply') %>
 
 <%= t('survey.questions.question4.title') %>
->> <%= @user.get_out || "sans réponse" %>
+<%= @user.get_out ? t('survey.questions.question4.answers.answer'+@user.get_out.to_s+'.text') : t('survey.no_reply') %>
 
 <%= t('survey.questions.question6.title') %>
->> <%= @user.old_kid || "sans réponse" %>
+<%= @user.old_kid ? t('survey.questions.question6.answers.answer'+@user.old_kid.to_s+'.text') : t('survey.no_reply') %>

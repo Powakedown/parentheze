@@ -18,6 +18,7 @@ fr:
       report: "Stats Report"
       why: "Pourquoi parentheze ?"
       admin: "Admin"
+      new-profiles: "Création de profil"
   shared:
     navbar:
       login: "connexion"
@@ -279,6 +280,7 @@ fr:
   guest:
     title: "Rapide enquète"
     questions_main_number: "4"
+    no_reply: "sans réponse"
     questions:
       question1:
         data: "parent"
