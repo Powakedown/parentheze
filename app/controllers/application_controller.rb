@@ -40,6 +40,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def session_ways?
+    false
+  end
+
   def cookie
     @cookie = cookies[:parentheze_guest].present?
   end
