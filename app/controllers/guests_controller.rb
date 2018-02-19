@@ -69,6 +69,7 @@ class GuestsController < ApplicationController
   end
 
   def init_form
+    @questions = t('.questions')
     @questions_number = t('.questions').length
     @breadcrumb_length = 5
   end
