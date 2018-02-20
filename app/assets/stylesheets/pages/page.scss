@@ -10,3 +10,16 @@
   color: white;
   background-color: $purple;
 }
+.footer {
+  height: 300px;
+  ul {
+    display: inline;
+  }
+  a {
+    margin: 30px;
+  }
+  .logo {
+    width: 217px;
+    height: 31px;
+  }
+}

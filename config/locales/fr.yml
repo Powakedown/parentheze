@@ -18,6 +18,7 @@ fr:
       report: "Stats Report"
       why: "Pourquoi parentheze ?"
       admin: "Admin"
+      about: "A propos de nous"
       new-profiles: "Création de profil"
   shared:
     navbar:

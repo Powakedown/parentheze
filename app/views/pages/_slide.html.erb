@@ -1,6 +1,6 @@
 <div class="flex-parent"> <!-- for IE bug -->
-  <div class="fullscreen relative flexbox" style="background-image: url(<%= slide[:image] %>)" id="slide<%= index %>">
-    <div class="slide<%= index %>">
+  <div class="fullscreen relative flexbox" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
+    <div class="slide<%= id %>">
       <h1 class=""><%= slide[:title] %></h1>
       <p class="margin-bottom-medium"><%= slide[:text] %></p>
       <% if current_page?(root_path) && @session_ways %>
