@@ -17,6 +17,8 @@ class Profile < ApplicationRecord
   alias_attribute :parent1, :mother_first_name
   alias_attribute :parent2, :father_first_name
 
+  has_many :wishes, through: :user
+
   has_attachment :photo
 
   def step3?

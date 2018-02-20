@@ -7,7 +7,7 @@
         <% unless current_user %>
           <%= link_to t(slide[:calltoaction]), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
         <% else %>
-          <div class="btn btn-yellow margin-bottom-medium"><%= t('home.slides.slide0.after_subscription') %></div>
+          <div class="btn btn-yellow margin-bottom-medium"><%= t('slides.slide0.after_subscription') %></div>
         <% end %>
       <% end %>
 
