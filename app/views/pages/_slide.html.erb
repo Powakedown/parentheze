@@ -1,13 +1,13 @@
 <div class="flex-parent"> <!-- for IE bug -->
-  <div class="fullscreen relative flexbox" style="background-image: url(<%= slide[:image] %>)" id="slide<%= index %>">
-    <div class="slide<%= index %>">
+  <div class="fullscreen relative flexbox" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
+    <div class="slide<%= id %>">
       <h1 class=""><%= slide[:title] %></h1>
       <p class="margin-bottom-medium"><%= slide[:text] %></p>
       <% if current_page?(root_path) && @session_ways %>
         <% unless current_user %>
           <%= link_to t(slide[:calltoaction]), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
         <% else %>
-          <div class="btn btn-yellow margin-bottom-medium"><%= t('home.slides.slide0.after_subscription') %></div>
+          <div class="btn btn-yellow margin-bottom-medium"><%= t('slides.slide0.after_subscription') %></div>
         <% end %>
       <% end %>
 
