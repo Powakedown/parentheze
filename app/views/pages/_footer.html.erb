@@ -1,7 +1,10 @@
-<div class="fullscreen relative flexbox" style="background-image: url(<%= image %>)" id=<%= id %>>
-  <div class="<%= id %>">
-    <h1 class=""><%= title %></h1>
-    <h4 class="margin-bottom-medium"><%= text %></h4>
-    <%= render 'shared/scroller', target_page: target_page, link_image: link_image %>
+<div class="footer white-on-purple flexbox">
+  <div class="text-center">
+    <%= cl_image_tag("parentheze/Parentheze_logo.svg", class: "logo margin-bottom-medium") %>
+    <div class="footer-links">
+      <%= link_to t('metas.titles.why'), pourquoi_parentheze_path %>
+      <%= link_to t('metas.titles.about'), pourquoi_parentheze_path %>
+      <%= link_to t('metas.titles.admin'), admin_path %>
+    </div>
   </div>
 </div>

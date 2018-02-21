@@ -20,6 +20,9 @@ class AdminsController < ApplicationController
   private
 
   def security_check
-    redirect_to root_path unless current_user.admin == true
+    if current_user.admin.nil?
+      redirect_to root_path
+      flash[:alert] = "Accès non autorisé"
+    end
   end
 end

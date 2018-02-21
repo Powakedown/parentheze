@@ -2,7 +2,6 @@
 
 
 <div class="dashboard">
-  <!-- <div class="pastille pastille-yellow pastille-action flexbox"><i class="fa fa-sign-out-alt"></i></div> -->
   <%= link_to(content_tag(:i, nil, class: 'fa fa-sign-out-alt'), root_path, class: "pastille pastille-yellow pastille-action flexbox" ) %>
 
   <div class="container">
@@ -14,100 +13,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <% @profiles.each do |profile| %>
-        <%= simple_form_for :profile, url: request_update_user_profile_path(profile.user, profile), method: :get do |f| %>
-          <div class="card">
-            <p>Cocher les points à rectifier, ils seront ajouter au mail : </p>
-            <div class="row margin-bottom-medium">
-              <div class="col-xs-12 col-md-9">
-                <div class="row">
-                  <div class="col-xs-12 col-md-4 ">
-                    <label class="checkbox">
-                      <input type="checkbox" class="boolean optional" id="parent1-<%= profile.id %>" name="parent1" value="true" />
-                    <label for="parent1-<%= profile.id %>"><p>Prénom parent 1 : </p></label>
-                    </label>
-                  </div>
-                  <div class="col-xs-12 col-md-4 ">
-                    <p class="align-to-checkbox"><%= profile.parent1 %></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-md-4 ">
-                    <label class="checkbox">
-                      <input type="checkbox" class="boolean optional" id="parent2-<%= profile.id %>" name="parent2" value="true" />
-                    <label for="parent2-<%= profile.id %>"><p>Prénom parent 2 : </p></label>
-                    </label>
-                  </div>
-                  <div class="col-xs-12 col-md-4 ">
-                    <p class="align-to-checkbox"><%= profile.parent2 %></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-md-4 ">
-                    <label class="checkbox">
-                      <input type="checkbox" class="boolean optional" id="kids-<%= profile.id %>" name="kids" value="true" />
-                    <label for="kids-<%= profile.id %>"><p>Nombre d'enfants :</p></label>
-                    </label>
-                  </div>
-                  <div class="col-xs-12 col-md-4 ">
-                    <p class="align-to-checkbox"><%= profile.kids %></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-md-4 ">
-                    <label class="checkbox">
-                      <input type="checkbox" class="boolean optional" id="address-<%= profile.id %>" name="address" value="true" />
-                    <label for="address-<%= profile.id %>"><p>Adresse :</p></label>
-                    </label>
-                  </div>
-                  <div class="col-xs-12 col-md-4 ">
-                    <p class="align-to-checkbox"><%= profile.address %></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-md-4 ">
-                    <label class="checkbox">
-                      <input type="checkbox" class="boolean optional" id="phone-<%= profile.id %>" name="phone" value="true" />
-                    <label for="phone-<%= profile.id %>"><p>Téléphone :</p></label>
-                    </label>
-                  </div>
-                  <div class="col-xs-12 col-md-4 ">
-                    <p class="align-to-checkbox"><%= profile.phone %></p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-md-12 ">
-                    <p>Besoins :</p>
-                    <div class="row">
-                    <% profile.user.wishes.each do |wish| %>
-                      <div class="col-xs-12 col-md-3">
-                        <p><%= wish.name %></p>
-                      </div>
-                    <% end %>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-md-4 ">
-                    <p></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-md-3">
-              <% if profile.photo? %>
-                <%= cl_image_tag profile.photo.path, width: 225, height: 150, crop: :fill %>
-              <% end %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-3">
-                <%= link_to "valider", validate_user_profile_path(profile.user, profile), class:"btn btn-green" %>
-              </div>
-              <div class="col-xs-12 col-md-3">
-                <%= f.button :submit, "demander les modifs", class:"btn btn-orange" %>
-              </div>
-            </div>
-          </div>
-          <% end %>
-        <% end %>
+        <%= render @profiles %>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-<div class="container-fluid" id=<%= "slide#{index}" %> >
+<div class="container-fluid" id=<%= "slide#{id}" %> >
   <div class="row">
     <div style="background-image: url(<%= slide[:image] %>)" class="full-height col-xs-12 col-md-6"></div>
     <div class="col-xs-12 col-md-6 full-height flex-parent black-on-white double-padding-box">
@@ -10,7 +10,7 @@
               <p><%= text[1] %></p>
             <% end %>
           </div>
-          <%= render 'shared/scroller', target_page: target_page, link_image: slide[:link_image]  %>
+          <%= render 'scroller', target_page: target_page, link_image: slide[:link_image]  %>
         </div>
       </div>
     </div>

@@ -9,9 +9,9 @@ class PagesController < ApplicationController
       redirect_to new_user_profile_path(current_user) if current_user.profile.step < 6
     end
     if cookie
-      @slides = t('home.slides')
-      @slide_shows = t('home.slide_with_split')
-      @slide_plan = t('home.slide_plan')
+      @slides = t('.slides')
+      @slide_split = t('.slide_with_split')
+      @slide_plan = t('.slide_plan')
       @guest = guest_user
       @guest.visit += 1
       @guest.save
@@ -30,8 +30,8 @@ class PagesController < ApplicationController
 
   def why
     @guest = guest_user
-    @slides = t('why.slides')
-    @slides_manifeste = t('why.manifeste')
+    @slides = t('.slides')
+    @slides_manifeste = t('.manifeste')
   end
 
   private

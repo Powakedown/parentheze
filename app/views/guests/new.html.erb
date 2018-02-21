@@ -6,7 +6,7 @@
       <% end %>
     </div>
   </div>
-    <% t('survey.questions').each do |question| %>
+    <% @questions.each do |question| %>
       <div id="<%= question[0] %>">
         <div class="fullscreen under-breadcrumb flexbox">
           <div class="survey-block">
@@ -14,7 +14,7 @@
               <div style="background-image: url(<%= question[1][:picture] %>)" class="img-anim slideLeft delay0"></div>
             <% end %>
             <%#= image_tag(question[1][:picture], class:"slideLeft") if question[1][:picture] %>
-            <h1 class="margin-bottom-medium slideLeft relative"><i class="fa fa-<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
+            <h1 class="margin-bottom-medium slideLeft relative"><i class="<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
             <h3 class="margin-bottom-medium slideLeft"><%= question[1][:subtitle] %></h3>
             <% question[1][:answers].each_with_index do |answer, x| %>
               <%= simple_form_for :guest, method: :patch do |f| %>

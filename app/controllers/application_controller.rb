@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :cookie
+  before_action :session_ways?
 
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -38,6 +39,10 @@ class ApplicationController < ActionController::Base
     else
       new_user_profile_path(current_user)
     end
+  end
+
+  def session_ways?
+    @session_ways = false
   end
 
   def cookie
