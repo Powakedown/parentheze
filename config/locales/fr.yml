@@ -11,34 +11,6 @@ fr:
     email_regex: "L'email rentré ne possède pas le bon format"
   metas:
     title: "Parentheze, la nouvelle vie des parents."
-  devise:
-    registrations:
-      new:
-        title: "Inscription :"
-        maintitle: "Donnée de connexion"
-        details: "Votre mail n’est pas communiqué à des tiers."
-        addon: "Déjà inscrit ?"
-        field1: "Email :"
-        field2: "Mot de passe (minimum 6 caractères incluant lettres et chiffres) :"
-        field3: "Confirmer le mot de passe :"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
-      edit:
-        title: "Inscription"
-        maintitle: "Donnée de connexion"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
-        details: "Votre mail n’est pas communiqué à des tiers."
-        placeholder1: "à renseigner"
-        placeholder2: "laisser vide si aucun changement"
-        field4: "Nouveau mot de passe (minimum 6 caractères incluant lettres et chiffres):"
-        field5: "Confirmer le nouveau mot de passe :"
-        field6: "Mot de passe actuel :"
-        field7: "Mot de passe :"
-    sessions:
-      new:
-        remember_me: "Se souvenir de moi"
-        field7: "Mot de passe :"
-        field1: "Email :"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
   admins:
     password_verification:
       alert: "Mot de passe erroné"
@@ -54,6 +26,8 @@ fr:
       subquery: "password"
       alert: "Accès non autorisé"
   profiles:
+    shared:
+      inscription-bg: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
     profile:
       card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
       field1: Prénom du parent1
@@ -72,7 +46,6 @@ fr:
     edit:
       card-image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
       title: "Inscription :"
-      image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
     form2:
       title: "Informations visibles sur le réseau"
       details: "Seules ces informations seront visibles publiquement."
