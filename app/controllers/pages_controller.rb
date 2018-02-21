@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home update home_parent why]
 
   def home
+    @questions = t('guest.questions').first(5)
     if current_user
       redirect_to new_user_profile_path(current_user) if current_user.profile.step < 6
     end

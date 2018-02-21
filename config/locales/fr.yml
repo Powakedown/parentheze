@@ -274,7 +274,7 @@ fr:
         title: "Nous avons pensé à tout, nous sommes parents et Parentheze est notre produit."
         image: ""
         target_page: ""
-  survey:
+  guest:
     title: "Rapide enquète"
     questions_main_number: "4"
     no_reply: "sans réponse"

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     if current_user.admin
       @profiles = Profile.where.not(step: 10)
     else
+      flash[:alert] = "Vérifiez vos autorisations."
       redirect_to root_path
     end
   end
