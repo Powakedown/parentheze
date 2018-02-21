@@ -16,7 +16,7 @@ class UserMailer < ApplicationMailer
     @user = guest
   end
 
-  def self_notification(guest)
+  def self_notification
     @user = guest
     mail(to: 'abriko@yahoo.fr',
          from: 'parentgenial@parentheze.com',
@@ -30,6 +30,13 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email,
          from: 'parentgenial@parentheze.com',
          subject: 'Inscription à la béta de parentheze',
+         track_opens: 'true')
+  end
+
+  def new_registration_notification
+    mail(to: 'parentgenial@parentheze.com',
+         from: 'parentgenial@parentheze.com',
+         subject: 'Nouvel Inscription sur parentheze',
          track_opens: 'true')
   end
 

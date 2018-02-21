@@ -16,8 +16,8 @@
         <%= f.error_notification %>
         <div class="login-box">
           <div class="login-fields-tall">
-            <h3><%= t('inscription.screen1.title') %></h3>
-            <p><%= t('inscription.screen1.details') %></p>
+            <h3><%= t('.title') %></h3>
+            <p><%= t('.details') %></p>
 
             <%= f.input :email, required: true, autofocus: true %>
 
@@ -26,10 +26,10 @@
                 <%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %>
               </p>
             <% end %>
-            <%= f.input :current_password, required: true, label: t('inscription.screen1.field6'), placeholder: t('inscription.screen1.placeholder1') %>
+            <%= f.input :current_password, required: true, label: t('.field6'), placeholder: t('.placeholder1') %>
 
-            <%= f.input :password, autocomplete: "off", required: false, label: t('inscription.screen1.field4'), placeholder: t('inscription.screen1.placeholder2') %>
-            <%= f.input :password_confirmation, required: false, label: t('inscription.screen1.field5'), placeholder: t('inscription.screen1.placeholder2') %>
+            <%= f.input :password, autocomplete: "off", required: false, label: t('.field4'), placeholder: t('.placeholder2') %>
+            <%= f.input :password_confirmation, required: false, label: t('.field5'), placeholder: t('.placeholder2') %>
           </div>
           <div class="form-actions text-center">
             <%= f.button :submit, "suivant", class:"margin-bottom-small" %>

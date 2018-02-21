@@ -2,10 +2,10 @@
   <div class="login-fields">
     <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
     <p><%= t('inscription.screen'<<step<<'.details') %></p>
-    <%= f.input :address, required: true, autofocus: true, as: :text, label: t('inscription.screen3.field1'), :input_html => { :rows => 2, :resize => "none" } %>
+    <%= f.input :address, required: true, autofocus: true, as: :text, label: t('.field1'), :input_html => { :rows => 2, :resize => "none" } %>
     <%= f.input :lat, as: :hidden %>
     <%= f.input :lng, as: :hidden %>
-    <%= f.input :phone, required: false, label: t('inscription.screen3.field2'), placeholder: t('inscription.screen3.placeholder2') %>
+    <%= f.input :phone, required: false, label: t('.field2'), placeholder: t('.placeholder2') %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, "suivant", class:"login-button" %>

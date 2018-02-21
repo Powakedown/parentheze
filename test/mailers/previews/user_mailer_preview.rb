@@ -6,12 +6,16 @@ class UserMailerPreview < ActionMailer::Preview
 
   def self_notification
     @user = Guest.first
-    UserMailer.self_notification(@user)
+    UserMailer.self_notification
   end
 
   def new_registration
     @user = User.last
     UserMailer.new_registration(@user)
+  end
+
+  def new_registration_notification
+    UserMailer.new_registration_notification
   end
 
   def validation

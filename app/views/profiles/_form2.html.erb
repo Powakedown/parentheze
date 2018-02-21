@@ -2,9 +2,9 @@
   <div class="login-fields">
     <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
     <p><%= t('inscription.screen'<<step<<'.details') %></p>
-    <%= f.input :mother_first_name, required: true, autofocus: true, label: t('inscription.screen2.field1') %>
-    <%= f.input :father_first_name, required: false, label: t('inscription.screen2.field2'), placeholder: t('inscription.screen2.placeholder2') %>
-    <%= f.input :kids, required: true, label: t('inscription.screen2.field3'), placeholder: t('inscription.screen2.placeholder3') %>
+    <%= f.input :mother_first_name, required: true, autofocus: true, label: t('.field1') %>
+    <%= f.input :father_first_name, required: false, label: t('.field2'), placeholder: t('.placeholder2') %>
+    <%= f.input :kids, required: true, label: t('.field3'), placeholder: t('.placeholder3') %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, "suivant", class:"login-button" %>

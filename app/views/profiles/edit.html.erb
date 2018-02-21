@@ -1,11 +1,11 @@
-<% content_for :title_tag do t('metas.titles.new_profile') end %>
+<% content_for :title_tag do t('.new-profile') end %>
 
 
 <div class="flex-parent"> <!-- for IE bug -->
   <div class="fullscreen relative flexbox text-left" style="background-image: url(<%= t('inscription.image') %>)">
     <div class="parentheze-login">
       <% if @step < 6 %>
-      <h4><%= t('inscription.title') %></h4>
+      <h4><%= t('.title') %></h4>
         <div class="breadcrumb">
           <div class="center flex-line">
             <% (1..5).each do |x| %>
@@ -17,7 +17,7 @@
 
       <% %w(2 3 4 5 6).each do |step| %>
         <% if @step == step.to_i %>
-          <div class="login-box <%= "expandOpen" if step == "6" %>" style="background-image: url(<%= t('inscription.screen'+step+'.image') %>)">
+          <div class="login-box <%= "expandOpen" if step == "6" %>" style="background-image: url(<%= t('.form'+step+'.image') %>)">
             <%= render 'form'<<step, step: step %>
           </div>
         <% end %>

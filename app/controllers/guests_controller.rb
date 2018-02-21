@@ -40,7 +40,7 @@ class GuestsController < ApplicationController
     if @guest.email != 'email@example.com' && @guest.valid? && !params[:guest][:email].nil?
       redirect_to :welcome
     elsif params[:guest][:email]
-      flash[:alert] = t('errors.email_valid')
+      flash[:alert] = t('.email_valid')
       redirect_to '/home#inscription-beta'
     else
       render :new
@@ -49,8 +49,8 @@ class GuestsController < ApplicationController
 
   def welcome
     UserMailer.welcome(@guest).deliver_now
-    UserMailer.self_notification(@guest).deliver_now
-    flash[:notice] = t('inscription.redirection.emailsent')
+    UserMailer.self_notification.deliver_now
+    flash[:notice] = t('.emailsent')
     render :welcome
   rescue => e
     @error = e.message

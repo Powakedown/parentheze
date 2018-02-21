@@ -3,10 +3,10 @@
     <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
     <p><%= t('inscription.screen'<<step<<'.details') %></p>
     <div class="img-examples">
-      <% t('inscription.screen5.examples').each do |x| %>
+      <% t('.examples').each do |x| %>
         <div class="img-example-container relative">
           <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
-          <%= image_tag x[1][:photo], alt: t('inscription.screen5.alt'), class: "img-example" %>
+          <%= image_tag x[1][:photo], alt: t('.alt'), class: "img-example" %>
         </div>
       <% end %>
     </div>

@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
   end
 
   def session_ways?
-    @session_ways = false
+    @session_ways = true
   end
 
   def cookie

@@ -15,14 +15,14 @@
         <%= f.error_notification %>
 
         <div class="login-box">
-          <h3><%= t('inscription.screen1.title') %></h3>
-          <p><%= t('inscription.screen1.details') %></p>
-          <%= f.input :email, required: true, autofocus: true, label: t('inscription.screen1.field1'), input_html: {value: session[:email] || "" } %>
-          <%= f.input :password, required: true, label: t('inscription.screen1.field2') %>
-          <%= f.input :password_confirmation, required: true, label: t('inscription.screen1.field3') %>
+          <h3><%= t('.title') %></h3>
+          <p><%= t('.details') %></p>
+          <%= f.input :email, required: true, autofocus: true, label: t('.field1'), input_html: {value: session[:email] || "" } %>
+          <%= f.input :password, required: true, label: t('.field2') %>
+          <%= f.input :password_confirmation, required: true, label: t('.field3') %>
           <div class="form-actions">
             <%= f.button :submit, "suivant", class:"margin-bottom-small" %>
-            <p class="text-center"><%= link_to t('inscription.screen1.addon'), new_user_session_path %></p>
+            <p class="text-center"><%= link_to t('.addon'), new_user_session_path %></p>
           </div>
         </div>
       <% end %>
@@ -30,27 +30,5 @@
   </div>
 </div>
 
-<%= content_for :after_js do %>
-  <script>
-    var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-    function testMail(e) {
-      if(this.value.match(pattern)){
-        this.style.cssText = null;
-      }
-      else if (this.value.length > 3) {
-        this.style.borderColor = "red";
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-      var profileEmail = document.getElementById('user_email');
-
-      if (profileEmail) {
-        profileEmail.addEventListener("keydown", testMail, false);
-      }
-
-    });
-  </script>
-<% end %>
 

@@ -8,7 +8,7 @@ class AdminsController < ApplicationController
     if params[:query][:password] == "#{ENV['ADMIN_PASSWORD']}" && current_user.admin
       redirect_to admin_validations_path
     else
-      flash[:alert] = "Mot de passe erroné"
+      flash[:alert] = t('.alert')
       redirect_to admin_path
     end
   end
@@ -22,7 +22,7 @@ class AdminsController < ApplicationController
   def security_check
     if current_user.admin.nil?
       redirect_to root_path
-      flash[:alert] = "Accès non autorisé"
+      flash[:alert] = t('.alert')
     end
   end
 end
