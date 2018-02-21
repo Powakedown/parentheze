@@ -14,13 +14,16 @@ fr:
   devise:
     registrations:
       new:
-        image:
+        title: "Inscription :"
+        maintitle: "Donnée de connexion"
+        details: "Votre mail n’est pas communiqué à des tiers."
         addon: "Déjà inscrit ?"
         field1: "Email :"
         field2: "Mot de passe (minimum 6 caractères incluant lettres et chiffres) :"
         field3: "Confirmer le mot de passe :"
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
       edit:
-        title: "Parentheze | inscription"
+        title: "Inscription"
         maintitle: "Donnée de connexion"
         image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
         details: "Votre mail n’est pas communiqué à des tiers."
@@ -35,6 +38,7 @@ fr:
         remember_me: "Se souvenir de moi"
         field7: "Mot de passe :"
         field1: "Email :"
+        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
   admins:
     password_verification:
       alert: "Mot de passe erroné"
@@ -48,6 +52,7 @@ fr:
       placeholder: "mot de passe"
       btn_text: "accéder"
       subquery: "password"
+      alert: "Accès non autorisé"
   profiles:
     profile:
       card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
@@ -65,71 +70,71 @@ fr:
     request_update:
       notice: "Profile envoyé en attente de modification"
     edit:
-      title: "Parentheze | nouveau profil"
-      form2:
-        title: "Informations visibles sur le réseau"
-        details: "Seules ces informations seront visibles publiquement."
-        image: ""
-        field1: "Prénom du premier parent :"
-        field2: "Prénom du deuxième parent :"
-        placeholder2: "laisser libre si parent solo"
-        field3: "Enfant(s) concernés par la garde :"
-        placeholder3: "1,2..."
-      form3:
-        title: "Informations non visibles sur le réseau"
-        details: "L’adresse permet de calculer les distances
-                entre les membres mais ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
-        image: ""
-        field1: "Adresse postale :"
-        field2: "Numéro de téléphone :"
-        placeholder2: "communiqué au moment des gardes"
-      form4:
-        title: "Envies et besoins"
-        details: "Vous pouvez décocher les besoins et envies qui ne vous correspondent pas. Vous pouvez aussi les modifier plus tard dans votre profil."
-        image: ""
-        fields:
-          field0: "J’ai besoin de faire garder mes enfants"
-          field1: "Je suis prêt à accueillir les enfants de mes voisins"
-          field2: "J’accepte les invitations pour faire connaissance "
-          field3: "J'accepte les échanges et les dons de matériel entre voisins"
-      form5:
-        title: "Photo de profil"
-        details: "Une bonne photo permet de se faire connaître
-                rapidement des connaissances et des parents du quartier ou de l’école.
-                La photo doit vous bien représenter :"
-        image: ""
-        field1: "télécharger une photo"
-        alt: "exemple de bonne photo"
-        examples:
-          example1:
-            photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_01.jpg"
-            icon: "fa-check-circle"
-            color: "#7ED321"
-          example2:
-            photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_02.jpg"
-            icon: "fa-check-circle"
-            color: "#7ED321"
-          example3:
-            photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_03.jpg"
-            icon: "fa-check-circle"
-            color: "#7ED321"
-          example4:
-            photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_04.jpg"
-            icon: "fa-check-circle"
-            color: "#7ED321"
-          example5:
-            photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_05.jpg"
-            icon: "fa-minus-circle"
-            color: "#D0021B"
-          example6:
-            photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_06.jpg"
-            icon: "fa-minus-circle"
-            color: "#D0021B"
-      form6:
-        title: "Bien joué !"
-        details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
-        image: ""
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
+      card-image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
+      title: "Inscription :"
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+    form2:
+      title: "Informations visibles sur le réseau"
+      details: "Seules ces informations seront visibles publiquement."
+      image: ""
+      field1: "Prénom du premier parent :"
+      field2: "Prénom du deuxième parent :"
+      placeholder2: "laisser libre si parent solo"
+      field3: "Enfant(s) concernés par la garde :"
+      placeholder3: "1,2..."
+    form3:
+      title: "Informations non visibles sur le réseau"
+      details: "L’adresse permet de calculer les distances
+              entre les membres mais ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
+      image: ""
+      field1: "Adresse postale :"
+      field2: "Numéro de téléphone :"
+      placeholder2: "communiqué au moment des gardes"
+    form4:
+      title: "Envies et besoins"
+      details: "Vous pouvez décocher les besoins et envies qui ne vous correspondent pas. Vous pouvez aussi les modifier plus tard dans votre profil."
+      image: ""
+      fields:
+        field0: "J’ai besoin de faire garder mes enfants"
+        field1: "Je suis prêt à accueillir les enfants de mes voisins"
+        field2: "J’accepte les invitations pour faire connaissance "
+        field3: "J'accepte les échanges et les dons de matériel entre voisins"
+    form5:
+      title: "Photo de profil"
+      details: "Une bonne photo permet de se faire connaître
+              rapidement des connaissances et des parents du quartier ou de l’école.
+              La photo doit vous bien représenter :"
+      image: ""
+      field1: "télécharger une photo"
+      alt: "exemple de bonne photo"
+      examples:
+        example1:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_01.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example2:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_02.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example3:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_03.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example4:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_04.jpg"
+          icon: "fa-check-circle"
+          color: "#7ED321"
+        example5:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_05.jpg"
+          icon: "fa-minus-circle"
+          color: "#D0021B"
+        example6:
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_06.jpg"
+          icon: "fa-minus-circle"
+          color: "#D0021B"
+    form6:
+      title: "Bien joué !"
+      details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
   shared:
     navbar:
       login: "connexion"
@@ -138,11 +143,16 @@ fr:
       sign_out: "se déconnecter"
       manifesto: "manifeste"
       plans: "exemple de forfait"
+      why: "Pourquoi parentheze ?"
+      plans: "Exemple de forfaits"
     cookie:
       image: "https://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
       text: "Ce site utilise des cookies afin de faciliter votre navigation et mesurer l'audience de notre site. En continuant à utiliser notre site, vous consentez à l'utilisation des coookies."
       button1_text: "Continuer"
       button2_text: "en savoir plus"
+    footer:
+      admin: "Admin"
+      about: "A propos de nous"
   pages:
     home:
       title: "Parentheze, la nouvelle vie des parents."
@@ -178,11 +188,6 @@ fr:
             title: "Panique ! Grève à l'école"
             subtitle: "la journée"
             color: "white"
-      slide_subscription:
-        title: "Inscrivez-vous"
-        text: "le service est en phase de test, participez à la béta gratuitement."
-        link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
-        checkbox: "Vous habitez la métropole bordelaise ou proche."
       slide_with_split:
         slide0:
           title: "Trouvez des parents comme vous :"
@@ -202,6 +207,11 @@ fr:
             text3: "- Réputation pour chaque garde"
             text4: "- Outil d'invitation pour faire connaissance"
           link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+    slide_subscription:
+      title: "Inscrivez-vous"
+      text: "le service est en phase de test, participez à la béta gratuitement."
+      link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
+      checkbox: "Vous habitez la métropole bordelaise ou proche."
     why:
       title: "Pourquoi Parentheze ?"
       slides:
@@ -305,21 +315,21 @@ fr:
           target_page: ""
   guests:
     index:
-      title: "Stats Report"
-    stats:
-      charac:
-        char1:
-          text: "des enfants en âge d'être gardé par une babysitter"
-          icon: "child"
-        char2:
-          text: "jaloux de ces parents qui sortent tout le temps"
-          icon: "binoculars"
-        char3:
-          text: "qui sortiraient plus souvent si la garde des enfants était moinds chère"
-          icon: "cab"
-        char4:
-          text: "sont prêts à garder les enfants des voisins"
-          icon: "home"
+      title: "Stats Report - survey guest"
+      stats:
+        charac:
+          char1:
+            text: "des enfants en âge d'être gardé par une babysitter"
+            icon: "child"
+          char2:
+            text: "jaloux de ces parents qui sortent tout le temps"
+            icon: "binoculars"
+          char3:
+            text: "qui sortiraient plus souvent si la garde des enfants était moinds chère"
+            icon: "cab"
+          char4:
+            text: "sont prêts à garder les enfants des voisins"
+            icon: "home"
     new:
       title: "Rapide enquète"
     welcome:

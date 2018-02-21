@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row margin-bottom-small">
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <p class="white">Pour formulaire: "<%= t('survey.title') %>"</p>
+        <p class="white"><%= t('.title') %></p>
       </div>
     </div>
     <div class="row margin-bottom-medium">
@@ -88,7 +88,7 @@
           <div class="label green">
             <div>
               <% ["1","2","3"].each do |x| %>
-                <div class="flex-line flex-left margin-top-bot"><i class="fa fa-<%= t('.stats.charac.char'+x+'.icon') %> pastille pastille-small flexbox"></i>  <%= t('.stats.charac.char'+x+'.text') %></div>
+                <div class="flex-line flex-left margin-top-bot"><i class="<%= t('.stats.charac.char'+x+'.icon') %> pastille pastille-small flexbox"></i>  <%= t('.stats.charac.char'+x+'.text') %></div>
               <% end %>
             </div>
             <div class="flexbox">

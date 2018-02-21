@@ -1,7 +1,7 @@
 <%= simple_form_for [ @user, @profile ] do |f| %>
   <div class="login-fields">
-    <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
-    <p><%= t('inscription.screen'<<step<<'.details') %></p>
+    <h3><%= t('.title') %></h3>
+    <p><%= t('.details') %></p>
     <%= f.input :mother_first_name, required: true, autofocus: true, label: t('.field1') %>
     <%= f.input :father_first_name, required: false, label: t('.field2'), placeholder: t('.placeholder2') %>
     <%= f.input :kids, required: true, label: t('.field3'), placeholder: t('.placeholder3') %>

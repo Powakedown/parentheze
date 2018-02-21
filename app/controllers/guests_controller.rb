@@ -49,7 +49,7 @@ class GuestsController < ApplicationController
 
   def welcome
     UserMailer.welcome(@guest).deliver_now
-    UserMailer.self_notification.deliver_now
+    UserMailer.self_notification(@guest).deliver_now
     flash[:notice] = t('.emailsent')
     render :welcome
   rescue => e

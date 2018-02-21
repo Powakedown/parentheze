@@ -1,7 +1,7 @@
 <%= simple_form_for :profile, url: user_profile_path, method: :patch do |f| %>
   <div class="login-fields">
-    <h3><%= t('inscription.screen'<<step<<'.title') %></h3>
-    <p><%= t('inscription.screen'<<step<<'.details') %></p>
+    <h3><%= t('.title') %></h3>
+    <p><%= t('.details') %></p>
     <input type="hidden" class="boolean optional" checked="checked" id="noneed" name="profile[noneed]" value="true" />
     <% t('.fields').each_with_index do |x,index| %>
       <label class="checkbox margin-bottom-medium">

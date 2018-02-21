@@ -2,7 +2,7 @@
 
 
 <div class="flex-parent"> <!-- for IE bug -->
-  <div class="fullscreen relative flexbox text-left" style="background-image: url(<%= t('inscription.image') %>)">
+  <div class="fullscreen relative flexbox text-left" style="background-image: url(<%= t('.image') %>)">
     <div class="parentheze-login">
       <% if @step < 6 %>
       <h4><%= t('.title') %></h4>
@@ -17,7 +17,7 @@
 
       <% %w(2 3 4 5 6).each do |step| %>
         <% if @step == step.to_i %>
-          <div class="login-box <%= "expandOpen" if step == "6" %>" style="background-image: url(<%= t('.form'+step+'.image') %>)">
+          <div class="login-box <%= "expandOpen" if step == "6" %>" style="background-image: url(<%= t('.card-image') if step == "6" %>)">
             <%= render 'form'<<step, step: step %>
           </div>
         <% end %>
