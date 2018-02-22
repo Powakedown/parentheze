@@ -20,12 +20,12 @@ class PagesController < ApplicationController
 
   end
 
-  def update
-    @guest = guest_user
-    @guest.step += 1
-    @guest.save
-    render plain: 'one more step'
-  end
+  # def update
+  #   @guest = guest_user
+  #   @guest.step += 1
+  #   @guest.save
+  #   render plain: 'one more step'
+  # end
 
   def why
     @guest = guest_user
