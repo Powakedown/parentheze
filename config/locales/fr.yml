@@ -456,7 +456,7 @@ fr:
         answers:
           answer1:
             text: "Nous avons pensé à tout !"
-            link: "/home"
+            link: "/"
         picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
         button_effect: "flash"
   footer:

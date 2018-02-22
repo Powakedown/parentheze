@@ -50,16 +50,16 @@ class GuestsController < ApplicationController
     end
   end
 
-  def welcome
-    UserMailer.welcome(@guest).deliver_now
-    UserMailer.self_notification(@guest).deliver_now
-    flash[:notice] = t('.emailsent')
-    render :welcome
-  rescue => e
-    @error = e.message
-    redirect_to '/home#inscription-beta'
-    flash[:alert] = @error.to_s
-  end
+  # def welcome
+  #   UserMailer.welcome(@guest).deliver_now
+  #   UserMailer.self_notification(@guest).deliver_now
+  #   flash[:notice] = t('.emailsent')
+  #   render :welcome
+  # rescue => e
+  #   @error = e.message
+  #   redirect_to '/home#inscription-beta'
+  #   flash[:alert] = @error.to_s
+  # end
 
   private
 
