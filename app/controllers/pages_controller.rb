@@ -8,7 +8,7 @@ class PagesController < ApplicationController
       redirect_to new_user_profile_path(current_user) if current_user.profile.step < 6
     end
     if cookie
-      @slides = t('.slides')
+      @slide_top = t('.slide_home_top')
       @slide_split = t('.slide_with_split')
       @slide_plan = t('.slide_plan')
       @guest = guest_user

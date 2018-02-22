@@ -65,13 +65,9 @@
   margin-right: 10%;
   width: 40%;
 }
-@media (max-device-width : 375px){
+@media (max-device-width : 568px){
   .slide0 {
-    width: 70%;
-    text-align: right;
-    margin-right: 10%;
-    margin-top: 25%;
-    margin-left: 25%;
+    width: 90%;
   }
   .slide4 {
     width: 80%;
@@ -88,9 +84,9 @@
     margin-right: 25%;
   }
 }
-@media (min-device-width : 376px) and (max-device-width : 768px){
-  .slide1, .slide2, .slide4 {
-    width: 60%;
+@media (min-device-width : 569px) and (max-device-width : 768px){
+  .slide0,.slide1, .slide2, .slide4 {
+    width: 80%;
   }
 }
 @media (min-device-width : 769px) and (max-device-width : 1024px){

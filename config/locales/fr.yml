@@ -1,5 +1,7 @@
 fr:
   commons:
+    placeholder:
+      email: "votre email"
     button:
       next: "suivant"
       previous: "précédent"
@@ -7,6 +9,7 @@ fr:
       downloading: "téléchargement"
       back_to_root: "revenir à l'accueil"
     register: "S'inscrire"
+    register_beta: "S'inscrire à la béta"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
   metas:
@@ -159,6 +162,7 @@ fr:
     slide_home_top:
       title: "Profitez ! Ce soir les enfants dorment chez des amis"
       text: "Échange de garde d'enfants et mutualisation de babysitter"
+      text2: "le service est en phase de test, participez à la béta gratuitement."
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
       after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
       calltoaction: "Créer mon compte"
@@ -176,12 +180,12 @@ fr:
         plan1:
           price: "22€"
           title: "la soirée"
-          subtitle: "4h en soirée - Repas non compris"
+          subtitle: "4h en soirée"
           color: "#E12787"
         plan2:
           price: "42€"
           title: "la soirée + la nuit + la grasse mat'"
-          subtitle: "Ex: 20h-midi - Repas non compris"
+          subtitle: "20h-midi"
           color: "#F1B255"
         plan3:
           price: "35€"
@@ -337,8 +341,8 @@ fr:
       subscription: "Oh yeah! Inscription à la béta enregistrée, vous allez recevoir un mail."
       text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
-      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
     update:
+      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
       email_valid: "Veuillez entrez un email valide"
     questions_main_number: "4"
     no_reply: "sans réponse"

@@ -2,7 +2,7 @@
 
 class Guest < ApplicationRecord
   validates :email, presence: { message: 'ne peut pas être vide' },
-                    format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/, message: 'non valide' }
+                    format: { with: /\A\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}\z/, message: 'non valide' }
   validates :email, uniqueness: { conditions: -> { where.not(email: ['email@example.com', 'parentgenial@parentheze.com']) } }
 
   scope :parenting, -> { where(parent: 1) }
