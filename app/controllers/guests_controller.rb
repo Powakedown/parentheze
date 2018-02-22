@@ -40,11 +40,11 @@ class GuestsController < ApplicationController
     if @guest.email != 'email@example.com' && @guest.valid? && !params[:guest][:email].nil?
       UserMailer.welcome(@guest).deliver_now
       UserMailer.self_notification(@guest).deliver_now
-      flash[:notice] = t('guests.welcome.emailsent')
+      flash[:notice] = t('.emailsent')
       redirect_to root_path
-    elsif params[:query][:email]
+    elsif params[:guest][:email]
       flash[:alert] = t('.email_valid')
-      redirect_to '/home#inscription-beta'
+      redirect_to root_path
     else
       render :new
     end

@@ -342,7 +342,6 @@ fr:
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
     update:
       emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
-    update:
       email_valid: "Veuillez entrez un email valide"
     questions_main_number: "4"
     no_reply: "sans réponse"
