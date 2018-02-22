@@ -4,27 +4,11 @@
 
   <%= render partial: "slide", locals: { slide: @slides.values[0], id: 0, target_page: "slide1" } %>
 
-  <%= render partial:'slide_with_split', locals: { slide: @slide_split.values[0], id: 1, target_page: "slide2" } %>
+  <%= render partial:'slide_with_split', locals: { slide: @slide_split[:slide0], id: 1, target_page: "slide2" } %>
 
-  <div class="flex-parent">
-    <div class="container-fluid fullscreen text-center flexbox slide-plan" id="slide2">
-        <div class="plans">
-          <h2><%= @slide_plan[:title] %></h2>
-          <p class="yellow"><%= t('.slide_plan.text') %></p>
-          <div class="margin-bottom-medium">
-            <div class="row">
-              <% @slide_plan[:plans].each do |plan| %>
-                <%= render 'plans', plan: plan %>
-              <% end %>
-          </div>
-        </div>
-        <%= render 'scroller', target_page: "slide3", link_image: t('.slides.slide0.link_image') %>
-      </div>
-    </div>
-  </div>
-</div>
+  <%= render partial:'slide_plan', locals: { slide: @slide_plan, id: 2, target_page: "slide3" } %>
 
-  <%= render partial:'slide_with_split', locals: { slide: @slide_split.values[1], id: 3, target_page: "inscription-beta" } %>
+  <%= render partial:'slide_with_split', locals: { slide: @slide_split[:slide1], id: 3, target_page: "inscription-beta" } %>
 
   <%= render 'slide_subscription' %>
 

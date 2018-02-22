@@ -156,57 +156,57 @@ fr:
   pages:
     home:
       title: "Parentheze, la nouvelle vie des parents."
-      slides:
-        slide0:
-          title: "Profitez ! Ce soir les enfants dorment chez des amis"
-          text: "Échange de garde d'enfants et mutualisation de babysitter"
-          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
-          after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
-          calltoaction: "Créer mon compte"
-          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-      slide_plan:
-        title: "Pensé pour les parents d'aujourd'hui"
-        text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
-        plans:
-          plan0:
-            price: "12€"
-            title: "no-stress"
-            subtitle: "2h en journée"
-            color: "#469AE0"
-          plan1:
-            price: "22€"
-            title: "la soirée"
-            subtitle: "4h en soirée - Repas non compris"
-            color: "#E12787"
-          plan2:
-            price: "42€"
-            title: "la soirée + la nuit + la grasse mat'"
-            subtitle: "Ex: 20h-midi - Repas non compris"
-            color: "#F1B255"
-          plan3:
-            price: "35€"
-            title: "Panique ! Grève à l'école"
-            subtitle: "la journée"
-            color: "white"
-      slide_with_split:
-        slide0:
-          title: "Trouvez des parents comme vous :"
-          text:
-            text0: "autour de vous, et qui vivent sur le rythme des enfants.
-                    Parentheze a été pensé pour les parents d’aujourd’hui.
-                    Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
-          image: "https://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
-          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
-        slide1:
-          title: "Réservé aux parents"
-          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
-          text:
-            text0: "- Pas de babysitter"
-            text1: "- Des forfaits de garde pour compenser les parents hôtes"
-            text2: "- Géolocalisation des membres autour de vous"
-            text3: "- Réputation pour chaque garde"
-            text4: "- Outil d'invitation pour faire connaissance"
-          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+    slide_home_top:
+      title: "Profitez ! Ce soir les enfants dorment chez des amis"
+      text: "Échange de garde d'enfants et mutualisation de babysitter"
+      image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
+      after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
+      calltoaction: "Créer mon compte"
+      link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+    slide_plan:
+      title: "Pensé pour les parents d'aujourd'hui"
+      text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
+      link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+      plans:
+        plan0:
+          price: "12€"
+          title: "no-stress"
+          subtitle: "2h en journée"
+          color: "#469AE0"
+        plan1:
+          price: "22€"
+          title: "la soirée"
+          subtitle: "4h en soirée - Repas non compris"
+          color: "#E12787"
+        plan2:
+          price: "42€"
+          title: "la soirée + la nuit + la grasse mat'"
+          subtitle: "Ex: 20h-midi - Repas non compris"
+          color: "#F1B255"
+        plan3:
+          price: "35€"
+          title: "Panique ! Grève à l'école"
+          subtitle: "la journée"
+          color: "white"
+    slide_with_split:
+      slide0:
+        title: "Trouvez des parents comme vous :"
+        text:
+          text0: "autour de vous, et qui vivent sur le rythme des enfants.
+                  Parentheze a été pensé pour les parents d’aujourd’hui.
+                  Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+      slide1:
+        title: "Réservé aux parents"
+        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
+        text:
+          text0: "- Pas de babysitter"
+          text1: "- Des forfaits de garde pour compenser les parents hôtes"
+          text2: "- Géolocalisation des membres autour de vous"
+          text3: "- Réputation pour chaque garde"
+          text4: "- Outil d'invitation pour faire connaissance"
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
     slide_subscription:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."

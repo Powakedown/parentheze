@@ -2,7 +2,7 @@
   <div class="fullscreen relative flexbox" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
     <div class="slide<%= id %>">
       <h1 class=""><%= slide[:title] %></h1>
-      <p class="margin-bottom-medium"><%= slide[:text] %></p>
+      <h5 class="margin-bottom-medium"><%= slide[:text] %></h5>
       <% if current_page?(root_path) && @session_ways %>
         <% unless current_user %>
           <%= link_to t(slide[:calltoaction]), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
