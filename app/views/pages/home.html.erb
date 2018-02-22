@@ -2,7 +2,7 @@
 
 <div class="home">
 
-  <%= render partial: "slide", locals: { slide: @slides.values[0], id: 0, target_page: "slide1" } %>
+  <%= render partial: "slide", locals: { slide: @slide_top, id: 0, target_page: "slide1" } %>
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_split.values[0], id: 1, target_page: "slide2" } %>
 
@@ -18,7 +18,7 @@
               <% end %>
           </div>
         </div>
-        <%= render 'scroller', target_page: "slide3", link_image: t('.slides.slide0.link_image') %>
+        <%= render 'scroller', target_page: "slide3", link_image: t('.slide_home_top.link_image') %>
       </div>
     </div>
   </div>

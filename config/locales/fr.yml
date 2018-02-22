@@ -1,5 +1,7 @@
 fr:
   commons:
+    placeholder:
+      email: "votre email"
     button:
       next: "suivant"
       previous: "précédent"
@@ -7,6 +9,7 @@ fr:
       downloading: "téléchargement"
       back_to_root: "revenir à l'accueil"
     register: "S'inscrire"
+    register_beta: "S'inscrire à la béta"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
   metas:
@@ -156,14 +159,14 @@ fr:
   pages:
     home:
       title: "Parentheze, la nouvelle vie des parents."
-      slides:
-        slide0:
-          title: "Profitez ! Ce soir les enfants dorment chez des amis"
-          text: "Échange de garde d'enfants et mutualisation de babysitter"
-          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
-          after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
-          calltoaction: "Créer mon compte"
-          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+      slide_home_top:
+        title: "Profitez ! Ce soir les enfants dorment chez des amis"
+        text: "Échange de garde d'enfants et mutualisation de babysitter"
+        text2: "le service est en phase de test, participez à la béta gratuitement."
+        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
+        after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
+        calltoaction: "Créer mon compte"
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
       slide_plan:
         title: "Pensé pour les parents d'aujourd'hui"
         text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
@@ -337,6 +340,7 @@ fr:
       subscription: "Oh yeah! Inscription à la béta enregistrée, vous allez recevoir un mail."
       text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
+    update:
       emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
     update:
       email_valid: "Veuillez entrez un email valide"

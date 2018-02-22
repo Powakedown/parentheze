@@ -3,12 +3,19 @@
     <div class="slide<%= id %>">
       <h1 class=""><%= slide[:title] %></h1>
       <p class="margin-bottom-medium"><%= slide[:text] %></p>
-      <% if current_page?(root_path) && @session_ways %>
+      <% unless current_page?(root_path) && @session_ways %>
         <% unless current_user %>
           <%= link_to t(slide[:calltoaction]), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
         <% else %>
-          <div class="btn btn-yellow margin-bottom-medium"><%= t('pages.home.slides.slide0.after_subscription') %></div>
+          <div class="btn btn-yellow margin-bottom-medium"><%= slide[:after_subscription] %></div>
         <% end %>
+      <% else current_page?(root_path) %>
+        <p class="margin-bottom-medium"><%= slide[:text2] %></p>
+        <div class="row margin-bottom-medium">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3">
+            <%= render 'shared/field_with_button', query: "guest", url: guest_path(@guest), subquery: :email, placeholder: t('commons.placeholder.email'), btn_text: t('commons.register_beta'), method: "patch"  %>
+          </div>
+        </div>
       <% end %>
 
       <div class="margin-bottom-medium">
