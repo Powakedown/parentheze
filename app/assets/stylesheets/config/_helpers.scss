@@ -101,6 +101,13 @@ $input-height: 56px;
   justify-content: center;
   align-items: center;
 }
+.flexbox-bottom {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  justify-content: center;
+  align-items: end;
+}
 .flex-line {
   display: -webkit-box;
   display: -moz-box;
@@ -218,7 +225,7 @@ a:hover.pastille {
     width: 150px;
     margin: auto;
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 20px;
   i {
     font-size: 30px;
     position: absolute;

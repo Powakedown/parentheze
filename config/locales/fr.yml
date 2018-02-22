@@ -17,8 +17,9 @@ fr:
   devise:
     registrations:
       new:
-        title: "Inscription :"
-        maintitle: "Donnée de connexion"
+        title: "Parentheze | Inscription"
+        maintitle: "Inscription : "
+        cardtitle: "Donnée de connexion"
         details: "Votre mail n’est pas communiqué à des tiers."
         addon: "Déjà inscrit ?"
         field1: "Email :"
@@ -112,27 +113,27 @@ fr:
       alt: "exemple de bonne photo"
       examples:
         example1:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_01.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_01.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example2:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_02.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_02.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example3:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_03.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_03.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example4:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_04.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_04.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example5:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_05.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_05.jpg"
           icon: "fa-minus-circle"
           color: "#D0021B"
         example6:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_06.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_06.jpg"
           icon: "fa-minus-circle"
           color: "#D0021B"
     form6:
@@ -164,7 +165,7 @@ fr:
       text: "Échange de garde d'enfants et mutualisation de babysitter"
       text2: "le service est en phase de test, participez à la béta gratuitement."
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
-      after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
+      after_subscription: "Votre compte est en attente de validation..."
       calltoaction: "Créer mon compte"
       link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     slide_plan:

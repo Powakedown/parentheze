@@ -1,29 +1,8 @@
  <div class="flex-parent"> <!-- for IE bug -->
-  <div class="fullscreen relative flexbox" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
+  <div class="fullscreen relative flexbox white-on-purple" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
     <div class="slide<%= id %>">
       <h1 class=""><%= slide[:title] %></h1>
       <h5 class="margin-bottom-medium"><%= slide[:text] %></h5>
-      <% if current_page?(root_path) && @session_ways %>
-        <% unless current_user %>
-          <%= link_to t(slide[:calltoaction]), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
-        <% else %>
-          <div class="btn btn-yellow margin-bottom-medium"><%= slide[:after_subscription] %></div>
-        <% end %>
-      <% elsif current_page?(root_path) %>
-        <div class="row margin-bottom-medium">
-          <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-            <%= render 'shared/field_with_button', query: "guest",
-                                                   url: guest_path(@guest),
-                                                   subquery: :email,
-                                                   placeholder: t('commons.placeholder.email'),
-                                                   btn_text: t('commons.register_beta'),
-                                                   method: "patch",
-                                                   label: slide[:text2] %>
-          </div>
-
-        </div>
-      <% end %>
-
       <div class="margin-bottom-medium">
         <% if slide[:link_image] %>
           <%= render 'scroller', target_page: target_page, link_image: slide[:link_image] %>

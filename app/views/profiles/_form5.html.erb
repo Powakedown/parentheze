@@ -1,16 +1,19 @@
 <%= simple_form_for [ @user, @profile ] do |f| %>
-  <div class="login-fields">
+  <div class="login-fields login-fields-for-xs">
     <h3><%= t('.title') %></h3>
     <p><%= t('.details') %></p>
-    <div class="img-examples">
-      <% t('.examples').each do |x| %>
-        <div class="img-example-container relative">
-          <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
-          <%= image_tag x[1][:photo], alt: t('.alt'), class: "img-example" %>
-        </div>
-      <% end %>
+    <div class="img-example-container">
+      <div class="row">
+        <% t('.examples').each do |x| %>
+          <div class="img-examples col-xs-6 col-sm-4">
+            <i class="fa <%= x[1][:icon] %>" style="color: <%= x[1][:color] %>"></i>
+            <div class="img-example relative" style="background-image: url(<%= x[1][:photo] %>)">
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div>
+    <div class="upload-container">
       <label class="text-center fileUpload">
          <span class=""><i class="fa fa-camera upload"></i></span>
          <%= f.input :photo, as: :attachinary, label: false %>
