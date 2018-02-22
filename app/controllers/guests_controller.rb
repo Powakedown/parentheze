@@ -18,8 +18,8 @@ class GuestsController < ApplicationController
       @form_completed_p = completion(@guests, :get_out)
       @target1 = percentage(@guests.target1, @parentcount)
       @target2 = percentage(@guests.target2, @parentcount)
-      @guest_steps = []
-      0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
+      # @guest_steps = []
+      # 0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
     else
       redirect_to root_path
     end
