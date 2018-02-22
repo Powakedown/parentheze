@@ -2,59 +2,56 @@ class ProfilesController < ApplicationController
   before_action :params_user, only: %i[create new edit update previous]
 
   def new
-    if current_user?
-      @profile = @user.profile || Profile.new(user: @user, step: 2, validation: 0)
-      @profile.step = 2 if @profile.step < 2
-      @profile.save!
-      @step = @profile.step
-      render :edit
-    else
-      redirect_to new_user_profile_path(@user)
-    end
+    @profile = @user.profile || Profile.new(user: @user, step: 2, validation: 0)
+    @profile.step = 2 if @profile.step < 2
+    @profile.save!
+    @step = @profile.step
+    render :edit
   end
 
   def show
   end
 
   def edit
-    if current_user?
-      @profile = @user.profile
-      @profile.save!
-      @step = @profile.step
-    else
-      redirect_to edit_user_profile_path(@user)
-    end
+    @profile = @user.profile
+    @profile.save!
+    @step = @profile.step
   end
 
   def update
-    if current_user?
-      @profile = @user.profile
-      @profile.step += 1
-
-      if @profile.step5?
-        @user.user_wishes.destroy_all
-        wishes = Wish.all.to_a
-        wishes.each_with_index do |wish, index|
-          UserWish.create( user: @user, wish: wish) if profile_params[("need"<<index.to_s).to_sym] == "true"
-        end
-        @profile.save
+    @profile = @user.profile
+    @profile.step += 1
+    if @profile.step5?
+      add_wishes(@user, @profile)
+    else
+      if @profile.update(profile_params)
         redirect_to edit_user_profile_path
-      else
-        if @profile.update(profile_params)
-          redirect_to edit_user_profile_path
-          if @profile.step6?
-            UserMailer.new_registration(@user).deliver_now
-            UserMailer.new_registration_notification.deliver_now
-          end
-        else
-          notice = ""
-          @profile.errors.messages.each do |key, value|
-            notice << value.first << ". <br/>"
-          end
-          redirect_to edit_user_profile_path, alert: notice
+        if @profile.step6?
+          inscription_done(@user)
         end
+      else
+        notice = ""
+        @profile.errors.messages.each do |key, value|
+          notice << value.first << ". <br/>"
+        end
+        redirect_to edit_user_profile_path, alert: notice
       end
     end
+  end
+
+  def add_wishes(user, profile)
+    user.user_wishes.destroy_all
+    wishes = Wish.all.to_a
+    wishes.each_with_index do |wish, index|
+      UserWish.create(user: user, wish: wish) if profile_params[("need"<<index.to_s).to_sym] == "true"
+    end
+    profile.save
+    redirect_to edit_user_profile_path
+  end
+
+  def inscription_done(user)
+    UserMailer.new_registration(user).deliver_now
+    UserMailer.new_registration_notification.deliver_now
   end
 
   def validate

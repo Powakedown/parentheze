@@ -2,9 +2,9 @@ class MyRegistrationsController < Devise::RegistrationsController
 
   def create
     super
-    if @user.persisted?
-      # UserMailer.new_registration(@user).deliver_now
-    end
+    # if @user.persisted?
+    #   # UserMailer.new_registration(@user).deliver_now
+    # end
   end
 
 end

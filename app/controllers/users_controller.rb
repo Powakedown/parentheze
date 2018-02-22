@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     if current_user.admin
-      @profiles = Profile.where.not(step: 10)
+      @profiles = Profile.where(validation: 0)
     else
       redirect_to root_path
     end
