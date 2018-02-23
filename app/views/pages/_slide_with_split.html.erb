@@ -7,7 +7,7 @@
           <h1 class=""><%= slide[:title] %></h1>
           <div class="margin-bottom-medium">
             <% slide[:text].each do |text| %>
-              <p><%= text[1] %></p>
+              <h5><%= text[1] %></h5>
             <% end %>
           </div>
           <%= render 'scroller', target_page: target_page, link_image: slide[:link_image]  %>

@@ -1,5 +1,5 @@
 <div class="flex-parent"> <!-- for IE bug -->
-  <div class="fullscreen relative flexbox text-left" style="background-image: url(<%= t('.image') %>)">
+  <div class="fullscreen relative flexbox text-left" style="background-image: linear-gradient(0deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.5) 100%), url(<%= t('.image') %>)">
 
     <div class="parentheze-login">
       <h4><%= t('.maintitle') %></h4>
@@ -15,7 +15,7 @@
         <%= f.error_notification %>
 
         <div class="login-box">
-          <h3><%= t('.maintitle') %></h3>
+          <h3><%= t('.cardtitle') %></h3>
           <p><%= t('.details') %></p>
           <%= f.input :email, required: true, autofocus: true, label: t('.field1'), input_html: {value: session[:email] || "" } %>
           <%= f.input :password, required: true, label: t('.field2') %>

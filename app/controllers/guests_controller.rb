@@ -18,8 +18,8 @@ class GuestsController < ApplicationController
       @form_completed_p = completion(@guests, :get_out)
       @target1 = percentage(@guests.target1, @parentcount)
       @target2 = percentage(@guests.target2, @parentcount)
-      @guest_steps = []
-      0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
+      # @guest_steps = []
+      # 0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
     else
       redirect_to root_path
     end
@@ -38,25 +38,28 @@ class GuestsController < ApplicationController
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
     if @guest.email != 'email@example.com' && @guest.valid? && !params[:guest][:email].nil?
-      redirect_to :welcome
+      UserMailer.welcome(@guest).deliver_now
+      UserMailer.self_notification(@guest).deliver_now
+      flash[:notice] = t('.emailsent')
+      redirect_to root_path
     elsif params[:guest][:email]
       flash[:alert] = t('.email_valid')
-      redirect_to '/home#inscription-beta'
+      redirect_to root_path
     else
       render :new
     end
   end
 
-  def welcome
-    UserMailer.welcome(@guest).deliver_now
-    UserMailer.self_notification(@guest).deliver_now
-    flash[:notice] = t('.emailsent')
-    render :welcome
-  rescue => e
-    @error = e.message
-    redirect_to '/home#inscription-beta'
-    flash[:alert] = @error.to_s
-  end
+  # def welcome
+  #   UserMailer.welcome(@guest).deliver_now
+  #   UserMailer.self_notification(@guest).deliver_now
+  #   flash[:notice] = t('.emailsent')
+  #   render :welcome
+  # rescue => e
+  #   @error = e.message
+  #   redirect_to '/home#inscription-beta'
+  #   flash[:alert] = @error.to_s
+  # end
 
   private
 

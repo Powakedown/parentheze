@@ -20,9 +20,9 @@ $body-font-size: 16px;
  *------------------------------------------------- */
 body {
   font-family: $body-font;
-  font-size: calc(2.1vh + 0.8vmin);
+  font-size: $font-size-base;
 }
-h1, h2, h3, h4, p, i, a {
+h1, h2, h3, h4, h5, h6, p, i, a {
   &.pink {
     color: $pink;
   }
@@ -45,11 +45,9 @@ h1, h2, h3, h4, p, i, a {
 h1, h2{
   font-family: $headers-font;
   font-weight: 900;
-  letter-spacing: 0em;
-  line-height: 0.9em;
-  margin-bottom: 0.2em;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
   margin-top: 10px;
-  font-size: 3em;
   .fa {
     position: absolute;
     left: -1.3em;
@@ -57,39 +55,66 @@ h1, h2{
     font-size: 70%;
   }
 }
+h1 {
+  font-size: 72px;
+  line-height: 65px;
+}
 h2 {
-  font-size: 2em;
-  line-height: 1.2em;
+  font-size: 60px;
+  line-height: 58px;
 }
 h3 {
-  font-size: 1.5em;
-  letter-spacing: 0em;
+  font-size: 35px;
+  letter-spacing: 1px;
   font-weight: bold;
 }
 h4 {
-  font-size: 1.2em;
-  letter-spacing: 0.2em;
+  font-size: 22px;
+  letter-spacing: 3px;
   font-weight: normal;
 }
 h5 {
-  font-size: 0.8em;
+  font-size: 22px;
+  letter-spacing: 0px;
   font-weight: normal;
   font-family: $body-font;
+  line-height: 32px;
 }
 h6 {
-  font-size: 0.6em;
+  font-size: 10px;
   font-weight: normal;
   font-family: $body-font;
 }
 p{
-  font-size: 0.9em;
+  font-size: $font-size-base;
   font-family: $body-font;
   font-weight: 300;
   line-height: 1.4em;
 }
-@media (max-device-width: 475px ) {
+@media (max-device-width: 569px ) {
+  h1 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  h2 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+  h3 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  h4 {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  h5 {
+    font-size: 18px;
+    letter-spacing: 0px;
+    line-height: 24px;
+  }
   p{
-    font-size: 1.2em;
+    font-size: 18px;
   }
 }
 a {

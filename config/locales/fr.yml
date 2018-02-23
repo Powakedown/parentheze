@@ -1,5 +1,7 @@
 fr:
   commons:
+    placeholder:
+      email: "votre email"
     button:
       next: "suivant"
       previous: "précédent"
@@ -7,6 +9,7 @@ fr:
       downloading: "téléchargement"
       back_to_root: "revenir à l'accueil"
     register: "S'inscrire"
+    register_beta: "S'inscrire à la béta"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
   metas:
@@ -14,8 +17,9 @@ fr:
   devise:
     registrations:
       new:
-        title: "Inscription :"
-        maintitle: "Donnée de connexion"
+        title: "Parentheze | Inscription"
+        maintitle: "Inscription : "
+        cardtitle: "Donnée de connexion"
         details: "Votre mail n’est pas communiqué à des tiers."
         addon: "Déjà inscrit ?"
         field1: "Email :"
@@ -109,27 +113,27 @@ fr:
       alt: "exemple de bonne photo"
       examples:
         example1:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_01.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_01.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example2:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_02.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_02.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example3:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_03.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_03.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example4:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_04.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_04.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example5:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_05.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_05.jpg"
           icon: "fa-minus-circle"
           color: "#D0021B"
         example6:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1516911851/parentheze/inscription_exemple_06.jpg"
+          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_06.jpg"
           icon: "fa-minus-circle"
           color: "#D0021B"
     form6:
@@ -156,57 +160,58 @@ fr:
   pages:
     home:
       title: "Parentheze, la nouvelle vie des parents."
-      slides:
-        slide0:
-          title: "Profitez ! Ce soir les enfants dorment chez des amis"
-          text: "Échange de garde d'enfants et mutualisation de babysitter"
-          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
-          after_subscription: "Votre compte est en attente de validation, surveillez vos mails..."
-          calltoaction: "Créer mon compte"
-          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
-      slide_plan:
-        title: "Pensé pour les parents d'aujourd'hui"
-        text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
-        plans:
-          plan0:
-            price: "12€"
-            title: "no-stress"
-            subtitle: "2h en journée"
-            color: "#469AE0"
-          plan1:
-            price: "22€"
-            title: "la soirée"
-            subtitle: "4h en soirée - Repas non compris"
-            color: "#E12787"
-          plan2:
-            price: "42€"
-            title: "la soirée + la nuit + la grasse mat'"
-            subtitle: "Ex: 20h-midi - Repas non compris"
-            color: "#F1B255"
-          plan3:
-            price: "35€"
-            title: "Panique ! Grève à l'école"
-            subtitle: "la journée"
-            color: "white"
-      slide_with_split:
-        slide0:
-          title: "Trouvez des parents comme vous :"
-          text:
-            text0: "autour de vous, et qui vivent sur le rythme des enfants.
-                    Parentheze a été pensé pour les parents d’aujourd’hui.
-                    Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
-          image: "https://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
-          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
-        slide1:
-          title: "Réservé aux parents"
-          image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
-          text:
-            text0: "- Pas de babysitter"
-            text1: "- Des forfaits de garde pour compenser les parents hôtes"
-            text2: "- Géolocalisation des membres autour de vous"
-            text3: "- Réputation pour chaque garde"
-            text4: "- Outil d'invitation pour faire connaissance"
-          link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+    slide_home_top:
+      title: "Profitez ! Ce soir les enfants dorment chez des amis"
+      text: "Échange de garde d'enfants et mutualisation de babysitter"
+      text2: "le service est en phase de test, participez à la béta gratuitement."
+      image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
+      after_subscription: "Votre compte est en attente de validation..."
+      calltoaction: "Créer mon compte"
+      link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+    slide_plan:
+      title: "Pensé pour les parents d'aujourd'hui"
+      text: "Parce que payer est parfois plus facile que de demander un service, nous avons pensé à des forfaits pour compenser la garde des enfants chez les parents voisins et amis."
+      link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
+      plans:
+        plan0:
+          price: "12€"
+          title: "no-stress"
+          subtitle: "2h en journée"
+          color: "#469AE0"
+        plan1:
+          price: "22€"
+          title: "la soirée"
+          subtitle: "4h en soirée"
+          color: "#E12787"
+        plan2:
+          price: "42€"
+          title: "la soirée + la nuit + la grasse mat'"
+          subtitle: "20h-midi"
+          color: "#F1B255"
+        plan3:
+          price: "35€"
+          title: "Panique ! Grève à l'école"
+          subtitle: "la journée"
+          color: "white"
+    slide_with_split:
+      slide0:
+        title: "Trouvez des parents comme vous :"
+        text:
+          text0: "autour de vous, et qui vivent sur le rythme des enfants.
+                  Parentheze a été pensé pour les parents d’aujourd’hui.
+                  Simple, rapide, avec une prise en charge totale pour des échanges de garde en toute confiance."
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1511880857/parentheze/Parentheze-iMac-Mockup.png"
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+      slide1:
+        title: "Réservé aux parents"
+        image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1512470879/parentheze/bigstock-family-children-and-home-conc-96663833.jpg"
+        text:
+          text0: "- Pas de babysitter"
+          text1: "- Des forfaits de garde pour compenser les parents hôtes"
+          text2: "- Géolocalisation des membres autour de vous"
+          text3: "- Réputation pour chaque garde"
+          text4: "- Outil d'invitation pour faire connaissance"
+        link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
     slide_subscription:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
@@ -337,8 +342,8 @@ fr:
       subscription: "Oh yeah! Inscription à la béta enregistrée, vous allez recevoir un mail."
       text: "Nous préparons Parentheze pour l'ouverture à la Béta test et vous serez parmi les premiers à en profiter."
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1509373509/confirmation_m1bpvc.jpg"
-      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
     update:
+      emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
       email_valid: "Veuillez entrez un email valide"
     questions_main_number: "4"
     no_reply: "sans réponse"
@@ -452,7 +457,7 @@ fr:
         answers:
           answer1:
             text: "Nous avons pensé à tout !"
-            link: "/home"
+            link: "/"
         picture: "https://media.giphy.com/media/rjkJD1v80CjYs/giphy.gif"
         button_effect: "flash"
   footer:

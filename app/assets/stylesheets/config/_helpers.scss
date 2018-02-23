@@ -82,6 +82,10 @@ $input-height: 56px;
 .padding-box {
   padding: 2%;
 }
+.padding-top-bot {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .double-padding-box {
   padding: 4%;
 }
@@ -96,6 +100,13 @@ $input-height: 56px;
   display: -ms-flexbox;
   justify-content: center;
   align-items: center;
+}
+.flexbox-bottom {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  justify-content: center;
+  align-items: end;
 }
 .flex-line {
   display: -webkit-box;
@@ -214,7 +225,7 @@ a:hover.pastille {
     width: 150px;
     margin: auto;
     margin-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 20px;
   i {
     font-size: 30px;
     position: absolute;

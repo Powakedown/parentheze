@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => "my_registrations" }
 
-  get "/home", to: "pages#home"
   patch "/home", to: "pages#update"
   get "/pourquoi_parentheze", to: "pages#why"
 

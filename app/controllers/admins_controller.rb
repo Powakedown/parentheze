@@ -20,7 +20,7 @@ class AdminsController < ApplicationController
   private
 
   def security_check
-    if current_user.admin.nil?
+    unless current_user.admin == true
       redirect_to root_path
       flash[:alert] = t('.alert')
     end
