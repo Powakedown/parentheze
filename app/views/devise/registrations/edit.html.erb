@@ -2,7 +2,7 @@
   <div class="fullscreen relative flexbox text-left" style="background-image: linear-gradient(0deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.5) 100%), url(<%= t('.image') %>)">
 
     <div class="parentheze-login">
-      <h4><%= t('inscription.title') %></h4>
+      <h4><%= t('.title') %></h4>
       <% if @user.step != 10 %>
         <div class="breadcrumb">
           <div class="center flex-line">
@@ -16,7 +16,7 @@
         <%= f.error_notification %>
         <div class="login-box">
           <div class="login-fields-tall">
-            <h3><%= t('.title') %></h3>
+            <h3><%= t('.cardtitle') %></h3>
             <p><%= t('.details') %></p>
 
             <%= f.input :email, required: true, autofocus: true %>
@@ -32,7 +32,7 @@
             <%= f.input :password_confirmation, required: false, label: t('.field5'), placeholder: t('.placeholder2') %>
           </div>
           <div class="form-actions text-center">
-            <%= f.button :submit, "suivant", class:"margin-bottom-small" %>
+            <%= f.button :submit, t('commons.button.next'), class:"margin-bottom-small" %>
             <% if @user.step == 10 %>
               <p><%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete, class:"red" %></p>
             <% end %>

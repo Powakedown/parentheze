@@ -2,8 +2,8 @@ class ProfilesController < ApplicationController
   before_action :params_user, only: %i[create new edit update previous]
 
   def new
-    @profile = @user.profile || Profile.new(user: @user, step: 2, validation: 0)
-    @profile.step = 2 if @profile.step < 2
+    @profile = @user.profile || Profile.new(user: @user, step: 1, validation: 0)
+    @profile.step = 1 if @profile.step < 1
     @profile.save!
     @step = @profile.step
     render :edit
@@ -93,7 +93,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :user, :phone, :noneed, :need0, :need1, :need2, :need3, :photo, :lat, :lng )
+    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :phone, :confidence, :need0, :need1, :need2, :need3, :photo, :lat, :lng )
   end
 
   def request_update_params

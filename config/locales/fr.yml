@@ -6,6 +6,7 @@ fr:
       next: "suivant"
       previous: "précédent"
       end: "terminer"
+      enter: "entrer"
       downloading: "téléchargement"
       back_to_root: "revenir à l'accueil"
     register: "S'inscrire"
@@ -77,6 +78,10 @@ fr:
       card-image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
       title: "Inscription :"
       image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+    form1:
+      title: "Le réseau de confiance"
+      details: "Vous entrez dans le cercle de confiance, posez-vous. L'inscription est simple et rapide, elle demande simplement votre attention. Les échanges se feront mieux grâce à des profils de qualité."
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1519400195/parentheze/confidence_circle.png"
     form2:
       title: "Informations visibles sur le réseau"
       details: "Seules ces informations seront visibles publiquement."

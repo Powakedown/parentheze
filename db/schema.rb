@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180213175008) do
+ActiveRecord::Schema.define(version: 20180223161634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20180213175008) do
     t.string "lat"
     t.string "lng"
     t.integer "validation"
+    t.boolean "confidence"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
