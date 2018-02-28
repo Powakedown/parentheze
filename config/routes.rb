@@ -23,6 +23,12 @@ Rails.application.routes.draw do
     end
   end
 
+  #JOBS
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   # ADMIN
   get '/admin', to: 'admins#password_check'
   get '/admin/password_verification', to: 'admins#password_verification'
