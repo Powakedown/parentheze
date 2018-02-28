@@ -6,13 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :cookie
   before_action :session_ways?
 
-  # Uncomment when you *really understand* Pundit!
-  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  # def user_not_authorized
-  #   flash[:alert] = "You are not authorized to perform this action."
-  #   redirect_to(root_path)
-  # end
-
   def guest_user(with_retry = true)
     # Cache the value the first time it's gotten.
     @cached_guest_user ||= Guest.find(session[:guest_user_id] || cookies[:parentheze_guest] ||= create_guest_user.id)

@@ -38,28 +38,18 @@ class GuestsController < ApplicationController
     @guest.update(guest_params)
     @current_question = session[:form_step] = params[:guest][:form_step]
     if @guest.email != 'email@example.com' && @guest.valid? && !params[:guest][:email].nil?
-      UserMailer.welcome(@guest).deliver_now
-      UserMailer.self_notification(@guest).deliver_now
-      flash[:notice] = t('.emailsent')
-      redirect_to root_path
-    elsif params[:guest][:email]
+      welcome(@guest)
+    else params[:guest][:email]
       flash[:alert] = t('.email_valid')
-      redirect_to root_path
-    else
-      render :new
     end
+    redirect_to root_path
   end
 
-  # def welcome
-  #   UserMailer.welcome(@guest).deliver_now
-  #   UserMailer.self_notification(@guest).deliver_now
-  #   flash[:notice] = t('.emailsent')
-  #   render :welcome
-  # rescue => e
-  #   @error = e.message
-  #   redirect_to '/home#inscription-beta'
-  #   flash[:alert] = @error.to_s
-  # end
+  def welcome(user)
+    UserMailer.welcome(user).deliver_now
+    UserMailer.self_notification(user).deliver_now
+    flash[:notice] = t('.emailsent')
+  end
 
   private
 
