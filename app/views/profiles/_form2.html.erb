@@ -7,9 +7,9 @@
     <%= f.input :kids, required: true, label: t('.field3'), placeholder: t('.placeholder3') %>
   </div>
   <div class="form-actions">
-    <%= f.button :submit, "suivant", class:"login-button" %>
+    <%= f.button :submit, t('commons.button.next'), class:"login-button" %>
     <p class="text-center clickable">
-        <%= link_to t('commons.button.previous'), edit_user_registration_path %>
+        <%= link_to t('commons.button.previous'), previous_user_profile_path(@user, @profile) %>
     </p>
   </div>
 <% end %>

@@ -49,8 +49,9 @@ class UserMailer < ApplicationMailer
          track_opens: 'true')
   end
 
-  def request_update(user, params)
+  def request_update(user, profile, params)
     @user = user
+    @profile = profile
     @url  = 'http://www.parentheze.com'
     @params = params
     mail(to: @user.email,

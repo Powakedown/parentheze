@@ -61,6 +61,7 @@ fr:
     registrations:
       destroyed: Au revoir ! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.
       edit:
+        cardtitle: "Éditer les données de connexion"
         are_you_sure: "Êtes-vous sûr ?"
         cancel_my_account: Supprimer mon compte
         currently_waiting_confirmation_for_email: 'Confirmation en attente pour: %{email}'

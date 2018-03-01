@@ -61,6 +61,11 @@
   z-index: 500;
   left: 30px;
 }
+#query_password {
+  padding-left: 40px;
+}
+
+
 input[type="checkbox"] {
   width: 40px;
 }
@@ -71,6 +76,9 @@ input, textarea{
   border-radius: $border-radius !important;
   font-size: 20px;
   resize: none;
+  &.input-with-picto {
+    padding-left: 40px !important;
+  }
 }
 .help-block {
   font-size: 16px;

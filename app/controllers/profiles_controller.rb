@@ -1,12 +1,13 @@
 class ProfilesController < ApplicationController
-  before_action :params_user, only: %i[create new edit update previous]
+  before_action :user_is_current_user, only: %i[create new edit update previous]
+  before_action :params_profile, only: %i[validate request_update]
 
   def new
-    @profile = @user.profile || Profile.new(user: @user, step: 2, validation: 0)
-    @profile.step = 2 if @profile.step < 2
+    @profile = @user.profile || Profile.new(user: @user, step: 1, validation: 0)
+    @profile.step = 1 if @profile.step < 1
     @profile.save!
     @step = @profile.step
-    render :edit
+    redirect_to edit_user_profile_path(@user, @profile)
   end
 
   def show
@@ -14,6 +15,13 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = @user.profile
+    #If user come back on edit after receiving request update mail
+    if @profile.validation == 2
+      @profile.validation = 0
+      @error_label = true
+      @profile.save
+      flash[:alert] = t('.flash-after-request')
+    end
     @profile.save!
     @step = @profile.step
   end
@@ -55,7 +63,6 @@ class ProfilesController < ApplicationController
   end
 
   def validate
-    @profile = Profile.find(params[:id])
     @profile.validation = 1
     if @profile.save
       flash[:notice] = t('.notice')
@@ -68,13 +75,36 @@ class ProfilesController < ApplicationController
   end
 
   def request_update
-    @profile = Profile.find(params[:id])
-    @profile.step = 2
-    @profile.validation = 2
+    @updates_requested = request_update_params
+    @profile_for_mail = @profile.as_json
+
+    UserMailer.request_update(@profile.user, @profile_for_mail, @updates_requested).deliver_now
+    flash[:notice] = t('.notice')
+
+    if request_update_params[:parent1].present?
+      @profile.step = 2
+      @profile.parent1 = nil
+    elsif request_update_params[:kids].present?
+      @profile.step = 2
+      @profile.kids = nil
+    elsif request_update_params[:parent2].present?
+      @profile.step = 2
+       @profile.parent2 = nil
+    elsif request_update_params[:address].present?
+      @profile.step = 3
+      @profile.address = nil
+    elsif request_update_params[:phone].present?
+      @profile.step = 4
+      @profile.phone = nil
+    else request_update_params[:photo].present?
+      @profile.step = 5
+      @profile.photo = nil
+    end
+
     if @profile.save
-      @updates_requested = request_update_params
-      UserMailer.request_update(@profile.user, @updates_requested).deliver_now
-      flash[:notice] = t('.notice')
+      redirect_to admin_validations_path
+    else
+      flash[:alert] = "PROBLEM"
       redirect_to admin_validations_path
     end
   end
@@ -88,12 +118,16 @@ class ProfilesController < ApplicationController
 
   private
 
-  def params_user
+  def user_is_current_user
     @user = current_user
   end
 
+  def params_profile
+    @profile = Profile.find(params[:id])
+  end
+
   def profile_params
-    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :user, :phone, :noneed, :need0, :need1, :need2, :need3, :photo, :lat, :lng )
+    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :phone, :confidence, :need0, :need1, :need2, :need3, :photo, :lat, :lng )
   end
 
   def request_update_params

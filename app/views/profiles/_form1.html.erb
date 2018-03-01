@@ -1,0 +1,16 @@
+<%= simple_form_for [ @user, @profile ] do |f| %>
+  <div class="login-fields">
+    <h3><%= t('.title') %></h3>
+    <p><%= t('.details') %></p>
+    <div class="img-illustration text-center">
+      <%= image_tag t('.image') %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.input :confidence, as: :hidden, input_html: {value: "true"}  %>
+    <%= f.button :submit, t('commons.button.enter'), class:"login-button" %>
+    <p class="text-center clickable">
+        <%= link_to t('commons.button.previous'), edit_user_registration_path %>
+    </p>
+  </div>
+<% end %>
