@@ -67,6 +67,7 @@ fr:
       field4: "Adresse"
       field5: "Téléphone"
       field6: "Besoins :"
+      field7: "Photo :"
       btn_text1: "valider"
       btn_text2: "demander les modifs"
     validate:
@@ -74,10 +75,12 @@ fr:
       alert: "Validation échouée, vérifier les logs"
     request_update:
       notice: "Profile envoyé en attente de modification"
+    new:
     edit:
       card-image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
       title: "Inscription :"
       image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+      flash-after-request: "vérifier les champs de cette étape et poursuivez"
     form1:
       title: "Le réseau de confiance"
       details: "Vous entrez dans le cercle de confiance, posez-vous. L'inscription est simple et rapide, elle demande simplement votre attention. Les échanges se feront mieux grâce à des profils de qualité."

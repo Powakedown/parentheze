@@ -22,17 +22,15 @@
                             <th style="font-size:16px;text-align:left;line-height:1.3;color:#0a0a0a;font-weight:normal;padding:0;width:564px;margin:0 auto;padding-left:16px;padding-right:16px;padding-bottom:0px!important;">
                                 <strong>
                                 <p style="padding:0;margin:0;line-height:1.4;font-weight:300;color:red;font-size:18px;text-align:left;margin-bottom:0px!important;">
-                                  <%= ("Prénom parent 1 : " + @user.mother_first_name.capitalize) if @params[:parent1].present? %></p>
+                                  <%= ("Prénom parent 1 : " + (@profile["mother_first_name"] ? @profile["mother_first_name"].capitalize : "")) if @params[:parent1].present? %></p>
                                 <p style="padding:0;margin:0;line-height:1.4;font-weight:300;color:red;font-size:18px;text-align:left;margin-bottom:0px!important;">
-                                   <%= ("Prénom parent 2 : " + @user.father_first_name.capitalize) if @params[:parent2].present? && @user.father_first_name.present? %></p>
+                                  <%= ("Prénom parent 2 : " + (@profile["father_first_name"] ? @profile["father_first_name"].capitalize : "")) if @params[:parent2].present? && @profile["father_first_name"].present? %></p>
                                 <p style="padding:0;margin:0;line-height:1.4;font-weight:300;color:red;font-size:18px;text-align:left;margin-bottom:0px!important;">
-                                  <%= ("Nombre d'enfant : " + @user.kids.to_s) if @params[:kids].present? %></p>
+                                  <%= ("Nombre d'enfant : " + (@profile["kids"] ? @profile["kids"].to_s : "")) if @params[:kids].present? %></p>
                                 <p style="padding:0;margin:0;line-height:1.4;font-weight:300;color:red;font-size:18px;text-align:left;margin-bottom:0px!important;">
-                                  <%= ("Adresse : " + @user.address) if @params[:address].present? %></p>
+                                    <%= ("Adresse : " + (@profile["address"] ? @profile["address"].to_s : "")) if @params[:address].present? %></p>
                                 <p style="padding:0;margin:0;line-height:1.4;font-weight:300;color:red;font-size:18px;text-align:left;margin-bottom:0px!important;">
-                                  <%= ("Téléphone : " + @user.phone) if @params[:phone].present? && @user.phone.present? %></p>
-                                <p style="padding:0;margin:0;line-height:1.4;font-weight:300;color:red;font-size:18px;text-align:left;margin-bottom:0px!important;">
-                                    <%= ("Photo non adéquate") if @params[:photo].present? %></p>
+                                  <%= ("Photo non adéquate") if @params["photo"].present? %></p>
                             </th>
                           </tr>
                         </tbody>
