@@ -24,10 +24,10 @@ Rails.application.routes.draw do
   end
 
   #JOBS
-  require "sidekiq/web"
-  authenticate :user, lambda { |u| u.admin } do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  # require "sidekiq/web"
+  # authenticate :user, lambda { |u| u.admin } do
+  #   mount Sidekiq::Web => '/sidekiq'
+  # end
 
   # ADMIN
   get '/admin', to: 'admins#password_check'
