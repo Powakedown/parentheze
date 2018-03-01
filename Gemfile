@@ -11,6 +11,10 @@ gem 'puma'
 gem 'rails', '5.1.1'
 gem 'redis'
 
+gem 'sidekiq'
+gem 'sinatra'
+gem 'sidekiq-failures'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'devise-i18n'
