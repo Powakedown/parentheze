@@ -112,11 +112,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var inputs = [profileName1, profileName2, profileKids, profilePhone]
 
-  for (var value of inputs) {
-    if (value) {
-      value.addEventListener("keydown", testIt, true);
+  // ES6 that crash assets precompile, wait for rails updates?
+  // for (var value of inputs) {
+  //   if (value) {
+  //     value.addEventListener("keydown", testIt, true);
+  //   }
+  // }
+
+  for(i = 0;i<inputs.length;i++) {
+    if (inputs[i]) {
+      inputs[i].addEventListener("keydown", testIt, true);
     }
   }
+
 });
 
 
