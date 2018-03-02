@@ -23,7 +23,7 @@
                   <%= f.input_field :form_step,  as: :hidden, value: answer[1][:link] %>
                   <%= f.button :submit, value: answer[1][:text], label: false, class:"answer btn-tall #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} flexbox center margin-bottom-medium", remote: true, id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
                 <% else %>
-                  <%= link_to answer[1][:text],answer[1][:link], :class => "answer #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn#{x.to_s} center margin-bottom-medium" %>
+                  <%= link_to answer[1][:text],answer[1][:link], :class => "answer #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} center margin-bottom-medium" %>
                 <% end %>
               <% end %>
             <% end %>

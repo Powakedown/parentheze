@@ -157,7 +157,7 @@ fr:
       plans: "exemple de forfait"
       why: "Pourquoi parentheze ?"
       plans: "Exemple de forfaits"
-    cookie:
+    cookie_approval:
       image: "https://res.cloudinary.com/doodlid/image/upload/v1511279429/parentheze/cookie.png"
       text: "Ce site utilise des cookies afin de faciliter votre navigation et mesurer l'audience de notre site. En continuant à utiliser notre site, vous consentez à l'utilisation des coookies."
       button1_text: "Continuer"
@@ -458,6 +458,9 @@ fr:
           answer1:
             text: "En attendant profitez-en, sortez!"
             link: "http://www.allocine.com"
+          answer2:
+            text: "Bientôt parent ? Accéder à Parentheze"
+            link: "https://www.parentheze.com"
         button_effect: "slideLeft"
       question9:
         data: "none"
