@@ -1,1 +1,1 @@
-console.log('registration');
+console.log('registration.js')
