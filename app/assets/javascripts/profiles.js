@@ -11,7 +11,7 @@ function testIt(e) {
     input.style.cssText = null;
   }
   else {
-    input.style.borderColor = "red";
+    // input.style.borderColor = "red";
   }
   }, 10);
 }

@@ -1,7 +1,9 @@
+console.log('myregistration');
 
-var pattern = /^([\w\.][^_])+@[a-zA-Z]+?\.[a-zA-Z]{2,3}$/;
+var pattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 function testMail(e) {
+  console.log('testMAIL');
   var input = this;
   input.style.color = "light-gray";
 
@@ -14,15 +16,6 @@ function testMail(e) {
       input.style.borderColor = "red";
     }
   }, 10);
-}
-
-function hideErrors(e) {
-  // var input = this;
-  // errorMessages = document.getElementsByClassName('help-block');
-  // console.log('focus');
-  // for (var value of errorMessages) {
-  //   value.style.display = "none";
-  // }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
