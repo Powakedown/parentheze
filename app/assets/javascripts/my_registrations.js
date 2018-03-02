@@ -1,6 +1,5 @@
-console.log('my_registration');
 
-var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+var pattern = /^([\w\.][^_])+@[a-zA-Z]+?\.[a-zA-Z]{2,3}$/;
 
 function testMail(e) {
   var input = this;
