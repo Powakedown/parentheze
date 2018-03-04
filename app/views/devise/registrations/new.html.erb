@@ -3,14 +3,7 @@
 
     <div class="parentheze-login">
       <h4><%= t('.maintitle') %></h4>
-      <div class="breadcrumb">
-        <div class="center flex-line">
-          <% @breadcrumb_length = 5 %>
-          <% (1..@breadcrumb_length).each do |x| %>
-            <div class="step flexbox <%= 'active' if x == 1 %>" id="breadcrumb-question<%= x %>"><%= x %></div>
-          <% end %>
-        </div>
-      </div>
+      <%= render "shared/breadcrumb", step: 1, length: 5 %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 

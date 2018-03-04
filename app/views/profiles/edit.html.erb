@@ -6,13 +6,7 @@
     <div class="parentheze-login">
       <% if @step < 6 %>
       <h4><%= t('.title') %></h4>
-        <div class="breadcrumb">
-          <div class="center flex-line">
-            <% (1..5).each do |x| %>
-              <div class="step flexbox <%= "active" if x == @step %>"><%= x %></div>
-            <% end %>
-          </div>
-        </div>
+        <%= render "shared/breadcrumb", step: @step, length: 5 %>
       <% end %>
 
       <% %w(1 2 3 4 5 6).each do |step| %>

@@ -1,11 +1,11 @@
 <div class="container-fluid flex-parent slide-subscription"> <!-- for IE bug -->
   <div class="flexbox fullscreen text-center" id="inscription-beta" >
     <div class="row full-width">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="col-xs-12 col-md-6 offset-md-3">
         <h1><%= t('.title') %></h1>
         <h4 class="margin-bottom-medium"><%= t('.text') %></h4>
         <div class="row center margin-bottom-medium">
-          <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <div class="col-xs-12 col-md-8 offset-md-2">
           <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
             <p class=" margin-bottom-medium">
              <label class="checkbox">

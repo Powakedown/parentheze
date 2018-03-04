@@ -10,6 +10,9 @@
     background-position: center center;
     background-size: cover;
   }
+  .breadcrumb {
+    width: 320px;
+  }
 }
 .answer {
   height: calc($input-height + 14px);
