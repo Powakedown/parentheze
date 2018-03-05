@@ -4,7 +4,7 @@
 <div class="flex-parent"> <!-- for IE bug -->
   <div class="fullscreen relative flexbox text-left" style="background-image: linear-gradient(0deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.5) 100%), url(<%= t('.image') %>)">
     <div class="parentheze-login">
-      <%= link_to(content_tag(:i, nil, class: 'fas fa-sign-out-alt sign-out'), destroy_user_session_path,  method: :delete ) %>
+      <%= link_to(content_tag(:i, nil, class: 'fas fa-sign-out-alt sign-out'), destroy_user_session_path,  method: :delete, class:"d-block d-sm-none")%>
       <% if @step < 6 %>
       <h4><%= t('.title') %></h4>
         <%= render "shared/breadcrumb", step: @step, length: 5 %>
