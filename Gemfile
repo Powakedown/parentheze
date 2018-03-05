@@ -16,7 +16,7 @@ gem 'sinatra'
 gem 'sidekiq-failures'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0'
 gem 'devise-i18n'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
