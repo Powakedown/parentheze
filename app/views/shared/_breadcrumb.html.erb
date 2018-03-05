@@ -1,0 +1,5 @@
+<div class="breadcrumb">
+  <% (1..length).each do |x| %>
+    <div class="step <%= "active" if x == step %>"><%= x %></div>
+  <% end %>
+</div>

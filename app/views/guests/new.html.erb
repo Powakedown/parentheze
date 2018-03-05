@@ -1,44 +1,39 @@
 <div class="survey">
-  <div class="breadcrumb">
-    <div class="center flex-line">
-      <% (1..@breadcrumb_length).each do |x| %>
-        <div class="step flexbox" id="breadcrumb-question<%= x %>"><%= x %></div>
-      <% end %>
-    </div>
-  </div>
-    <% @questions.each do |question| %>
-      <div id="<%= question[0] %>">
-        <div class="fullscreen under-breadcrumb flexbox">
-          <div class="survey-block">
-            <% if question[1][:picture] %>
-              <div style="background-image: url(<%= question[1][:picture] %>)" class="img-anim slideLeft delay0"></div>
-            <% end %>
-            <%#= image_tag(question[1][:picture], class:"slideLeft") if question[1][:picture] %>
-            <h1 class="margin-bottom-medium slideLeft relative"><i class="<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
-            <h3 class="margin-bottom-medium slideLeft"><%= question[1][:subtitle] %></h3>
-            <% question[1][:answers].each_with_index do |answer, x| %>
-              <%= simple_form_for :guest, method: :patch do |f| %>
-                <% if question[1][:data] != "none" %>
-                  <%= f.input_field question[1][:data],  as: :hidden, value: x+1 %>
-                  <%= f.input_field :form_step,  as: :hidden, value: answer[1][:link] %>
-                  <%= f.button :submit, value: answer[1][:text], label: false, class:"answer btn-tall #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} flexbox center margin-bottom-medium", remote: true, id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
-                <% else %>
-                  <%= link_to answer[1][:text],answer[1][:link], :class => "answer #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} center margin-bottom-medium" %>
-                <% end %>
+
+  <%= render "shared/breadcrumb", step: @current_question.to_i , length: @breadcrumb_length %>
+
+  <% @questions.each do |question| %>
+    <div id="<%= question[0] %>">
+      <div class="fullscreen under-breadcrumb flexbox">
+        <div class="survey-block">
+          <% if question[1][:picture] %>
+            <div style="background-image: url(<%= question[1][:picture] %>)" class="img-anim slideLeft delay0"></div>
+          <% end %>
+          <%#= image_tag(question[1][:picture], class:"slideLeft") if question[1][:picture] %>
+          <h1 class="margin-bottom-medium slideLeft relative"><i class="<%= question[1][:picto] || nil %> bounce"></i> <%= question[1][:title] %></h1>
+          <h3 class="margin-bottom-medium slideLeft"><%= question[1][:subtitle] %></h3>
+          <% question[1][:answers].each_with_index do |answer, x| %>
+            <%= simple_form_for :guest, method: :patch do |f| %>
+              <% if question[1][:data] != "none" %>
+                <%= f.input_field question[1][:data],  as: :hidden, value: x+1 %>
+                <%= f.input_field :form_step,  as: :hidden, value: answer[1][:link] %>
+                <%= f.button :submit, value: answer[1][:text], label: false, class:"answer btn-tall #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} flexbox center margin-bottom-medium", remote: true, id:answer[0], goto: answer[1][:link], data: { disable_with: "" }  %>
+              <% else %>
+                <%= link_to answer[1][:text],answer[1][:link], :class => "answer #{question[1][:button_effect]} delay#{x.to_s} btn btn-wrap btn-tall btn-#{x.to_s} center margin-bottom-medium" %>
               <% end %>
             <% end %>
-          </div>
+          <% end %>
         </div>
       </div>
+    </div>
   <% end %>
+
 </div>
 
 <%= content_for :after_js do %>
   <script>
     var current_question = <%= @current_question %>;
     var questions_number = <%= @questions_number %>;
-
-    $('#breadcrumb-question'+current_question).addClass('active');
 
     for (i = 1; i <= questions_number ; i++) {
       $('#question'+i).hide();
