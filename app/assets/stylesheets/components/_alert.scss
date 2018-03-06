@@ -60,10 +60,10 @@
   width: 60px;
   margin-right: 20px;
   border-radius: 4px 0 0 4px;
-  &.warning{
+  &.alert-warning{
     background-color: $red;
   }
-  &.info{
+  &.alert-notice, &.alert-success{
     background-color: $green;
   }
 }
@@ -75,15 +75,17 @@
   top: 12px;
   right: 12px;
   cursor: pointer;
+  appearance: none;
   .fa-times{
-    &.warning {
+    &.close-warning {
     color: $red;
     }
-    &.info {
+    &.close-notice, &.close-success {
     color: $green;
     }
   }
 }
+
 
 @media (max-device-width : 768px) {
   .alert {

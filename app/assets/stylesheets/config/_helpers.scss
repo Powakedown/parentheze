@@ -161,6 +161,9 @@ $input-height: 56px;
 a:hover {
   text-decoration: none !important;
 }
+button, html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: none;
+}
 //COMPONENTS
 a:hover.pastille {
   color: $light-yellow;

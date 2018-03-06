@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
       @profile.validation = 0
       @error_label = true
       @profile.save
-      flash[:alert] = t('.flash-after-request')
+      flash[:warning] = t('.flash-after-request')
     end
     @profile.save!
     @step = @profile.step
@@ -69,7 +69,7 @@ class ProfilesController < ApplicationController
       redirect_to admin_validations_path
       UserMailer.validation(@profile.user).deliver_now
     else
-      flash[:alert] = t('.alert')
+      flash[:warning] = t('.alert')
       redirect_to admin_validations_path
     end
   end
@@ -104,7 +104,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to admin_validations_path
     else
-      flash[:alert] = "PROBLEM"
+      flash[:warning] = "PROBLEM"
       redirect_to admin_validations_path
     end
   end

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :cookie
   before_action :session_ways?
+  add_flash_types :success, :warning
 
   def guest_user(with_retry = true)
     # Cache the value the first time it's gotten.

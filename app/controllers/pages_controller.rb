@@ -29,17 +29,17 @@ class PagesController < ApplicationController
 
     if @valid_email && @valid_comment && @human
       session[:contact_email] = session[:contact_name] = session[:contact_comment] = nil
-      flash[:notice] = t('.notice')
+      flash[:success] = t('.notice')
       UserMailer.contact_form(@message[:name], @message[:email], @message[:comment]).deliver_now
       redirect_to root_path
     else
       session[:contact_email] = @message[:email]
       session[:contact_name] = @message[:name]
       session[:contact_comment] = @message[:comment]
-      flash[:alert] = t('.be_human') unless @human
-      flash[:alert] = t('.invalid_email') unless @valid_email
-      flash[:alert] = t('.blank_email') unless @email_presence
-      flash[:alert] = t('.invalid_comment') unless @valid_comment
+      flash[:warning] = t('.be_human') unless @human
+      flash[:warning] = t('.invalid_email') unless @valid_email
+      flash[:warning] = t('.blank_email') unless @email_presence
+      flash[:warning] = t('.invalid_comment') unless @valid_comment
       redirect_to "/#slide4"
     end
   end
