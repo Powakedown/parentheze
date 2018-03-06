@@ -11,6 +11,7 @@ class PagesController < ApplicationController
       @slide_top = t('.slide_home_top')
       @slide_split = t('.slide_with_split')
       @slide_plan = t('.slide_plan')
+      @slide_contact = t('.slide_contact')
       @guest = guest_user
       @guest.visit += 1
       @guest.save

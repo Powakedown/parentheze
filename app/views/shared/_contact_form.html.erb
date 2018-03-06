@@ -1,0 +1,29 @@
+<div class="contact-form black-on-white">
+  <div class="contact-header"></div>
+  <div class="container">
+    <div class="row">
+      <div class="contact-identity col-5">
+        <h3><%= t('.title') %></h3>
+        <div class="bar"></div>
+        <%= simple_form_for :message, url: guest_path(@guest), method: :patch do |f| %>
+        <div class="margin-bottom-medium">
+          <p> <%= t('.identity.field1') %></p>
+          <%= f.input :email, label: false %>
+          <p><%= t('.identity.field2') %></p>
+          <%= f.input :email, label: false %>
+        </div>
+         <label class="checkbox">
+           <input type="checkbox" class="boolean optional" id="iamhuman" name="iamhuman" value="1" />
+           <label for="iamhuman"><%= t('.identity.checkbox') %></label>
+         </label>
+      </div>
+      <div class="contact-message col-7">
+        <p><%= t('.message.title') %></p>
+          <%= f.input :comment, label: false, id: "textarea", as: :text, :input_html => { :cols => 5, :rows => 10, placeholder: t('.message.placeholder'), :resize => "none" } %>
+          <%= f.button :submit, value: t('.message.button_text'), data: { disable_with: "" }, class:"contact-button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

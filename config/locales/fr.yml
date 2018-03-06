@@ -148,6 +148,16 @@ fr:
       title: "Bien joué !"
       details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
   shared:
+    contact_form:
+      title: "Écrivez-nous"
+      message:
+        title: "message :"
+        placeholder: "écrivez votre message ici"
+        button_text: "ENVOYER"
+      identity:
+        field1: "prénom, nom ou pseudo :"
+        field2: "email :"
+        checkbox: "je ne suis pas un robot"
     navbar:
       login: "connexion"
       sign_up: "s'enregistrer"
@@ -220,6 +230,9 @@ fr:
           text3: "- Réputation pour chaque garde"
           text4: "- Outil d'invitation pour faire connaissance"
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
+    slide_contact:
+      title: "Contact"
+      text: "Aidez-nous à développer Parentheze, nous sommes à la recherche de partenaires et d'associés"
     slide_subscription:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."

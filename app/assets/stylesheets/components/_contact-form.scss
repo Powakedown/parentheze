@@ -1,0 +1,55 @@
+.contact-form {
+  width: 880px;
+  height: 480px;
+  background-color: $white;
+  box-shadow: $shadow;
+  .contact-header {
+    height: 60px;
+    width: 100%;
+  }
+  p {
+    margin-bottom: 5px;
+  }
+  .bar {
+    width: 80px;
+    height: 2px;
+    background-color: $yellow;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .contact-identity {
+    // width: 360px;
+    height: 420px;
+    padding: 0px 60px 70px 60px;
+    border-right: 1px solid $gray;
+  }
+  .contact-message {
+    // width: 520px;
+    height: 420px;
+    padding: 15px 30px 15px 30px;
+    textarea {
+      padding: 0;
+      border: none;
+      margin-top: 10px;
+      height: 300px;
+    }
+    .form-control:focus, textarea:focus {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  .contact-button {
+    height: 56px;
+    width: 100%;
+    background-color: $yellow;
+    border-radius: 0 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  [type="checkbox"]:not(:checked) + label:before,
+  [type="checkbox"]:checked + label:before {
+    border-color: $gray;
+  }
+}
