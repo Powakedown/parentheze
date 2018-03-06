@@ -1,4 +1,4 @@
-<% content_for :title_tag do t('.title') end %>
+<% content_for(:title_tag) { t('.title') } %>
 
 <div class="fullscreen relative flex-column flexbox text-center home" style="background-image: url(<%= t('.image') %>)">
   <div>

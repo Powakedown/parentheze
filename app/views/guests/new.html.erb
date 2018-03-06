@@ -1,3 +1,5 @@
+<% content_for(:title_tag) { t('.title') } %>
+
 <div class="survey">
 
   <%= render "shared/breadcrumb", step: @current_question.to_i , length: @breadcrumb_length %>

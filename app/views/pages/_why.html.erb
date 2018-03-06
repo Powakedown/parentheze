@@ -1,4 +1,0 @@
-  <% t('.slides').length.times do |x| %>
-    <% xstring = x.to_s %>
-    <%= render "slide", target_page: "slide"+(x+1).to_s, id: "slide"+xstring ,  title: t('.slide'+xstring+'.title'), text: t('.slide'+xstring+'.text'), image: t('.slide'+xstring+'.image'), link_image: t('.slide0.link_image') %>
-  <% end %>
