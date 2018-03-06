@@ -33,6 +33,16 @@ class UserMailer < ApplicationMailer
          track_opens: 'true')
   end
 
+  def contact_form(user, email, comment)
+    @name = user
+    @email = email
+    @comment = comment
+    mail(to: 'abriko@yahoo.fr',
+         from: 'parentgenial@parentheze.com',
+         subject: 'Votre profil sur Parentheze',
+         track_opens: 'true')
+  end
+
   def new_registration_notification
     mail(to: 'parentgenial@parentheze.com',
          from: 'parentgenial@parentheze.com',
@@ -54,7 +64,7 @@ class UserMailer < ApplicationMailer
     @profile = profile
     @url  = 'http://www.parentheze.com'
     @params = params
-    mail(to: @user.email,
+    mail(to: @user,
          from: 'parentgenial@parentheze.com',
          subject: 'Votre profil sur Parentheze',
          track_opens: 'true')
