@@ -5,7 +5,7 @@
       <div class="contact-identity col-5">
         <h3><%= t('.title') %></h3>
         <div class="bar"></div>
-        <%= simple_form_for :message, url: guest_path(@guest), method: :patch do |f| %>
+        <%= simple_form_for :message, url: contact_path, method: :get do |f| %>
         <div class="margin-bottom-medium">
           <p> <%= t('.identity.field1') %></p>
           <%= f.input :email, label: false %>
@@ -25,5 +25,4 @@
       </div>
     </div>
   </div>
-
 </div>

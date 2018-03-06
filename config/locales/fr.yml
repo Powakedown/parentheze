@@ -178,6 +178,8 @@ fr:
   pages:
     home:
       title: "Parentheze, la nouvelle vie des parents."
+    contact:
+      notice: "Votre message a bien été envoyé."
     slide_home_top:
       title: "Profitez ! Ce soir les enfants dorment chez des amis"
       text: "Échange de garde d'enfants et mutualisation de babysitter"
@@ -232,7 +234,7 @@ fr:
         link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1512466553/parentheze/btn_oui_blue_oxcch8.png"
     slide_contact:
       title: "Contact"
-      text: "Aidez-nous à développer Parentheze, nous sommes à la recherche de partenaires et d'associés"
+      text: "Aidez-nous à développer Parentheze, nous sommes à la recherche de partenaires, d'associés et de beta-testers"
     slide_subscription:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."

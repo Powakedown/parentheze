@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[home update home_parent why]
+  skip_before_action :authenticate_user!, only: %i[home update home_parent why contact]
 
   def home
     if current_user
@@ -21,12 +21,13 @@ class PagesController < ApplicationController
 
   end
 
-  # def update
-  #   @guest = guest_user
-  #   @guest.step += 1
-  #   @guest.save
-  #   render plain: 'one more step'
-  # end
+  def contact
+    @message = params_message
+    if @message.presence
+      flash[:notice] = t('.notice')
+      redirect_to root_path
+    end
+  end
 
   def why
     @guest = guest_user
@@ -35,6 +36,10 @@ class PagesController < ApplicationController
   end
 
   private
+
+  def params_message
+    params.require(:message).permit(:email, :name, :comment, :iamhuman)
+  end
 
   def params_guest
     params.require(:guest).permit(:email)

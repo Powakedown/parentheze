@@ -4,15 +4,17 @@ Rails.application.routes.draw do
   root "pages#home"
   resources :guests, only: %i[create new update show index]
 
-  devise_for :users, :controllers => { :registrations => "my_registrations" }
 
   patch "/home", to: "pages#update"
+  get "/contact", to: "pages#contact"
   get "/pourquoi_parentheze", to: "pages#why"
 
   # MAIL
   get '/welcome', to: 'guests#welcome'
 
   # INSCRIPTION
+  devise_for :users, :controllers => { :registrations => "my_registrations" }
+
   resources :users, only: %i[] do
     resources :profiles, only: %i[new create show edit update] do
       member do
