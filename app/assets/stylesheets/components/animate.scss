@@ -18,7 +18,16 @@ slideDown
 ==============================================
 */
 .withdelay{
-  animation-delay: 1s;
+  animation-delay: 0s;
+ }
+.withdelay-2{
+  animation-delay: 0.2s;
+ }
+.withdelay-3{
+  animation-delay: 0.4s;
+ }
+.withdelay-4{
+  animation-delay: 0.6s;
  }
 
 .slideDown{
@@ -301,7 +310,7 @@ slideLeft
 }
 
 
-.slideLeft-nobounce{
+.slideLeft-nobounce, .slideLeft-nobounce1, %slideLeft-nobounce {
   animation-name: slideLeft-bounce;
   -webkit-animation-name: slideLeft-bounce;
 
@@ -313,6 +322,25 @@ slideLeft
 
   visibility: visible !important;
 }
+
+ .slideLeft-nobounce2 {
+  @extend %slideLeft-nobounce;
+  animation-duration: 1.1s;
+  -webkit-animation-duration: 1.1s;
+}
+
+.slideLeft-nobounce3 {
+  @extend %slideLeft-nobounce;
+ animation-duration: 1.2s;
+ -webkit-animation-duration: 1.2s;
+ }
+
+ .slideLeft-nobounce4 {
+  @extend %slideLeft-nobounce;
+  animation-duration: 1.3s;
+  -webkit-animation-duration: 1.3s;
+}
+
 
 @keyframes slideLeft-nobounce {
   0% {

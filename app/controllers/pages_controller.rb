@@ -36,10 +36,10 @@ class PagesController < ApplicationController
       session[:contact_email] = @message[:email]
       session[:contact_name] = @message[:name]
       session[:contact_comment] = @message[:comment]
-      flash[:warning] = t('.be_human') unless @human
-      flash[:warning] = t('.invalid_email') unless @valid_email
-      flash[:warning] = t('.blank_email') unless @email_presence
-      flash[:warning] = t('.invalid_comment') unless @valid_comment
+      flash[:warning1] = t('.be_human') unless @human
+      flash[:warning2] = t('.invalid_email') unless @valid_email
+      flash[:warning3] = t('.blank_email') unless @email_presence
+      flash[:warning4] = t('.invalid_comment') unless @valid_comment
       redirect_to "/#slide4"
     end
   end

@@ -1,5 +1,7 @@
+<%= console %>
+
 <% flash.each do |key, value| %>
-  <div class="alert slideLeft-nobounce" role="alert">
+  <div class="alert position-<%= key[-1] %> slideLeft-nobounce<%= key[-1] %>" role="alert">
     <div class="alert-badge alert-<%= key %> flexbox">
       <i class="far fa-bell bigEntrance withdelay" aria-hidden="true"></i>
     </div>
@@ -9,4 +11,3 @@
     <div type="button" class="alert-close" data-dismiss="alert" aria-label="close"><i class="fa fa-times close-<%= key %>" aria-hidden="true"></i></div>
   </div>
 <% end %>
-<%= yield %>

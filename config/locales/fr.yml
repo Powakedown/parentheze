@@ -183,7 +183,7 @@ fr:
       invalid_email: "Mail non valide."
       blank_email: "Veuillez entrer un email."
       invalid_comment: "Message trop court ou absent."
-      be_human: "Veuillez cocher la case 'je ne suis pas un robot"
+      be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
     slide_home_top:
       title: "Profitez ! Ce soir les enfants dorment chez des amis"
       text: "Échange de garde d'enfants et mutualisation de babysitter"
