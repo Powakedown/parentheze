@@ -53,14 +53,9 @@
   border-radius: 8px;
   padding: 30px;
   color: $dark-gray;
-  .login-fields {
-    height: 470px;
-  }
-  @media (max-device-width: 569px ) {
-    .login-fields-for-xs {
-      height: 570px;
-    }
-  }
+  @include media-breakpoint-up(xs) { .login-fields { height: 470px; }}
+  @include media-breakpoint-down(xs) { .login-fields { min-height: 500px; }}
+  @include media-breakpoint-down(xs) { .login-fields-small { min-height: 330px; }}
   .login-fields-tall {
     min-height: 530px;
   }
@@ -72,6 +67,9 @@
     &.numeric {
       width: 80px;
     }
+  }
+  input#profile_photo {
+    height: 100px;
   }
   input[type="submit"]{
     background-color: $blue;

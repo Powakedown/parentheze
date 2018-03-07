@@ -239,6 +239,7 @@ fr:
     slide_contact:
       title: "Aidez-nous à développer Parentheze,"
       text: "nous sommes à la recherche de partenaires, d'associés et de beta-testers"
+      link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     slide_subscription:
       title: "Inscrivez-vous"
       text: "le service est en phase de test, participez à la béta gratuitement."
