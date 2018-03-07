@@ -4,7 +4,7 @@
       <%= f.button :submit, class: 'btn btn-green', id: "button-search", data: { disable_with: "recherche..." }, value: btn_text %>
   <% end %>
 </div>
-<div class="form-for-xs flex-vertical d-block d-sm-block">
+<div class="form-for-xs flex-vertical d-block d-sm-none">
   <%= simple_form_for query.to_sym, url: url , method: method.to_sym do |f| %>
       <%= f.input subquery, label: false, placeholder: placeholder %>
       <%= f.button :submit, class: 'btn btn-green', id: "button-search", data: { disable_with: "recherche..." }, value: btn_text %>

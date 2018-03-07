@@ -39,7 +39,7 @@ class UserMailer < ApplicationMailer
     @comment = comment
     mail(to: 'abriko@yahoo.fr',
          from: 'parentgenial@parentheze.com',
-         subject: 'Votre profil sur Parentheze',
+         subject: 'Nouveau message depuis Parentheze',
          track_opens: 'true')
   end
 

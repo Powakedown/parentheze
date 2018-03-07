@@ -26,11 +26,11 @@ fr:
         field1: "Email :"
         field2: "Mot de passe (minimum 6 caractères incluant lettres et chiffres) :"
         field3: "Confirmer le mot de passe :"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
       edit:
         title: "Inscription"
         maintitle: "Donnée de connexion"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
         details: "Votre mail n’est pas communiqué à des tiers."
         placeholder1: "à renseigner"
         placeholder2: "laisser vide si aucun changement"
@@ -43,7 +43,7 @@ fr:
         remember_me: "Se souvenir de moi"
         field7: "Mot de passe :"
         field1: "Email :"
-        image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+        image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
   admins:
     password_verification:
       alert: "Mot de passe erroné"
@@ -77,14 +77,14 @@ fr:
       notice: "Profile envoyé en attente de modification"
     new:
     edit:
-      card-image: "http://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
+      card-image: "https://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
       title: "Inscription :"
-      image: "http://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
+      image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
       flash-after-request: "vérifier les champs de cette étape et poursuivez"
     form1:
       title: "Le réseau de confiance"
       details: "Vous entrez dans le cercle de confiance, posez-vous. L'inscription est simple et rapide, elle demande simplement votre attention. Les échanges se feront mieux grâce à des profils de qualité."
-      image: "http://res.cloudinary.com/doodlid/image/upload/v1519400195/parentheze/confidence_circle.png"
+      image: "https://res.cloudinary.com/doodlid/image/upload/v1519400195/parentheze/confidence_circle.png"
     form2:
       title: "Informations visibles sur le réseau"
       details: "Seules ces informations seront visibles publiquement."
@@ -121,27 +121,27 @@ fr:
       alt: "exemple de bonne photo"
       examples:
         example1:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_01.jpg"
+          photo: "https://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_01.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example2:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_02.jpg"
+          photo: "https://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_02.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example3:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_03.jpg"
+          photo: "https://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_03.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example4:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_04.jpg"
+          photo: "https://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_04.jpg"
           icon: "fa-check-circle"
           color: "#7ED321"
         example5:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_05.jpg"
+          photo: "https://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_05.jpg"
           icon: "fa-minus-circle"
           color: "#D0021B"
         example6:
-          photo: "http://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_06.jpg"
+          photo: "https://res.cloudinary.com/doodlid/image/upload/v1519322027/parentheze/inscription_exemple_06.jpg"
           icon: "fa-minus-circle"
           color: "#D0021B"
     form6:
@@ -276,13 +276,13 @@ fr:
           target_page: "slide_manifeste"
         slide5:
           title: "Chers parents, posez-vous, on s’occupe de tout."
-          image: "http://res.cloudinary.com/doodlid/image/upload/v1513328712/mother_kid_xtep44.jpg"
+          image: "https://res.cloudinary.com/doodlid/image/upload/v1513328712/mother_kid_xtep44.jpg"
           link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
           target_page: "slide_manifeste"
       manifeste:
         slide0:
           title: 'Les parents s’occupent de tout, mais qui s’occupe d’eux ?'
-          image: 'http://res.cloudinary.com/doodlid/image/upload/v1513177233/parentheze/lynette_mother.png'
+          image: 'https://res.cloudinary.com/doodlid/image/upload/v1513177233/parentheze/lynette_mother.png'
           text: "Les parents sont un pilier majeur de notre société. Ils sont responsables des générations à venir et font de l’éducation de leurs enfants une priorité.
                 Ils construisent ainsi le monde de demain. Ils sont le coeur de toutes les organisations. Ils rassurent, gèrent et stabilisent.
                 Ils sont actifs et hyper sollicités. Ils vivent au rythme battant de leurs enfants et savent se montrer, comme eux, inépuisables.
@@ -291,7 +291,7 @@ fr:
           target_page: "slide"
         slide1:
           title: "Se préoccuper des parents pour la première fois"
-          image: "http://res.cloudinary.com/doodlid/image/upload/v1513179669/parentheze/parent_care.png"
+          image: "https://res.cloudinary.com/doodlid/image/upload/v1513179669/parentheze/parent_care.png"
           text: "La politique familiale ne s’intéresse aux parents que pour s’assurer qu’ils ont bien les moyens de s'occuper correctement de leurs enfants.
                 Les innombrables services et loisirs réservés aux familles ne s’intéressent qu'aux enfants et ne soulagent en rien la pression subit par les parents.
                 Personne ne s’intéresse aux parents pour ce qu’ils sont : des gens comme les autres qui ont des envies communes mais des contraintes particulières.
@@ -300,7 +300,7 @@ fr:
           target_page: "slide"
         slide2:
           title: "Assez de sacrifices, des solutions !"
-          image: "http://res.cloudinary.com/doodlid/image/upload/v1513179381/parentheze/parent_sacrifice.png"
+          image: "https://res.cloudinary.com/doodlid/image/upload/v1513179381/parentheze/parent_sacrifice.png"
           text: "Les parents paient cher la moindre part de liberté et de tranquillité.
                 Il y a les petits sacrifices récurrents comme celui d’aller manger une bouffe passable,
                 dans un fast food, uniquement car la présence de jeux pour les enfants fait passer un repas plus tranquille.
@@ -313,7 +313,7 @@ fr:
           target_page: "slide"
         slide3:
           title: "Pourquoi personne ne s'était attaqué au problème?"
-          image: "http://res.cloudinary.com/doodlid/image/upload/v1513180421/parentheze/parent_zuckerberg.png"
+          image: "https://res.cloudinary.com/doodlid/image/upload/v1513180421/parentheze/parent_zuckerberg.png"
           text: "Parce que les meilleurs entrepreneurs sont souvent jeunes et sans enfant quand ils changent le monde.
                 Parce qu’ils sont déjà lancés dans de grands projets quand ils deviennent à leur tour parents et découvrent alors les besoins.
                 Parce qu'avant le numérique, il était impossible de proposer un service rentable et de qualité uniquement dédiés aux parents.
@@ -322,7 +322,7 @@ fr:
           target_page: "slide"
         slide4:
           title: "Parentheze facilite des usages qui existent déjà."
-          image: "http://res.cloudinary.com/doodlid/image/upload/v1513181229/parentheze/parent_babysitting.png"
+          image: "https://res.cloudinary.com/doodlid/image/upload/v1513181229/parentheze/parent_babysitting.png"
           text: "S'échanger la garde de nos enfants, nous, parents, le faisons déjà. Soirée pyjama et anniversaires créent les occasions
                 d'emmener ses enfants chez d'autres pour la soirée, la nuit, l'après midi. C'est vieux comme le monde, c'est gratuit et naturel.
                 Simplement, demain, vous avez envie de sortir, changer d'air, aller à une soirée d'anniversaire, vous allez peut-être demander à ses
@@ -332,7 +332,7 @@ fr:
           target_page: "slide"
         slide5:
           title: "Comment ça marche?"
-          image: "http://res.cloudinary.com/doodlid/image/upload/v1513194127/parentheze/parents_how.png"
+          image: "https://res.cloudinary.com/doodlid/image/upload/v1513194127/parentheze/parents_how.png"
           text: "Parentheze propose un service simple, rapide, avec prise en main totale pour limiter ce genre de frein.
                 Les parents qui reçoivent la garde des enfants sont compensés en € pour cela car le temps passés à rendre service,
                 même à des amis, ne leur ai pas gratuit.
