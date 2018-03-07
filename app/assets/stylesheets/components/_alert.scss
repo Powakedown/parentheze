@@ -78,6 +78,10 @@
   width: 60px;
   margin-right: 20px;
   border-radius: 4px 0 0 4px;
+  @include media-breakpoint-down(xs) {
+    min-height: 80px;
+    border-radius: 0px;
+  }
   &.alert-warning, &.alert-warning1, &.alert-warning2, &.alert-warning3, &.alert-warning4 {
     background-color: $red;
   }
@@ -94,6 +98,10 @@
   right: 12px;
   cursor: pointer;
   appearance: none;
+  @include media-breakpoint-down(xs) {
+    top: 22px;
+    right: 22px;
+  }
   .fa-times{
     &.close-warning, &.close-warning1, &.close-warning2, &.close-warning3, &.close-warning4 {
     color: $red;
@@ -103,18 +111,4 @@
     }
   }
 }
-
-
-@media (max-device-width : 768px) {
-
-  .alert-badge {
-    height: 80px;
-    border-radius: 0px;
-  }
-  .alert-close {
-    top: 22px;
-    right: 22px;
-  }
-}
-
 
