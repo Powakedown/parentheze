@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   if (profileEmail) {
     profileEmail.addEventListener("keydown", testMail, false);
-    profileEmail.addEventListener("focus", hideErrors, false);
   }
 
 });
