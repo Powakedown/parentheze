@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :cookie
   before_action :session_ways?
+  add_flash_types :success, :warning
 
   def guest_user(with_retry = true)
     # Cache the value the first time it's gotten.
@@ -64,6 +65,15 @@ class ApplicationController < ActionController::Base
 
   def current_user?
     current_user.id == params[:user_id].to_i
+  end
+
+  def email_valid(email)
+    mail_regex = /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/
+    email =~ mail_regex && email.length > 8
+  end
+
+  def comment_valid(comment)
+    comment.present? && comment.length > 8
   end
 
 end

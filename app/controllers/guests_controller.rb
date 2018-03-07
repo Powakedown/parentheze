@@ -42,7 +42,7 @@ class GuestsController < ApplicationController
       flash[:notice] = t('.emailsent')
       redirect_to root_path
     elsif params[:guest][:email]
-      flash[:alert] = t('.email_valid')
+      flash[:warning] = t('.email_valid')
       redirect_to root_path
     else
       render :new

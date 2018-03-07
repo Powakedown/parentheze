@@ -4,28 +4,46 @@
 
 .alert {
   position: fixed;
-  right: 5px;
-  top: 50px;
   margin: 0;
   text-align: center;
   color: $dark-gray;
   background-color: #FFF;
   font-size: 16px;
-  // width: 25%;
-  min-width: calc(15% + 140px);
-  max-width: calc(25% + 140px);
-  min-height: 60px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  @extend %display-flex;
   text-align: left;
   justify-content: left;
   align-items: stretch;
-  border-radius: 4px;
   z-index: 1000;
   padding: 0px;
   border: none;
+  @include media-breakpoint-down(xs) {
+    left: 0px;
+    top: 0px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 80px;
+    border-radius: 0px;
+  }
+  @include media-breakpoint-up(xs) {
+    right: 5px;
+    top: 50px;
+    min-width: calc(15% + 150px);
+    max-width: calc(25% + 150px);
+    min-height: 60px;
+    border-radius: $border-radius;
+  }
+  &.position-2 {
+    @include media-breakpoint-down(xs) {  top: 81px; }
+    @include media-breakpoint-up(xs) {  top: 120px; }
+  }
+  &.position-3 {
+    @include media-breakpoint-down(xs) {  top: 162px; }
+    @include media-breakpoint-up(xs) {  top: 190px; }
+  }
+  &.position-4 {
+    @include media-breakpoint-down(xs) {  top: 243px; }
+    @include media-breakpoint-up(xs) {  top: 260px; }
+  }
   &.alert-danger {
     display: flex;
     justify-content: center;
@@ -60,10 +78,10 @@
   width: 60px;
   margin-right: 20px;
   border-radius: 4px 0 0 4px;
-  &.warning{
+  &.alert-warning, &.alert-warning1, &.alert-warning2, &.alert-warning3, &.alert-warning4 {
     background-color: $red;
   }
-  &.info{
+  &.alert-notice, &.alert-success{
     background-color: $green;
   }
 }
@@ -75,25 +93,20 @@
   top: 12px;
   right: 12px;
   cursor: pointer;
+  appearance: none;
   .fa-times{
-    &.warning {
+    &.close-warning, &.close-warning1, &.close-warning2, &.close-warning3, &.close-warning4 {
     color: $red;
     }
-    &.info {
+    &.close-notice, &.close-success {
     color: $green;
     }
   }
 }
 
+
 @media (max-device-width : 768px) {
-  .alert {
-    left: 0px;
-    top: 0px;
-    min-width: 100%;
-    max-width: 100%;
-    height: 80px;
-    border-radius: 0px;
-  }
+
   .alert-badge {
     height: 80px;
     border-radius: 0px;

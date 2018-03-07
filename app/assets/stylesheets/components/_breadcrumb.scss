@@ -3,22 +3,22 @@
   height: 39px;
   margin: 25px auto 0 auto;
   padding: 0px;
-}
-.step {
-  position: relative;
-  margin: auto;
-  height: 35px;
-  width: 35px;
-  font-size: 26px;
-  font-weight: bold;
-  border-radius: 50%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $medium-gray;
-  &.active {
-    background-color: $light-blue;
+  .step {
+    position: relative;
+    margin: auto;
+    height: 35px;
+    width: 35px;
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 50%;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $medium-gray;
+    &.active {
+      background-color: $light-blue;
+      color: white;
+    }
   }
 }

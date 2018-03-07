@@ -26,6 +26,13 @@
     background-color: white;
     color: $dark-gray;
   }
+  .sign-out {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 28px;
+    color: white;
+  }
 }
 @media (max-device-width: 569px ) {
   .parentheze-login{

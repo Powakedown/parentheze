@@ -3,14 +3,8 @@
 
     <div class="parentheze-login">
       <h4><%= t('.title') %></h4>
-      <% if @user.step != 10 %>
-        <div class="breadcrumb">
-          <div class="center flex-line">
-            <% (1..5).each do |x| %>
-              <div class="step flexbox <%= 'active' if x == 1 %>" id="breadcrumb-question<%= x %>"><%= x %></div>
-            <% end %>
-          </div>
-        </div>
+      <% if @user.validation != 1 %>
+        <%= render "shared/breadcrumb", step: 1, length: 5 %>
       <% end %>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>

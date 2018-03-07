@@ -1,10 +1,10 @@
-<div class="form-fake-wrap flex-vertical hidden-xs">
+<div class="form-fake-wrap flex-vertical d-none d-sm-block">
   <%= simple_form_for query.to_sym, url: url , method: method.to_sym do |f| %>
       <%= f.input subquery, label: false, placeholder: placeholder, class:"input-with-picto" %>
       <%= f.button :submit, class: 'btn btn-green', id: "button-search", data: { disable_with: "recherche..." }, value: btn_text %>
   <% end %>
 </div>
-<div class="form-for-xs flex-vertical hidden-sm hidden-md hidden-lg">
+<div class="form-for-xs flex-vertical d-block d-sm-block">
   <%= simple_form_for query.to_sym, url: url , method: method.to_sym do |f| %>
       <%= f.input subquery, label: false, placeholder: placeholder %>
       <%= f.button :submit, class: 'btn btn-green', id: "button-search", data: { disable_with: "recherche..." }, value: btn_text %>

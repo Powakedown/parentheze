@@ -3,7 +3,7 @@
     <%= cl_image_tag "parentheze/Parentheze_logo.svg" %>
   <% end %>
 
-  <div class="navbar-wagon-right d-none d-sm-block">
+  <div class="navbar-wagon-right d-none d-lg-block">
       <%= link_to t('.why'), pourquoi_parentheze_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t('.plans'), "#slide2", class: "navbar-wagon-item navbar-wagon-link" %>
       <% if @session_ways %>
@@ -15,7 +15,7 @@
       <% end %>
   </div>
 
-  <div class="navbar-wagon-item d-block d-sm-none">
+  <div class="navbar-wagon-item d-block d-lg-none">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
