@@ -2,6 +2,7 @@
   <div class="fullscreen relative flexbox text-left" style="background-image: linear-gradient(0deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.5) 100%), url(<%= t('.image') %>)">
 
     <div class="parentheze-login">
+      <%= render 'shared/sign_out_button' %>
       <h4><%= t('.title') %></h4>
       <% if @user.validation != 1 %>
         <%= render "shared/breadcrumb", step: 1, length: 5 %>

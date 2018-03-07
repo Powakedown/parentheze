@@ -46,8 +46,10 @@ $input-height: 56px;
   }
   @include media-breakpoint-down(xs)
   {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    &.with-padding-for-xs  {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
   @media (min-width : 1024px) {
     background-attachment: fixed;
