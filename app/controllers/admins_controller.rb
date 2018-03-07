@@ -1,8 +1,7 @@
 class AdminsController < ApplicationController
   before_action :security_check, only: %i[validations password_check password_verification]
 
-  def password_check
-  end
+  def password_check; end
 
   def password_verification
     if params[:query][:password] == "#{ENV['ADMIN_PASSWORD']}" && current_user.admin
@@ -20,9 +19,8 @@ class AdminsController < ApplicationController
   private
 
   def security_check
-    unless current_user.admin == true
-      redirect_to root_path
-      flash[:warning] = t('.alert')
-    end
+    return if current_user.admin
+    redirect_to root_path
+    flash[:warning] = t('.alert')
   end
 end
