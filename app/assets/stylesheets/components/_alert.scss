@@ -82,7 +82,8 @@
     min-height: 80px;
     border-radius: 0px;
   }
-  &.alert-warning, &.alert-warning1, &.alert-warning2, &.alert-warning3, &.alert-warning4 {
+  &.alert-warning, &.alert-warning1, &.alert-warning2, &.alert-warning3, &.alert-warning4,
+  &.alert-alert, &.alert-alert1, &.alert-alert2, &.alert-alert3, &.alert-alert4 {
     background-color: $red;
   }
   &.alert-notice, &.alert-success{
@@ -103,7 +104,8 @@
     right: 22px;
   }
   .fa-times{
-    &.close-warning, &.close-warning1, &.close-warning2, &.close-warning3, &.close-warning4 {
+    &.close-warning, &.close-warning1, &.close-warning2, &.close-warning3, &.close-warning4,
+    &.close-alert, &.close-alert1, &.close-alert2, &.close-alert3, &.close-alert4 {
     color: $red;
     }
     &.close-notice, &.close-success {
