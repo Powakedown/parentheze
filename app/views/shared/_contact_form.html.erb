@@ -2,7 +2,7 @@
   <div class="contact-header"></div>
   <div class="container">
     <div class="row">
-      <div class="contact-identity col-5">
+      <div class="contact-identity col-12 col-sm-5">
         <h3><%= t('.title') %></h3>
         <div class="bar"></div>
         <%= simple_form_for :message, url: contact_path, method: :get do |f| %>
@@ -17,7 +17,7 @@
            <label for="iamhuman"><%= t('.identity.checkbox') %></label>
          </label>
       </div>
-      <div class="contact-message col-7">
+      <div class="contact-message col-12 col-sm-7">
         <p><%= t('.message.title') %></p>
           <%= f.input :comment, label: false, id: "textarea", as: :text, :input_html => { cols: 5,
                                                                                           rows: 10,
