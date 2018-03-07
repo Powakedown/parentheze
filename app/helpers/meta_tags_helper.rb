@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module MetaTagsHelper
   # frozen_string_literal: true
 

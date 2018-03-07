@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProfilesController < ApplicationController
   before_action :user_is_current_user, only: %i[create new edit update previous]
   before_action :params_profile, only: %i[validate request_update]
@@ -34,13 +36,11 @@ class ProfilesController < ApplicationController
     else
       if @profile.update(profile_params)
         redirect_to edit_user_profile_path
-        if @profile.step6?
-          inscription_done(@user)
-        end
+        inscription_done(@user) if @profile.step6?
       else
-        notice = ""
+        notice = ''
         @profile.errors.messages.each do |key, value|
-          notice << value.first << ". <br/>"
+          notice << value.first << '. <br/>'
         end
         redirect_to edit_user_profile_path, alert: notice
       end
@@ -89,7 +89,7 @@ class ProfilesController < ApplicationController
       @profile.kids = nil
     elsif request_update_params[:parent2].present?
       @profile.step = 2
-       @profile.parent2 = nil
+      @profile.parent2 = nil
     elsif request_update_params[:address].present?
       @profile.step = 3
       @profile.address = nil
