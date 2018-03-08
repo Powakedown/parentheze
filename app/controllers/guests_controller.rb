@@ -25,7 +25,6 @@ class GuestsController < ApplicationController
     @guest = guest_user
     session[:form_step] ||= "1"
     set_question
-    console
   end
 
   def update
