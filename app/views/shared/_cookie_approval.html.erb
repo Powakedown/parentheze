@@ -1,15 +1,17 @@
-<div class="flexbox" id="cookie-label">
-  <i class="fa fa-times slide-away"></i>
-  <div class="cookie-content">
-    <div class="flexbox">
-      <%= image_tag t('.image') %>
-    </div>
-    <div>
-      <p><%= t('.text') %></p>
-      <p><strong><a class="slide-away"> <%= t('.button1_text') %></a></strong><strong><span id="know-more"><%= t('.button2_text') %></span></strong></p>
+<a class="slide-away">
+  <div class="flexbox" id="cookie-label">
+    <i class="fa fa-times slide-away"></i>
+    <div class="cookie-content">
+      <div class="flexbox">
+        <%= image_tag t('.image') %>
+      </div>
+      <div>
+        <p><%= t('.text') %></p>
+        <p><strong> <%= t('.button1_text') %></strong><strong><span id="know-more"><%= t('.button2_text') %></span></strong></p>
+      </div>
     </div>
   </div>
-</div>
+</a>
 
 <%= content_for :after_js do %>
   <script>

@@ -1,42 +1,37 @@
-# frozen_string_literal: true
-
 class GuestsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[create index update new welcome]
   before_action :find_guest, only: %i[update welcome]
   before_action :init_form, only: %i[update new]
 
   def index
-    if tester
-      @guests = Guest.not_tester
-      @guestcount = @guests.count
-      @parentcount = @guests.parenting.count
-      @visits = @guests.visitors.parenting.count
-      @visitors_p = percentage(@visits, @guestcount)
-      @parents = percentage(@parentcount, @guestcount)
-      @average_visits = average(@guests, :visit)
-      @questions = t('.questions').first(5)
-      @form_completed_p = completion(@guests, :get_out)
-      @target1 = percentage(@guests.target1, @parentcount)
-      @target2 = percentage(@guests.target2, @parentcount)
-      # @guest_steps = []
-      # 0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
-    else
-      redirect_to root_path
-    end
+    redirect_to root_path unless tester
+    @guests = Guest.not_tester
+    @guestcount = @guests.count
+    @parentcount = @guests.parenting.count
+    @visits = @guests.visitors.parenting.count
+    @visitors_p = percentage(@visits, @guestcount)
+    @parents = percentage(@parentcount, @guestcount)
+    @average_visits = average(@guests, :visit)
+    @questions = t('.questions').first(5)
+    @form_completed_p = completion(@guests, :get_out)
+    @target1 = percentage(@guests.target1, @parentcount)
+    @target2 = percentage(@guests.target2, @parentcount)
+    # @guest_steps = []
+    # 0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
   end
 
   def new
-    if cookie && !tester
-      redirect_to root_path
-    else
-      @guest = guest_user
-      @current_question = session[:form_step] = 1
-    end
+    redirect_to root_path if cookie && !tester
+    @guest = guest_user
+    session[:form_step] ||= "1"
+    set_question
+    console
   end
 
   def update
     @guest.update(guest_params)
-    @current_question = session[:form_step] = params[:guest][:form_step]
+    @current_question = session[:form_step] = params[:guest][:form_step] ||= "9"
+    set_question
     if @guest.email != 'email@example.com' && @guest.valid? && !params[:guest][:email].nil?
       welcome_mail(@guest)
       flash[:notice] = t('.emailsent')
@@ -66,7 +61,10 @@ class GuestsController < ApplicationController
 
   def init_form
     @questions = t('.questions')
-    @questions_number = t('.questions').length
     @breadcrumb_length = 5
+  end
+
+  def set_question
+    @question = @questions[('question'<<session[:form_step]).to_sym]
   end
 end
