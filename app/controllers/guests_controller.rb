@@ -50,8 +50,8 @@ class GuestsController < ApplicationController
   end
 
   def welcome_mail(user)
-    UserMailer.welcome(user).deliver_now
-    UserMailer.self_notification(user).deliver_now
+    UserMailer.welcome(user).deliver_later
+    UserMailer.self_notification(user).deliver_later
   end
 
   private

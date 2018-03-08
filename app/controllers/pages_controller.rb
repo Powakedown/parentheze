@@ -30,7 +30,7 @@ class PagesController < ApplicationController
     if @valid_email && @valid_comment && @human
       session[:contact_email] = session[:contact_name] = session[:contact_comment] = nil
       flash[:success] = t('.notice')
-      UserMailer.contact_form(@message[:name], @message[:email], @message[:comment]).deliver_now
+      UserMailer.contact_form(@message[:name], @message[:email], @message[:comment]).deliver_later
       redirect_to root_path
     else
       session[:contact_email] = @message[:email]

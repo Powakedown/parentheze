@@ -1,4 +1,5 @@
 //= require attachinary
+
 var patternName = "^[^0-9][\\w'\\-áéíóúäëïöüÄőŐűŰZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÉÈÊĒÀÄ][^0-9_!.¡?÷?¿+=@#$%^&*(){}|~<>;:\\[\\]]{0,}$";
 var patternNumber = "^\\d+$";
 var patternPhone = "^(0|\\+33|0033)[1-9][0-9]{8}$";
@@ -11,7 +12,7 @@ function testIt(e) {
     input.style.cssText = null;
   }
   else {
-    // input.style.borderColor = "red";
+    input.style.borderColor = "red";
   }
   }, 10);
 }

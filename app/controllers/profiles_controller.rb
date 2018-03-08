@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ProfilesController < ApplicationController
   before_action :user_is_current_user, only: %i[create new edit update previous]
   before_action :params_profile, only: %i[validate request_update]
@@ -51,15 +49,15 @@ class ProfilesController < ApplicationController
     user.user_wishes.destroy_all
     wishes = Wish.all.to_a
     wishes.each_with_index do |wish, index|
-      UserWish.create(user: user, wish: wish) if profile_params[("need"<<index.to_s).to_sym] == "true"
+      UserWish.create(user: user, wish: wish) if profile_params[("need"<<index.to_s).to_sym].present?
     end
     profile.save
     redirect_to edit_user_profile_path
   end
 
   def inscription_done(user)
-    UserMailer.new_registration(user).deliver_now
-    UserMailer.new_registration_notification.deliver_now
+    UserMailer.new_registration(user).deliver_later
+    UserMailer.new_registration_notification.deliver_later
   end
 
   def validate
@@ -67,7 +65,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       flash[:notice] = t('.notice')
       redirect_to admin_validations_path
-      UserMailer.validation(@profile.user).deliver_now
+      UserMailer.validation(@profile.user).deliver_later
     else
       flash[:warning] = t('.alert')
       redirect_to admin_validations_path
@@ -78,7 +76,7 @@ class ProfilesController < ApplicationController
     @updates_requested = request_update_params
     @profile_for_mail = @profile.as_json
 
-    UserMailer.request_update(@profile.user, @profile_for_mail, @updates_requested).deliver_now
+    UserMailer.request_update(@profile.user, @profile_for_mail, @updates_requested).deliver_later
     flash[:notice] = t('.notice')
 
     if request_update_params[:parent1].present?
