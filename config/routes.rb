@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root "pages#home"
+
   resources :guests, only: %i[create new update show index]
 
-
+  # VITRINE
+  root "pages#home"
   patch "/home", to: "pages#update"
   get "/contact", to: "pages#contact"
   get "/pourquoi_parentheze", to: "pages#why"
@@ -26,10 +27,10 @@ Rails.application.routes.draw do
   end
 
   #JOBS
-  # require "sidekiq/web"
-  # authenticate :user, lambda { |u| u.admin } do
-  #   mount Sidekiq::Web => '/sidekiq'
-  # end
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   # ADMIN
   get '/admin', to: 'admins#password_check'
