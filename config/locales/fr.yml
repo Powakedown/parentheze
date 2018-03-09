@@ -97,7 +97,7 @@ fr:
     form3:
       title: "Informations non visibles sur le réseau"
       details: "L’adresse permet de calculer les distances
-              entre les membres mais ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
+              entre les membres mais n'est ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
       image: ""
       field1: "Adresse postale :"
       field2: "Numéro de téléphone :"

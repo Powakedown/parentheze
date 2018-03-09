@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GuestsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[create index update new welcome]
   before_action :find_guest, only: %i[update welcome]
@@ -64,6 +66,6 @@ class GuestsController < ApplicationController
   end
 
   def set_question
-    @question = @questions[('question'<<session[:form_step]).to_sym]
+    @question = @questions[('question'+session[:form_step]).to_sym]
   end
 end

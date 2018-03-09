@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProfilesController < ApplicationController
   before_action :user_is_current_user, only: %i[create new edit update previous]
   before_action :params_profile, only: %i[validate request_update]
@@ -49,7 +51,7 @@ class ProfilesController < ApplicationController
     user.user_wishes.destroy_all
     wishes = Wish.all.to_a
     wishes.each_with_index do |wish, index|
-      UserWish.create(user: user, wish: wish) if profile_params[("need"<<index.to_s).to_sym].present?
+      UserWish.create(user: user, wish: wish) if profile_params[("need"+index.to_s).to_sym].present?
     end
     profile.save
     redirect_to edit_user_profile_path
