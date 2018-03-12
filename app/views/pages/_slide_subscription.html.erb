@@ -1,25 +1,8 @@
-<div class="container-fluid flex-parent slide-subscription"> <!-- for IE bug -->
-  <div class="flexbox fullscreen text-center" id="inscription-beta" >
-    <div class="row full-width">
-      <div class="col-xs-12 col-md-6 offset-md-3">
-        <h1><%= t('.title') %></h1>
-        <h4 class="margin-bottom-medium"><%= t('.text') %></h4>
-        <div class="row center margin-bottom-medium">
-          <div class="col-xs-12 col-md-8 offset-md-2">
-          <%= simple_form_for :guest, url: guest_path(@guest), method: :patch do |f| %>
-            <p class=" margin-bottom-medium">
-             <label class="checkbox">
-               <input type="checkbox" class="boolean optional" checked="checked" id="bordelais" name="guest[bordelais]" value="1" />
-               <label for="bordelais"><%= t('.checkbox') %></label>
-             </label>
-            </p>
-            <%= f.input :email, label: false, placeholder: t('placeholder.email') %>
-            <%= f.button :submit, value: t('commons.register'), data: { disable_with: "" }, class:"col-xs-12" %>
-          <% end %>
-          </div>
-        </div>
-        <%= render 'scroller', target_page: "slide0", link_image: t('.link_image'), step: 6 %>
-      </div>
+<div class="flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen with-padding-for-xs relative flexbox white-on-purple" id="inscription-beta" >
+    <div class="full-width">
+      <h3 class="text-center"><%= t('.title') %></h3>
+      <%= render "shared/subscription_form" %>
     </div>
   </div>
 </div>

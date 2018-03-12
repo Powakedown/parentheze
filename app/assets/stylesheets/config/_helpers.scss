@@ -29,6 +29,9 @@ $input-height: 56px;
     color: $white;
   }
 }
+.hidden-error, #hidden-error {
+  display: none;
+}
 .margin-top-navbar {
   margin-top: 70px;
 }

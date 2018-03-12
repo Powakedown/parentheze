@@ -158,6 +158,13 @@ fr:
         field1: "prénom, nom ou pseudo :"
         field2: "email* :"
         checkbox: "je ne suis pas un robot"
+    subscription_form:
+      title: "Laissez-nous votre mail pour participer à la phase de Béta-test et faire parti des premiers à découvrir Parentheze :"
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1520794823/parentheze/o-TEEN-AND-PARENTS-AND-TV-570.jpg"
+      btn_text: "ENVOYER"
+      identity:
+        field1: "email :"
+        field1_error: "email non valide"
     navbar:
       login: "connexion"
       sign_up: "s'enregistrer"
@@ -241,7 +248,7 @@ fr:
       text: "nous sommes à la recherche de partenaires, d'associés et de beta-testers"
       link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     slide_subscription:
-      title: "Inscrivez-vous"
+      title: "Devenez béta-testeurs"
       text: "le service est en phase de test, participez à la béta gratuitement."
       link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
       checkbox: "Vous habitez la métropole bordelaise ou proche."
