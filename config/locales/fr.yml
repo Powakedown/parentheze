@@ -168,6 +168,9 @@ fr:
       identity:
         field1: "email :"
         field1_error: "email non valide"
+    profile_card_invitation:
+      title: "Ajoutez des amis ici"
+      reputation: "invitation par email"
     navbar:
       login: "connexion"
       sign_up: "s'enregistrer"
