@@ -76,6 +76,9 @@ fr:
     request_update:
       notice: "Profile envoyé en attente de modification"
     new:
+    index:
+      column1-title: "vous"
+      column2-title: "autour de vous"
     edit:
       card-image: "https://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
       title: "Inscription :"

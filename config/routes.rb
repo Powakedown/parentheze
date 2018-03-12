@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   # INSCRIPTION
   devise_for :users, controllers: { registrations: "my_registrations" }
 
-  resources :users, only: %i[index] do
+  get '/profiles', to: "profiles#index"
+
+  resources :users, only: %i[] do
     resources :profiles, only: %i[new create show edit update] do
       member do
         get 'previous'

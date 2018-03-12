@@ -187,11 +187,17 @@ a:hover.pastille {
   height: 75px;
   color: white;
   background-color: $dark-gray;
-  font-size: 1em;
+  font-size: 28px;
   float: left;
   margin-right: 10px;
   &.pastille-yellow {
     background-color: $yellow;
+  }
+  &.pastille-blue {
+    background-color: $blue;
+  }
+  &.pastille-light-blue {
+    background-color: $light-blue;
   }
   &.pastille-small {
     width: 30px;

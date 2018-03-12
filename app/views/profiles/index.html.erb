@@ -1,1 +1,32 @@
-<%= render "shared/profile-card" %>
+<div class="flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen relative white-on-purple mosaic">
+    <%= render "shared/pastille_action", path: root_path, icon: "fas fa-glass-martini", color: "yellow", class: "pastille_action" %>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="mosaic-header"></div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            <div class="row">
+              <div class="col-12 col-sm-12">
+                <h5><%= t('.column1-title') %></h5>
+
+                <%= render "shared/profile_card", profile: @profile, reputation: "Bonne réputation", distance: "200 mètres" %>
+              </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9">
+            <div class="row">
+              <div class="col-12"><h5><%= t('.column2-title') %></h5></div>
+              <% @profiles.each do |profile| %>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3"><%= render "shared/profile_card", profile: profile, reputation: "Bonne réputation", distance: "200 mètres" %>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
