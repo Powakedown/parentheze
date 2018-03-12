@@ -39,6 +39,10 @@ class Profile < ApplicationRecord
     step == 6
   end
 
+  def validated?
+    validation == 1
+  end
+
   def names
     mother_first_name + (father_first_name.present? ? " & " + father_first_name : "" )
   end

@@ -200,6 +200,7 @@ fr:
       text2: "le service est en phase de test, participez à la béta gratuitement."
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
       after_subscription: "Votre compte est en attente de validation..."
+      validated: "Entrer"
       calltoaction: "Créer mon compte"
       link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     slide_plan:
