@@ -2,7 +2,7 @@
   <div class="fullscreen relative flexbox-bottom white-on-purple" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
     <div class="slide<%= id %>">
       <h1 class=""><%= slide[:title] %></h1>
-      <h5 class="margin-bottom-medium"><%= slide[:text] %></h5>
+      <h4 class="margin-bottom-medium"><%= slide[:text] %></h4>
       <% if @session_ways %>
         <% if current_user %>
           <div class="btn btn-yellow margin-bottom-medium"><%= slide[:after_subscription] %></div>

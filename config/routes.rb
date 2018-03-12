@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   get '/welcome', to: 'guests#welcome'
 
   # INSCRIPTION
-  devise_for :users, :controllers => { :registrations => "my_registrations" }
+  devise_for :users, controllers: { registrations: "my_registrations" }
 
-  resources :users, only: %i[] do
+  resources :users, only: %i[index] do
     resources :profiles, only: %i[new create show edit update] do
       member do
         get 'previous'
