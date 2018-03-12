@@ -40,12 +40,12 @@ document.addEventListener("DOMContentLoaded", function()  {
   function checkMailOnClick(e) {
     var submit = this;
 
-    if(emailField.value.match(pattern)){
+    if(emailFields[1].value.match(pattern)){
       resetError(submit, errorLabel);
     }
     else {
       e.preventDefault();
-      displayError(emailField, errorLabel);
+      displayError(emailFields[1], errorLabel);
     }
   }
 
