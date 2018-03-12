@@ -42,5 +42,12 @@
     color: $gray;
     line-height: 11px;
   }
+  &.empty {
+    background-color: rgba(140,20,124,0.02);
+    border-color: rgba(255,255,255,0.02);
+    border-size: 1px;
+    border-style: solid;
+
+  }
 
 }

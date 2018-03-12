@@ -170,7 +170,12 @@ fr:
         field1_error: "email non valide"
     profile_card_invitation:
       title: "Ajoutez des amis ici"
-      reputation: "invitation par email"
+      reputation: "superbe invitation"
+      distance: "préconçue par email"
+    profile_card_school:
+      title: "Secouez votre école"
+      reputation: "nous envoyons pour vous"
+      distance: "les invitations"
     navbar:
       login: "connexion"
       sign_up: "s'enregistrer"
