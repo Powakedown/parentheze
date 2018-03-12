@@ -9,7 +9,7 @@
           <p><%= t('.title') %></p>
           <div class="bar"></div>
           <p> <%= t('.identity.field1') %></p>
-          <%= f.input :email, label: false, input_html: {value: session[:contact_email] || "" } %>
+          <%= f.input :email, label: false, input_html: {value: session[:contact_email] || "", class:"email-field"} %>
           <p class="red" id="hidden-error"> <%= t('.identity.field1_error') %></p>
           <%= f.button :submit, value: t('.btn_text'), data: { disable_with: "" }, class:"contact-button", id: "submit_mail" %>
         </div>

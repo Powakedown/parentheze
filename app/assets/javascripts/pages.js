@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function()  {
+
+  //SCROLLER
+
   $(window).scroll(function() {
     $("#animatedElement").each(function(){
     var imagePos = $(this).offset().top;
@@ -18,16 +21,27 @@ document.addEventListener("DOMContentLoaded", function()  {
     }, 500);
   });
 
+
+  // REGEX MAIL
+
   var submitMail = document.getElementById('submit_mail');
   var pattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  var emailField = document.getElementById('guest_email');
+  var emailFields = document.getElementsByClassName('email-field');
   var errorLabel = document.getElementById('hidden-error');
 
+  submitMail.addEventListener("click", checkMailOnClick, true);
+
+  for(i = 0;i<emailFields.length;i++) {
+    if (emailFields[i]) {
+      emailFields[i].addEventListener("keydown", checkMailOnKeydown, true);
+    }
+  }
+
   function checkMailOnClick(e) {
-    var input = this;
+    var submit = this;
 
     if(emailField.value.match(pattern)){
-      resetError(input, errorLabel);
+      resetError(submit, errorLabel);
     }
     else {
       e.preventDefault();
@@ -38,16 +52,15 @@ document.addEventListener("DOMContentLoaded", function()  {
   function checkMailOnKeydown(e) {
     var input = this;
     input.style.color = "light-gray";
-
     setTimeout(function(){
       if(input.value.match(pattern)){
         resetError(input, errorLabel);
       }
-      else if (input.value.length > 15) {
-        displayError(input, errorLabel);
-      }
       else if (input.value.length == 0) {
         resetError(input, errorLabel);
+      }
+      else if (input.value.length > 12) {
+        displayError(input, errorLabel);
       }
     }, 10);
   }
@@ -66,9 +79,4 @@ document.addEventListener("DOMContentLoaded", function()  {
     }
   }
 
-  submitMail.addEventListener("click", checkMailOnClick, true);
-
-  if (submitMail) {
-    emailField.addEventListener("keydown", checkMailOnKeydown, false);
-  }
 });
