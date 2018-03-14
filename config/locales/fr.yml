@@ -191,8 +191,11 @@ fr:
       button1_text: "Continuer"
       button2_text: "en savoir plus"
     footer:
-      admin: "Admin"
+      admin: "admin"
       about: "A propos de nous"
+      legal: "Mentions légales"
+      why: "Pourquoi parentheze ?"
+      chart: "Charte"
   pages:
     home:
       title: "Parentheze, la nouvelle vie des parents."
