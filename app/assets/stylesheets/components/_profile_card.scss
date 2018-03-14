@@ -49,7 +49,27 @@
     border-color: rgba(255,255,255,0.02);
     border-size: 1px;
     border-style: solid;
-
   }
-
+  .card-promotion {
+    min-height: 20px;
+    color: white;
+    background-color: $orange;
+    width: 130px;
+    box-shadow: $shadow;
+    position: absolute;
+    top: 20px;
+    left: -5px;
+    padding: 2px 2px 2px 10px;
+  }
+  .card-free {
+    min-height: 20px;
+    color: white;
+    background-color: $red;
+    width: 130px;
+    box-shadow: $shadow;
+    position: absolute;
+    top: 50px;
+    left: -5px;
+    padding: 2px 2px 2px 10px;
+  }
 }

@@ -1,11 +1,17 @@
-<%= link_to root_path do %>
+<%= link_to link do %>
   <div class="profile-card">
-    <div class="profile-card-portrait" style="background-image: url('<%= cl_image_path "parentheze/profile-card-invitation2.png" %>')">
+    <% if promotion %>
+      <div class="card-promotion"><%= t('card.promotion') %></div>
+    <% end %>
+    <% if free %>
+      <div class="card-free"><%= t('card.free') %></div>
+    <% end %>
+    <div class="profile-card-portrait" style="background-image: url('<%= cl_image_path image %>')">
     </div>
     <div class="profile-card-description text-center">
-      <h5 class="name"><%= t('.title') %></h5>
-      <h5 class="reputation"><%= t('.reputation') %></h5>
-      <h5 class="reputation"><%= t('.distance') %></h5>
+      <h5 class="name"><%= title %></h5>
+      <h5 class="reputation"><%= text1 %></h5>
+      <h5 class="reputation"><%= text2 %></h5>
     </div>
   </div>
 <% end %>

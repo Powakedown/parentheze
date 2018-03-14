@@ -1,0 +1,68 @@
+.over-footer {
+  position: relative;
+  min-height: 180px;
+  background-color: $purple;
+  color: white;
+  padding: 20px 0 38px 0;
+  a {
+    color: white;
+    &:hover {
+      color: $yellow;
+    }
+  }
+  .over-footer-form {
+    border-radius: $border-radius;
+    position: relative;
+    @include media-breakpoint-down(lg) {
+      min-height: 115px;
+      width: 95%;
+      textarea {
+        border: none;
+        height: 115px;
+      }
+      .over-footer-button {
+        width: 100%;
+        background-color: $yellow;
+        border-radius: $border-radius;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      height: 115px;
+      width: 880px;
+      .form-control:focus, textarea:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+      textarea {
+        padding: 10px 15px 10px 15px;
+        border: none;
+        width: calc(100% - 115px);
+        margin-top: 10px;
+        min-height: 105px;
+      }
+      .over-footer-button {
+        height: 115px !important;
+        width: 115px;
+        background-color: $yellow;
+        border-radius: $border-radius;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+  }
+
+  .footer-line-dark {
+    width: 100%;
+    height: 2px;
+    background-color: $black;
+    margin-top: 40px;
+  }
+  .footer-line-light {
+    width: 100%;
+    height: 2px;
+    background-color: $light-purple;
+  }
+}
