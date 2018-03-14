@@ -26,6 +26,7 @@ Rails.application.routes.draw do
         get 'previous'
         get 'validate'
         get 'request_update'
+        get 'add_friends'
       end
     end
   end

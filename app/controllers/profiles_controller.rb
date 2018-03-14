@@ -1,10 +1,9 @@
 class ProfilesController < ApplicationController
-  before_action :user_is_current_user, only: %i[create new edit index update previous]
+  before_action :user_and_profile, only: %i[create new edit index update previous add_friends]
   before_action :params_profile, only: %i[validate request_update]
 
 
-  def add_friend
-
+  def add_friends
   end
 
   def add_wishes(user, profile)
@@ -128,8 +127,9 @@ class ProfilesController < ApplicationController
 
   private
 
-  def user_is_current_user
+  def user_and_profile
     @user = current_user
+    @profile = @user.profile
   end
 
   def params_profile
