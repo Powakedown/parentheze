@@ -12,7 +12,8 @@ class User < ApplicationRecord
   delegate :mother_first_name, :father_first_name, :address, :kids, :phone, :comment, :validation, :photo, :step, to: :profile, :allow_nil => true
 
   has_one :profile, dependent: :destroy
-  has_many :bookings
+  has_many :favorites, dependent: :destroy
+  has_many :bookings, dependent: :destroy
   has_many :user_wishes, dependent: :destroy
   has_many :wishes, through: :user_wishes
 
