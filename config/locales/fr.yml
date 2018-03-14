@@ -59,6 +59,8 @@ fr:
       subquery: "password"
       alert: "Accès non autorisé"
   profiles:
+    add_friend:
+      title: "Inviter un ami sur Parentheze"
     profile:
       card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
       field1: Prénom du parent1

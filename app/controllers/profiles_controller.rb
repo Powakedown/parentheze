@@ -2,20 +2,19 @@ class ProfilesController < ApplicationController
   before_action :user_is_current_user, only: %i[create new edit index update previous]
   before_action :params_profile, only: %i[validate request_update]
 
-  def new
-    @profile = @user.profile || Profile.new(user: @user, step: 1, validation: 0)
-    @profile.step = 1 if @profile.step < 1
-    @profile.save!
-    @step = @profile.step
-    redirect_to edit_user_profile_path(@user, @profile)
+
+  def add_friend
+
   end
 
-  def show
-  end
-
-  def index
-    @profiles = Profile.validated.where.not(user_id: @user.id)
-    @profile = @user.profile
+  def add_wishes(user, profile)
+    user.user_wishes.destroy_all
+    wishes = Wish.all.to_a
+    wishes.each_with_index do |wish, index|
+      UserWish.create(user: user, wish: wish) if profile_params[("need"<<index.to_s).to_sym].present?
+    end
+    profile.save
+    redirect_to edit_user_profile_path
   end
 
   def edit
@@ -31,33 +30,9 @@ class ProfilesController < ApplicationController
     @step = @profile.step
   end
 
-  def update
+  def index
+    @profiles = Profile.validated.where.not(user_id: @user.id)
     @profile = @user.profile
-    @profile.step += 1
-    if @profile.step5?
-      add_wishes(@user, @profile)
-    else
-      if @profile.update(profile_params)
-        redirect_to edit_user_profile_path
-        inscription_done(@user) if @profile.step6?
-      else
-        notice = ''
-        @profile.errors.messages.each do |key, value|
-          notice << value.first << '. <br/>'
-        end
-        redirect_to edit_user_profile_path, alert: notice
-      end
-    end
-  end
-
-  def add_wishes(user, profile)
-    user.user_wishes.destroy_all
-    wishes = Wish.all.to_a
-    wishes.each_with_index do |wish, index|
-      UserWish.create(user: user, wish: wish) if profile_params[("need"<<index.to_s).to_sym].present?
-    end
-    profile.save
-    redirect_to edit_user_profile_path
   end
 
   def inscription_done(user)
@@ -65,16 +40,20 @@ class ProfilesController < ApplicationController
     UserMailer.new_registration_notification.deliver_later
   end
 
-  def validate
-    @profile.validation = 1
-    if @profile.save
-      flash[:notice] = t('.notice')
-      redirect_to admin_validations_path
-      UserMailer.validation(@profile.user).deliver_later
-    else
-      flash[:warning] = t('.alert')
-      redirect_to admin_validations_path
-    end
+  def new
+    @profile = @user.profile || Profile.new(user: @user, step: 1, validation: 0)
+    @profile.step = 1 if @profile.step < 1
+    @profile.save!
+    @step = @profile.step
+    redirect_to edit_user_profile_path(@user, @profile)
+  end
+
+
+  def previous
+    @profile = @user.profile
+    @profile.step -= 1
+    @profile.save!
+    redirect_to edit_user_profile_path(@user)
   end
 
   def request_update
@@ -112,11 +91,39 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def previous
+  def show
+  end
+
+
+  def update
     @profile = @user.profile
-    @profile.step -= 1
-    @profile.save!
-    redirect_to edit_user_profile_path(@user)
+    @profile.step += 1
+    if @profile.step5?
+      add_wishes(@user, @profile)
+    else
+      if @profile.update(profile_params)
+        redirect_to edit_user_profile_path
+        inscription_done(@user) if @profile.step6?
+      else
+        notice = ''
+        @profile.errors.messages.each do |key, value|
+          notice << value.first << '. <br/>'
+        end
+        redirect_to edit_user_profile_path, alert: notice
+      end
+    end
+  end
+
+  def validate
+    @profile.validation = 1
+    if @profile.save
+      flash[:notice] = t('.notice')
+      redirect_to admin_validations_path
+      UserMailer.validation(@profile.user).deliver_later
+    else
+      flash[:warning] = t('.alert')
+      redirect_to admin_validations_path
+    end
   end
 
   private
