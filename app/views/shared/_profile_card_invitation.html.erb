@@ -1,7 +1,10 @@
 <%= link_to link do %>
   <div class="profile-card">
     <% if promotion %>
-      <div class="promotion"><%= t('card.promotion') %></div>
+      <div class="card-promotion"><%= t('card.promotion') %></div>
+    <% end %>
+    <% if free %>
+      <div class="card-free"><%= t('card.free') %></div>
     <% end %>
     <div class="profile-card-portrait" style="background-image: url('<%= cl_image_path image %>')">
     </div>

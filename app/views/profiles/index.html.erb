@@ -30,7 +30,8 @@
                                                              text1: t('card.invitation.text1'),
                                                              text2: t('card.invitation.text2'),
                                                              link: root_path,
-                                                             promotion: false %>
+                                                             promotion: false,
+                                                             free: false %>
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <%= render "shared/profile_card_invitation", image: t('card.school.image'),
@@ -38,7 +39,8 @@
                                                          text1: t('card.school.text1'),
                                                          text2: t('card.school.text2'),
                                                          link: root_path,
-                                                         promotion: true %>
+                                                         promotion: true,
+                                                         free: true %>
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                 <%= render "shared/profile_card_invitation", image: t('card.visitcard.image'),
@@ -46,7 +48,8 @@
                                                          text1: t('card.visitcard.text1'),
                                                          text2: t('card.visitcard.text2'),
                                                          link: root_path,
-                                                         promotion: true %>
+                                                         promotion: true,
+                                                         free: true %>
               </div>
             <% 3.times do %>
               <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">

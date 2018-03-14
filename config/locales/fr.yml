@@ -160,6 +160,7 @@ fr:
       details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
   card:
     promotion: "Durée limitée"
+    free: "Gratuit"
     invitation:
       title: "Ajoutez des amis ici"
       text1: "superbe invitation"
