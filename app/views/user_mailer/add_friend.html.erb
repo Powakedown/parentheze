@@ -11,19 +11,17 @@
 
                   <%= render "user_mailer/onboarding/logo" %>
 
-                  <%= render "user_mailer/onboarding/title",  title: "Bienvenue sur Parentheze, votre profil est en cours de validation.",
-                                                  text: "Nous créons un réseau de confiance, les profils ont besoin d'être validés. L'expérience n'en sera que meilleure. Surveillez votre boîte mail, vous serez notifié. Si vous ne recevez pas le mail de validation rapidement, consultez les spams ou rendez-vous sur le site directement." %>
+                  <%= render "user_mailer/components/add_friend_chat" %>
 
-                  <%= render "user_mailer/onboarding/calltoaction", btn_text: "Aller sur Parentheze",
-                                                        link: "http://www.parentheze.com" %>
+                  <%= render "user_mailer/components/separation_bar" %>
 
-                  <%= render "user_mailer/onboarding/text", strong_text: "Parentheze est en béta",
-                                                text: "le service va s'améliorer avec vous, grâce à vous. Nous essayons de répondre au mieux à vos besoins. N'hésitez pas et :" %>
+                  <%= render "user_mailer/onboarding/title",  title: "#{@host_names.capitalize} vous #{ @host_is_couple ? "invitent à" : "invite à" } rejoindre Parentheze",
+                                                              text: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants." %>
 
-                  <%= render "user_mailer/onboarding/calltoaction", btn_text: "Écrivez-nous",
-                                                        link: "mailto: parentgenial@parentheze.com" %>
+                  <%= render "user_mailer/onboarding/text", strong_text: "Parentheze",
+                                                            text: " la nouvelle vie des parents, est le site réservé exclusivement aux parents. Grâce à Parentheze, retrouvez les parents autour de vous qui ont les mêmes besoins, les mêmes contraintes et sont à la recherche de nouvelles solutions." %>
 
-                  <%= render "user_mailer/onboarding/bigphoto", photo: "https://res.cloudinary.com/doodlid/image/upload/v1519923591/parentheze/polaroid_mail_photo02.png" %>
+                  <%= render "user_mailer/onboarding/calltoaction", btn_text: "Rejoignez #{@host_names} sur Parentheze", color: "#469AE0", link: "https://www.parentheze.com" %>
 
                   <%= render "user_mailer/onboarding/footer" %>
 

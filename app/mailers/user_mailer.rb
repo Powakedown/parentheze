@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
 
   def welcome(guest)
     @user = guest
-    @url  = 'http://www.parentheze.com'
+    @url  = 'https://www.parentheze.com'
     mail(to: @user.email,
          from: 'parentgenial@parentheze.com',
          subject: 'Inscription à la béta de parentheze',
@@ -26,7 +26,7 @@ class UserMailer < ApplicationMailer
 
   def new_registration(user)
     @user = user
-    @url  = 'http://www.parentheze.com'
+    @url  = 'https://www.parentheze.com'
     mail(to: @user.email,
          from: 'parentgenial@parentheze.com',
          subject: 'Inscription à la béta de parentheze',
@@ -50,18 +50,21 @@ class UserMailer < ApplicationMailer
          track_opens: 'true')
   end
 
-  def invitation(user)
-    @user = user
-    @url  = 'http://www.parentheze.com'
-    mail(to: @user.email,
-         from: 'parentgenial@parentheze.com',
-         subject: @user.names + " vous invite à les rejoindre sur Parentheze",
+  def add_friend(friend_mail, host_mail, host_photo, host_names, host_is_couple)
+    @friend_mail = friend_mail
+    @host_mail = host_mail
+    @host_photo = host_photo
+    @host_names = host_names
+    @host_is_couple = host_is_couple
+    mail(to: @friend_mail,
+         from: @host_mail,
+         subject: @host_names + " vous invite à les rejoindre sur Parentheze",
          track_opens: 'true')
   end
 
   def validation(user)
     @user = user
-    @url  = 'http://www.parentheze.com'
+    @url  = 'https://www.parentheze.com'
     mail(to: @user.email,
          from: 'parentgenial@parentheze.com',
          subject: 'Votre profil est validé!',
@@ -71,7 +74,7 @@ class UserMailer < ApplicationMailer
   def request_update(user, profile, params)
     @user = user
     @profile = profile
-    @url  = 'http://www.parentheze.com'
+    @url  = 'https://www.parentheze.com'
     @params = params
     mail(to: @user,
          from: 'parentgenial@parentheze.com',

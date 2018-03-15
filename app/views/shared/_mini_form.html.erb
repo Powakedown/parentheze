@@ -1,7 +1,7 @@
 <div class="full-width">
   <%= simple_form_for :message, url: path, method: :get do |f| %>
     <div class="col-12 col-sm-8">
-      <%= f.input :comment, label: false, placeholder: placeholder %>
+      <%= f.input :comment, label: false, placeholder: placeholder, input_html: {value: value || "" }  %>
     </div>
     <div class="col-12 col-sm-4">
     <%= f.button :submit, value: t('commons.button.send'), data: { disable_with: "" } %>

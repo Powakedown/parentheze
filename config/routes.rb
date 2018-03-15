@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/welcome', to: 'guests#welcome'
   get "/contact", to: "messengers#contact"
   get "/mini_contact", to: "messengers#mini_contact"
+  get "/add_friend", to: "messengers#add_friend"
 
 
   # INSCRIPTION
