@@ -1,0 +1,39 @@
+<div style="font-size:16px;min-width:100%;font-weight:normal;padding:0;margin:0;line-height:1.3;color:#7E7E7E;text-align:left;width:100%!important;">
+  <table style="border-spacing:0;border-collapse:collapse;vertical-align:top;font-weight:normal;margin:0;text-align:left;font-size:16px;line-height:19px;background:#f3f3f3;padding:0;width:100%;min-height:100%;color:#0a0a0a;margin-bottom:0px!important;background-color:white;">
+      <tbody>
+        <tr style="padding:0;vertical-align:top;text-align:left;">
+        <td align="center" valign="top" style="font-size:16px;word-wrap:break-word;vertical-align:top;text-align:left;line-height:1.3;color:#0a0a0a;padding:0;margin:0;font-weight:normal;border-collapse:collapse!important;">
+          <center style="width:100%;min-width:580px;">
+            <table style="border-spacing:0;border-collapse:collapse;padding:0;vertical-align:top;background:#fefefe;width:580px;margin:0 auto;text-align:inherit;max-width:580px;">
+              <tbody>
+                <tr style="padding:0;vertical-align:top;text-align:left;">
+                  <td style="font-size:16px;word-wrap:break-word;vertical-align:top;text-align:left;line-height:1.3;color:#0a0a0a;padding:0;margin:0;font-weight:normal;border-collapse:collapse!important;">
+
+                  <%= render "user_mailer/onboarding/logo" %>
+
+                  <%= render "user_mailer/onboarding/title",  title: "Bienvenue sur Parentheze, votre profil est en cours de validation.",
+                                                  text: "Nous créons un réseau de confiance, les profils ont besoin d'être validés. L'expérience n'en sera que meilleure. Surveillez votre boîte mail, vous serez notifié. Si vous ne recevez pas le mail de validation rapidement, consultez les spams ou rendez-vous sur le site directement." %>
+
+                  <%= render "user_mailer/onboarding/calltoaction", btn_text: "Aller sur Parentheze",
+                                                        link: "http://www.parentheze.com" %>
+
+                  <%= render "user_mailer/onboarding/text", strong_text: "Parentheze est en béta",
+                                                text: "le service va s'améliorer avec vous, grâce à vous. Nous essayons de répondre au mieux à vos besoins. N'hésitez pas et :" %>
+
+                  <%= render "user_mailer/onboarding/calltoaction", btn_text: "Écrivez-nous",
+                                                        link: "mailto: parentgenial@parentheze.com" %>
+
+                  <%= render "user_mailer/onboarding/bigphoto", photo: "https://res.cloudinary.com/doodlid/image/upload/v1519923591/parentheze/polaroid_mail_photo02.png" %>
+
+                  <%= render "user_mailer/onboarding/footer" %>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </center>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

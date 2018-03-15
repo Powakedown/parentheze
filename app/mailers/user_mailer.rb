@@ -50,6 +50,15 @@ class UserMailer < ApplicationMailer
          track_opens: 'true')
   end
 
+  def invitation(user)
+    @user = user
+    @url  = 'http://www.parentheze.com'
+    mail(to: @user.email,
+         from: 'parentgenial@parentheze.com',
+         subject: @user.names + " vous invite à les rejoindre sur Parentheze",
+         track_opens: 'true')
+  end
+
   def validation(user)
     @user = user
     @url  = 'http://www.parentheze.com'

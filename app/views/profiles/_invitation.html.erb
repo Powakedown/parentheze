@@ -1,0 +1,17 @@
+<div class="mailer-preview-frame black-on-white">
+  <%= cl_image_tag ("parentheze/Parentheze_logo_black.svg"), class:"mailer-preview-logo" %>
+  <%= cl_image_tag ("parentheze/inscription_exemple_04.jpg"), class:"mailer-preview-portrait" %>
+
+  <h3><%= t('.title') %></h3>
+  <p><%= t('.text1') %></p>
+  <p><%= t('.text2') %></p>
+
+  <%= link_to t('btn_text'), "https://www.parentheze.com", class:"btn btn-yellow" %>
+
+  <%= cl_image_tag "parentheze/polaroid_mail_photo02.png" %>
+
+  <div class="mailer-preview-bar"></div>
+
+  <h5><%= t('.footer.line1') %></h5>
+  <h5><%= t('.footer.line2') %></h5>
+</div>

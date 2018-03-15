@@ -23,6 +23,11 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.validation(@user)
   end
 
+  def invitation
+    @user = User.last
+    UserMailer.invitation(@user)
+  end
+
   def request_update
     @user = User.last
     UserMailer.request_update(@user, params)

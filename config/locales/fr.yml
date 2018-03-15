@@ -69,6 +69,14 @@ fr:
   profiles:
     add_friend:
       title: "Inviter un ami sur Parentheze"
+    invitation:
+      title: "vous invite à les rejoindre sur Parentheze"
+      text: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."
+      text2: "Parentheze, la nouvelle vie des parents, est le site réservé exclusivement aux parents. Grâce à Parentheze, retrouvez les parents autour de vous, qui ont les mêmes besoins, les mêmes contraintes et sont à la recherche de nouvelles solutions. "
+      footer:
+        line1: "Envoyé avec ♥︎ par Parentheze"
+        line2: "Parentheze - Bordeaux"
+      btn_text: "Aller sur Parentheze"
     profile:
       card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
       field1: Prénom du parent1
