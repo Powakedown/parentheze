@@ -61,10 +61,17 @@ $input-height: 56px;
 .margin-bottom-medium {
   margin-bottom: 1.3em !important;
 }
+.margin-bottom-big {
+  margin-bottom: 1.8em !important;
+}
 @media (max-width : 375px){
   .margin-bottom-medium {
     margin-bottom: 0.8em !important;
   }
+}
+.separator-vertical {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .margin-top-small {
   margin-top: 20px;
@@ -84,6 +91,15 @@ $input-height: 56px;
   border: $border-light;
   border-radius: $border-radius;
 }
+// BAR AND LINE
+.bar-separator {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 40%;
+  height: 5px;
+  background-color: $yellow;
+}
+
 .underline {
   border-bottom: $border-medium;
   padding-bottom: 5px;

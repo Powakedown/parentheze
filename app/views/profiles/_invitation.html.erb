@@ -1,17 +1,35 @@
 <div class="mailer-preview-frame black-on-white">
-  <%= cl_image_tag ("parentheze/Parentheze_logo_black.svg"), class:"mailer-preview-logo" %>
-  <%= cl_image_tag ("parentheze/inscription_exemple_04.jpg"), class:"mailer-preview-portrait" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= cl_image_tag ("parentheze/Parentheze_logo_black.svg"), class:"mailer-preview-logo" %>
+      </div>
+      <div class="col-12 col-md-12 separator-vertical">
+        <%= cl_image_tag ("parentheze/inscription_exemple_04.jpg"), class:"mailer-preview-portrait" %>
+        <%= cl_image_tag ("parentheze/invitation_bubble.png") %>
+      </div>
+      <div class="col-12 col-md-9 separator-vertical text-right">
+        <%= cl_image_tag ("parentheze/invitation_bubble_2.png") %>
+      </div>
 
-  <h3><%= t('.title') %></h3>
-  <p><%= t('.text1') %></p>
-  <p><%= t('.text2') %></p>
+      <div class="col-12 col-md-9">
+        <div class="bar-separator"></div>
+      </div>
 
-  <%= link_to t('btn_text'), "https://www.parentheze.com", class:"btn btn-yellow" %>
+      <div class="col-12 col-md-9 separator-vertical">
+        <h3 class="separator-vertical"><%= "Maxime et Juliette " + t('.title') %></h3>
+        <p class="separator-vertical"><%= t('.text1') %></p>
+        <p class="separator-vertical"><%= t('.text2') %></p>
+      </div>
 
-  <%= cl_image_tag "parentheze/polaroid_mail_photo02.png" %>
+      <div class="col-12 col-md-9 separator-vertical">
+      <%= link_to t('.btn_text'), "https://www.parentheze.com", class:"btn btn-blue separator-vertical" %>
+      </div>
+      <div class="mailer-preview-bar separator-vertical"></div>
 
-  <div class="mailer-preview-bar"></div>
-
-  <h5><%= t('.footer.line1') %></h5>
-  <h5><%= t('.footer.line2') %></h5>
+      <div class="col-12 col-md-9 ">
+        <h5><%= t('.footer.line1') %></h5>
+      </div>
+    </div>
+  </div>
 </div>

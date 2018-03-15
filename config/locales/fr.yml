@@ -68,15 +68,17 @@ fr:
       be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
   profiles:
     add_friend:
-      title: "Inviter un ami sur Parentheze"
+      column-title: "Invitation d'ami(s)"
+      title: "Parrainer des amis sur Parentheze en les invitant :"
+      subtitle: "( ajouter plusieurs adresses mail en les séparant par « ; » )  "
+      preview: "Aperçu du message envoyé vos amis :"
     invitation:
-      title: "vous invite à les rejoindre sur Parentheze"
-      text: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."
-      text2: "Parentheze, la nouvelle vie des parents, est le site réservé exclusivement aux parents. Grâce à Parentheze, retrouvez les parents autour de vous, qui ont les mêmes besoins, les mêmes contraintes et sont à la recherche de nouvelles solutions. "
+      title: "vous invitent à les rejoindre sur Parentheze"
+      text1: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."
+      text2: "Parentheze, la nouvelle vie des parents, est le site réservé exclusivement aux parents. Grâce à Parentheze, retrouvez les parents autour de vous qui ont les mêmes besoins, les mêmes contraintes et sont à la recherche de nouvelles solutions. "
       footer:
-        line1: "Envoyé avec ♥︎ par Parentheze"
-        line2: "Parentheze - Bordeaux"
-      btn_text: "Aller sur Parentheze"
+        line1: "Envoyé avec ♥︎ par Parentheze depuis Bordeaux"
+      btn_text: "Rejoignez Maxime et Juliette sur Parentheze"
     profile:
       card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
       field1: Prénom du parent1
