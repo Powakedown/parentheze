@@ -71,7 +71,7 @@ fr:
       column-title: "Invitation d'ami(s)"
       title: "Parrainer des amis sur Parentheze en les invitant :"
       subtitle: "( ajouter plusieurs adresses mail en les séparant par « ; » )  "
-      preview: "Aperçu du message envoyé vos amis :"
+      preview: "Aperçu du message envoyé à vos amis :"
     invitation:
       title: "vous invitent à les rejoindre sur Parentheze"
       text1: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."
@@ -90,6 +90,8 @@ fr:
       field7: "Photo :"
       btn_text1: "valider"
       btn_text2: "demander les modifs"
+    self_profile:
+      title: "vous"
     validate:
       notice: "Profil validé"
       alert: "Validation échouée, vérifier les logs"

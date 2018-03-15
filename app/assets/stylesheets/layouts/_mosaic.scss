@@ -11,6 +11,8 @@
   }
 }
 .page-wrapper {
-  padding: 40px;
-
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  @include media-breakpoint-down(sm) { padding: 20px 10px 20px 10px; }
+  @include media-breakpoint-up(sm) { padding: 40px; }
 }
