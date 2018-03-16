@@ -200,7 +200,8 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 //COMPONENTS
 
 a:hover.pastille {
-  color: $light-yellow;
+  background-color: $light-yellow;
+  color: white;
 }
 .pastille {
   border-radius: 50%;
@@ -227,13 +228,6 @@ a:hover.pastille {
   &.pastille-small {
     width: 30px;
     height: 30px;
-  }
-  &.pastille-action {
-    position: absolute;
-    right: 2%;
-    @include media-breakpoint-down(xs) { top: 75px; }
-    @include media-breakpoint-up(xs) { top: 100px; }
-    z-index: 500;
   }
   &.pastille-close {
     position: absolute;

@@ -16,3 +16,10 @@
   @include media-breakpoint-down(sm) { padding: 20px 10px 20px 10px; }
   @include media-breakpoint-up(sm) { padding: 40px; }
 }
+.buttons-menu {
+  position: absolute;
+  right: 2%;
+  @include media-breakpoint-down(xs) { top: 75px; }
+  @include media-breakpoint-up(xs) { top: 100px; }
+  z-index: 500;
+}
