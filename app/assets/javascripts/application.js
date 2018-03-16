@@ -6,6 +6,7 @@
 //= require cloudinary/jquery.cloudinary
 //= require bootstrap
 //= require flash
-//= require regex
+//= require field_test
+
 
 

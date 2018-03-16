@@ -26,7 +26,7 @@ class MessengersController < ApplicationController
   end
 
   def add_friend
-    @emails = @message[:comment].split(";").select{|word| email_valid(word)}
+    @emails = @message[:comment].split(";").map(&:strip).select{|word| email_valid(word)}
     unless @emails.empty?
       @emails.each do |mail|
         UserMailer.add_friend(mail, @user.email, @user.photo.path.presence, @user.names, @user.profile.couple?).deliver_now
