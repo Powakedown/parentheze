@@ -77,7 +77,7 @@ fr:
     add_friend:
       column-title: "Invitation d'ami(s)"
       title: "Parrainer des amis sur Parentheze en les invitant :"
-      subtitle: "( ajouter plusieurs adresses mails en les séparant par « ; » )  "
+      subtitle: "( ajouter plusieurs adresses mails en les séparant par «;» )  "
       preview: "Aperçu du message envoyé à vos amis :"
     ask_for_cards:
       column-title: "Carte d'invitation"
