@@ -72,6 +72,7 @@ fr:
     ask_for_cards:
       subject: "Demande de membre Parentheze : cartes d'invitations"
       notice: "Merci, nous allons préparer votre lot de carte au plus vite !"
+      warning: "Veuillez remplir le champ nom correctement."
   profiles:
     add_friend:
       column-title: "Invitation d'ami(s)"
@@ -86,6 +87,7 @@ fr:
       title2: "Avez-vous pensé à envoyer les invitations mails ?"
       btn_text2: "Elles sont belles et n'attendent que vous"
       preview: "Voici les cartes que vous allez recevoir :"
+      placeholder: "précisez votre nom, c'est mieux pour le facteur ;)"
     add_friend_preview:
       title: " vous %{verb} à les rejoindre sur Parentheze"
       text1: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."

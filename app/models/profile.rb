@@ -10,6 +10,7 @@ class Profile < ApplicationRecord
   validates :address, presence: true, :if => :step4?
   validates :photo, presence: true, :if => :step6?
 
+
   belongs_to :user
 
   delegate :email, :admin, to: :user, :allow_nil => true

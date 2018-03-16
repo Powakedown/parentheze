@@ -1,6 +1,6 @@
 class MessengersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[contact mini_contact]
-  before_action :message_from_params, only: %i[contact add_friend mini_contact]
+  before_action :message_from_params, only: %i[contact add_friend mini_contact ask_for_cards]
   before_action :who_is_user, only: %i[add_friend mini_contact ask_for_cards]
 
   def contact
@@ -41,9 +41,15 @@ class MessengersController < ApplicationController
   end
 
   def ask_for_cards
-    UserMailer.notification(t('.subject'), @user.email, @user.address, @user.names).deliver_now
-    flash[:notice] = t('.notice')
-    redirect_to profiles_path
+    @profile.card += 1
+    @profile.name = @message[:comment]
+    unless @message[:comment].present?
+      flash[:warning] = t('.warning')
+    elsif @profile.save!
+      UserMailer.notification(t('.subject'), @user.email, @user.address, @user.names).deliver_now
+      flash[:notice] = t('.notice')
+      redirect_to profiles_path
+    end
   end
 
   def mini_contact

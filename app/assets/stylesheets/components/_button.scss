@@ -1,6 +1,6 @@
 .btn, input.btn, select.btn {
   color: white;
-  background-color: $yellow;
+  // background-color: $yellow;
   border-radius: $border-radius;
   height: auto !important;
   height: $input-height; // for IE
@@ -15,7 +15,7 @@
   -webkit-box-shadow: none;
   border-bottom:none;
   cursor: pointer;
-  white-space: normal;
+  // white-space: normal;
   &.btn-calltoaction {
     min-height: 75px;
     font-size: 0.9em;
