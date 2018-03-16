@@ -1,18 +1,46 @@
-<div class="footer white-on-purple flexbox">
-  <div class="text-center container">
-    <%= cl_image_tag("parentheze/Parentheze_logo.svg", class: "logo margin-bottom-medium") %>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4 margin-bottom-small">
-        <%= link_to t('shared.navbar.why'), pourquoi_parentheze_path %>
+<div class="footer">
+  <div class="splash-image" id="footer-splash">
+    <%= cl_image_tag("parentheze/parent_dancing.gif") %>
+  </div>
+  <div class="text-center container ">
+    <div class="row footer-menu">
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5><%= link_to t('.about'), pourquoi_parentheze_path %></h5>
       </div>
-      <div class="col-xs-12 col-sm-4 margin-bottom-small">
-      <%= link_to t('.about'), pourquoi_parentheze_path %>
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5><%= link_to t('.legal'), pourquoi_parentheze_path %></h5>
       </div>
-      <div class="col-xs-12 col-sm-4 margin-bottom-small">
-        <% if @session_ways %>
-          <%= link_to t('.admin'), admin_path %>
-        <% end %>
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5><%= link_to t('.why'), pourquoi_parentheze_path %></h5>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <h5><%= link_to t('.chart'), pourquoi_parentheze_path %></h5>
       </div>
     </div>
   </div>
+  <div class="footer-line-dark"></div>
+  <div class="footer-line-light"></div>
+  <div class="footer-pastille flexbox">
+    <%= link_to cl_image_tag("parentheze/Parentheze_logo_square.svg", class: "footer-logo", id:"footer-logo"), root_path %>
+  </div>
 </div>
+
+<% content_for :after_js do %>
+  <script>
+    document.addEventListener("DOMContentLoaded", function()  {
+      var footerLogo = document.getElementById('footer-logo');
+      var footerSplash = document.getElementById('footer-splash');
+
+      footerLogo.addEventListener("mouseover", displaySplash);
+      footerLogo.addEventListener("mouseout", hideSplash);
+
+      function displaySplash(){
+        footerSplash.style.display = "block";
+      }
+
+      function hideSplash(){
+        footerSplash.style.display = "none" ;
+      }
+    });
+  </script>
+<% end  %>

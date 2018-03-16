@@ -1,0 +1,12 @@
+.mosaic {
+  background-color: $light-purple;
+  color: white;
+  .mosaic-header {
+    height: 150px;
+  }
+  .pastille_action {
+    position: absolute;
+    top: 5%;
+    height: 5%;
+  }
+}

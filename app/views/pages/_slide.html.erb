@@ -2,7 +2,7 @@
   <div class="fullscreen relative flexbox white-on-purple" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
     <div class="slide<%= id %>">
       <h1 class=""><%= slide[:title] %></h1>
-      <h5 class="margin-bottom-medium"><%= slide[:text] %></h5>
+      <h4 class="margin-bottom-medium"><%= slide[:text] %></h4>
       <div class="margin-bottom-medium">
         <% if slide[:link_image] %>
           <%= render 'scroller', target_page: target_page, link_image: slide[:link_image] %>

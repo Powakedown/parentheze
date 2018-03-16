@@ -7,14 +7,18 @@ Rails.application.routes.draw do
   # VITRINE
   root "pages#home"
   patch "/home", to: "pages#update"
-  get "/contact", to: "pages#contact"
   get "/pourquoi_parentheze", to: "pages#why"
 
-  # MAIL
+  # MESSENGER
   get '/welcome', to: 'guests#welcome'
+  get "/contact", to: "messengers#contact"
+  get "/mini_contact", to: "messengers#mini_contact"
+
 
   # INSCRIPTION
-  devise_for :users, :controllers => { :registrations => "my_registrations" }
+  devise_for :users, controllers: { registrations: "my_registrations" }
+
+  get '/profiles', to: "profiles#index"
 
   resources :users, only: %i[] do
     resources :profiles, only: %i[new create show edit update] do

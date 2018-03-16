@@ -1,13 +1,15 @@
  <div class="flex-parent"> <!-- for IE bug -->
-  <div class="fullscreen relative flexbox-bottom white-on-purple" style="background-image: url(<%= slide[:image] %>)" id="slide<%= id %>">
+  <div class="fullscreen relative flexbox-bottom white-on-purple" style="background-image: url(<%= t('.image') %>)" id="slide<%= id %>">
     <div class="slide<%= id %>">
-      <h1 class=""><%= slide[:title] %></h1>
-      <h5 class="margin-bottom-medium"><%= slide[:text] %></h5>
+      <h1 class=""><%= t('.title') %></h1>
+      <h4 class="margin-bottom-medium"><%= t('.text') %></h4>
       <% if @session_ways %>
-        <% if current_user %>
-          <div class="btn btn-yellow margin-bottom-medium"><%= slide[:after_subscription] %></div>
+        <% if current_user && current_user.validation == 0 %>
+          <div class="btn btn-yellow margin-bottom-medium"><%= t('.after_subscription') %></div>
+        <% elsif current_user && current_user.validation == 1 %>
+          <div class="btn btn-yellow margin-bottom-medium"><%= t('.validated') %></div>
         <% else %>
-          <%= link_to t(slide[:calltoaction]), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
+          <%= link_to t('.calltoaction'), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>
         <% end %>
       <% else %>
         <div class="row margin-bottom-medium">
@@ -18,16 +20,16 @@
                                                    placeholder: t('commons.placeholder.email'),
                                                    btn_text: t('commons.register_beta'),
                                                    method: "patch",
-                                                   label: slide[:text2] %>
+                                                   label: t('.text2') %>
           </div>
         </div>
       <% end %>
 
       <div class="margin-bottom-medium">
-        <% if slide[:link_image] %>
-          <%= render 'scroller', target_page: target_page, link_image: slide[:link_image] %>
+        <% if t('.link_image') %>
+          <%= render 'scroller', target_page: target_page, link_image: t('.link_image') %>
         <% else %>
-          <%= link_to slide[:button_text], "#"<<target_page , class:"btn btn-yellow flexbox btn-large center scroll" %>
+          <%= link_to t('.button_text'), "#"<<target_page , class:"btn btn-yellow flexbox btn-large center scroll" %>
         <% end %>
       </div>
     </div>

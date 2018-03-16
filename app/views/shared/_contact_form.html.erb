@@ -10,7 +10,8 @@
           <p> <%= t('.identity.field1') %></p>
           <%= f.input :name, label: false, input_html: {value: session[:contact_name] || "" } %>
           <p><%= t('.identity.field2') %></p>
-          <%= f.input :email, label: false, input_html: {value: session[:contact_email] || "" } %>
+          <%= f.input :email, label: false, input_html: {value: session[:contact_email] || "", class:"email-field"} %>
+
         </div>
          <label class="checkbox">
            <input type="checkbox" class="boolean optional" id="iamhuman" name="iamhuman" value="1" />

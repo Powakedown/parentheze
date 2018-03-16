@@ -7,6 +7,7 @@ fr:
       previous: "précédent"
       end: "terminer"
       enter: "entrer"
+      send: "envoyer"
       downloading: "téléchargement"
       back_to_root: "revenir à l'accueil"
     register: "S'inscrire"
@@ -58,6 +59,13 @@ fr:
       btn_text: "accéder"
       subquery: "password"
       alert: "Accès non autorisé"
+  messengers:
+    contact:
+      notice: "Oh yeah ! Votre message a bien été envoyé."
+      invalid_email: "Mail non valide."
+      blank_email: "Veuillez entrer un email."
+      invalid_comment: "Message trop court ou absent."
+      be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
   profiles:
     profile:
       card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
@@ -76,6 +84,9 @@ fr:
     request_update:
       notice: "Profile envoyé en attente de modification"
     new:
+    index:
+      column1-title: "vous"
+      column2-title: "autour de vous"
     edit:
       card-image: "https://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
       title: "Inscription :"
@@ -147,6 +158,23 @@ fr:
     form6:
       title: "Bien joué !"
       details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
+  card:
+    promotion: "Durée limitée"
+    invitation:
+      title: "Ajoutez des amis ici"
+      text1: "superbe invitation"
+      text2: "préconçue par email"
+      image: "parentheze/profile-card-invitation2.png"
+    school:
+      title: "Secouez votre école"
+      text1: "nous envoyons pour vous"
+      text2: "les invitations"
+      image: "parentheze/profile-card-school.png"
+    visitcard:
+      title: "Pas assez de monde autour ?"
+      text1: "recevez et distribuez"
+      text2: "des cartes d'invitations"
+      image: "parentheze/profile-card-school.png"
   shared:
     contact_form:
       title: "Écrivez-nous"
@@ -158,6 +186,16 @@ fr:
         field1: "prénom, nom ou pseudo :"
         field2: "email* :"
         checkbox: "je ne suis pas un robot"
+    subscription_form:
+      title: "Laissez-nous votre mail pour participer à la phase de Béta-test et faire parti des premiers à découvrir Parentheze :"
+      image: "http://res.cloudinary.com/doodlid/image/upload/v1520794823/parentheze/o-TEEN-AND-PARENTS-AND-TV-570.jpg"
+      btn_text: "ENVOYER"
+      identity:
+        field1: "email :"
+        field1_error: "email non valide"
+    profile_card_invitation:
+
+
     navbar:
       login: "connexion"
       sign_up: "s'enregistrer"
@@ -173,23 +211,23 @@ fr:
       button1_text: "Continuer"
       button2_text: "en savoir plus"
     footer:
-      admin: "Admin"
       about: "A propos de nous"
+      legal: "Mentions légales"
+      why: "Pourquoi parentheze ?"
+      chart: "Charte"
+    over_footer:
+      title: "Quelque chose vous manque, vous avez des idées ou besoin d’aide ? Écrivez-nous :"
+      placeholder: "J'aimerais bien ..."
   pages:
     home:
       title: "Parentheze, la nouvelle vie des parents."
-    contact:
-      notice: "Oh yeah ! Votre message a bien été envoyé."
-      invalid_email: "Mail non valide."
-      blank_email: "Veuillez entrer un email."
-      invalid_comment: "Message trop court ou absent."
-      be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
     slide_home_top:
       title: "Profitez ! Ce soir les enfants dorment chez des amis"
       text: "Échange de garde d'enfants et mutualisation de babysitter"
       text2: "le service est en phase de test, participez à la béta gratuitement."
       image: "https://res.cloudinary.com/doodlid/image/upload/q_60/v1508851317/parentheze/home1_parent_party.jpg"
       after_subscription: "Votre compte est en attente de validation..."
+      validated: "Entrer"
       calltoaction: "Créer mon compte"
       link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     slide_plan:
@@ -241,7 +279,7 @@ fr:
       text: "nous sommes à la recherche de partenaires, d'associés et de beta-testers"
       link_image: "https://res.cloudinary.com/doodlid/image/upload/c_scale,w_60/v1511275876/parentheze/oui_arrow.png"
     slide_subscription:
-      title: "Inscrivez-vous"
+      title: "Devenez béta-testeurs"
       text: "le service est en phase de test, participez à la béta gratuitement."
       link_image: "https://res.cloudinary.com/doodlid/image/upload/q_60/c_scale,w_45/v1511277565/parentheze/top_arrow.png"
       checkbox: "Vous habitez la métropole bordelaise ou proche."

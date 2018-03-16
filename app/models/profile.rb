@@ -19,6 +19,8 @@ class Profile < ApplicationRecord
 
   has_many :wishes, through: :user
 
+  scope :validated, -> { where(validation: 1) }
+
   has_attachment :photo
 
   def step3?
@@ -35,5 +37,13 @@ class Profile < ApplicationRecord
 
   def step6?
     step == 6
+  end
+
+  def validated?
+    validation == 1
+  end
+
+  def names
+    mother_first_name + (father_first_name.present? ? " & " + father_first_name : "" )
   end
 end

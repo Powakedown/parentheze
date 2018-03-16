@@ -1,5 +1,4 @@
 .contact-form {
-
   @include media-breakpoint-down(lg) { min-height: 480px; width: 95%; }
   @include media-breakpoint-up(lg) { height: 480px; width: 880px;}
   background-color: $white;
@@ -22,24 +21,38 @@
     @include media-breakpoint-down(lg) {
       min-height: 200px;
       padding: 0px 15px 0px 15px;
+      &.no-header {
+        min-height: 200px;
+      }
     }
     @include media-breakpoint-up(lg) {
       border-right: $border-medium;
       height: 420px;
       padding: 0px 60px 70px 60px;
+      &.no-header {
+        height: 480px;
+      }
     }
   }
   .contact-message {
     background-color: $white;
+    background-size: cover;
+    background-position: center center;
     @include media-breakpoint-down(lg) {
       min-height: 350px;
       padding: 15px 15px 0px 15px;
       textarea {
         height: 220px;
       }
+      &.no-header {
+        min-height: 480px;
+      }
     }
     @include media-breakpoint-up(lg) {
       height: 420px;
+      &.no-header {
+        height: 480px;
+      }
       padding: 15px 30px 15px 30px;
       .form-control:focus, textarea:focus {
         border: none;

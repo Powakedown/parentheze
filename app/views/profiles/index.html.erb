@@ -1,0 +1,63 @@
+<div class="fullscreen relative mosaic">
+  <%= render "shared/pastille_action", path: root_path, icon: "fas fa-glass-martini", color: "yellow", class: "pastille_action" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="mosaic-header"></div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+          <div class="row">
+            <div class="col-12 col-sm-12">
+              <h5><%= t('.column1-title') %></h5>
+
+              <%= render "shared/profile_card", profile: @profile, reputation: "Bonne réputation", distance: "200 mètres" %>
+            </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-9">
+          <div class="row">
+            <div class="col-12">
+              <h5><%= t('.column2-title') %></h5>
+            </div>
+            <% @profiles.each do |profile| %>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <%= render "shared/profile_card", profile: profile, reputation: "Bonne réputation", distance: "200 mètres" %>
+              </div>
+            <% end %>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <%= render "shared/profile_card_invitation", image: t('card.invitation.image'),
+                                                             title: t('card.invitation.title'),
+                                                             text1: t('card.invitation.text1'),
+                                                             text2: t('card.invitation.text2'),
+                                                             link: root_path,
+                                                             promotion: false %>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <%= render "shared/profile_card_invitation", image: t('card.school.image'),
+                                                         title: t('card.school.title'),
+                                                         text1: t('card.school.text1'),
+                                                         text2: t('card.school.text2'),
+                                                         link: root_path,
+                                                         promotion: true %>
+              </div>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <%= render "shared/profile_card_invitation", image: t('card.visitcard.image'),
+                                                         title: t('card.visitcard.title'),
+                                                         text1: t('card.visitcard.text1'),
+                                                         text2: t('card.visitcard.text2'),
+                                                         link: root_path,
+                                                         promotion: true %>
+              </div>
+            <% 3.times do %>
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <%= render "shared/profile_card_empty" %>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "shared/over_footer" %>
+<%= render "shared/footer" %>
+

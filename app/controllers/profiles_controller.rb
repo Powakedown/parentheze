@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :user_is_current_user, only: %i[create new edit update previous]
+  before_action :user_is_current_user, only: %i[create new edit index update previous]
   before_action :params_profile, only: %i[validate request_update]
 
   def new
@@ -11,6 +11,11 @@ class ProfilesController < ApplicationController
   end
 
   def show
+  end
+
+  def index
+    @profiles = Profile.validated.where.not(user_id: @user.id)
+    @profile = @user.profile
   end
 
   def edit

@@ -1,0 +1,26 @@
+<%= link_to root_path do %>
+  <div class="pastille pastille-action flexbox pastille-<%= color %>">
+    <i class="fa" id="div1"></i>
+  </div>
+<% end %>
+
+<%= content_for :after_js do %>
+  <script>
+    function hand() {
+      var a;
+      a = document.getElementById("div1");
+      a.innerHTML = "&#xf25a;";
+      setTimeout(function () {
+          a.innerHTML = "&#xf1ae;";
+        }, 1500);
+      setTimeout(function () {
+          a.innerHTML = "&#xf000;";
+        }, 2000);
+      setTimeout(function () {
+          a.innerHTML = "&#xf0f4;";
+        }, 2500);
+    }
+    hand();
+    setInterval(hand, 3000);
+  </script>
+<% end %>

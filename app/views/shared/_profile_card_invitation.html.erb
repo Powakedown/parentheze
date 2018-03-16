@@ -1,0 +1,14 @@
+<%= link_to link do %>
+  <div class="profile-card">
+    <% if promotion %>
+      <div class="promotion"><%= t('card.promotion') %></div>
+    <% end %>
+    <div class="profile-card-portrait" style="background-image: url('<%= cl_image_path image %>')">
+    </div>
+    <div class="profile-card-description text-center">
+      <h5 class="name"><%= title %></h5>
+      <h5 class="reputation"><%= text1 %></h5>
+      <h5 class="reputation"><%= text2 %></h5>
+    </div>
+  </div>
+<% end %>
