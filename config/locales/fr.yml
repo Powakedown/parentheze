@@ -66,7 +66,24 @@ fr:
       blank_email: "Veuillez entrer un email."
       invalid_comment: "Message trop court ou absent."
       be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
+    add_friend:
+      warning: 'Veuillez remplir le champ "email" correctement'
+      notice: "Merci ! Vos invitations se prépare et partent bientôt !"
   profiles:
+    add_friend:
+      column-title: "Invitation d'ami(s)"
+      title: "Parrainer des amis sur Parentheze en les invitant :"
+      subtitle: "( ajouter plusieurs adresses mails en les séparant par « ; » )  "
+      preview: "Aperçu du message envoyé à vos amis :"
+    add_friend_preview:
+      title: " vous %{verb} à les rejoindre sur Parentheze"
+      text1: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."
+      text2: "Parentheze, la nouvelle vie des parents, est le site réservé exclusivement aux parents. Grâce à Parentheze, retrouvez les parents autour de vous qui ont les mêmes besoins, les mêmes contraintes et sont à la recherche de nouvelles solutions. "
+      footer:
+        line1: "Envoyé avec ♥︎ par Parentheze depuis Bordeaux"
+      btn_text: "Rejoignez %{recipient} sur Parentheze"
+    mosaic:
+      title: "autour de vous"
     profile:
       card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
       field1: Prénom du parent1
@@ -78,15 +95,14 @@ fr:
       field7: "Photo :"
       btn_text1: "valider"
       btn_text2: "demander les modifs"
+    self_profile:
+      title: "vous"
     validate:
       notice: "Profil validé"
       alert: "Validation échouée, vérifier les logs"
     request_update:
       notice: "Profile envoyé en attente de modification"
     new:
-    index:
-      column1-title: "vous"
-      column2-title: "autour de vous"
     edit:
       card-image: "https://res.cloudinary.com/doodlid/image/upload/v1517584284/parentheze/inscription_end.png"
       title: "Inscription :"
@@ -160,6 +176,7 @@ fr:
       details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
   card:
     promotion: "Durée limitée"
+    free: "Gratuit"
     invitation:
       title: "Ajoutez des amis ici"
       text1: "superbe invitation"

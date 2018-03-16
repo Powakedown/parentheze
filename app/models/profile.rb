@@ -43,7 +43,11 @@ class Profile < ApplicationRecord
     validation == 1
   end
 
+  def couple?
+    mother_first_name.present? && father_first_name.present?
+  end
+
   def names
-    mother_first_name + (father_first_name.present? ? " & " + father_first_name : "" )
+    (mother_first_name.present? ? mother_first_name : "" ) + (father_first_name.present? ? " & " + father_first_name : "" )
   end
 end

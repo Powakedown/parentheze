@@ -1,10 +1,5 @@
 //= require attachinary
 
-var patternName = "^[^0-9][\\w'\\-áéíóúäëïöüÄőŐűŰZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÉÈÊĒÀÄ][^0-9_!.¡?÷?¿+=@#$%^&*(){}|~<>;:\\[\\]]{0,}$";
-var patternNumber = "^\\d+$";
-var patternPhone = "^(0|\\+33|0033)[1-9][0-9]{8}$";
-
-
 function testIt(e) {
   var input = this;
   setTimeout(function(){
@@ -75,10 +70,6 @@ function getAddressComponents(place) {
     city: city,
     country_code: country_code
   };
-}
-
-function testMail(e) {
-  console.log(e.keyCode);
 }
 
 document.addEventListener("DOMContentLoaded", function() {

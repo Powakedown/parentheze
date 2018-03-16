@@ -1,8 +1,9 @@
 class MessengersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[contact mini_contact]
+  before_action :message_from_params, only: %i[contact add_friend mini_contact]
+  before_action :who_is_user, only: %i[add_friend mini_contact]
 
   def contact
-    @message = params_message
     @valid_email = email_valid(@message[:email])
     @valid_comment = comment_valid(@message[:comment])
     @human = params[:iamhuman].present?
@@ -24,10 +25,23 @@ class MessengersController < ApplicationController
     end
   end
 
+  def add_friend
+    @emails = @message[:comment].split(";").map(&:strip).select{|word| email_valid(word)}
+    unless @emails.empty?
+      @emails.each do |mail|
+        UserMailer.add_friend(mail, @user.email, @user.photo.path.presence, @user.names, @user.profile.couple?).deliver_now
+      end
+      flash[:notice] = t('.notice')
+      redirect_to add_friends_user_profile_path(@user, @user.profile)
+    else
+      session[:emails] = @message[:comment]
+      flash[:warning] = t('.warning')
+      redirect_to add_friends_user_profile_path(@user, @user.profile)
+    end
+  end
+
   def mini_contact
-    @message = params_message
     @valid_comment = comment_valid(@message[:comment])
-    @user = current_user
     if @valid_comment
       flash[:success] = t('messengers.contact.notice')
       UserMailer.contact_form(@user.names, @user[:email], "mini_contact : " + @message[:comment]).deliver_later
@@ -39,6 +53,14 @@ class MessengersController < ApplicationController
   end
 
   private
+
+  def who_is_user
+    @user = current_user
+  end
+
+  def message_from_params
+    @message = params_message
+  end
 
   def params_message
     params.require(:message).permit(:email, :name, :comment, :iamhuman)

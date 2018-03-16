@@ -1,13 +1,13 @@
 <div class="flex-parent"> <!-- for IE bug -->
   <div class="fullscreen relative white-on-purple mosaic">
-    <%= render "shared/buttons", mosaic: false, action: true %>
+     <%= render "shared/buttons", mosaic: true, action: true %>
     <div class="container">
       <div class="row">
         <%= render "header" %>
         <%= render "self_profile" %>
-        <%= render "mosaic" %>
+        <%= render "add_friend" %>
       </div>
     </div>
   </div>
 </div>
-<%= render "shared/over_footer" %>
+

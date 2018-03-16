@@ -143,7 +143,7 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    pg (1.0.0)
+    pg (0.21.0)
     popper_js (1.12.9)
     postmark (1.10.0)
       json
@@ -283,7 +283,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   meta_request
-  pg
+  pg (~> 0.2)
   postmark-rails
   pry-byebug
   pry-rails

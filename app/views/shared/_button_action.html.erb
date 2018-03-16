@@ -1,14 +1,10 @@
-<%= link_to root_path do %>
-  <div class="pastille pastille-action flexbox pastille-<%= color %>">
-    <i class="fa" id="div1"></i>
-  </div>
-<% end %>
+<%= link_to(content_tag(:i, nil, class: 'fa', id:'pastille'), root_path, class: "pastille pastille-yellow flexbox" ) %>
 
 <%= content_for :after_js do %>
   <script>
     function hand() {
       var a;
-      a = document.getElementById("div1");
+      a = document.getElementById("pastille");
       a.innerHTML = "&#xf25a;";
       setTimeout(function () {
           a.innerHTML = "&#xf1ae;";

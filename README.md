@@ -6,7 +6,7 @@ Projet de solution collaborative destinée à révolutionner les usages, créer 
 
 ### informations
 
-[Parentheze - La nouvelle vie des parents](http://www.parentheze.com)
+[Parentheze - La nouvelle vie des parents](https://www.parentheze.com)
 
 [Parentheze sur facebook](http://www.facebook.com/parenthezeapp)
 

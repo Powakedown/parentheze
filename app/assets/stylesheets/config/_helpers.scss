@@ -61,9 +61,20 @@ $input-height: 56px;
 .margin-bottom-medium {
   margin-bottom: 1.3em !important;
 }
+.margin-bottom-big {
+  margin-bottom: 1.8em !important;
+}
 @media (max-width : 375px){
   .margin-bottom-medium {
     margin-bottom: 0.8em !important;
+  }
+}
+.separator-vertical {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 .margin-top-small {
@@ -84,6 +95,15 @@ $input-height: 56px;
   border: $border-light;
   border-radius: $border-radius;
 }
+// BAR AND LINE
+.bar-separator {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 40%;
+  height: 5px;
+  background-color: $yellow;
+}
+
 .underline {
   border-bottom: $border-medium;
   padding-bottom: 5px;
@@ -180,7 +200,8 @@ button, html [type="button"], [type="reset"], [type="submit"] {
 //COMPONENTS
 
 a:hover.pastille {
-  color: $light-yellow;
+  background-color: $light-yellow;
+  color: white;
 }
 .pastille {
   border-radius: 50%;
@@ -197,6 +218,10 @@ a:hover.pastille {
   &.pastille-blue {
     background-color: $blue;
   }
+  &.pastille-white {
+    background-color: $white;
+    color: $dark-gray;
+  }
   &.pastille-light-blue {
     background-color: $light-blue;
   }
@@ -204,12 +229,15 @@ a:hover.pastille {
     width: 30px;
     height: 30px;
   }
-  &.pastille-action {
+  &.pastille-close {
     position: absolute;
-    right: 2%;
-    @include media-breakpoint-down(xs) { top: 75px; }
-    @include media-breakpoint-up(xs) { top: 100px; }
+    right: 10px;
+    @include media-breakpoint-down(xs) { top: 10px; }
+    @include media-breakpoint-up(xs) { top: 10px; }
     z-index: 500;
+    margin-right: 0;
+    height: 40px;
+    width: 40px;
   }
 }
 //SPLITS

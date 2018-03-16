@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function()  {
   // REGEX MAIL
 
   var submitMail = document.getElementById('submit_mail');
-  var pattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   var emailFields = document.getElementsByClassName('email-field');
   var errorLabel = document.getElementById('hidden-error');
 
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function()  {
   function checkMailOnClick(e) {
     var submit = this;
 
-    if(emailFields[1].value.match(pattern)){
+    if(emailFields[1].value.match(patternEmail)){
       resetError(submit, errorLabel);
     }
     else {
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function()  {
     var input = this;
     input.style.color = "light-gray";
     setTimeout(function(){
-      if(input.value.match(pattern)){
+      if(input.value.match(patternEmail)){
         resetError(input, errorLabel);
       }
       else if (input.value.length == 0) {
