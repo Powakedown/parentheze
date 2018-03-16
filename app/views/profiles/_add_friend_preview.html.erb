@@ -5,7 +5,7 @@
         <%= cl_image_tag ("parentheze/Parentheze_logo_black.svg"), class:"mailer-preview-logo" %>
       </div>
       <div class="col-12 col-md-12 separator-vertical">
-        <%= cl_image_tag ("parentheze/inscription_exemple_04.jpg"), class:"mailer-preview-portrait" %>
+        <%= cl_image_tag ( @user.photo.path ), class:"mailer-preview-portrait" %>
         <%= cl_image_tag ("parentheze/invitation_bubble.png"), class:"mailer-preview-bubble" %>
       </div>
       <div class="col-12 col-md-12 col-lg-12 col-xl-9 separator-vertical text-right">
@@ -17,13 +17,13 @@
       </div>
 
       <div class="col-12 col-md-12 col-lg-12 col-xl-9 separator-vertical">
-        <h3 class="separator-vertical"><%= "Maxime et Juliette " + t('.title') %></h3>
+        <h3 class="separator-vertical"><%= @user.names + t('.title', verb: @profile.couple? ? "invitent" : "invite") %></h3>
         <p class="separator-vertical"><%= t('.text1') %></p>
         <p class="separator-vertical"><%= t('.text2') %></p>
       </div>
 
       <div class="col-12 col-md-12 col-lg-12 col-xl-9 separator-vertical">
-      <%= link_to t('.btn_text'), "https://www.parentheze.com", class:"btn btn-blue separator-vertical" %>
+      <%= link_to t('.btn_text', recipient: @user.names), "https://www.parentheze.com", class:"btn btn-blue separator-vertical" %>
       </div>
       <div class="mailer-preview-bar separator-vertical"></div>
 

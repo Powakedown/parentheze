@@ -73,15 +73,15 @@ fr:
     add_friend:
       column-title: "Invitation d'ami(s)"
       title: "Parrainer des amis sur Parentheze en les invitant :"
-      subtitle: "( ajouter plusieurs adresses mail en les séparant par « ; » )  "
+      subtitle: "( ajouter plusieurs adresses mails en les séparant par « ; » )  "
       preview: "Aperçu du message envoyé à vos amis :"
-    invitation:
-      title: "vous invitent à les rejoindre sur Parentheze"
+    add_friend_preview:
+      title: " vous %{verb} à les rejoindre sur Parentheze"
       text1: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."
       text2: "Parentheze, la nouvelle vie des parents, est le site réservé exclusivement aux parents. Grâce à Parentheze, retrouvez les parents autour de vous qui ont les mêmes besoins, les mêmes contraintes et sont à la recherche de nouvelles solutions. "
       footer:
         line1: "Envoyé avec ♥︎ par Parentheze depuis Bordeaux"
-      btn_text: "Rejoignez Maxime et Juliette sur Parentheze"
+      btn_text: "Rejoignez %{recipient} sur Parentheze"
     mosaic:
       title: "autour de vous"
     profile:

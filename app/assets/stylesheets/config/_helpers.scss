@@ -217,6 +217,10 @@ a:hover.pastille {
   &.pastille-blue {
     background-color: $blue;
   }
+  &.pastille-white {
+    background-color: $white;
+    color: $dark-gray;
+  }
   &.pastille-light-blue {
     background-color: $light-blue;
   }
@@ -230,6 +234,16 @@ a:hover.pastille {
     @include media-breakpoint-down(xs) { top: 75px; }
     @include media-breakpoint-up(xs) { top: 100px; }
     z-index: 500;
+  }
+  &.pastille-close {
+    position: absolute;
+    right: 10px;
+    @include media-breakpoint-down(xs) { top: 10px; }
+    @include media-breakpoint-up(xs) { top: 10px; }
+    z-index: 500;
+    margin-right: 0;
+    height: 40px;
+    width: 40px;
   }
 }
 //SPLITS
