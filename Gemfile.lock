@@ -283,7 +283,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   meta_request
-  pg (~> 0.2)
+  pg
   postmark-rails
   pry-byebug
   pry-rails
