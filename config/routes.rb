@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/contact", to: "messengers#contact"
   get "/mini_contact", to: "messengers#mini_contact"
   get "/add_friend", to: "messengers#add_friend"
+  get "/ask_for_cards", to: "messengers#ask_for_cards"
 
 
   # INSCRIPTION
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
         get 'validate'
         get 'request_update'
         get 'add_friends'
+        get 'ask_for_cards'
       end
     end
   end

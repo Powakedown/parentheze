@@ -9,7 +9,7 @@ class User < ApplicationRecord
                     format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ }
   validates :email, uniqueness: { conditions: -> { where.not(email: ['email@example.com', 'parentgenial@parentheze.com']) } }
 
-  delegate :mother_first_name, :father_first_name, :address, :kids, :phone, :comment, :names, :validation, :photo, :step, to: :profile, :allow_nil => true
+  delegate :mother_first_name, :father_first_name, :name, :address, :kids, :phone, :comment, :names, :validation, :photo, :step, to: :profile, :allow_nil => true
 
   has_one :profile, dependent: :destroy
   has_many :bookings
