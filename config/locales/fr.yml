@@ -69,12 +69,25 @@ fr:
     add_friend:
       warning: 'Veuillez remplir le champ "email" correctement'
       notice: "Merci ! Vos invitations se prépare et partent bientôt !"
+    ask_for_cards:
+      subject: "Demande de membre Parentheze : cartes d'invitations"
+      notice: "Merci, nous allons préparer votre lot de carte au plus vite !"
+      warning: "Veuillez remplir le champ nom correctement."
   profiles:
     add_friend:
       column-title: "Invitation d'ami(s)"
       title: "Parrainer des amis sur Parentheze en les invitant :"
       subtitle: "( ajouter plusieurs adresses mails en les séparant par « ; » )  "
       preview: "Aperçu du message envoyé à vos amis :"
+    ask_for_cards:
+      column-title: "Carte d'invitation"
+      title: "Recevoir des cartes d'invitation à distribuer ?"
+      text_html: "Nous pouvons vous envoyer des cartes d'invitation, de type carte de visite, à distribuer autour de vous, auprès de vos amis, proches, connaissances, parents d'élèves ou de camarades de classe. </br> </br> <strong>Il n'est pas toujours facile d'établir le contact</strong> les matins d'école ou d'expliquer ce que vous cherchez auprès de votre entourage. Avec la carte d'invitation Parentheze, tendez-leur simplement, dites que vous les invitez à vous rejoindre \"là dessus\". C'est rapide, ça ne coûte rien et ça peut vous changer la vie."
+      btn_text: "Oui, je veux recevoir gratuitement un lot de cartes"
+      title2: "Avez-vous pensé à envoyer les invitations mails ?"
+      btn_text2: "Elles sont belles et n'attendent que vous"
+      preview: "Voici les cartes que vous allez recevoir :"
+      placeholder: "précisez votre nom, c'est mieux pour le facteur ;)"
     add_friend_preview:
       title: " vous %{verb} à les rejoindre sur Parentheze"
       text1: "...pour y échanger, se faciliter la vie, trouver un moyen malin de garder les enfants."

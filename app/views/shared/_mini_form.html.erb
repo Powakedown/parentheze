@@ -4,7 +4,7 @@
       <%= f.input :comment, label: false, placeholder: placeholder, input_html: {value: value || "" }  %>
     </div>
     <div class="col-12 col-sm-4">
-    <%= f.button :submit, value: t('commons.button.send'), data: { disable_with: "" } %>
+    <%= f.button :submit, value: btn_text, data: { disable_with: "" }, class:"btn btn-blue" %>
     </div>
   <% end %>
 </div>

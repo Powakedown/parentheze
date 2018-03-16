@@ -43,10 +43,13 @@ class UserMailer < ApplicationMailer
          track_opens: 'true')
   end
 
-  def new_registration_notification
+  def notification(subject, user_email, user_address, user_names)
+    @subject = subject
+    @user_address = user_address
+    @user_names = user_names
     mail(to: 'parentgenial@parentheze.com',
-         from: 'parentgenial@parentheze.com',
-         subject: 'Nouvel Inscription sur parentheze',
+         from: user_email,
+         subject: subject,
          track_opens: 'true')
   end
 

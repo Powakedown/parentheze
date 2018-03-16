@@ -1,7 +1,7 @@
 class MessengersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[contact mini_contact]
-  before_action :message_from_params, only: %i[contact add_friend mini_contact]
-  before_action :who_is_user, only: %i[add_friend mini_contact]
+  before_action :message_from_params, only: %i[contact add_friend mini_contact ask_for_cards]
+  before_action :who_is_user, only: %i[add_friend mini_contact ask_for_cards]
 
   def contact
     @valid_email = email_valid(@message[:email])
@@ -29,7 +29,7 @@ class MessengersController < ApplicationController
     @emails = @message[:comment].split(";").map(&:strip).select{|word| email_valid(word)}
     unless @emails.empty?
       @emails.each do |mail|
-        UserMailer.add_friend(mail, @user.email, @user.photo.path.presence, @user.names, @user.profile.couple?).deliver_now
+        UserMailer.add_friend(mail, @user.email, @user.photo.path.presence, @user.names, @user.profile.couple?).deliver_later
       end
       flash[:notice] = t('.notice')
       redirect_to add_friends_user_profile_path(@user, @user.profile)
@@ -37,6 +37,18 @@ class MessengersController < ApplicationController
       session[:emails] = @message[:comment]
       flash[:warning] = t('.warning')
       redirect_to add_friends_user_profile_path(@user, @user.profile)
+    end
+  end
+
+  def ask_for_cards
+    @profile.card += 1
+    @profile.name = @message[:comment]
+    unless @message[:comment].present?
+      flash[:warning] = t('.warning')
+    elsif @profile.save!
+      UserMailer.notification(t('.subject'), @user.email, @user.address, @user.names).deliver_now
+      flash[:notice] = t('.notice')
+      redirect_to profiles_path
     end
   end
 

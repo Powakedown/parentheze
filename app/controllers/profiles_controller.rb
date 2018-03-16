@@ -1,10 +1,9 @@
 class ProfilesController < ApplicationController
-  before_action :user_and_profile, only: %i[create new edit index update previous add_friends]
+  before_action :user_and_profile, only: %i[create new edit index update previous add_friends ask_for_cards]
   before_action :params_profile, only: %i[validate request_update]
 
 
-  def add_friends
-  end
+  def add_friends; end
 
   def add_wishes(user, profile)
     user.user_wishes.destroy_all
@@ -15,6 +14,8 @@ class ProfilesController < ApplicationController
     profile.save
     redirect_to edit_user_profile_path
   end
+
+  def ask_for_cards; end
 
   def edit
     @profile = @user.profile
