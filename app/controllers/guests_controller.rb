@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GuestsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[create index update new welcome]
   before_action :find_guest, only: %i[update welcome]
@@ -17,7 +19,7 @@ class GuestsController < ApplicationController
     @target1 = percentage(@guests.target1, @parentcount)
     @target2 = percentage(@guests.target2, @parentcount)
     # @guest_steps = []
-    # 0.upto(4) { |x| @guest_steps << percentage(@guests.visitors.where(step: (x..6)), @visits) }
+    # 0.upto(4) { |x| @guest_steps + percentage(@guests.visitors.where(step: (x..6)), @visits) }
   end
 
   def new
@@ -44,8 +46,8 @@ class GuestsController < ApplicationController
   end
 
   def welcome_mail(user)
-    UserMailer.welcome(user).deliver_later
-    UserMailer.self_notification(user).deliver_later
+    UserMailer.welcome(user).deliver_now
+    UserMailer.self_notification(user).deliver_now
   end
 
   private
@@ -64,6 +66,6 @@ class GuestsController < ApplicationController
   end
 
   def set_question
-    @question = @questions[('question'<<session[:form_step]).to_sym]
+    @question = @questions[('question'+session[:form_step]).to_sym]
   end
 end

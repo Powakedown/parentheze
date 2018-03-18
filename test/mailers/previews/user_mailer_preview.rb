@@ -14,8 +14,8 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.new_registration(@user)
   end
 
-  def new_registration_notification
-    UserMailer.new_registration_notification
+  def notification
+    UserMailer.notification
   end
 
   def validation

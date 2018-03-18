@@ -11,7 +11,7 @@ class MessengersController < ApplicationController
     if @valid_email && @valid_comment && @human
       session[:contact_email] = session[:contact_name] = session[:contact_comment] = nil
       flash[:success] = t('.notice')
-      UserMailer.contact_form(@message[:name], @message[:email], @message[:comment]).deliver_later
+      UserMailer.contact_form(@message[:name], @message[:email], @message[:comment]).deliver_now
       redirect_to root_path
     else
       session[:contact_email] = @message[:email]
@@ -29,7 +29,7 @@ class MessengersController < ApplicationController
     @emails = @message[:comment].split(";").map(&:strip).select{|word| email_valid(word)}
     unless @emails.empty?
       @emails.each do |mail|
-        UserMailer.add_friend(mail, @user.email, @user.photo.path.presence, @user.names, @user.profile.couple?).deliver_later
+        UserMailer.add_friend(mail, @user.email, @user.photo.path.presence, @user.names, @user.profile.couple?).deliver_now
       end
       flash[:notice] = t('.notice')
       redirect_to add_friends_user_profile_path(@user, @user.profile)
@@ -45,7 +45,7 @@ class MessengersController < ApplicationController
     @profile.name = @message[:comment]
     unless @message[:comment].present?
       flash[:warning] = t('.warning')
-    elsif @profile.save!
+    else @profile.save!
       UserMailer.notification(t('.subject'), @user.email, @user.address, @user.names).deliver_now
       flash[:notice] = t('.notice')
       redirect_to profiles_path
@@ -56,7 +56,7 @@ class MessengersController < ApplicationController
     @valid_comment = comment_valid(@message[:comment])
     if @valid_comment
       flash[:success] = t('messengers.contact.notice')
-      UserMailer.contact_form(@user.names, @user[:email], "mini_contact : " + @message[:comment]).deliver_later
+      UserMailer.contact_form(@user.names, @user[:email], "mini_contact : " + @message[:comment]).deliver_now
       redirect_to profiles_path
     else
       flash[:warning1] = t('messengers.contact.invalid_comment')

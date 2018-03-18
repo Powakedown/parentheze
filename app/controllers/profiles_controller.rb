@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProfilesController < ApplicationController
   before_action :user_and_profile, only: %i[create new edit index update previous add_friends ask_for_cards]
   before_action :params_profile, only: %i[validate request_update]
@@ -9,7 +11,7 @@ class ProfilesController < ApplicationController
     user.user_wishes.destroy_all
     wishes = Wish.all.to_a
     wishes.each_with_index do |wish, index|
-      UserWish.create(user: user, wish: wish) if profile_params[("need"<<index.to_s).to_sym].present?
+      UserWish.create(user: user, wish: wish) if profile_params[("need"+index.to_s).to_sym].present?
     end
     profile.save
     redirect_to edit_user_profile_path
@@ -36,8 +38,8 @@ class ProfilesController < ApplicationController
   end
 
   def inscription_done(user)
-    UserMailer.new_registration(user).deliver_later
-    UserMailer.new_registration_notification.deliver_later
+    UserMailer.new_registration(user).deliver_now
+    UserMailer.notification.deliver_now
   end
 
   def new
@@ -60,7 +62,7 @@ class ProfilesController < ApplicationController
     @updates_requested = request_update_params
     @profile_for_mail = @profile.as_json
 
-    UserMailer.request_update(@profile.user, @profile_for_mail, @updates_requested).deliver_later
+    UserMailer.request_update(@profile.user, @profile_for_mail, @updates_requested).deliver_now
     flash[:notice] = t('.notice')
 
     if request_update_params[:parent1].present?
@@ -108,6 +110,7 @@ class ProfilesController < ApplicationController
         notice = ''
         @profile.errors.messages.each do |key, value|
           notice << value.first << '. <br/>'
+          notice << value.first << '. <br/>'
         end
         redirect_to edit_user_profile_path, alert: notice
       end
@@ -119,7 +122,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       flash[:notice] = t('.notice')
       redirect_to admin_validations_path
-      UserMailer.validation(@profile.user).deliver_later
+      UserMailer.validation(@profile.user).deliver_now
     else
       flash[:warning] = t('.alert')
       redirect_to admin_validations_path

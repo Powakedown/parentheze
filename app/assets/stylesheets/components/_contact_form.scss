@@ -4,8 +4,9 @@
   background-color: $white;
   box-shadow: $shadow;
   .contact-header {
-    height: 60px;
     width: 100%;
+    @include media-breakpoint-down(sm) {  height: 30px; }
+    @include media-breakpoint-up(sm) {  height: 60px; }
   }
   p {
     margin-bottom: 5px;
@@ -22,7 +23,7 @@
       min-height: 200px;
       padding: 0px 15px 0px 15px;
       &.no-header {
-        min-height: 200px;
+        min-height: 340px;
       }
     }
     @include media-breakpoint-up(lg) {
