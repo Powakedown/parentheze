@@ -96,6 +96,8 @@ fr:
       footer:
         line1: "Envoyé avec ♥︎ par Parentheze depuis Bordeaux"
       btn_text: "Rejoignez %{recipient} sur Parentheze"
+    inscription_done:
+      subject: "Nouvelle inscription"
     mosaic:
       title: "autour de vous"
     profile:

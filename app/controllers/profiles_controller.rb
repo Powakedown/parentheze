@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
 
   def inscription_done(user)
     UserMailer.new_registration(user).deliver_now
-    UserMailer.notification.deliver_now
+    UserMailer.notification(t('.subject'), user.email, user.address, user.names).deliver_now
   end
 
   def new
