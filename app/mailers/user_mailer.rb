@@ -48,7 +48,7 @@ class UserMailer < ApplicationMailer
     @user_address = user_address
     @user_names = user_names
     mail(to: 'parentgenial@parentheze.com',
-         from: user_email,
+         from: 'parentgenial@parentheze.com',
          subject: subject,
          track_opens: 'true')
   end
@@ -60,7 +60,7 @@ class UserMailer < ApplicationMailer
     @host_names = host_names
     @host_is_couple = host_is_couple
     mail(to: @friend_mail,
-         from: @host_mail,
+         from: 'parentgenial@parentheze.com',
          subject: @host_names + " vous invite à les rejoindre sur Parentheze",
          track_opens: 'true')
   end
