@@ -37,9 +37,9 @@ class ProfilesController < ApplicationController
     @profile = @user.profile
   end
 
-  def inscription_done(user)
-    UserMailer.new_registration(user).deliver_now
-    UserMailer.notification(t('.subject'), user.email, user.address, user.names).deliver_now
+  def inscriptionDone(user)
+    UserMailer.new_registration(user[mail: user.email]).deliver_later
+    UserMailer.notification(t('.subject'), user.email, user.address, user.names).deliver_later
   end
 
   def new
@@ -58,11 +58,11 @@ class ProfilesController < ApplicationController
     redirect_to edit_user_profile_path(@user)
   end
 
-  def request_update
+  def requestUpdate
     @updates_requested = request_update_params
     @profile_for_mail = @profile.as_json
 
-    UserMailer.request_update(@profile.user, @profile_for_mail, @updates_requested).deliver_now
+    UserMailer.request_update(@profile.user, @profile_for_mail, @updates_requested).deliver_later
     flash[:notice] = t('.notice')
 
     if request_update_params[:parent1].present?
@@ -122,7 +122,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       flash[:notice] = t('.notice')
       redirect_to admin_validations_path
-      UserMailer.validation(@profile.user).deliver_now
+      UserMailer.validation(@profile.user).deliver_later
     else
       flash[:warning] = t('.alert')
       redirect_to admin_validations_path
