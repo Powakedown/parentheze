@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
   end
 
   def index
-    @profiles = Profile.validated.where.not(user_id: @user.id)
+    @profiles = Profile.validated.excluding(@user.id)
     @profile = @user.profile
   end
 

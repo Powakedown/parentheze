@@ -21,6 +21,7 @@ class Profile < ApplicationRecord
   has_many :wishes, through: :user
 
   scope :validated, -> { where(validation: 1) }
+  # scope :not_self, -> { where.not( user_id: Profile.first.user.id)}
 
   has_attachment :photo
 
@@ -38,6 +39,10 @@ class Profile < ApplicationRecord
 
   def step6?
     step == 6
+  end
+
+  def self.excluding(id)
+    where.not(user_id: id)
   end
 
   def validated?

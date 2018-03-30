@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180316164237) do
-
+ActiveRecord::Schema.define(version: 20180320193935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +92,7 @@ ActiveRecord::Schema.define(version: 20180316164237) do
     t.boolean "confidence"
     t.string "name"
     t.integer "card", default: 0
+    t.index ["step"], name: "index_profiles_on_step"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -130,6 +129,7 @@ ActiveRecord::Schema.define(version: 20180316164237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "number"
+    t.index ["number"], name: "index_wishes_on_number"
   end
 
   add_foreign_key "bookings", "plans"
