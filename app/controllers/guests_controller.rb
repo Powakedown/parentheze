@@ -46,8 +46,8 @@ class GuestsController < ApplicationController
   end
 
   def welcome_mail(user)
-    UserMailer.welcome({mail: user.mail}).deliver_later
-    UserMailer.self_notification.deliver_later
+    UserMailer.welcome({email: user.email}).deliver_now
+    UserMailer.notification({subject: t('.subject'), email: user.email}).deliver_now
   end
 
   private

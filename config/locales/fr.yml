@@ -66,6 +66,9 @@ fr:
       blank_email: "Veuillez entrer un email."
       invalid_comment: "Message trop court ou absent."
       be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
+      subject: "Nouveau message depuis le contact form"
+    mini_contact:
+      subject: "Message depuis le mini contact"
     add_friend:
       warning: 'Veuillez remplir le champ "email" correctement'
       notice: "Merci ! Vos invitations se prépare et partent bientôt !"
@@ -124,6 +127,8 @@ fr:
       title: "Inscription :"
       image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
       flash-after-request: "vérifier les champs de cette étape et poursuivez"
+    update:
+      subject: "Nouvel inscription sur Parentheze"
     form1:
       title: "Le réseau de confiance"
       details: "Vous entrez dans le cercle de confiance, posez-vous. L'inscription est simple et rapide, elle demande simplement votre attention. Les échanges se feront mieux grâce à des profils de qualité."
@@ -444,6 +449,8 @@ fr:
     update:
       emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
       email_valid: "Veuillez entrez un email valide"
+      subject: "Nouveau guest sur Parentheze"
+    welcome_mail:
     questions_main_number: "4"
     no_reply: "sans réponse"
     questions:

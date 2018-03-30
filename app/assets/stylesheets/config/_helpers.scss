@@ -346,3 +346,7 @@ ul {
   left: -115px;
   border-radius: 50%;
 }
+.img-responsive {
+  @include media-breakpoint-down(sm) { width: 100% }
+  @include media-breakpoint-up(sm) { width: 50% }
+}
