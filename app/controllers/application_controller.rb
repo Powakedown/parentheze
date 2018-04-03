@@ -55,6 +55,10 @@ class ApplicationController < ActionController::Base
     guest_user.email == 'parentgenial@parentheze.com'
   end
 
+  def mails(collection)
+    collection.map { |x| x.email }
+  end
+
   def percentage(serie, total)
     if serie.is_a? Integer
       serie * 100 / total

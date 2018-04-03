@@ -57,6 +57,7 @@ class MessengersController < ApplicationController
   end
 
   def custom_mail
+    session[:custom_mail] = params[:message]
     UserMailer.custom_mail(params[:message])
     redirect_to admin_mailer_path
   end

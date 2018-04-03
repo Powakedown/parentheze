@@ -11,11 +11,9 @@
 
                   <%= render "user_mailer/onboarding/logo" %>
 
-                  <%= render "user_mailer/onboarding/title",  title: @subject,
-                                                  text: @comment %>
+                  <%= render "user_mailer/onboarding/title",  title: @subject, text: @comment %>
 
-                  <%= render "user_mailer/onboarding/calltoaction", btn_text: @btn_text, color: "#F1B255",
-                                                        link: @link %>
+                  <%= render "user_mailer/onboarding/calltoaction", btn_text: @btn_text, color: "#F1B255", link: @link %>
 
                   <%= render "user_mailer/onboarding/bigphoto", photo: @photo %>
 

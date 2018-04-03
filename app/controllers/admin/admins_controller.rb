@@ -8,7 +8,9 @@ module Admin
       redirect_to admin_validations_path
     end
 
-    def mailer; end
+    def mailer
+      @destinatary = ['parentgenial@parentheze.com', 'Guest inscrits', 'Profils validés', 'Profils non complets']
+    end
 
     def password_check; end
 
