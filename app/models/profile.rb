@@ -10,6 +10,7 @@ class Profile < ApplicationRecord
   validates :address, presence: true, :if => :step4?
   validates :photo, presence: true, :if => :step6?
 
+  enum admin: { ambassador: 0, coordinator: 1, supervisor: 2 }
 
   belongs_to :user
 
@@ -21,6 +22,7 @@ class Profile < ApplicationRecord
   has_many :wishes, through: :user
 
   scope :validated, -> { where(validation: 1) }
+  scope :to_validate, -> { where(step: 6, validation: 0) }
   # scope :not_self, -> { where.not( user_id: Profile.first.user.id)}
 
   has_attachment :photo

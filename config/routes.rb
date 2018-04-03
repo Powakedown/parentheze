@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/profiles', to: "profiles#index"
 
   resources :users, only: %i[] do
-    resources :profiles, only: %i[new create show edit update] do
+    resources :profiles, only: %i[new create show edit update destroy] do
       member do
         get 'previous'
         get 'validate'
@@ -41,9 +41,14 @@ Rails.application.routes.draw do
   end
 
   # ADMIN
-  get '/admin', to: 'admins#password_check'
-  get '/admin/password_verification', to: 'admins#password_verification'
-  get '/admin/validations', to: 'admins#validations'
+  namespace :admin do
+    get '/', to: 'admins#password_check'
+    get '/requested', to: 'admins#requested'
+    get '/validations', to: 'admins#validations'
+    get '/password_verification', to: 'admins#password_verification'
+    get '/destroy_profile', to: 'admins#destroy_profile'
+    get '/mailer', to: 'admins#mailer'
+  end
 
   mount Attachinary::Engine => "/attachinary"
 

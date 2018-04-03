@@ -17,7 +17,5 @@ class User < ApplicationRecord
   has_many :user_wishes, dependent: :destroy
   has_many :wishes, through: :user_wishes
 
-  def self.admin?
-    admin == true
-  end
+  enum role: { member: 0, moderator: 1, admin: 2 }
 end

@@ -2,7 +2,7 @@
 
 class ProfilesController < ApplicationController
   before_action :user_and_profile, only: %i[create new edit index update previous add_friends ask_for_cards]
-  before_action :params_profile, only: %i[validate request_update]
+  before_action :params_profile, only: %i[validate destroy request_update]
 
 
   def add_friends; end
@@ -18,6 +18,8 @@ class ProfilesController < ApplicationController
   end
 
   def ask_for_cards; end
+
+  def destroy; end
 
   def edit
     @profile = @user.profile

@@ -45,20 +45,43 @@ fr:
         field7: "Mot de passe :"
         field1: "Email :"
         image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
-  admins:
-    password_verification:
-      alert: "Mot de passe erroné"
-    security_check:
-      alert: "Accès non autorisé"
-    validations:
-      title: "Validation des profils"
-      maintitle: "Inscription à valider"
-    password_check:
-      title: "Admin access"
-      placeholder: "mot de passe"
-      btn_text: "accéder"
-      subquery: "password"
-      alert: "Accès non autorisé"
+  admin:
+    admins:
+      mailer:
+        title: "Créer un mail personnalisé"
+        subtitle: "Écrire le message à envoyer :"
+      password_verification:
+        alert: "Mot de passe erroné"
+      security_check:
+        alert: "Accès non autorisé"
+      validations:
+        title: "Validation des profils"
+      profiles:
+        nothing_here: "Aucune profil ici"
+      tabs:
+        tab1: "Inscription à valider"
+        tab2: "En attente de modification"
+        tab3: "Custom Mailer"
+      requested:
+        title: "Profils en cours de validation"
+      password_check:
+        title: "Admin access"
+        placeholder: "mot de passe"
+        btn_text: "accéder"
+        subquery: "password"
+        alert: "Accès non autorisé"
+      profile:
+        card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
+        field1: Prénom du parent1
+        field2: Prénom du parent2
+        field3: "Nombre d'enfants"
+        field4: "Adresse"
+        field5: "Téléphone"
+        field6: "Besoins :"
+        field7: "Photo :"
+        btn_text1: "valider"
+        btn_text2: "demander les modifs"
+        btn_text3: "supprimer le profil"
   messengers:
     contact:
       notice: "Oh yeah ! Votre message a bien été envoyé."
@@ -103,17 +126,6 @@ fr:
       subject: "Nouvelle inscription"
     mosaic:
       title: "autour de vous"
-    profile:
-      card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
-      field1: Prénom du parent1
-      field2: Prénom du parent2
-      field3: "Nombre d'enfants"
-      field4: "Adresse"
-      field5: "Téléphone"
-      field6: "Besoins :"
-      field7: "Photo :"
-      btn_text1: "valider"
-      btn_text2: "demander les modifs"
     self_profile:
       title: "vous"
     validate:

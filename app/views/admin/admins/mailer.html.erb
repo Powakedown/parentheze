@@ -1,0 +1,32 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= render "tabs" %>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <h5><%= t('.subtitle') %></h5>
+          </div>
+          <div class="col-12">
+            <div class="page-wrapper black-on-white margin-bottom-big relative">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <h3><%= t('.title') %></h3>
+                  </div>
+                  <div class="col-12">
+                    <p><%= t('.subtitle') %></p>
+                  </div>
+                  <%= render "shared/mini_form", path: add_friend_path, placeholder: "email(s)", value: session[:emails], btn_text: t('.btn_text') %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

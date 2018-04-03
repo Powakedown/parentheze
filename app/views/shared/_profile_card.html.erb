@@ -1,6 +1,6 @@
 <%= link_to user_profile_path(profile.user, profile) do %>
   <div class="profile-card">
-    <div class="profile-card-portrait" style="background-image: url('<%= profile.photo.present? ? (cl_image_path profile.photo.path) : "" %>')">
+    <div class="profile-card-portrait" style="background-image: url('<%= profile.photo.present? ? (cl_image_path profile.photo.path, effect:"blue:10" ) : "" %>')">
     </div>
     <div class="profile-card-description text-center">
       <h5 class="name"><%= profile.names %></h5>
