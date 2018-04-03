@@ -56,6 +56,11 @@ class MessengersController < ApplicationController
     end
   end
 
+  def custom_mail
+    UserMailer.custom_mail(params[:message])
+    redirect_to admin_mailer_path
+  end
+
   def mini_contact
     @valid_comment = comment_valid(@message[:comment])
     if @valid_comment

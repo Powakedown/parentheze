@@ -50,6 +50,7 @@ fr:
       mailer:
         title: "Créer un mail personnalisé"
         subtitle: "Écrire le message à envoyer :"
+        btn_text: "Envoyer les mails"
       password_verification:
         alert: "Mot de passe erroné"
       security_check:

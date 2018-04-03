@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "/mini_contact", to: "messengers#mini_contact"
   get "/add_friend", to: "messengers#add_friend"
   get "/ask_for_cards", to: "messengers#ask_for_cards"
+  get "/custom_mail", to: "messengers#custom_mail"
 
 
   # INSCRIPTION
