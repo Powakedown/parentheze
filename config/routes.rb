@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/add_friend", to: "messengers#add_friend"
   get "/ask_for_cards", to: "messengers#ask_for_cards"
   get "/custom_mail", to: "messengers#custom_mail"
+  get "/card_for_school", to: "messengers#card_for_school"
 
 
   # INSCRIPTION
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
         get 'request_update'
         get 'add_friends'
         get 'ask_for_cards'
+        get 'card_for_school'
       end
     end
   end
