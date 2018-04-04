@@ -4,14 +4,17 @@
   <% end %>
 
   <div class="navbar-wagon-right d-none d-lg-block">
-      <%= link_to t('.why'), pourquoi_parentheze_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to t('.plans'), "/#slide2", class: "navbar-wagon-item navbar-wagon-link" %>
       <% if @session_ways %>
         <% if user_signed_in? %>
           <%= link_to t('.sign_out'), destroy_user_session_path,  method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
         <% else %>
+          <%= link_to t('.why'), pourquoi_parentheze_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to t('.plans'), "/#slide2", class: "navbar-wagon-item navbar-wagon-link" %>
           <%= link_to t('.sign_in'), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <% end %>
+      <% else %>
+        <%= link_to t('.why'), pourquoi_parentheze_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t('.plans'), "/#slide2", class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
   </div>
 

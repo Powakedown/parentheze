@@ -29,7 +29,7 @@
         <% if t('.link_image') %>
           <%= render 'scroller', target_page: target_page, link_image: t('.link_image') %>
         <% else %>
-          <%= link_to t('.button_text'), "#"<<target_page , class:"btn btn-yellow flexbox btn-large center scroll" %>
+          <%= link_to t('.button_text'), "#"+target_page , class:"btn btn-yellow flexbox btn-large center scroll" %>
         <% end %>
       </div>
     </div>

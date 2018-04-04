@@ -4,10 +4,20 @@ Nouveau message depuis Parentheze
 Aller sur l'admin: <%= link_to "Admin", "https://parentheze.herokuapp.com/admin" %>
 </br>
 </br>
-SUJET : <%= @subject %>
+EMAIL : <%= @mail_content[:email] %>
 </br>
 </br>
-NAMES : <%= @user_names %>
+SUJET : <%= @mail_content[:subject] %>
 </br>
 </br>
-ADRESSE : <%= @user_address %>
+PRENOMS : <%= @mail_content[:names] %>
+</br>
+</br>
+NOM DE FAMILLE : <%= @mail_content[:name] %>
+</br>
+</br>
+ADRESSE : <%= @mail_content[:address] %>
+</br>
+</br>
+MESSAGE : <%= @mail_content[:content] || @mail_content[:comment] %>
+

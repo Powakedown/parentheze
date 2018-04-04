@@ -45,20 +45,44 @@ fr:
         field7: "Mot de passe :"
         field1: "Email :"
         image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
-  admins:
-    password_verification:
-      alert: "Mot de passe erroné"
-    security_check:
-      alert: "Accès non autorisé"
-    validations:
-      title: "Validation des profils"
-      maintitle: "Inscription à valider"
-    password_check:
-      title: "Admin access"
-      placeholder: "mot de passe"
-      btn_text: "accéder"
-      subquery: "password"
-      alert: "Accès non autorisé"
+  admin:
+    admins:
+      mailer:
+        title: "Créer un mail personnalisé"
+        subtitle: "Écrire le message à envoyer :"
+        btn_text: "Envoyer les mails"
+      password_verification:
+        alert: "Mot de passe erroné"
+      security_check:
+        alert: "Accès non autorisé"
+      validations:
+        title: "Validation des profils"
+      profiles:
+        nothing_here: "Aucune profil ici"
+      tabs:
+        tab1: "Inscription à valider"
+        tab2: "En attente de modification"
+        tab3: "Custom Mailer"
+      requested:
+        title: "Profils en cours de validation"
+      password_check:
+        title: "Admin access"
+        placeholder: "mot de passe"
+        btn_text: "accéder"
+        subquery: "password"
+        alert: "Accès non autorisé"
+      profile:
+        card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
+        field1: Prénom du parent1
+        field2: Prénom du parent2
+        field3: "Nombre d'enfants"
+        field4: "Adresse"
+        field5: "Téléphone"
+        field6: "Besoins :"
+        field7: "Photo :"
+        btn_text1: "valider"
+        btn_text2: "demander les modifs"
+        btn_text3: "supprimer le profil"
   messengers:
     contact:
       notice: "Oh yeah ! Votre message a bien été envoyé."
@@ -66,6 +90,9 @@ fr:
       blank_email: "Veuillez entrer un email."
       invalid_comment: "Message trop court ou absent."
       be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
+      subject: "Nouveau message depuis le contact form"
+    mini_contact:
+      subject: "Message depuis le mini contact"
     add_friend:
       warning: 'Veuillez remplir le champ "email" correctement'
       notice: "Merci ! Vos invitations se prépare et partent bientôt !"
@@ -79,6 +106,7 @@ fr:
       title: "Parrainer des amis sur Parentheze en les invitant :"
       subtitle: "( ajouter plusieurs adresses mails en les séparant par « ; » )  "
       preview: "Aperçu du message envoyé à vos amis :"
+      btn_text: "Envoyer les invitations"
     ask_for_cards:
       column-title: "Carte d'invitation"
       title: "Recevoir des cartes d'invitation à distribuer ?"
@@ -95,19 +123,10 @@ fr:
       footer:
         line1: "Envoyé avec ♥︎ par Parentheze depuis Bordeaux"
       btn_text: "Rejoignez %{recipient} sur Parentheze"
+    inscription_done:
+      subject: "Nouvelle inscription"
     mosaic:
       title: "autour de vous"
-    profile:
-      card_title: "Cocher les points à rectifier, ils seront ajouter au mail : "
-      field1: Prénom du parent1
-      field2: Prénom du parent2
-      field3: "Nombre d'enfants"
-      field4: "Adresse"
-      field5: "Téléphone"
-      field6: "Besoins :"
-      field7: "Photo :"
-      btn_text1: "valider"
-      btn_text2: "demander les modifs"
     self_profile:
       title: "vous"
     validate:
@@ -121,6 +140,8 @@ fr:
       title: "Inscription :"
       image: "https://res.cloudinary.com/doodlid/image/upload/v1516868696/parentheze/inscription_background.jpg"
       flash-after-request: "vérifier les champs de cette étape et poursuivez"
+    update:
+      subject: "Nouvel inscription sur Parentheze"
     form1:
       title: "Le réseau de confiance"
       details: "Vous entrez dans le cercle de confiance, posez-vous. L'inscription est simple et rapide, elle demande simplement votre attention. Les échanges se feront mieux grâce à des profils de qualité."
@@ -137,7 +158,7 @@ fr:
     form3:
       title: "Informations non visibles sur le réseau"
       details: "L’adresse permet de calculer les distances
-              entre les membres mais ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
+              entre les membres mais n'est ni affichée ni pointée sur une carte. Seuls les membres proches vous verront sur le réseau."
       image: ""
       field1: "Adresse postale :"
       field2: "Numéro de téléphone :"
@@ -441,6 +462,8 @@ fr:
     update:
       emailsent: "Votre email nous a été envoyé, vous êtes en lice pour la béta."
       email_valid: "Veuillez entrez un email valide"
+      subject: "Nouveau guest sur Parentheze"
+    welcome_mail:
     questions_main_number: "4"
     no_reply: "sans réponse"
     questions:

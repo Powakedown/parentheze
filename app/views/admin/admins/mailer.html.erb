@@ -1,0 +1,45 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= render "tabs" %>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <h5><%= t('.subtitle') %></h5>
+          </div>
+          <div class="col-12">
+            <div class="page-wrapper black-on-white margin-bottom-big relative">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <h3><%= t('.title') %></h3>
+                  </div>
+                  <div class="col-12">
+                    <p><%= t('.subtitle') %></p>
+                  </div>
+                  <div class="col-12">
+                    <%= simple_form_for :message, url: custom_mail_path, method: :get do |f| %>
+                      <%= f.input :subject, label: "Sujet : " %>
+                      <%= f.input :photo, label: "Lien de la photo à inclure :", required: false %>
+                      <%= f.input :comment, label: "Corps du message : ", id: "textarea", as: :text, :input_html => { cols: 12,
+                                                                                                      rows: 5,
+                                                                                                      resize: "none"
+                                                                                                     } %>
+                      <%= f.input :btn_text, label: "Texte du bouton : ", required: false %>
+                      <%= f.input :link, label: "Lien du bouton : ", required: false %>
+                      <%= f.button :submit, value: t('commons.button.send'), data: { disable_with: "" }, class:"btn btn-yellow" %>
+                    <% end %>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

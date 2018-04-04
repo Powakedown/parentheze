@@ -2,85 +2,60 @@
 
 class UserMailer < ApplicationMailer
   default from: 'parentgenial@parentheze.com'
+  before_action :host_url
 
-  def welcome(guest)
-    @user = guest
-    @url  = 'https://www.parentheze.com'
-    mail(to: @user.email,
-         from: 'parentgenial@parentheze.com',
-         subject: 'Inscription à la béta de parentheze',
-         track_opens: 'true')
-  end
-
-  def welcome_redirection(guest)
-    @user = guest
-  end
-
-  def self_notification(guest)
-    @user = guest
-    mail(to: 'abriko@yahoo.fr',
-         from: 'parentgenial@parentheze.com',
-         subject: 'Nouveau Guest sur Parentheze',
-         track_opens: 'true')
-  end
-
-  def new_registration(user)
-    @user = user
-    @url  = 'https://www.parentheze.com'
-    mail(to: @user.email,
-         from: 'parentgenial@parentheze.com',
-         subject: 'Inscription à la béta de parentheze',
-         track_opens: 'true')
-  end
-
-  def contact_form(user, email, comment)
-    @name = user
-    @email = email
-    @comment = comment
-    mail(to: 'abriko@yahoo.fr',
-         from: 'parentgenial@parentheze.com',
-         subject: 'Nouveau message depuis Parentheze',
-         track_opens: 'true')
-  end
-
-  def notification(subject, user_email, user_address, user_names)
-    @subject = subject
-    @user_address = user_address
-    @user_names = user_names
+  def custom_mail(mail_content)
+    @mail_content = mail_content
     mail(to: 'parentgenial@parentheze.com',
-         from: user_email,
-         subject: subject,
+         subject: mail_content[:subject],
          track_opens: 'true')
   end
 
-  def add_friend(friend_mail, host_mail, host_photo, host_names, host_is_couple)
+  def host_url
+    @url = Rails.application.config.action_mailer.default_url_options
+    @admin_mail = 'parentgenial@parentheze.com'
+  end
+
+  def welcome(guest_as_hash)
+    mail(to: guest_as_hash[:email],
+         subject: 'Inscription à la béta de parentheze',
+         track_opens: 'true')
+  end
+
+  def new_registration(user_as_hash)
+    mail(to: user_as_hash[:email],
+         subject: 'Inscription à la béta de parentheze',
+         track_opens: 'true')
+  end
+
+  def notification(mail_content)
+    @mail_content = mail_content
+    mail(to: @admin_mail,
+         subject: mail_content[:subject],
+         track_opens: 'true')
+  end
+
+  def add_friend(friend_mail, host)
     @friend_mail = friend_mail
-    @host_mail = host_mail
-    @host_photo = host_photo
-    @host_names = host_names
-    @host_is_couple = host_is_couple
+    @host_mail = host[:mail]
+    @host_photo = host[:photo]
+    @host_names = host[:name]
+    @host_is_couple = host[:couple]
     mail(to: @friend_mail,
-         from: @host_mail,
          subject: @host_names + " vous invite à les rejoindre sur Parentheze",
          track_opens: 'true')
   end
 
-  def validation(user)
-    @user = user
-    @url  = 'https://www.parentheze.com'
-    mail(to: @user.email,
-         from: 'parentgenial@parentheze.com',
+  def validation(user_as_hash)
+    mail(to: user_as_hash[:email],
          subject: 'Votre profil est validé!',
          track_opens: 'true')
   end
 
-  def request_update(user, profile, params)
-    @user = user
+  def request_update(mail, profile, updates)
     @profile = profile
-    @url  = 'https://www.parentheze.com'
-    @params = params
-    mail(to: @user,
-         from: 'parentgenial@parentheze.com',
+    @params = updates
+    mail(to: mail,
          subject: 'Votre profil sur Parentheze',
          track_opens: 'true')
   end

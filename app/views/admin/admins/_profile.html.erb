@@ -93,10 +93,13 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-3">
-        <%= link_to t('.btn_text1'), validate_user_profile_path(profile.user, profile), class:"btn btn-green" %>
+        <%= link_to t('.btn_text1'), validate_user_profile_path(profile.user, profile), class:"btn btn-green", data: {confirm: 'Are you sure?'} %>
       </div>
       <div class="col-xs-12 col-md-3">
-        <%= f.button :submit, t('.btn_text2'), class:"btn btn-orange" %>
+        <%= f.button :submit, t('.btn_text2'), class:"btn btn-orange", data: {confirm: 'Are you sure?'} %>
+      </div>
+      <div class="col-xs-12 col-md-3">
+        <%= link_to t('.btn_text3'), admin_destroy_profile_path(profile.id), class:"btn btn-green", data: {confirm: 'Are you sure?'} %>
       </div>
     </div>
   </div>

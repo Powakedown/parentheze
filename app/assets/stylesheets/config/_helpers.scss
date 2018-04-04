@@ -313,6 +313,7 @@ a:hover.pastille {
       justify-content: center;
       align-items: center;
       color: black;
+      padding: 10px;
     }
   }
   input {
@@ -344,4 +345,8 @@ ul {
   top: 20px;
   left: -115px;
   border-radius: 50%;
+}
+.img-responsive {
+  @include media-breakpoint-down(sm) { width: 100% }
+  @include media-breakpoint-up(sm) { width: 50% }
 }

@@ -23,6 +23,7 @@ class PagesController < ApplicationController
   end
 
   def why
+    @guest = guest_user
     @slides = t('.slides')
     @slides_manifeste = t('.manifeste')
   end

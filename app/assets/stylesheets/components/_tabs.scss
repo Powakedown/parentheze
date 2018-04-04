@@ -1,0 +1,7 @@
+.tabs {
+  .tab {
+    @extend .btn;
+    background-color: $light-purple;
+    border-radius: $border-radius $border-radius 0 0;
+  }
+}

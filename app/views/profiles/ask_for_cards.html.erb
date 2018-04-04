@@ -22,7 +22,7 @@
                       <p><%= t('.text_html') %></p>
                     </div>
                     <div class="col-12 margin-bottom-big text-center">
-                      <%= cl_image_tag "parentheze/cards_invitations.png", :width=>400, :crop=>"scale" %>
+                      <%= cl_image_tag "parentheze/cards_invitations.png", width:400, crop:"scale", class:"img-responsive" %>
                     </div>
                   </div>
                 </div>
@@ -33,7 +33,7 @@
                   <h3 class="margin-bottom-small"><%= t('.title2') %></h3>
                 </div>
                 <div class="col-12">
-                  <%= link_to t('.btn_text2'), ask_for_cards_path, class:"btn btn-green" %>
+                  <%= link_to t('.btn_text2'), add_friends_user_profile_path(@user, @profile), class:"btn btn-green" %>
                 </div>
               </div>
             </div>

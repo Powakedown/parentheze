@@ -11,7 +11,10 @@ class MessengersController < ApplicationController
     if @valid_email && @valid_comment && @human
       session[:contact_email] = session[:contact_name] = session[:contact_comment] = nil
       flash[:success] = t('.notice')
-      UserMailer.contact_form(@message[:name], @message[:email], @message[:comment]).deliver_later
+      UserMailer.notification({ subject: t('.subject'),
+                                email:params_message[:email],
+                                name: params_message[:name],
+                                content: params_message[:comment]}).deliver_now
       redirect_to root_path
     else
       session[:contact_email] = @message[:email]
@@ -29,7 +32,7 @@ class MessengersController < ApplicationController
     @emails = @message[:comment].split(";").map(&:strip).select{|word| email_valid(word)}
     unless @emails.empty?
       @emails.each do |mail|
-        UserMailer.add_friend(mail, @user.email, @user.photo.path.presence, @user.names, @user.profile.couple?).deliver_later
+        UserMailer.add_friend(mail, {email: @user.email, photo: @user.photo.path, name: @user.names, couple: @user.profile.couple?}).deliver_now
       end
       flash[:notice] = t('.notice')
       redirect_to add_friends_user_profile_path(@user, @user.profile)
@@ -43,20 +46,26 @@ class MessengersController < ApplicationController
   def ask_for_cards
     @profile.card += 1
     @profile.name = @message[:comment]
-    unless @message[:comment].present?
+    if @message[:comment].blank?
       flash[:warning] = t('.warning')
+      redirect_to profiles_path
     elsif @profile.save!
-      UserMailer.notification(t('.subject'), @user.email, @user.address, @user.names).deliver_now
+      UserMailer.notification( {subject: t('.subject'), email: @user.email, address: @user.address, name: @user.full_name }).deliver_now
       flash[:notice] = t('.notice')
       redirect_to profiles_path
     end
+  end
+
+  def custom_mail
+    UserMailer.custom_mail(params[:message])
+    redirect_to admin_mailer_path
   end
 
   def mini_contact
     @valid_comment = comment_valid(@message[:comment])
     if @valid_comment
       flash[:success] = t('messengers.contact.notice')
-      UserMailer.contact_form(@user.names, @user[:email], "mini_contact : " + @message[:comment]).deliver_later
+      UserMailer.notification( {subject: t('.subject'), names: @user.names, email: @user.email, content: "mini_contact : " + @message[:comment]}).deliver_now
       redirect_to profiles_path
     else
       flash[:warning1] = t('messengers.contact.invalid_comment')
@@ -68,6 +77,7 @@ class MessengersController < ApplicationController
 
   def who_is_user
     @user = current_user
+    @profile = @user.profile
   end
 
   def message_from_params

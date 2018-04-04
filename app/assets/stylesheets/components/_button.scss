@@ -15,7 +15,7 @@
   -webkit-box-shadow: none;
   border-bottom:none;
   cursor: pointer;
-  // white-space: normal;
+  @include media-breakpoint-down(sm) { white-space: normal; }
   &.btn-calltoaction {
     min-height: 75px;
     font-size: 0.9em;
@@ -87,7 +87,10 @@ input {
   background-color: $water-green;
 }
 .btn-yellow, .btn-1 {
-  background-color: $yellow !important;
+  background-color: $yellow;
+}
+.btn-orange, .btn-1 {
+  background-color: $orange !important;
 }
 .btn-inverse {
   color: $dark-gray !important;
