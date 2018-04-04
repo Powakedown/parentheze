@@ -7,13 +7,16 @@ class ApplicationController < ActionController::Base
   before_action :session_ways?
   add_flash_types :success, :warning
 
-  def guest_user(with_retry = true)
-    # Cache the value the first time it's gotten.
-    @cached_guest_user ||= Guest.find(session[:guest_user_id] || cookies[:parentheze_guest] ||= create_guest_user.id)
-  rescue ActiveRecord::RecordNotFound # if session[:guest_user_id] invalid
-    session[:guest_user_id] = nil
-    cookies[:parentheze_guest] = nil
-    guest_user if with_retry
+  def average(collection, column)
+    collection.average(column).to_digits.to_f.round(2)
+  end
+
+  def after_sign_in_path_for(resource_or_scope)
+    if current_user.validation == 1
+      "/profiles"
+    else
+      new_user_profile_path(current_user)
+    end
   end
 
   def create_guest_user
@@ -27,33 +30,36 @@ class ApplicationController < ActionController::Base
     u
   end
 
-  def after_sign_in_path_for(resource_or_scope)
-    if current_user.validation == 1
-      "/profiles"
-    else
-      new_user_profile_path(current_user)
-    end
+  def completion(collection, column)
+    collection.count(column) * 100 / collection.count
   end
 
-  def session_ways?
-    @session_ways = true
+  def comment_valid(comment)
+    comment.present? && comment.length > 8
   end
 
   def cookie
     @cookie = cookies[:parentheze_guest].present?
   end
 
-  def average(collection, column)
-    collection.average(column).to_digits.to_f.round(2)
+  def current_user?
+    current_user.id == params[:user_id].to_i
   end
 
-  def completion(collection, column)
-    collection.count(column) * 100 / collection.count
+  def email_valid(email)
+    mail_regex = /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/
+    email =~ mail_regex && email.length > 8
   end
 
-  def tester
-    guest_user.email == 'parentgenial@parentheze.com'
+  def guest_user(with_retry = true)
+    # Cache the value the first time it's gotten.
+    @cached_guest_user ||= Guest.find(session[:guest_user_id] || cookies[:parentheze_guest] ||= create_guest_user.id)
+  rescue ActiveRecord::RecordNotFound # if session[:guest_user_id] invalid
+    session[:guest_user_id] = nil
+    cookies[:parentheze_guest] = nil
+    guest_user if with_retry
   end
+
 
   def mails(collection)
     collection.map { |x| x.email }
@@ -67,17 +73,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def current_user?
-    current_user.id == params[:user_id].to_i
+  def session_ways?
+    @session_ways = true
   end
 
-  def email_valid(email)
-    mail_regex = /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/
-    email =~ mail_regex && email.length > 8
+
+  def tester
+    guest_user.email == 'parentgenial@parentheze.com'
   end
 
-  def comment_valid(comment)
-    comment.present? && comment.length > 8
-  end
+
+
+
+
 
 end

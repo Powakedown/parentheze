@@ -31,13 +31,13 @@ module Admin
       @profiles = Profile.to_validate
     end
 
-
     private
 
     def security_check
+      current_user.admin? ? flash[:notice] = 'admin' : flash[:warning] = 'not admin'
       return if current_user.admin?
       redirect_to root_path
-      flash[:warning] = t('.alert')
+      # flash[:warning] = t('.alert')
     end
   end
 end
