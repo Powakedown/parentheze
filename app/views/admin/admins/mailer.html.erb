@@ -22,6 +22,7 @@
                   </div>
                   <div class="col-12">
                     <%= simple_form_for :message, url: custom_mail_path, method: :get do |f| %>
+                      <%= f.input :destinatary, collection: @destinatary, prompt: "Sélectionner le(s) Destinataire(s)", required: :true, label: "Destinataire(s) : ", input_html: { value: session[:custom_mail]["destinatary"] } %>
                       <%= f.input :subject, label: "Sujet : ", input_html: { value: session[:custom_mail]["subject"] } %>
                       <%= f.input :photo, label: "Lien de la photo à inclure :", required: false, input_html: { value: session[:custom_mail]["photo"] } %>
                       <%= f.input :comment, label: "Corps du message : ", id: "textarea",
@@ -32,8 +33,8 @@
                                                                                          value: session[:custom_mail]["comment"]
                                                                                           } %>
                       <%= f.input :btn_text, label: "Texte du bouton : ", required: false, input_html: { value: session[:custom_mail]["btn_text"] } %>
-                      <%= f.input :destinatary, collection: @destinatary, prompt: "Sélectionner le(s) Destinataire(s)", required: :true, label: "Destinataire(s) : ", input_html: { value: session[:custom_mail]["destinatary"] } %>
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                      <%= f.input :btn_link, label: "Lien du bouton : ", required: false, input_html: { value: session[:custom_mail]["btn_link"] } %>
+                      <button type="button" id="submit" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal">
                         Envoyer
                       </button>
                   </div>
@@ -58,12 +59,16 @@
           </button>
         </div>
         <div>
+          <p>Destinataires : </p>
+          <p class="underline" id="destinatary"> </p>
+          <p>Sujet :</p>
+          <p class="underline" id="subject" ></p>
           <div class="full-width separator-vertical">
             <%= image_tag "https://res.cloudinary.com/doodlid/image/upload/v1518618244/parentheze/Parentheze_logo_black.png", class:"mailer-preview-logo" %>
           </div>
-          <p id:"comment">azertyuiopqsdfghjklmwxcvbn</p>
+          <p id="comment"></p>
           <div class="separator-vertical">
-            <div class="btn btn-yellow" id:"btn_text">Envoyer</div>
+            <%= link_to '', "http://www.ecosia.org", id:"btn", class:"btn btn-yellow" %>
           </div>
 
           <%= image_tag "https://res.cloudinary.com/doodlid/image/upload/v1519923591/parentheze/polaroid_mail_photo02.png", class:"mailer-preview-photo", id:"photo" %>
@@ -77,4 +82,23 @@
       </div>
     </div>
   </div>
+<% end %>
+
+<%= content_for :after_js do %>
+  <script>
+    var submit = document.getElementById('submit');
+
+    submit.addEventListener('click', fillFields);
+
+    function fillFields() {
+      $('#destinatary').html($('#message_destinatary').val());
+      $('#subject').html($('#message_subject').val());
+      $('#comment').html($('#message_comment').val());
+      $('#photo').attr('src', $('#message_photo').val());
+      $('#btn').html($('#message_btn_text').val());
+      var btn = document.getElementById('btn');
+      btn.setAttribute('href', ($('#message_btn_link').val()));
+    }
+
+  </script>
 <% end %>
