@@ -9,6 +9,7 @@ module Admin
     end
 
     def mailer
+      @session = session[:custom_mail] || {}
       @recipient = ['1 - parentgenial@parentheze.com', '2 - Guest inscrits', '3 - Profils validés', '4 - Profils non complets']
     end
 
