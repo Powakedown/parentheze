@@ -4,9 +4,9 @@ class UserMailer < ApplicationMailer
   default from: 'parentgenial@parentheze.com'
   before_action :host_url
 
-  def custom_mail(mail_content)
+  def custom_mail(recipient, mail_content)
     @mail_content = mail_content
-    mail(to: 'parentgenial@parentheze.com',
+    mail(to: recipient,
          subject: mail_content[:subject],
          track_opens: 'true')
   end

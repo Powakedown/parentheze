@@ -57,7 +57,19 @@ class MessengersController < ApplicationController
   end
 
   def custom_mail
-    UserMailer.custom_mail(params[:message])
+    session[:custom_mail] = params[:message]
+
+    case params[:message]["recipient"].first
+      when "1" then @recipients = ["parentgenial@parentheze.com"]
+      when "2" then @recipients = mails(Guest.subscriber.not_tester)
+      when "3" then @recipients = mails(Profile.validated)
+      when "4" then @recipients = mails(Profile.to_validate)
+    end
+
+    @recipients.each do |recipient|
+      UserMailer.custom_mail(recipient, params[:message]).deliver_now
+    end
+
     redirect_to admin_mailer_path
   end
 

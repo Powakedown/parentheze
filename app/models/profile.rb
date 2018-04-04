@@ -23,7 +23,6 @@ class Profile < ApplicationRecord
 
   scope :validated, -> { where(validation: 1) }
   scope :to_validate, -> { where(step: 6, validation: 0) }
-  # scope :not_self, -> { where.not( user_id: Profile.first.user.id)}
 
   has_attachment :photo
 

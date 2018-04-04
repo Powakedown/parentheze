@@ -1,6 +1,6 @@
 module Admin
   class AdminsController < ApplicationController
-    before_action :security_check, only: %i[validations password_check password_verification]
+    before_action :security_check, only: %i[validations password_check password_verification mailer requested]
 
     def destroy_profile
       @profile = Profile.find(params[:format])
@@ -8,7 +8,9 @@ module Admin
       redirect_to admin_validations_path
     end
 
-    def mailer; end
+    def mailer
+      @recipient = ['1 - parentgenial@parentheze.com', '2 - Guest inscrits', '3 - Profils validés', '4 - Profils non complets']
+    end
 
     def password_check; end
 
