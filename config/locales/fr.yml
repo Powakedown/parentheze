@@ -91,6 +91,8 @@ fr:
       invalid_comment: "Message trop court ou absent."
       be_human: "Veuillez cocher la case 'je ne suis pas un robot'"
       subject: "Nouveau message depuis le contact form"
+    custom_mail:
+      notice: "Oh yeah ! Message(s) envoyé(s)."
     mini_contact:
       subject: "Message depuis le mini contact"
     add_friend:

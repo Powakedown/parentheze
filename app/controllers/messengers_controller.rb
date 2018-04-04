@@ -70,6 +70,7 @@ class MessengersController < ApplicationController
       UserMailer.custom_mail(recipient, params[:message]).deliver_now
     end
 
+    flash[:notice] = t('.notice')
     redirect_to admin_mailer_path
   end
 

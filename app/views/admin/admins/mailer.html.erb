@@ -8,12 +8,10 @@
       <div class="col-12">
         <div class="row">
           <div class="col-12">
-            <h5><%= t('.subtitle') %></h5>
-          </div>
-          <div class="col-12">
             <div class="page-wrapper black-on-white margin-bottom-big relative">
               <div class="container">
                 <div class="row">
+                  <div class="pastille pastille-yellow pastille-close flexbox clickable" id="erase"><i class="fas fa-eraser"></i></div>
                   <div class="col-12">
                     <h3><%= t('.title') %></h3>
                   </div>
@@ -87,8 +85,20 @@
 <%= content_for :after_js do %>
   <script>
     var submit = document.getElementById('submit');
+    var eraser = document.getElementById('erase');
+    var btn = document.getElementById('btn');
 
     submit.addEventListener('click', fillFields);
+    eraser.addEventListener('click', emptyFields);
+
+    function emptyFields() {
+      document.getElementById('message_recipient').value = "";
+      document.getElementById('message_subject').value = "";
+      document.getElementById('message_comment').value = "";
+      document.getElementById('message_photo').value = "";
+      document.getElementById('message_btn_text').value = "";
+      document.getElementById('message_btn_link').value = "";
+    }
 
     function fillFields() {
       $('#recipient').html($('#message_recipient').val());
@@ -96,7 +106,6 @@
       $('#comment').html($('#message_comment').val());
       $('#photo').attr('src', $('#message_photo').val());
       $('#btn').html($('#message_btn_text').val());
-      var btn = document.getElementById('btn');
       btn.setAttribute('href', ($('#message_btn_link').val()));
     }
 

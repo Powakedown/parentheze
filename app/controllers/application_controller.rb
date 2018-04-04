@@ -60,7 +60,6 @@ class ApplicationController < ActionController::Base
     guest_user if with_retry
   end
 
-
   def mails(collection)
     collection.map { |x| x.email }
   end
@@ -77,14 +76,8 @@ class ApplicationController < ActionController::Base
     @session_ways = true
   end
 
-
   def tester
     guest_user.email == 'parentgenial@parentheze.com'
   end
-
-
-
-
-
 
 end
