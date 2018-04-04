@@ -48,7 +48,7 @@ class MessengersController < ApplicationController
     @profile.name = @message[:comment]
     if @message[:comment].blank?
       flash[:warning] = t('.warning')
-      redirect_to profiles_path
+      redirect_to  ask_for_cards_user_profile_path(@user, @profile)
     elsif @profile.save!
       UserMailer.notification( {subject: t('.subject'), email: @user.email, address: @user.address, name: @user.full_name }).deliver_now
       flash[:notice] = t('.notice')
