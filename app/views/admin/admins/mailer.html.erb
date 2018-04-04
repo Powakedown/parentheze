@@ -22,7 +22,7 @@
                   </div>
                   <div class="col-12">
                     <%= simple_form_for :message, url: custom_mail_path, method: :get do |f| %>
-                      <%= f.input :destinatary, collection: @destinatary, prompt: "Sélectionner le(s) Destinataire(s)", required: :true, label: "Destinataire(s) : ", input_html: { value: session[:custom_mail]["destinatary"] } %>
+                      <%= f.input :recipient, collection: @recipient, prompt: "Sélectionner le(s) Destinataire(s)", required: :true, label: "Destinataire(s) : ", input_html: { value: session[:custom_mail]["recipient"] } %>
                       <%= f.input :subject, label: "Sujet : ", input_html: { value: session[:custom_mail]["subject"] } %>
                       <%= f.input :photo, label: "Lien de la photo à inclure :", required: false, input_html: { value: session[:custom_mail]["photo"] } %>
                       <%= f.input :comment, label: "Corps du message : ", id: "textarea",
@@ -60,7 +60,7 @@
         </div>
         <div>
           <p>Destinataires : </p>
-          <p class="underline" id="destinatary"> </p>
+          <p class="underline" id="recipient"> </p>
           <p>Sujet :</p>
           <p class="underline" id="subject" ></p>
           <div class="full-width separator-vertical">
@@ -91,7 +91,7 @@
     submit.addEventListener('click', fillFields);
 
     function fillFields() {
-      $('#destinatary').html($('#message_destinatary').val());
+      $('#recipient').html($('#message_recipient').val());
       $('#subject').html($('#message_subject').val());
       $('#comment').html($('#message_comment').val());
       $('#photo').attr('src', $('#message_photo').val());
