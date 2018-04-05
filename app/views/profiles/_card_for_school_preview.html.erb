@@ -6,29 +6,20 @@
       </div>
       <div class="col-12 col-md-12 separator-vertical">
         <%= cl_image_tag ( @user.photo.path ), class:"mailer-preview-portrait" %>
-        <%= cl_image_tag ("parentheze/invitation_bubble.png"), class:"mailer-preview-bubble" %>
-      </div>
-      <div class="col-12 col-md-12 col-lg-12 col-xl-9 separator-vertical text-right">
-        <%= cl_image_tag ("parentheze/invitation_bubble_2.png"), class:"mailer-preview-bubble" %>
+        <%= cl_image_tag ("parentheze/card_for_school_preview_bubble.png"), class:"mailer-preview-bubble" %>
+        <p><%= @user.names %></p>
       </div>
 
-      <div class="col-12 col-md-12 col-lg-12 col-xl-9">
-        <div class="bar-separator"></div>
-      </div>
-
-      <div class="col-12 col-md-12 col-lg-12 col-xl-9 separator-vertical">
-        <h3 class="separator-vertical"><%= @user.names + t('.title', verb: @profile.couple? ? "invitent" : "invite") %></h3>
-        <p class="separator-vertical"><%= t('.text1') %></p>
-        <p class="separator-vertical"><%= t('.text2') %></p>
-      </div>
-
-      <div class="col-12 col-md-12 col-lg-12 col-xl-9 separator-vertical">
-      <%= link_to t('.btn_text', recipient: @user.names), "https://www.parentheze.com", class:"btn btn-blue separator-vertical" %>
+      <div class="col-12 col-md-12 separator-vertical">
+        <div class="mailer-preview-content">
+          <%= t('.content_html') %>
+        </div>
       </div>
       <div class="mailer-preview-bar separator-vertical"></div>
 
       <div class="col-12 col-md-12 col-lg-12 col-xl-9 ">
-        <h5><%= t('.footer.line1') %></h5>
+        <p><%= t('.footer.line1') %></p>
+        <p><%= t('.footer.line2') %></p>
       </div>
     </div>
   </div>

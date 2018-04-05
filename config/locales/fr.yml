@@ -142,9 +142,32 @@ fr:
       btn_text: "Envoyer le courrier dans mon école"
       title2: "Avez-vous pensé à envoyer les invitations mails ?"
       btn_text2: "Elles sont belles et n'attendent que vous"
-      preview: "Voici le courrier que votre APE va recevoir :"
+      preview: "Voici le courrier que votre association de parents d'élève va recevoir :"
       label: "Nom et adresse postale de votre école ou de l'association des parents d'élèves :"
       checkbox_label: "Envoyer le courrier de votre part ?"
+    card_for_school_preview:
+      content_html: "Bonjour,</br></br>
+                Vous recevez ce courrier car des parents de votre école souhaitent vous faire part de leur découverte et aimerait inviter les autres parents du quartier sur Parentheze.
+                </br></br>
+                <h4>Parentheze, c’est quoi ?</h4>
+                C’est un réseau réservé aux parents qui met l’accent sur la rencontre et facilite la vie des parents en leur permettant de pratiquer l’échange de garde et la mutualisation de babysitter.
+                </br></br>
+                Parentheze est créé par des parents d’ici pour des parents d’ici et est aujourd’hui uniquement bordelais.
+                </br></br>
+                Nous vous invitons à aller sur <strong>www.parentheze.com</strong> pour en savoir plus.
+                </br></br>
+                <h4>Si vous pensez que Parentheze peut aider les parents de votre école, vous pouvez :</h4>
+                - faire passer le message aux parents de votre école par vos moyens de communication privilégiés
+                </br></br>
+                - afficher la petite affiche jointe sur le panneau d’affichage
+                </br></br>
+                - vous inscrire sur Parentheze afin de recevoir des cartes d’invitations et inviter facilement les parents autour grâce
+                </br></br>
+                À bientôt,</br></br>
+                Maxime de Parentheze"
+      footer:
+        line1: "inscription sur www.parentheze.com"
+        line2: "parentgenial@parentheze.com"
     inscription_done:
       subject: "Nouvelle inscription"
     mosaic:

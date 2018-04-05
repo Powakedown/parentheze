@@ -1,7 +1,7 @@
 class MessengersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[contact mini_contact]
-  before_action :message_from_params, only: %i[contact add_friend mini_contact ask_for_cards]
-  before_action :who_is_user, only: %i[add_friend mini_contact ask_for_cards]
+  before_action :message_from_params, only: %i[contact add_friend mini_contact ask_for_cards card_for_school]
+  before_action :who_is_user, only: %i[add_friend mini_contact ask_for_cards card_for_school]
 
   def contact
     @valid_email = email_valid(@message[:email])

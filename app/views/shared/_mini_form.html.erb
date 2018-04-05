@@ -1,12 +1,6 @@
 <div class="full-width">
   <%= simple_form_for :message, url: content[:path], method: :get do |f| %>
     <div class="col-12 col-sm-8">
-      <% if content[:checkbox_label].size > 0 %>
-      <div class="margin-bottom-small">
-          <p><%= content[:checkbox_label] %></p>
-          <%= f.collection_radio_buttons :options, [[true, 'Oui'] ,[false, 'Non']], :first, :last %>
-      </div>
-      <% end %>
       <%= f.input :comment, label: content[:label], placeholder: content[:placeholder], input_html: {value: content[:value] || "" }  %>
     </div>
     <div class="col-12 col-sm-4">

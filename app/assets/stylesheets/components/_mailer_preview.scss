@@ -24,9 +24,9 @@
     }
     .mailer-preview-bubble {
       @include media-breakpoint-up(xl) { height: 75px; }
-      @include media-breakpoint-down(xl) { height: 52px; }
-      @include media-breakpoint-down(lg) { height: 44px; }
+      @include media-breakpoint-down(lg) { height: 35px; }
       @include media-breakpoint-down(sm) { height: 36px; }
+      // position: absolute;
     }
     .mailer-preview-bar {
       width: 100%;
@@ -35,6 +35,15 @@
     }
     .mailer-preview-photo {
       width: 350px;
+    }
+    .mailer-preview-content {
+      width: 80%;
+      text-align: justify;
+      text-justify: inter-word;
+      color: $light-purple;
+      h4 {
+        font-weight: bold;
+      }
     }
   }
 }
