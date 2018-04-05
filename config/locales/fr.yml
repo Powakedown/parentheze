@@ -102,6 +102,10 @@ fr:
       subject: "Demande de membre Parentheze : cartes d'invitations"
       notice: "Merci, nous allons préparer votre lot de carte au plus vite !"
       warning: "Veuillez remplir le champ nom correctement."
+    card_for_school:
+      subject: "Envoie de courrier à l'APE de l'école"
+      notice: "Merci, nous préparons le courrier et l'envoyons bientôt !"
+      warning: "Veuillez remplir le champ nom et adresse correctement"
   profiles:
     add_friend:
       column-title: "Invitation d'ami(s)"
@@ -128,12 +132,19 @@ fr:
     card_for_school:
       column-title: "Démarcher votre école"
       title: "Courrier à l'association de votre école"
-      text_html: "Nous envoyons pour vous un courrier à l'association des parents d'élèves de votre école afin de leur présenter Parentheze. En effet, certaines APE cherchent un outil de ce type car les parents leur demandent des solutions qu'ils ne peuvent pas fournir jusque là. Aujourd'hui, Parentheze peut les aider à fournir des solutions de quartier grâce à un réseau de proximité. "
-      btn_text: "Envoyer le courrier dans mon école."
+      text_html: "Nous envoyons pour vous un courrier à l'association des parents d'élèves
+                  de votre école afin de leur présenter Parentheze. En effet, certaines APE
+                  cherchent un outil de ce type car les parents leur demandent des solutions
+                  qu'ils ne pouvaient pas fournir jusque là. Aujourd'hui, Parentheze peut les
+                  aider à fournir des solutions de quartier grâce à un réseau de proximité. </br></br>
+                  <strong>Ce qui serait super</strong>, c'est que le courrier soit envoyé de votre part.
+                  Ainsi, il manifesterait plus un besoin proche au sein de l'école qu'un simple démarchage commerciale."
+      btn_text: "Envoyer le courrier dans mon école"
       title2: "Avez-vous pensé à envoyer les invitations mails ?"
       btn_text2: "Elles sont belles et n'attendent que vous"
       preview: "Voici le courrier que votre APE va recevoir :"
-      label: "Nom et adresse de votre école ou de l'association des parents d'élèves :"
+      label: "Nom et adresse postale de votre école ou de l'association des parents d'élèves :"
+      checkbox_label: "Envoyer le courrier de votre part ?"
     inscription_done:
       subject: "Nouvelle inscription"
     mosaic:

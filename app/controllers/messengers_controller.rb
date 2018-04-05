@@ -56,6 +56,18 @@ class MessengersController < ApplicationController
     end
   end
 
+  def card_for_school
+    @profile.card += 10
+    if @message[:comment].blank?
+      flash[:warning] = t('.warning')
+      redirect_to card_for_school_user_profile_path(@user, @profile)
+    elsif @profile.save!
+      UserMailer.notification( {subject: t('.subject'), email: @user.email, comment: @message[:comment] }).deliver_now
+      flash[:notice] = t('.notice')
+      redirect_to profiles_path
+    end
+  end
+
   def custom_mail
     session[:custom_mail] = params[:message]
 
