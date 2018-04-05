@@ -64,6 +64,7 @@ class MessengersController < ApplicationController
     elsif @profile.save!
       UserMailer.notification( {subject: t('.subject'), email: @user.email, names: @user.names, address: @message[:comment] }).deliver_now
       flash[:notice] = t('.notice')
+      Letter.create!(user: @user, name: "Letter to school")
       redirect_to profiles_path
     end
   end
