@@ -76,6 +76,12 @@ class ApplicationController < ActionController::Base
     @session_ways = true
   end
 
+  def security_check
+    return if current_user.admin?
+    redirect_to root_path
+    flash[:warning] = t('.alert')
+  end
+
   def tester
     guest_user.email == 'parentgenial@parentheze.com'
   end

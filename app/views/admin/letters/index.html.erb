@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <%= render "tabs" %>
+        <%= render "admin/shared/tabs" %>
       </div>
 
       <div class="col-12">
@@ -25,11 +25,9 @@
                         </div>
                         <div>
                           <% if letter.to_send? %>
-                            <%= link_to content_tag(:i, nil, class:'fas fa-check'), root_path, class: "pastille pastille-green flexbox" %>
+                            <%= link_to content_tag(:i, nil, class:'fas fa-check'), admin_letter_path(letter), method: :patch, class: "pastille pastille-green flexbox" %>
                           <% elsif letter.sent? %>
                             <i class="fas fa-check green"></i>
-                          <% elsif letter.to_trash? %>
-                            <i class="fas fa-trash"></i>
                           <% end %>
                         </div>
                       </div>

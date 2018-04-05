@@ -59,11 +59,6 @@ fr:
         title: "Validation des profils"
       profiles:
         nothing_here: "Aucune profil ici"
-      tabs:
-        tab1: "Inscription à valider"
-        tab2: "En attente de modification"
-        tab3: "Custom Mailer"
-        tab4: "Letters"
       requested:
         title: "Profils en cours de validation"
       password_check:
@@ -84,8 +79,18 @@ fr:
         btn_text1: "valider"
         btn_text2: "demander les modifs"
         btn_text3: "supprimer le profil"
-      letters:
+    shared:
+      tabs:
+        tab1: "Inscription à valider"
+        tab2: "En attente de modification"
+        tab3: "Custom Mailer"
+        tab4: "Letters"
+    letters:
+      index:
         title: "Lettres à envoyer :"
+      update:
+        notice: "Lettre marquée comme envoyée"
+        warning: "Quelque chose s'est map passé"
   messengers:
     contact:
       notice: "Oh yeah ! Votre message a bien été envoyé."

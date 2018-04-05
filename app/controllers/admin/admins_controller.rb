@@ -8,10 +8,6 @@ module Admin
       redirect_to admin_validations_path
     end
 
-    def letters
-      @letters = Letter.preload(:user).order(:state)
-    end
-
     def mailer
       @session = session[:custom_mail] || {}
       @recipient = ['1 - parentgenial@parentheze.com', '2 - Guest inscrits', '3 - Profils validés', '4 - Profils non complets']
@@ -37,12 +33,5 @@ module Admin
     end
 
     private
-
-    def security_check
-      # current_user.admin? ? flash[:notice] = 'admin' : flash[:warning] = 'not admin'
-      return if current_user.admin?
-      redirect_to root_path
-      flash[:warning] = t('.alert')
-    end
   end
 end
