@@ -62,7 +62,7 @@ class MessengersController < ApplicationController
       flash[:warning] = t('.warning')
       redirect_to card_for_school_user_profile_path(@user, @profile)
     elsif @profile.save!
-      UserMailer.notification( {subject: t('.subject'), email: @user.email, comment: @message[:comment] }).deliver_now
+      UserMailer.notification( {subject: t('.subject'), email: @user.email, names: @user.names, address: @message[:comment] }).deliver_now
       flash[:notice] = t('.notice')
       redirect_to profiles_path
     end
