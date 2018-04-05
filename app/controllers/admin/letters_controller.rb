@@ -1,7 +1,21 @@
 module Admin
   class LettersController < ApplicationController
     before_action :security_check
-    before_action :params_letter, only: %i(update destroy)
+    before_action :params_letter, only: %i(update destroy export)
+
+    def destroy
+      @letter.destroy
+      redirect_to controller: "letters", action: "index"
+    end
+
+    def export
+      respond_to do |format|
+        format.html
+        format.pdf do
+          render pdf: "Letter to School"
+        end
+      end
+    end
 
     def index
       @letters = Letter.preload(:user).order(:state)
@@ -15,11 +29,6 @@ module Admin
       else
         flash[:warning] = t('.warning')
       end
-    end
-
-    def destroy
-      @letter.destroy
-      redirect_to controller: "letters", action: "index"
     end
 
     private

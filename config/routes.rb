@@ -2,8 +2,6 @@
 
 Rails.application.routes.draw do
 
-  get 'letters/index'
-
   resources :guests, only: %i[create new update show index]
 
   # VITRINE
@@ -53,7 +51,11 @@ Rails.application.routes.draw do
     get '/password_verification', to: 'admins#password_verification'
     get '/destroy_profile', to: 'admins#destroy_profile'
     get '/mailer', to: 'admins#mailer'
-    resources :letters, only: %i[index update destroy]
+    resources :letters, only: %i[index update destroy] do
+      member do
+        get 'export'
+      end
+    end
   end
 
   mount Attachinary::Engine => "/attachinary"
