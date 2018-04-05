@@ -26,6 +26,7 @@
                         <div>
                           <% if letter.to_send? %>
                             <%= link_to content_tag(:i, nil, class:'fas fa-check'), admin_letter_path(letter), method: :patch, class: "pastille pastille-green flexbox" %>
+                            <%= link_to content_tag(:i, nil, class:'fas fa-trash'), admin_letter_path(letter), method: :delete, class: "pastille pastille-red flexbox" %>
                           <% elsif letter.sent? %>
                             <i class="fas fa-check green"></i>
                           <% end %>

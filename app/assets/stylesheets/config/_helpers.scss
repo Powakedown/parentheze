@@ -224,6 +224,10 @@ a:hover.pastille {
     background-color: $white;
     color: $dark-gray;
   }
+  &.pastille-red {
+    background-color: $red;
+    color: $white;
+  }
   &.pastille-light-blue {
     background-color: $light-blue;
   }
