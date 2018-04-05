@@ -1,11 +1,15 @@
 module Admin
   class AdminsController < ApplicationController
-    before_action :security_check, only: %i[validations password_check password_verification mailer requested]
+    before_action :security_check, only: %i[validations password_check password_verification mailer letters requested]
 
     def destroy_profile
       @profile = Profile.find(params[:format])
       @profile.destroy
       redirect_to admin_validations_path
+    end
+
+    def letters
+      @letters = Letter.preload(:user).order(:state)
     end
 
     def mailer

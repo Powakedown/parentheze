@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     get '/password_verification', to: 'admins#password_verification'
     get '/destroy_profile', to: 'admins#destroy_profile'
     get '/mailer', to: 'admins#mailer'
+    get '/letters', to: 'admins#letters'
   end
 
   mount Attachinary::Engine => "/attachinary"

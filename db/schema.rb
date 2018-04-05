@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 201804031306121) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "address"
+    t.integer "state"
     t.index ["user_id"], name: "index_letters_on_user_id"
   end
 
