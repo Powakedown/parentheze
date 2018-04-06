@@ -72,6 +72,8 @@ class MessengersController < ApplicationController
   def custom_mail
     session[:custom_mail] = params[:message]
 
+    message_content = params[:message][:comment].split('#').map { |p| p.delete "\n" "\r" }
+
     case params[:message]["recipient"].first
       when "1" then @recipients = ["parentgenial@parentheze.com"]
       when "2" then @recipients = mails(Guest.subscriber.not_tester)
@@ -80,7 +82,7 @@ class MessengersController < ApplicationController
     end
 
     @recipients.each do |recipient|
-      UserMailer.custom_mail(recipient, params[:message]).deliver_now
+      UserMailer.custom_mail(recipient, params[:message], message_content).deliver_now
     end
 
     flash[:notice] = t('.notice')

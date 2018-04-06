@@ -23,10 +23,10 @@
                       <%= f.input :recipient, collection: @recipient, prompt: "Sélectionner le(s) Destinataire(s)", required: :true, label: "Destinataire(s) : ", input_html: { value: @session["recipient"] } %>
                       <%= f.input :subject, label: "Sujet : ", input_html: { value: @session["subject"] } %>
                       <%= f.input :photo, label: "Lien de la photo à inclure :", required: false, input_html: { value: @session["photo"]} %>
-                      <%= f.input :comment, label: "Corps du message : ", id: "textarea",
+                      <%= f.input :comment, label: "Corps du message : (Séparer les paragraphes par #) ", id: "textarea",
                                                                           as: :text,
                                                                           input_html: {  cols: 12,
-                                                                                         rows: 5,
+                                                                                         rows: 15,
                                                                                          resize: "none",
                                                                                          value: @session["comment"]
                                                                                           } %>
