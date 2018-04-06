@@ -123,7 +123,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       flash[:notice] = t('.notice')
       redirect_to admin_validations_path
-      UserMailer.validation({mail: @profile.email}).deliver_now
+      UserMailer.validation({email: @profile.email}).deliver_now
     else
       flash[:warning] = t('.alert')
       redirect_to admin_validations_path
