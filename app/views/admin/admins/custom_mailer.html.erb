@@ -16,9 +16,6 @@
                     <h3><%= t('.title') %></h3>
                   </div>
                   <div class="col-12">
-                    <p><%= t('.subtitle') %></p>
-                  </div>
-                  <div class="col-12">
                     <%= simple_form_for :message, url: custom_mail_path, method: :get do |f| %>
                       <%= f.input :recipient, collection: @recipient, prompt: "Sélectionner le(s) Destinataire(s)", required: :true, label: "Destinataire(s) : ", input_html: { value: @session["recipient"] } %>
                       <%= f.input :subject, label: "Sujet : ", input_html: { value: @session["subject"] } %>

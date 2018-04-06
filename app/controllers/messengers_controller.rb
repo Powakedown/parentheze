@@ -70,7 +70,7 @@ class MessengersController < ApplicationController
   end
 
   def custom_mail
-    session[:custom_mail] = params[:message]
+    session[:custom_mail] ||= params[:message]
 
     message_content = params[:message][:comment].split('#').map { |p| p.delete "\n" "\r" }
 
