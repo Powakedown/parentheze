@@ -4,15 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :cookie
-  before_action :session_ways?
   add_flash_types :success, :warning
+  $session_way = true
 
   def average(collection, column)
     collection.average(column).to_digits.to_f.round(2)
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    if current_user.validation == 1
+    if current_user.profile.validated?
       "/profiles"
     else
       new_user_profile_path(current_user)
@@ -23,10 +23,7 @@ class ApplicationController < ActionController::Base
     u = Guest.new(name: 'guest', email: 'email@example.com')
     u.save!(validate: false)
     session[:guest_user_id] = u.id
-    cookies[:parentheze_guest] = {
-      value: u.id,
-      expires: 1.year.from_now
-    }
+    cookies[:parentheze_guest] = { value: u.id, expires: 1.year.from_now }
     u
   end
 
@@ -55,7 +52,7 @@ class ApplicationController < ActionController::Base
     # Cache the value the first time it's gotten.
     @cached_guest_user ||= Guest.find(session[:guest_user_id] || cookies[:parentheze_guest] ||= create_guest_user.id)
   rescue ActiveRecord::RecordNotFound # if session[:guest_user_id] invalid
-    session[:guest_user_id] = nil
+    session[:guest_user_id] = new_user_profile_path
     cookies[:parentheze_guest] = nil
     guest_user if with_retry
   end
@@ -73,7 +70,7 @@ class ApplicationController < ActionController::Base
   end
 
   def session_ways?
-    @session_ways = false
+    $session_way
   end
 
   def security_check

@@ -79,12 +79,16 @@ fr:
         btn_text1: "valider"
         btn_text2: "demander les modifs"
         btn_text3: "supprimer le profil"
+      session_way:
+        title: "Configurer l'affichage des liens"
+        way1: "Connexion/Inscription/Déconnexion :"
     shared:
       tabs:
         tab1: "Inscription à valider"
         tab2: "En attente de modification"
         tab3: "Custom Mailer"
         tab4: "Letters"
+        tab5: "Links"
     letters:
       index:
         title: "Lettres à envoyer :"
@@ -296,7 +300,7 @@ fr:
       btn_text: "ENVOYER"
       identity:
         field1: "email :"
-        field1_error: "email non valide"
+        field1_error: "email non disponible ou non valide"
     profile_card_invitation:
 
 

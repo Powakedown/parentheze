@@ -5,7 +5,7 @@ module Admin
 
     def destroy
       @letter.destroy
-      redirect_to controller: "letters", action: "index"
+      redirect_to action: "index"
     end
 
     def export

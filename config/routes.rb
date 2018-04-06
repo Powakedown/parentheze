@@ -50,7 +50,9 @@ Rails.application.routes.draw do
     get '/validations', to: 'admins#validations'
     get '/password_verification', to: 'admins#password_verification'
     get '/destroy_profile', to: 'admins#destroy_profile'
-    get '/mailer', to: 'admins#custom_mailer'
+    get '/custom_mailer', to: 'admins#custom_mailer'
+    get '/session_way', to: 'admins#session_way'
+    patch '/session_way', to: 'admins#session_way_update'
     resources :letters, only: %i[index update destroy] do
       member do
         get 'export'

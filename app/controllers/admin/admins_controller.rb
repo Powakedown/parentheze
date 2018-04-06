@@ -28,6 +28,13 @@ module Admin
       @profiles = Profile.where(validation: 2)
     end
 
+    def session_way; end
+
+    def session_way_update
+      $session_way = !$session_way
+      redirect_to controller: "admins", action: "session_way"
+    end
+
     def validations
       @profiles = Profile.to_validate
     end

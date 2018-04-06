@@ -86,7 +86,7 @@ class MessengersController < ApplicationController
     end
 
     flash[:notice] = t('.notice')
-    redirect_to admin_mailer_path
+    redirect_to admin_custom_mailer_path
   end
 
   def mini_contact
