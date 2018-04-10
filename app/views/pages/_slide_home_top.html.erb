@@ -5,9 +5,9 @@
       <h4 class="margin-bottom-medium"><%= t('.text') %></h4>
 
       <% if $session_way %>
-        <% if current_user && current_user.validation == 0 %>
+        <% if current_user && current_user.profile.pending? %>
           <div class="btn btn-yellow margin-bottom-medium"><%= t('.after_subscription') %></div>
-        <% elsif current_user && current_user.validation == 1 %>
+        <% elsif current_user && current_user.profile.validated? %>
           <div class="btn btn-yellow margin-bottom-medium"><%= t('.validated') %></div>
         <% else %>
           <%= link_to t('.calltoaction'), new_user_registration_path, class: "btn btn-blue margin-bottom-medium" %>

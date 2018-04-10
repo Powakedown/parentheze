@@ -63,7 +63,7 @@ class ProfilesController < ApplicationController
   end
 
   def request_update
-    UserMailer.request_update({email: @profile.email, profile: @profile.as_json, updates: request_update_params}).deliver_now
+    UserMailer.request_update({email: @profile.email, profile: @profile.id, updates: request_update_params}).deliver_now
     flash[:notice] = t('.notice')
 
     if request_update_params[:parent1].present?

@@ -12,8 +12,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource_or_scope)
-    if current_user.profile.validated?
-      "/profiles"
+    if current_user.profile
+      if current_user.profile.validated?
+        "/profiles"
+      end
     else
       new_user_profile_path(current_user)
     end

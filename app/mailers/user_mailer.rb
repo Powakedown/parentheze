@@ -53,10 +53,10 @@ class UserMailer < ApplicationMailer
          track_opens: 'true')
   end
 
-  def request_update(mail, profile, updates)
-    @profile = profile
-    @params = updates
-    mail(to: mail,
+  def request_update(email_content)
+    @profile = Profile.find(email_content[:profile])
+    @params = email_content[:updates]
+    mail(to: email_content[:mail],
          subject: 'Votre profil sur Parentheze',
          track_opens: 'true')
   end
