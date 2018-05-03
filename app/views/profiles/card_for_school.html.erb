@@ -1,0 +1,44 @@
+<div class="flex-parent"> <!-- for IE bug -->
+  <div class="fullscreen relative white-on-purple mosaic">
+     <%= render "shared/buttons", mosaic: true, action: true %>
+    <div class="container">
+      <div class="row">
+        <%= render "header" %>
+        <%= render "self_profile" %>
+        <div class="col-12 col-md-8 col-lg-8 col-xl-9">
+          <div class="row">
+            <div class="col-12">
+              <h5><%= t('.column-title') %></h5>
+            </div>
+            <div class="col-12">
+              <div class="page-wrapper black-on-white margin-bottom-big relative">
+                <%= render "shared/button_close" %>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3><%= t('.title') %></h3>
+                    </div>
+                    <div class="col-12">
+                      <p><%= t('.text_html') %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="margin-bottom-medium">
+                  <%= render "shared/mini_form", content: { path: card_for_school_path, checkbox_label: t('.checkbox_label'),label: t('.label'), btn_text: t('.btn_text') } %>
+                </div>
+              </div>
+            <div class="full-width">
+              <h4><%= t('.preview') %></h4>
+              <div class="mailer-preview">
+                <%= render "card_for_school_preview" %>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

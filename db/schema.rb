@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316164237) do
-
+ActiveRecord::Schema.define(version: 201804031306121) do
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(version: 20180316164237) do
     t.integer "host"
   end
 
+  create_table "letters", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "address"
+    t.integer "state"
+    t.index ["user_id"], name: "index_letters_on_user_id"
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -92,6 +102,7 @@ ActiveRecord::Schema.define(version: 20180316164237) do
     t.boolean "confidence"
     t.string "name"
     t.integer "card", default: 0
+    t.index ["step"], name: "index_profiles_on_step"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -118,7 +129,7 @@ ActiveRecord::Schema.define(version: 20180316164237) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -128,11 +139,13 @@ ActiveRecord::Schema.define(version: 20180316164237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "number"
+    t.index ["number"], name: "index_wishes_on_number"
   end
 
   add_foreign_key "bookings", "plans"
   add_foreign_key "bookings", "users"
   add_foreign_key "favorites", "users"
+  add_foreign_key "letters", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "user_wishes", "users"
   add_foreign_key "user_wishes", "wishes"

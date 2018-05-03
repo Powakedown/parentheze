@@ -1,7 +1,6 @@
 <% content_for(:title_tag) { t('.title') } %>
 
 <div class="home">
-
   <%= render partial: "slide_home_top", locals: { slide: @slide_top, id: 0, target_page: "slide1" } %>
 
   <%= render partial:'slide_with_split', locals: { slide: @slide_split[:slide0], id: 1, target_page: "slide2" } %>
@@ -13,6 +12,4 @@
   <%= render partial:'slide_contact', locals: { slide: @slide_contact, id: 4, target_page: "inscription-beta" }  %>
 
   <%= render 'slide_subscription' %>
-
-  <%= render 'shared/footer', target_page: "slide1" %>
 </div>

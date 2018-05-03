@@ -1,0 +1,42 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= render "admin/shared/tabs" %>
+      </div>
+
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-wrapper black-on-white margin-bottom-big relative">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <h3><%= t('.title') %></h3>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="col-12 underline margin-bottom-medium">
+                      <div class="flex-line">
+                        <div>
+                          <p><%= t('.way1') %> <%= $session_way %> </p>
+                        </div>
+                        <div>
+                          <% if $session_way %>
+                            <%= link_to content_tag(:i, nil, class:'fas fa-times'), admin_session_way_path, method: :patch, data: { confirm: "ATTENTION!" }, class: "pastille pastille-red flexbox" %>
+                          <% else %>
+                            <%= link_to content_tag(:i, nil, class:'fas fa-check'), admin_session_way_path, method: :patch, class: "pastille pastille-green flexbox" %>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

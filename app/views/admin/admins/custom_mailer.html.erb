@@ -1,0 +1,110 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= render "admin/shared/tabs" %>
+      </div>
+
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-wrapper black-on-white margin-bottom-big relative">
+              <div class="container">
+                <div class="row">
+                  <div class="pastille pastille-yellow pastille-close flexbox clickable" id="erase"><i class="fas fa-eraser"></i></div>
+                  <div class="col-12">
+                    <h3><%= t('.title') %></h3>
+                  </div>
+                  <div class="col-12">
+                    <%= simple_form_for :message, url: custom_mail_path, method: :get do |f| %>
+                      <%= f.input :recipient, collection: @recipient, prompt: "Sélectionner le(s) Destinataire(s)", required: :true, label: "Destinataire(s) : ", input_html: { value: @session["recipient"] } %>
+                      <%= f.input :subject, label: "Sujet : ", input_html: { value: @session["subject"] } %>
+                      <%= f.input :photo, label: "Lien de la photo à inclure :", required: false, input_html: { value: @session["photo"]} %>
+                      <%= f.input :comment, label: "Corps du message : (Séparer les paragraphes par #) ", id: "textarea",
+                                                                          as: :text,
+                                                                          input_html: {  cols: 12,
+                                                                                         rows: 15,
+                                                                                         resize: "none",
+                                                                                         value: @session["comment"]
+                                                                                          } %>
+                      <%= f.input :btn_text, label: "Texte du bouton : ", required: false, input_html: { value: @session["btn_text"]} %>
+                      <%= f.input :btn_link, label: "Lien du bouton : ", required: false, input_html: { value: @session["btn_link"] } %>
+                      <button type="button" id="submit" class="btn btn-blue" data-toggle="modal" data-target="#exampleModal">
+                        Envoyer
+                      </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade mailer-preview mailer-preview-notransform" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content mailer-preview-frame" style="width: 600px">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Aperçu du mail</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div>
+          <p>Destinataires : </p>
+          <p class="underline" id="recipient"> </p>
+          <p>Sujet :</p>
+          <p class="underline" id="subject" ></p>
+          <div class="full-width separator-vertical">
+            <%= image_tag "https://res.cloudinary.com/doodlid/image/upload/v1518618244/parentheze/Parentheze_logo_black.png", class:"mailer-preview-logo" %>
+          </div>
+          <p id="comment"></p>
+          <div class="separator-vertical">
+            <%= link_to '', "http://www.ecosia.org", id:"btn", class:"btn btn-yellow" %>
+          </div>
+
+          <%= image_tag "https://res.cloudinary.com/doodlid/image/upload/v1519923591/parentheze/polaroid_mail_photo02.png", class:"mailer-preview-photo", id:"photo" %>
+
+          <%= render "user_mailer/onboarding/footer" %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.button :submit, value: "Double check et envoie", class:"btn btn-yellow" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= content_for :after_js do %>
+  <script>
+    var submit = document.getElementById('submit');
+    var eraser = document.getElementById('erase');
+    var btn = document.getElementById('btn');
+
+    submit.addEventListener('click', fillFields);
+    eraser.addEventListener('click', emptyFields);
+
+    function emptyFields() {
+      document.getElementById('message_recipient').value = "";
+      document.getElementById('message_subject').value = "";
+      document.getElementById('message_comment').value = "";
+      document.getElementById('message_photo').value = "";
+      document.getElementById('message_btn_text').value = "";
+      document.getElementById('message_btn_link').value = "";
+    }
+
+    function fillFields() {
+      $('#recipient').html($('#message_recipient').val());
+      $('#subject').html($('#message_subject').val());
+      $('#comment').html($('#message_comment').val());
+      $('#photo').attr('src', $('#message_photo').val());
+      $('#btn').html($('#message_btn_text').val());
+      btn.setAttribute('href', ($('#message_btn_link').val()));
+    }
+
+  </script>
+<% end %>

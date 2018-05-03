@@ -5,6 +5,7 @@ var patternNumber = "^\\d+$";
 var patternPhone = "^(0|\\+33|0033)[1-9][0-9]{8}$";
 
 function testMail(e) {
+  console.log("testMail");
   var input = this;
   input.style.color = "light-gray";
 

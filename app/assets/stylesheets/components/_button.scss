@@ -87,7 +87,10 @@ input {
   background-color: $water-green;
 }
 .btn-yellow, .btn-1 {
-  background-color: $yellow !important;
+  background-color: $yellow;
+}
+.btn-orange {
+  background-color: $orange !important;
 }
 .btn-inverse {
   color: $dark-gray !important;

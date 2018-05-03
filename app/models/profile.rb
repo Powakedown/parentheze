@@ -6,10 +6,11 @@ class Profile < ApplicationRecord
   validates :father_first_name, format: { with: Regexp.new(regex_name), message: 'Le prénom du parent 2 n\'est pas valide' }, if: :step3?, allow_blank: true
   validates_numericality_of :kids, greater_than: 0, message: 'Vous devez être parent et avoir au moins 1 enfant', if: :step3?
   validates :kids, presence: { message: 'Vous devez être parent et avoir au moins 1 enfant' }, if: :step3?
-  validates :phone, format: { with: Regexp.new(regex_phone), message: 'Le numéro de téléphone n\'pas valide'}, if: :step4?, allow_blank: true
+  validates :phone, format: { with: Regexp.new(regex_phone), message: 'Le numéro de téléphone n\'est pas valide'}, if: :step4?, allow_blank: true
   validates :address, presence: true, :if => :step4?
   validates :photo, presence: true, :if => :step6?
 
+  enum validation: { pending: 0, validated: 1, uncomplete: 2 }
 
   belongs_to :user
 
@@ -21,6 +22,7 @@ class Profile < ApplicationRecord
   has_many :wishes, through: :user
 
   scope :validated, -> { where(validation: 1) }
+  scope :to_validate, -> { where(step: 6, validation: 0) }
 
   has_attachment :photo
 
@@ -40,8 +42,8 @@ class Profile < ApplicationRecord
     step == 6
   end
 
-  def validated?
-    validation == 1
+  def self.excluding(id)
+    where.not(user_id: id)
   end
 
   def couple?
@@ -50,6 +52,10 @@ class Profile < ApplicationRecord
 
   def names
     (mother_first_name.present? ? mother_first_name.capitalize : "" ) + (father_first_name.present? ? " & " + father_first_name.capitalize : "" )
+  end
+
+  def full_name
+    (mother_first_name.present? ? mother_first_name : "" ) + (father_first_name.present? ? " & " + father_first_name : "" ) + (name.present? ? " " + name : "" )
   end
 
 end

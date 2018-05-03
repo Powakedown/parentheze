@@ -12,6 +12,7 @@ Bundler.require(*Rails.groups)
 module Parentheze
   class Application < Rails::Application
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.action_mailer.default_url_options = { host: 'https://www.parentheze.com' }
 
     config.generators do |generate|
       generate.assets false

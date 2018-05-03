@@ -1,0 +1,46 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= render "admin/shared/tabs" %>
+      </div>
+
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-wrapper black-on-white margin-bottom-big relative">
+              <div class="container">
+                <div class="row">
+
+                  <div class="col-12">
+                    <h3 class="margin-bottom-big"><%= t('.title') %></h3>
+                  </div>
+                  <% @letters.each do |letter| %>
+                    <div class="col-12 underline margin-bottom-medium">
+                      <div class="flex-line">
+                        <div>
+                          <p>Type: <%= letter.name %></p>
+                          <p>Prénoms: <%= letter.user.names %></p>
+                          <p>Adresse: <%= letter.address %></p>
+                        </div>
+                        <div>
+                          <% if letter.to_send? %>
+                            <%= link_to content_tag(:i, nil, class:'fas fa-check'), admin_letter_path(letter), method: :patch, class: "pastille pastille-green flexbox" %>
+                            <%= link_to content_tag(:i, nil, class:'fas fa-trash'), admin_letter_path(letter), method: :delete, class: "pastille pastille-red flexbox" %>
+                            <%= link_to content_tag(:i, nil, class:'fas fa-file-pdf'), export_admin_letter_path(letter, :format => :pdf), class: "pastille pastille-blue flexbox" %>
+                          <% elsif letter.sent? %>
+                            <i class="fas fa-check green"></i>
+                          <% end %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

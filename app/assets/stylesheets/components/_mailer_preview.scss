@@ -1,12 +1,14 @@
 .mailer-preview {
-  margin-top: -50px;
+  margin-top: -10px;
   .mailer-preview-frame {
     background-color: $white;
     box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.5), 0 0px 0 0 rgba(0, 0, 0, 0.5);
     @include media-breakpoint-down(sm) { padding: 15px 5px 15px 5px; }
     @include media-breakpoint-down(xl) { padding: 35px 20px 35px 20px; }
     @include media-breakpoint-up(xl) { padding: 35px 50px 35px 50px; }
-    transform: rotate(-2deg) scale(0.8, 0.8);
+    &.mailer-preview-transform {
+      transform: rotate(1.5deg) scale(0.9, 0.9);
+    }
     .mailer-preview-logo {
       width: 150px;
       margin-bottom: 40px;
@@ -22,14 +24,26 @@
     }
     .mailer-preview-bubble {
       @include media-breakpoint-up(xl) { height: 75px; }
-      @include media-breakpoint-down(xl) { height: 52px; }
-      @include media-breakpoint-down(lg) { height: 44px; }
+      @include media-breakpoint-down(lg) { height: 35px; }
       @include media-breakpoint-down(sm) { height: 36px; }
+      // position: absolute;
     }
     .mailer-preview-bar {
       width: 100%;
       height: 2px;
       background-color: $gray;
+    }
+    .mailer-preview-photo {
+      width: 350px;
+    }
+    .mailer-preview-content {
+      width: 80%;
+      text-align: justify;
+      text-justify: inter-word;
+      color: $light-purple;
+      h4 {
+        font-weight: bold;
+      }
     }
   }
 }

@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function()  {
     field.style.borderColor = "red";
     if (label) {
       label.style.display = "block";
+      field.style.color = "red";
     }
   }
 

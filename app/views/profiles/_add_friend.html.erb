@@ -14,7 +14,7 @@
             <div class="col-12">
               <p><%= t('.subtitle') %></p>
             </div>
-            <%= render "shared/mini_form", path: add_friend_path, placeholder: "email(s)", value: session[:emails], btn_text: t('commons.button.send'),addon:"" %>
+            <%= render "shared/mini_form", content: { path: add_friend_path, placeholder: "email(s)", value: session[:emails], btn_text: t('.btn_text') } %>
           </div>
         </div>
       </div>

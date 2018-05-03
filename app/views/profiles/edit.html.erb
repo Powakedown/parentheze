@@ -12,7 +12,7 @@
       <% %w(1 2 3 4 5 6).each do |step| %>
         <% if @step == step.to_i %>
           <div class="login-box <%= "expandOpen" if step == "6" %>" style="background-image: url(<%= t('.card-image') if step == "6" %>)">
-            <%= render 'form'<<step, step: step %>
+            <%= render 'form'+step, step: step %>
           </div>
         <% end %>
       <% end %>

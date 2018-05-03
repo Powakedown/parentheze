@@ -103,7 +103,6 @@ $input-height: 56px;
   height: 5px;
   background-color: $yellow;
 }
-
 .underline {
   border-bottom: $border-medium;
   padding-bottom: 5px;
@@ -218,9 +217,16 @@ a:hover.pastille {
   &.pastille-blue {
     background-color: $blue;
   }
+  &.pastille-green {
+    background-color: $green;
+  }
   &.pastille-white {
     background-color: $white;
     color: $dark-gray;
+  }
+  &.pastille-red {
+    background-color: $red;
+    color: $white;
   }
   &.pastille-light-blue {
     background-color: $light-blue;
@@ -313,6 +319,7 @@ a:hover.pastille {
       justify-content: center;
       align-items: center;
       color: black;
+      padding: 10px;
     }
   }
   input {
@@ -344,4 +351,8 @@ ul {
   top: 20px;
   left: -115px;
   border-radius: 50%;
+}
+.img-responsive {
+  @include media-breakpoint-down(sm) { width: 100% }
+  @include media-breakpoint-up(sm) { width: 50% }
 }

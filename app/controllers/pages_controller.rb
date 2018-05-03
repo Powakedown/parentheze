@@ -4,10 +4,12 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home why]
 
   def home
-    if current_user && current_user.profile.validated?
-      redirect_to "/profiles"
-    elsif current_user && current_user.profile.step < 6
-      redirect_to new_user_profile_path(current_user)
+    if current_user
+      if current_user.profile.validated?
+        redirect_to "/profiles"
+      elsif current_user.profile.step < 6
+        redirect_to new_user_profile_path(current_user)
+      end
     end
     if cookie
       @slide_top = t('.slide_home_top')
@@ -23,6 +25,7 @@ class PagesController < ApplicationController
   end
 
   def why
+    @guest = guest_user
     @slides = t('.slides')
     @slides_manifeste = t('.manifeste')
   end

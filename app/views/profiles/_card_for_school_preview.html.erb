@@ -1,0 +1,26 @@
+<div class="mailer-preview-frame mailer-preview-transform black-on-white">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= cl_image_tag ("parentheze/Parentheze_logo_black.svg"), class:"mailer-preview-logo" %>
+      </div>
+      <div class="col-12 col-md-12 separator-vertical">
+        <%= cl_image_tag ( @user.photo.path ), class:"mailer-preview-portrait" %>
+        <%= cl_image_tag ("parentheze/card_for_school_preview_bubble.png"), class:"mailer-preview-bubble" %>
+        <p><%= @user.names %></p>
+      </div>
+
+      <div class="col-12 col-md-12 separator-vertical">
+        <div class="mailer-preview-content">
+          <%= t('.content_html') %>
+        </div>
+      </div>
+      <div class="mailer-preview-bar separator-vertical"></div>
+
+      <div class="col-12 col-md-12 col-lg-12 col-xl-9 ">
+        <p><%= t('.footer.line1') %></p>
+        <p><%= t('.footer.line2') %></p>
+      </div>
+    </div>
+  </div>
+</div>
