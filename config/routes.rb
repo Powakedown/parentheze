@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/add_friend", to: "messengers#add_friend"
   get "/ask_for_cards", to: "messengers#ask_for_cards"
   get "/custom_mail", to: "messengers#custom_mail"
+  get "/card_for_school", to: "messengers#card_for_school"
 
 
   # INSCRIPTION
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
         get 'request_update'
         get 'add_friends'
         get 'ask_for_cards'
+        get 'card_for_school'
       end
     end
   end
@@ -48,7 +50,14 @@ Rails.application.routes.draw do
     get '/validations', to: 'admins#validations'
     get '/password_verification', to: 'admins#password_verification'
     get '/destroy_profile', to: 'admins#destroy_profile'
-    get '/mailer', to: 'admins#mailer'
+    get '/custom_mailer', to: 'admins#custom_mailer'
+    get '/session_way', to: 'admins#session_way'
+    patch '/session_way', to: 'admins#session_way_update'
+    resources :letters, only: %i[index update destroy] do
+      member do
+        get 'export'
+      end
+    end
   end
 
   mount Attachinary::Engine => "/attachinary"

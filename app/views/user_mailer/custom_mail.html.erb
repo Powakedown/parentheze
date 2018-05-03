@@ -11,7 +11,7 @@
 
                   <%= render "user_mailer/onboarding/logo" %>
 
-                  <%= render "user_mailer/onboarding/title",  title: @mail_content["subject"], text: @mail_content["comment"] %>
+                  <%= render "user_mailer/onboarding/custom_mail_content",  title: @mail_content["subject"], text: @mail_content["text"] %>
 
                   <%= render "user_mailer/onboarding/calltoaction", btn_text: @mail_content["btn_text"], color: "#F1B255", link: @mail_content["link"] %>
 

@@ -23,7 +23,9 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem "i18n-js"
+gem 'i18n-js'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

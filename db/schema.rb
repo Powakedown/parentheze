@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(version: 201804031306121) do
     t.integer "host"
   end
 
+  create_table "letters", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "address"
+    t.integer "state"
+    t.index ["user_id"], name: "index_letters_on_user_id"
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -135,6 +145,7 @@ ActiveRecord::Schema.define(version: 201804031306121) do
   add_foreign_key "bookings", "plans"
   add_foreign_key "bookings", "users"
   add_foreign_key "favorites", "users"
+  add_foreign_key "letters", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "user_wishes", "users"
   add_foreign_key "user_wishes", "wishes"

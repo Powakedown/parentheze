@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>My Seating PLan</title>
+    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+
+  </head>
+  <body onload='number_pages'>
+    Page <span class="page"></span> of <span class="topage"></span>
+    <div id="header">
+<!--       <%= wicked_pdf_image_tag 'mysite.jpg' %>
+ --></div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

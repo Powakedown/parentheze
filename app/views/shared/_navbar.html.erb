@@ -4,7 +4,7 @@
   <% end %>
 
   <div class="navbar-wagon-right d-none d-lg-block">
-      <% if @session_ways %>
+      <% if $session_way %>
         <% if user_signed_in? %>
           <%= link_to t('.sign_out'), destroy_user_session_path,  method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
         <% else %>
@@ -24,7 +24,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><%= link_to t('.why'), pourquoi_parentheze_path, class: "navbar-wagon-item flexbox" %></li>
         <li><%= link_to t('.plans'), "/#slide2", class: "navbar-wagon-item flexbox" %></li>
-        <% if @session_ways %>
+        <% if $session_way %>
           <% if user_signed_in? %>
             <li><%= link_to t('.sign_out'), destroy_user_session_path,  method: :delete , class: "navbar-wagon-item flexbox"%></li>
           <% else %>

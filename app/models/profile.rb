@@ -10,7 +10,7 @@ class Profile < ApplicationRecord
   validates :address, presence: true, :if => :step4?
   validates :photo, presence: true, :if => :step6?
 
-  enum admin: { ambassador: 0, coordinator: 1, supervisor: 2 }
+  enum validation: { pending: 0, validated: 1, uncomplete: 2 }
 
   belongs_to :user
 
@@ -44,10 +44,6 @@ class Profile < ApplicationRecord
 
   def self.excluding(id)
     where.not(user_id: id)
-  end
-
-  def validated?
-    validation == 1
   end
 
   def couple?

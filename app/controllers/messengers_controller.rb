@@ -1,7 +1,7 @@
 class MessengersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[contact mini_contact]
-  before_action :message_from_params, only: %i[contact add_friend mini_contact ask_for_cards]
-  before_action :who_is_user, only: %i[add_friend mini_contact ask_for_cards]
+  before_action :message_from_params, only: %i[contact add_friend mini_contact ask_for_cards card_for_school]
+  before_action :who_is_user, only: %i[add_friend mini_contact ask_for_cards card_for_school]
 
   def contact
     @valid_email = email_valid(@message[:email])
@@ -48,7 +48,7 @@ class MessengersController < ApplicationController
     @profile.name = @message[:comment]
     if @message[:comment].blank?
       flash[:warning] = t('.warning')
-      redirect_to profiles_path
+      redirect_to  ask_for_cards_user_profile_path(@user, @profile)
     elsif @profile.save!
       UserMailer.notification( {subject: t('.subject'), email: @user.email, address: @user.address, name: @user.full_name }).deliver_now
       flash[:notice] = t('.notice')
@@ -56,8 +56,23 @@ class MessengersController < ApplicationController
     end
   end
 
+  def card_for_school
+    @profile.card += 10
+    if @message[:comment].blank?
+      flash[:warning] = t('.warning')
+      redirect_to card_for_school_user_profile_path(@user, @profile)
+    elsif @profile.save!
+      UserMailer.notification( {subject: t('.subject'), email: @user.email, names: @user.names, address: @message[:comment] }).deliver_now
+      flash[:notice] = t('.notice')
+      Letter.create!(user: @user, name: "Letter to school", state: 0, address: @message[:comment])
+      redirect_to profiles_path
+    end
+  end
+
   def custom_mail
     session[:custom_mail] = params[:message]
+
+    message_content = params[:message][:comment].split('#').map { |p| p.delete "\n" "\r" }
 
     case params[:message]["recipient"].first
       when "1" then @recipients = ["parentgenial@parentheze.com"]
@@ -67,11 +82,11 @@ class MessengersController < ApplicationController
     end
 
     @recipients.each do |recipient|
-      UserMailer.custom_mail(recipient, params[:message]).deliver_now
+      UserMailer.custom_mail(recipient, params[:message], message_content).deliver_now
     end
 
     flash[:notice] = t('.notice')
-    redirect_to admin_mailer_path
+    redirect_to admin_custom_mailer_path
   end
 
   def mini_contact

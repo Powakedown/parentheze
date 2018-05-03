@@ -1,10 +1,10 @@
 <div class="full-width">
-  <%= simple_form_for :message, url: path, method: :get do |f| %>
+  <%= simple_form_for :message, url: content[:path], method: :get do |f| %>
     <div class="col-12 col-sm-8">
-      <%= f.input :comment, label: false, placeholder: placeholder, input_html: {value: value || "" }  %>
+      <%= f.input :comment, label: content[:label], placeholder: content[:placeholder], input_html: {value: content[:value] || "" }  %>
     </div>
     <div class="col-12 col-sm-4">
-    <%= f.button :submit, value: btn_text, data: { disable_with: "" }, class:"btn btn-blue" %>
+    <%= f.button :submit, value: content[:btn_text], data: { disable_with: "" }, class:"btn btn-blue" %>
     </div>
   <% end %>
 </div>

@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :user_wishes, dependent: :destroy
   has_many :wishes, through: :user_wishes
+  has_many :letters
 
   enum role: { member: 0, moderator: 1, admin: 2 }
 end
