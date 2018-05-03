@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ProfilesController < ApplicationController
-  before_action :user_and_profile, only: %i[create new edit index update previous add_friends ask_for_cards card_for_school]
+  before_action :user_and_profile, only: %i[create new edit index update show previous add_friends ask_for_cards card_for_school]
   before_action :params_profile, only: %i[validate destroy request_update]
 
 
@@ -95,6 +95,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+
   end
 
 

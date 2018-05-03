@@ -265,6 +265,18 @@ fr:
     form6:
       title: "Bien joué !"
       details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
+    show:
+      title: "Votre profil"
+    profile:
+      column-title: "Votre profil en détail"
+      message:
+        placeholder: "Ajoutez un petit mot à propos de vous ici."
+      needs: "Vos envies et besoins :"
+      photo: "Votre photo de profil :"
+      favorites: "Vos favoris :"
+      save_description: "Enregistrer votre description"
+      save_photo: "Enregistrer votre photo"
+      save_needs: "Enregistrer vos besoins & envies"
   card:
     promotion: "Durée limitée"
     free: "Gratuit"

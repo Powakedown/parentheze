@@ -20,6 +20,7 @@ class Profile < ApplicationRecord
   alias_attribute :parent2, :father_first_name
 
   has_many :wishes, through: :user
+  has_many :favorites
 
   scope :validated, -> { where(validation: 1) }
   scope :to_validate, -> { where(step: 6, validation: 0) }

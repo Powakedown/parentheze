@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 201804031306121) do
-  
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 201804031306121) do
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.integer "favorite"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_favorites_on_profile_id"
   end
 
   create_table "guests", force: :cascade do |t|
@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 201804031306121) do
 
   add_foreign_key "bookings", "plans"
   add_foreign_key "bookings", "users"
-  add_foreign_key "favorites", "users"
+  add_foreign_key "favorites", "profiles"
   add_foreign_key "letters", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "user_wishes", "users"
