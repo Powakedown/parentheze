@@ -15,7 +15,7 @@
   -webkit-box-shadow: none;
   border-bottom:none;
   cursor: pointer;
-  @include media-breakpoint-down(sm) { white-space: normal; }
+  @include media-breakpoint-down(md) { white-space: normal; }
   &.btn-calltoaction {
     min-height: 75px;
     font-size: 0.9em;

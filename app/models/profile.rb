@@ -51,7 +51,7 @@ class Profile < ApplicationRecord
   end
 
   def names
-    (mother_first_name.present? ? mother_first_name : "" ) + (father_first_name.present? ? " & " + father_first_name : "" )
+    (mother_first_name.present? ? mother_first_name.capitalize : "" ) + (father_first_name.present? ? " & " + father_first_name.capitalize : "" )
   end
 
   def full_name
