@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[] do
     resources :profiles, only: %i[new create show edit update destroy] do
+      resources :favorites, only: %i[create destroy]
       member do
         get 'add_friends'
         get 'ask_for_cards'

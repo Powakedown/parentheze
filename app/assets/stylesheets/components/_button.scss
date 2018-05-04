@@ -24,8 +24,9 @@
     margin-bottom: 0px;
   }
   &:hover {
-    background-color: $light-yellow;
-    color: white;
+    background-color: $light-yellow !important;
+    color: white !important;
+    border: 1px solid $light-yellow !important;
   }
   &.btn-tall {
     min-height: 70px;
@@ -91,6 +92,11 @@ input {
 }
 .btn-orange {
   background-color: $orange !important;
+}
+.btn-yellow-inverse {
+  background-color: $white !important;
+  color: $yellow !important;
+  border: 1px solid $yellow;
 }
 .btn-inverse {
   color: $dark-gray !important;

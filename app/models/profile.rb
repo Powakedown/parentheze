@@ -59,4 +59,7 @@ class Profile < ApplicationRecord
     (mother_first_name.present? ? mother_first_name : "" ) + (father_first_name.present? ? " & " + father_first_name : "" ) + (name.present? ? " " + name : "" )
   end
 
+  def favorite_of(favorite)
+    favorite.favorites.where(favorite: self).any?
+  end
 end

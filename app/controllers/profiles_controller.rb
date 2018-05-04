@@ -91,7 +91,10 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @favorite = Favorite.where(profile: @current_profile, favorite: @profile.id).first
+    @wish = Wish.all
+  end
 
   def update
     if @profile.pending?
@@ -155,6 +158,7 @@ class ProfilesController < ApplicationController
   def params_profile
     @profile = Profile.find(params[:id])
     @user = @profile.user
+    @current_profile = current_user.profile
   end
 
   def profile_params

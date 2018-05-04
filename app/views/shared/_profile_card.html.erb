@@ -7,6 +7,8 @@
       <h5 class="reputation"><%= reputation %></h5>
       <h5 class="distance"><%= distance %></h5>
     </div>
-    <i class="fas fa-star profile-favorite"></i>
+    <% if profile.favorite_of(current_user.profile) %>
+      <i class="fas fa-star profile-favorite"></i>
+    <% end %>
   </div>
 <% end %>

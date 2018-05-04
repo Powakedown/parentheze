@@ -96,6 +96,15 @@ fr:
       update:
         notice: "Lettre marquée comme envoyée"
         warning: "Quelque chose s'est map passé"
+  favorites:
+    create:
+      notice: "Profil ajouté à vos favoris"
+    destroy:
+      notice: "Profil supprimé de vos favoris"
+    button_delete:
+      text: "Supprimer de vos favoris"
+    button_add:
+      text: "Ajouter à vos favoris"
   messengers:
     contact:
       notice: "Oh yeah ! Votre message a bien été envoyé."
@@ -284,6 +293,7 @@ fr:
       column-title: "Prés de vous"
       needs: "Envies et besoins :"
       favorites: "Favoris :"
+      no-favorite: "Aucun favori actuellement"
   card:
     promotion: "Durée limitée"
     free: "Gratuit"
@@ -321,8 +331,6 @@ fr:
         field1: "email :"
         field1_error: "email non disponible ou non valide"
     profile_card_invitation:
-
-
     navbar:
       login: "connexion"
       sign_up: "s'enregistrer"

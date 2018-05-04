@@ -1,4 +1,6 @@
 //= require attachinary
+var spanToFill = document.getElementById('button-favorite');
+const favoriteStar = document.getElementById('favorite-star');
 
 function testIt(e) {
   if(this.value.match(new RegExp(this.pattern))){

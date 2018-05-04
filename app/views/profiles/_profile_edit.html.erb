@@ -1,7 +1,7 @@
 <div class="profile-detailed col-12 col-md-8 col-lg-8 col-xl-9">
   <div class="row">
     <div class="col-12">
-      <h5><%= @profile.user == current_user ? t('.column-title-self') : t('.column-title') %></h5>
+      <h5><%= t('.column-title') %></h5>
     </div>
     <div class="col-12">
       <div class="page-wrapper black-on-white margin-bottom-big relative">
@@ -63,11 +63,13 @@
               <div class="col-12">
                 <h4 class="margin-bottom-medium"><%= t('.favorites') %></h4>
                 <% @profile.favorites.each do |fav| %>
-                  <div class="favorites-list">
-                    <%= cl_image_tag Profile.find(fav.favorite).photo.path %>
-                    <h4><%= Profile.find(fav.favorite).names %></h4>
-                    <h4><%= "200m" %></h4>
-                  </div>
+                  <%= link_to user_profile_path(Profile.find(fav.favorite)) do %>
+                    <div class="favorites-list">
+                      <%= cl_image_tag Profile.find(fav.favorite).photo.path %>
+                      <h4><%= Profile.find(fav.favorite).names %></h4>
+                      <h4><%= "200m" %></h4>
+                    </div>
+                  <% end %>
                 <% end %>
               </div>
 

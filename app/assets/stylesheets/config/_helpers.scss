@@ -211,6 +211,11 @@ a:hover.pastille {
   font-size: 28px;
   float: left;
   margin-right: 10px;
+  &.pastille-small {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+  }
   &.pastille-yellow {
     background-color: $yellow;
   }

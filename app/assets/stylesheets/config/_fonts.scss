@@ -93,6 +93,9 @@ p{
   font-family: $body-font;
   font-weight: 400;
   line-height: 1.4em;
+  i {
+    margin-right: 10px;
+  }
 }
 @media (max-device-width: 569px ) {
   h1 {

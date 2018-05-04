@@ -6,43 +6,51 @@
     <div class="col-12">
       <div class="page-wrapper black-on-white margin-bottom-big relative">
         <%= render "shared/button_close" %>
-          <div class="container">
-            <div class="row">
-              <div class="col-6 margin-bottom-big text-center">
-                <%= cl_image_tag @profile.photo.path, id:"photo" %>
-              </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-6 margin-bottom-big text-center">
+              <% if @profile.favorite_of(@current_profile) %>
+                <div id="favorite-star" class="flexbox"><i class="fas fa-star"></i></div>
+              <% end %>
+              <%= cl_image_tag @profile.photo.path, id:"photo" %>
+            </div>
 
-              <div class="col-6">
-                <h3><%= @profile.names %></h3>
-                <p><%= @profile.kids %> enfants</p>
-                <p>situés à 200 m</p>
-                <p class="green">Bonne Réputation</p>
-              </div>
+            <div class="col-6">
+              <h3><%= @profile.names %></h3>
+              <p><%= @profile.kids %> enfants</p>
+              <p>situés à 200 m</p>
+              <p class="green">Bonne Réputation</p>
+              <span id="button-favorite">
+                <%= render @profile.favorite_of(current_user.profile) ? 'favorites/button_delete' : 'favorites/button_add' %>
+              </span>
+            </div>
 
-              <div class="col-12">
-                <p><%= @profile.comment %></p>
+            <div class="col-12">
+              <p><%= @profile.comment %></p>
+              <h4 class="margin-bottom-medium"><%= t('.needs') %></h4>
+                <% @wish.each_with_index do |wish,index| %>
+                  <label class="checkbox margin-bottom-medium">
+                      <input type="checkbox" class="boolean optional" <%= @profile.wishes.include?(wish) ? 'checked="checked"' : '' %>/>
+                    <label><%= wish.name %></label>
+                  </label>
+                <% end %>
+            </div>
 
-                <h4 class="margin-bottom-medium"><%= t('.needs') %></h4>
-                  <% Wish.all.each_with_index do |wish,index| %>
-                    <label class="checkbox margin-bottom-medium">
-                        <input type="checkbox" class="boolean optional" <%= @profile.wishes.include?(wish) ? 'checked="checked"' : '' %>/>
-                      <label><%= wish.name %></label>
-                    </label>
-                  <% end %>
-              </div>
-
-              <div class="col-12">
-                <h4 class="margin-bottom-medium"><%= t('.favorites') %></h4>
-                <% @profile.favorites.each do |fav| %>
+            <div class="col-12">
+              <h4 class="margin-bottom-medium"><%= t('.favorites') %></h4>
+              <span><%= @profile.favorites.empty? ? t('.no-favorite') : '' %></span>
+              <% @profile.favorites.each do |fav| %>
+                <%= link_to user_profile_path(Profile.find(fav.favorite)) do %>
                   <div class="favorites-list">
                     <%= cl_image_tag Profile.find(fav.favorite).photo.path %>
                     <h4><%= Profile.find(fav.favorite).names %></h4>
                     <h4><%= "200m" %></h4>
                   </div>
                 <% end %>
-              </div>
+              <% end %>
             </div>
           </div>
+        </div>
       </div>
     </div>
     </div>

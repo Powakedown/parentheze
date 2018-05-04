@@ -1,4 +1,7 @@
 .profile-detailed {
+  a {
+    color: $dark-gray;
+  }
   #photo {
     width: 100%;
   }
@@ -12,5 +15,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px;
+    border-radius: $border-radius;
+    img {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+  #favorite-star {
+    position: absolute;
+    z-index: 500;
+    right: 20px;
+    top: 2px;
+    font-size: 20px;
+    color: $yellow;
+    background-color: $white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 1s;
   }
 }
