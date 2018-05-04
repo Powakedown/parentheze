@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class ProfilesController < ApplicationController
-  before_action :user_and_profile, only: %i[create new edit index update show previous add_friends ask_for_cards card_for_school]
-  before_action :params_profile, only: %i[validate destroy request_update]
-
+  before_action :user_and_profile, only: %i[create new edit index update previous add_friends ask_for_cards card_for_school update_wishes]
+  before_action :params_profile, only: %i[validate destroy request_update show]
 
   def add_friends; end
 
@@ -24,9 +23,8 @@ class ProfilesController < ApplicationController
   def destroy; end
 
   def edit
-    @profile = @user.profile
     #If user come back on edit after receiving request update mail
-    if @profile.validation == 2
+    if @profile.uncomplete?
       @profile.validation = 0
       @error_label = true
       @profile.save
@@ -53,7 +51,6 @@ class ProfilesController < ApplicationController
     @step = @profile.step
     redirect_to edit_user_profile_path(@user, @profile)
   end
-
 
   def previous
     @profile = @user.profile
@@ -94,17 +91,11 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def show
-
-  end
-
+  def show; end
 
   def update
-    @profile = @user.profile
-    @profile.step += 1
-    if @profile.step5?
-      add_wishes(@user, @profile)
-    else
+    if @profile.pending?
+      @profile.step += 1
       if @profile.update(profile_params)
         redirect_to edit_user_profile_path
         inscription_done(@user) if @profile.step6?
@@ -116,7 +107,30 @@ class ProfilesController < ApplicationController
         flash[:warning] = notice
         redirect_to edit_user_profile_path
       end
+    elsif @profile.validated?
+      if @profile.update(profile_params)
+        redirect_to user_profile_path(@user, @profile)
+        flash[:notice] = t('.success')
+      else
+        flash[:warning] = t('.errors.commons')
+      end
     end
+  end
+
+  def update_wishes
+    @user.user_wishes.destroy_all
+    wishes = Wish.all.to_a
+    wishes.each_with_index do |wish, index|
+      UserWish.create(user: @user, wish: wish) if profile_params[("need"+index.to_s).to_sym].present?
+    end
+    if @profile.step4?
+      path = edit_user_profile_path
+      @profile.step += 1
+      @profile.save
+    else
+      path = user_profile_path
+    end
+    redirect_to path
   end
 
   def validate
@@ -140,10 +154,11 @@ class ProfilesController < ApplicationController
 
   def params_profile
     @profile = Profile.find(params[:id])
+    @user = @profile.user
   end
 
   def profile_params
-    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :phone, :confidence, :need0, :need1, :need2, :need3, :photo, :lat, :lng )
+    params.require(:profile).permit(:address, :kids, :mother_first_name, :father_first_name, :phone, :confidence, :comment, :need0, :need1, :need2, :need3, :photo, :lat, :lng )
   end
 
   def request_update_params

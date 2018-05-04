@@ -14,6 +14,7 @@ fr:
     register_beta: "S'inscrire à la béta"
   errors:
     email_regex: "L'email rentré ne possède pas le bon format"
+    commons: "Quelque chose s'est mal passé."
   metas:
     title: "Parentheze, la nouvelle vie des parents."
   devise:
@@ -199,6 +200,7 @@ fr:
       flash-after-request: "vérifier les champs de cette étape et poursuivez"
     update:
       subject: "Nouvel inscription sur Parentheze"
+      success: "Votre profil a été mis à jour."
     form1:
       title: "Le réseau de confiance"
       details: "Vous entrez dans le cercle de confiance, posez-vous. L'inscription est simple et rapide, elle demande simplement votre attention. Les échanges se feront mieux grâce à des profils de qualité."
@@ -267,7 +269,7 @@ fr:
       details: "Votre profil est maintenant en cours de vérification. Dés qu’il sera validé, vous pourrez accéder à la plateforme. A bientôt."
     show:
       title: "Votre profil"
-    profile:
+    profile_edit:
       column-title: "Votre profil en détail"
       message:
         placeholder: "Ajoutez un petit mot à propos de vous ici."
@@ -277,6 +279,11 @@ fr:
       save_description: "Enregistrer votre description"
       save_photo: "Enregistrer votre photo"
       save_needs: "Enregistrer vos besoins & envies"
+      description: "Quelques mots à propos de vous :"
+    profile_show:
+      column-title: "Prés de vous"
+      needs: "Envies et besoins :"
+      favorites: "Favoris :"
   card:
     promotion: "Durée limitée"
     free: "Gratuit"

@@ -1,17 +1,17 @@
-<%= link_to link do %>
+<%= link_to content[:link] do %>
   <div class="profile-card">
-    <% if promotion %>
+    <% if content[:promotion] == true %>
       <div class="card-promotion"><%= t('card.promotion') %></div>
     <% end %>
-    <% if free %>
+    <% if content[:free] == true %>
       <div class="card-free"><%= t('card.free') %></div>
     <% end %>
-    <div class="profile-card-portrait" style="background-image: url('<%= cl_image_path image %>')">
+    <div class="profile-card-portrait" style="background-image: url('<%= cl_image_path content[:image] %>')">
     </div>
     <div class="profile-card-description text-center">
-      <h5 class="name"><%= title %></h5>
-      <h5 class="reputation"><%= text1 %></h5>
-      <h5 class="reputation"><%= text2 %></h5>
+      <h5 class="name"><%= content[:title] %></h5>
+      <h5 class="reputation"><%= content[:text1] %></h5>
+      <h5 class="reputation"><%= content[:text2] %></h5>
     </div>
   </div>
 <% end %>

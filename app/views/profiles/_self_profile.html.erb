@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <h5><%= t('.title') %></h5>
-      <%= render "shared/profile_card", profile: @profile, reputation: "Bonne réputation", distance: "200 mètres" %>
+      <%= render "shared/profile_card", profile: current_user.profile, reputation: "Bonne réputation", distance: "200 mètres" %>
     </div>
   </div>
 </div>
