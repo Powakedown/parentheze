@@ -27,12 +27,13 @@ Rails.application.routes.draw do
   resources :users, only: %i[] do
     resources :profiles, only: %i[new create show edit update destroy] do
       member do
-        get 'previous'
-        get 'validate'
-        get 'request_update'
         get 'add_friends'
         get 'ask_for_cards'
         get 'card_for_school'
+        get 'previous'
+        get 'request_update'
+        get 'update_wishes'
+        get 'validate'
       end
     end
   end

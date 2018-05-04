@@ -9,31 +9,34 @@
       </div>
     <% end %>
     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-      <%= render "shared/profile_card_invitation", image: t('card.invitation.image'),
-                                                   title: t('card.invitation.title'),
-                                                   text1: t('card.invitation.text1'),
-                                                   text2: t('card.invitation.text2'),
-                                                   link: add_friends_user_profile_path(@user, @profile),
-                                                   promotion: false,
-                                                   free: false %>
+      <%= render "shared/profile_card_invitation", content: {
+                                                    image: t('card.invitation.image'),
+                                                    title: t('card.invitation.title'),
+                                                    text1: t('card.invitation.text1'),
+                                                    text2: t('card.invitation.text2'),
+                                                    link: add_friends_user_profile_path(@user, @profile),
+                                                    promotion: false,
+                                                    free: false } %>
     </div>
     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-      <%= render "shared/profile_card_invitation", image: t('card.school.image'),
-                                               title: t('card.school.title'),
-                                               text1: t('card.school.text1'),
-                                               text2: t('card.school.text2'),
-                                               link: card_for_school_user_profile_path(@user, @profile),
-                                               promotion: true,
-                                               free: true %>
+      <%= render "shared/profile_card_invitation", content: {
+                                                    image: t('card.school.image'),
+                                                    title: t('card.school.title'),
+                                                    text1: t('card.school.text1'),
+                                                    text2: t('card.school.text2'),
+                                                    link: card_for_school_user_profile_path(@user, @profile),
+                                                    promotion: true,
+                                                    free: true } %>
     </div>
     <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-      <%= render "shared/profile_card_invitation", image: t('card.visitcard.image'),
-                                               title: t('card.visitcard.title'),
-                                               text1: t('card.visitcard.text1'),
-                                               text2: t('card.visitcard.text2'),
-                                               link: ask_for_cards_user_profile_path(@user, @profile),
-                                               promotion: true,
-                                               free: true %>
+      <%= render "shared/profile_card_invitation", content: {
+                                                    image: t('card.visitcard.image'),
+                                                    title: t('card.visitcard.title'),
+                                                    text1: t('card.visitcard.text1'),
+                                                    text2: t('card.visitcard.text2'),
+                                                    link: ask_for_cards_user_profile_path(@user, @profile),
+                                                    promotion: true,
+                                                    free: true } %>
     </div>
     <% 3.times do %>
       <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
