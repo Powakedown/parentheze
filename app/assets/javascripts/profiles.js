@@ -1,15 +1,12 @@
 //= require attachinary
 
 function testIt(e) {
-  var input = this;
-  setTimeout(function(){
-  if(input.value.match(new RegExp(input.pattern))){
-    input.style.cssText = null;
+  if(this.value.match(new RegExp(this.pattern))){
+    this.style.cssText = null;
   }
   else {
-    input.style.borderColor = "red";
+    this.style.borderColor = "red";
   }
-  }, 10);
 }
 
 function onPlaceChanged() {
@@ -95,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (profileAddress) {
     var autocomplete = new google.maps.places.Autocomplete(profileAddress, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-    google.maps.event.addDomListener(profileAddress, 'keydown', function(e) {
+    google.maps.event.addDomListener(profileAddress, 'keyup', function(e) {
       if (e.key === "Enter") {
         e.preventDefault(); // Do not submit the form on Enter.
       }
@@ -113,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for(i = 0;i<inputs.length;i++) {
     if (inputs[i]) {
-      inputs[i].addEventListener("keydown", testIt, true);
+      inputs[i].addEventListener("keyup", testIt, true);
     }
   }
 
