@@ -25,7 +25,7 @@
                 <h4 class="margin-bottom-medium"><%= t('.needs') %></h4>
                   <% Wish.all.each_with_index do |wish,index| %>
                     <label class="checkbox margin-bottom-medium">
-                        <input type="checkbox" class="boolean optional" <%= @profile.wishes.where(number: index).present? ? 'checked="checked"' : '' %>/>
+                        <input type="checkbox" class="boolean optional" <%= @profile.wishes.include?(wish) ? 'checked="checked"' : '' %>/>
                       <label><%= wish.name %></label>
                     </label>
                   <% end %>

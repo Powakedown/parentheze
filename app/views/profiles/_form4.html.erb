@@ -3,15 +3,11 @@
     <h3><%= t('.title') %></h3>
     <p><%= t('.details') %></p>
     <input type="hidden" class="boolean optional" checked="checked" id="noneed" name="profile[noneed]" value="true" />
-    <% t('.fields').each_with_index do |x,index| %>
-      <label class="checkbox margin-bottom-medium">
-        <% if @user.wishes.where(number: index).present? %>
-          <input type="checkbox" class="boolean optional" checked="checked" id="<%= x[0] %>" name="profile[need<%= index %>]" value="true" />
-        <% else %>
-          <input type="checkbox" class="boolean optional" id="<%= x[0] %>" name="profile[need<%= index %>]" value="true" />
-        <% end %>
-        <label for="<%= x[0] %>"><%= x[1] %></label>
-      </label>
+    <% Wish.all.each do |wish| %>
+      <span class="checkbox margin-bottom-medium">
+        <input type="checkbox" class="boolean optional" <%= @profile.wishes.include?(wish) ? 'checked="checked"' : "" %> id="<%= wish.number %>" name="profile[need<%= wish.number %>]" value="true" />
+        <label for="<%= wish.number %>"><%= wish.name %></label>
+      </span>
     <% end %>
   </div>
   <div class="form-actions">
